@@ -1,10 +1,11 @@
 package xdb.http;
 
 import java.util.Enumeration;
+
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletContext;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class MockFilterConfig implements FilterConfig {
     final ServletContext context;
 

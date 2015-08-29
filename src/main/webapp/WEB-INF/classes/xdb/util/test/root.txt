@@ -1,1 +1,0 @@
-File to mark directory root in classpath.

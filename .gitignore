@@ -3,3 +3,4 @@
 /data
 /.gradle
 *.class
+/bin

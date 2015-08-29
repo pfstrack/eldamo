@@ -1,9 +1,0 @@
-<model-config>
-    <!-- Keys for indexing, modeled after XSLT keys -->
-    <index-keys>
-        <key name="uuid" match="product" use="@uuid" />
-        <key name="parent"
-             match="item"
-             use="children/*/(@id|@idref)" />
-    </index-keys>
-</model-config>

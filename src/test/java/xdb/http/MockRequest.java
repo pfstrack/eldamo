@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class MockRequest implements HttpServletRequest {
     public final List<Cookie> cookies = new LinkedList<Cookie>();
     private final String uri;

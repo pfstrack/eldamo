@@ -1,5 +1,6 @@
 package xdb.dom;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -14,6 +15,7 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import javax.xml.xpath.XPathVariableResolver;
 
+import net.sf.saxon.dom.DOMNodeList;
 import net.sf.saxon.xpath.XPathFactoryImpl;
 
 import org.w3c.dom.Node;
@@ -92,6 +94,13 @@ public final class XPathEngine {
             return Collections.emptyList();
         } else if (result instanceof List) {
             return (List<Node>) result;
+        } else if (result instanceof DOMNodeList) {
+            DOMNodeList domNodeList = (DOMNodeList) result;
+            List<Node> list = new ArrayList<Node>(domNodeList.getLength());
+            for (int i = 0; i < domNodeList.getLength(); i++) {
+                list.add(domNodeList.item(i));
+            }
+            return list;
         } else {
             throw new IllegalStateException("Unexpected return type " + result.getClass());
         }

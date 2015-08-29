@@ -130,6 +130,7 @@ public class DispatchServlet extends HttpServlet {
      *             For errors writing the response.
      */
     private void sendError(HttpServletResponse response, Exception ex) throws IOException {
+        ex.printStackTrace();
         response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         response.setContentType("text/xml");
         setCommonHeaders(response);
