@@ -1,0 +1,46 @@
+<model-config>
+    <!-- Keys for indexing, structure similar to XSLT keys -->
+    <index-keys>
+        <key name="ref" match="ref" use="@source" />
+        <key name="word" match="word" use="@v" />
+        <key name="lang-word" match="word" type="string" use="concat(ancestor-or-self::*[@l][1]/@l, ':', @v)" />
+        <key name="language" match="word" use="ancestor-or-self::*[@l][1]/@l" />
+
+        <key name="category" match="word" use="ancestor-or-self::*[@cat][1]/@cat" />
+
+        <key name="class" match="word" type="string-list" use="normalize-space(concat(class/@form, ' ', class/@variant))" />
+
+        <key name="cognate-of" match="word" type="string-list" use="cognate/concat(@l, ':', @v)" />
+        <key name="cognate-of-ref" match="ref" use="cognate/@source" />
+
+        <key name="related-to" match="word" use="related/@v" />
+        <key name="related-to-ref" match="ref" use="related/@source" />
+
+        <key name="before-to" match="word" use="before/@v" />
+
+        <key name="element-in" match="word" use="element/@v" />
+        <key name="element-in-ref" match="ref" use="element/@source" />
+
+        <key name="deriv-to" match="word" use="deriv/@v" />
+        <key name="deriv-to-ref" match="ref" use="deriv/@source" />
+
+        <key name="inflect-form-ref" type="string-list" match="ref" use="inflect/@form" />
+        <key name="inflect-form-and-class-ref" type="string-list" match="ref" use="normalize-space(concat(inflect/@form, ' ', inflect/@variant, ' ', ../class/@form, ' ', ../class/@variant))" />
+        <key name="inflect-table" match="inflect-table" use="@form" />
+
+        <key name="rule-to" match="rule" type="string" use="concat(@l, ':', @rule, ':', @from)" />
+        <key name="rule-element-ref" match="ref" type="string" use="concat(@rl, ':', @rule, ':', @from)" />
+        <key name="rule-to-ref" match="ref" use="deriv[../@rule]/@source" />
+        <key name="rule-example-ref" match="rule-example" type="string" use="concat(@l, ':', @v)" />
+        <key name="rule-example-ref2" match="rule-example" type="string" use="concat(@l, ':', @rule, ':', @from)" />
+
+        <key name="correction" match="ref" use="correction/@source" />
+
+        <key name="example" match="ref" use="example/@source" />
+        <key name="example-inflect" match="ref" use="example-inflect/@source" />
+        <key name="example-deriv" match="ref" use="example-deriv/@source" />
+
+        <key name="word-code" match="word" type="string" use="xdb:hashcode(.)" />
+        <key name="ref-code" match="ref" type="string" use="xdb:hashcode(.)" />
+    </index-keys>
+</model-config>

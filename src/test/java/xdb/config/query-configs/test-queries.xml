@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+    <shared-params id="common-filters">
+        <param name="venue" description="The venue" />
+    </shared-params>
+    <query-controller uri-pattern="/entity/item.*">
+        <simple-request-parser>
+            <param name="id" description="The item id." required="true" />
+            <param name="entity-type" description="The entity types being retrieved. If omitted, any kind of entity can be retrieved." multi-valued="true" />
+            <use-shared-params idref="common-filters" />
+        </simple-request-parser>
+        <query>
+            <xpath-query xpath="id($id)" />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="xml" mime-type="text/xml">
+<![CDATA[
+/*
+]]>
+            </xquery-renderer>
+        </renderers>
+        <description>A query returning one item by its id.</description>
+        <example><![CDATA[item.xml?id=1234]]></example>
+    </query-controller>
+</configs>

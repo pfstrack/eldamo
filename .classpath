@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/javax.servlet.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/saxon9.1.0.5-dom.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9.1.0.5-s9api.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9.1.0.5-xpath.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9.1.0.5.jar"/>
+	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
+</classpath>

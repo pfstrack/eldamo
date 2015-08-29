@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+    version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <!--
+    <filter>
+        <filter-name>LayoutFilter</filter-name>
+        <filter-class>xdb.layout.LayoutFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LayoutFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+        <init-param>
+            <param-name>compilerSourceVM</param-name>
+            <param-value>1.6</param-value>
+        </init-param>
+        <init-param>
+            <param-name>compilerTargetVM</param-name>
+            <param-value>1.6</param-value>
+        </init-param>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>*.jsp</url-pattern>
+    </servlet-mapping>
+    -->
+
+    <filter>
+        <filter-name>PubModeFilter</filter-name>
+        <filter-class>xdb.control.PubModeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PubModeFilter</filter-name>
+        <url-pattern>/pub/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>DispatchServlet</servlet-name>
+        <servlet-class>xdb.control.DispatchServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatchServlet</servlet-name>
+        <url-pattern>/content/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HomeJSP</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeJSP</servlet-name>
+        <url-pattern>/index.html</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

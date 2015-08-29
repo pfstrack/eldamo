@@ -1,0 +1,50 @@
+<test-data>
+    <venue id="sun-store-us">
+        <channel name="st" />
+        <venue-pricing currency="USD">
+            <price-list-ref idref="HARDWARE AND SYSTEM SOFTWARE CURRENT COMMERCIAL" />
+        </venue-pricing>
+    </venue>
+    <product id="Sun_Fire_T1000_Se_1" publish-date="2001-01-01">
+        <channel name="st" />
+        <children>
+            <bundle-ref idref="DUMMY1--Sun_Fire_T1000_Se_1" ecom-base-part="true"/>
+            <bundle-ref idref="DUMMY2--Sun_Fire_T1000_Se_1" ecom-base-part="true"/>
+            <part-ref idref="T10Z106A-04GE1J" />
+            <part-ref idref="T10Z106A-08GE1J" />
+        </children>
+    </product>
+    <product id="Product_HWSA" publish-date="2001-01-01">
+        <channel name="st" />
+        <product-ecom-flags product-template="Standalone"/>
+        <children>
+            <bundle-ref idref="DUMMY1--Sun_Fire_T1000_Se_1" ecom-base-part="true"/>
+            <part-ref idref="T10Z106A-04GE1J" />
+            <part-ref idref="T10Z106A-08GE1J" ecom-base-part="true" />
+        </children>
+    </product>
+    <bundle id="DUMMY1--Sun_Fire_T1000_Se_1" publish-date="2001-01-01">
+        <channel name="st" />
+        <bundled-parts>
+            <part-ref idref="T10Z106A-04GE1J" quantity="1"/>
+        </bundled-parts>
+    </bundle>
+    <bundle id="DUMMY2--Sun_Fire_T1000_Se_1" publish-date="2001-01-01" priority-position="1">
+        <channel name="st" />
+        <bundled-parts>
+            <part-ref idref="T10Z106A-08GE1J" quantity="1"/>
+        </bundled-parts>
+    </bundle>
+    <part id="T10Z106A-04GE1J" publish-date="2001-01-01">
+        <channel name="st" />
+        <price list="HARDWARE AND SYSTEM SOFTWARE CURRENT COMMERCIAL" price="3395.00" from="2001-01-01" to="2036-12-31"/>
+    </part>
+    <part id="T10Z106A-08GE1J" publish-date="2001-01-01">
+        <channel name="st" />
+        <price list="HARDWARE AND SYSTEM SOFTWARE CURRENT COMMERCIAL" price="3695.00" from="2001-01-01" to="2036-12-31"/>
+    </part>
+    <part id="T10Z106A-16GE1J" publish-date="2001-01-01" last-order-date="2001-01-02">
+        <channel name="st" />
+        <price list="HARDWARE AND SYSTEM SOFTWARE CURRENT COMMERCIAL" price="1000.00" from="2001-01-01" to="2036-12-31"/>
+    </part>
+</test-data>
