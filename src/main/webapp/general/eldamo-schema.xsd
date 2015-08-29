@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="before">
+    <xs:annotation>
+      <xs:documentation>Indicates that a particular phonetic change must occur before another one. The change that must come after is specified by the word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="order-example"/>
+      </xs:sequence>
+      <xs:attribute name="l" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="ad"/>
+            <xs:enumeration value="dan"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="ilk"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="on"/>
+            <xs:enumeration value="s"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cat">
+    <xs:annotation>
+      <xs:documentation>A semantic category, specified by its @id. An individual word element can be linked to a semantic category by its @cat attributed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="label" use="required"/>
+      <xs:attribute name="num" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cat-group">
+    <xs:annotation>
+      <xs:documentation>A group of semantic categories, for organization purposes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="cat"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:ID"/>
+      <xs:attribute name="label" use="required"/>
+      <xs:attribute name="num" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cats">
+    <xs:annotation>
+      <xs:documentation>Parent element of all semantic categories.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="cat-group"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="change">
+    <xs:annotation>
+      <xs:documentation>Indicate a change on the part of Tolkien from one form to another. The new form is linked by the source reference (@source). Intermediate forms may be indicated by @i1 attributes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="i1" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cite" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Bibliographical citation for a specific reference.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="class">
+    <xs:annotation>
+      <xs:documentation>Syntactical class for a word, such as a strong versus weak verb. The @form attribute specifies one or more space-delimited classes. The optional @variant attribute has special variations.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="form" use="required"/>
+      <xs:attribute name="variant">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="common"/>
+            <xs:enumeration value="feminine"/>
+            <xs:enumeration value="masculine"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cognate">
+    <xs:annotation>
+      <xs:documentation>Link to a cognate in another language. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="l">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="eq"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="ilk"/>
+            <xs:enumeration value="mq"/>
+            <xs:enumeration value="mt"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="nan"/>
+            <xs:enumeration value="ns"/>
+            <xs:enumeration value="q"/>
+            <xs:enumeration value="s"/>
+            <xs:enumeration value="t"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="source"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="correction">
+    <xs:annotation>
+      <xs:documentation>An editorial correction of an earlier published form. Uses a source reference (@source). Note that the reference value (ref/@v) of the correction reference is the original (uncorrected) form, while the reference value (ref/@v) of the linked/corrected reference is the corrected form. This is to ensure that the corrected form will appear in the relationship of its original references.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deriv">
+    <xs:annotation>
+      <xs:documentation>Indicates this form is derived etymologically from the linked form. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source). Intermediate forms may be indicated by @i1, @i2 and @i3 attributes, in that chronological order (past to future). @@@ In the final form of the data model, a deriv element should be unique with a word/ref element, but there are some unfinished data corrections preventing enforcement of this rule. These unfinished data elements are indicated by @t="m" attribute values, which will be removed after the data is cleaned up.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="rule-example"/>
+        <xs:element ref="rule-start"/>
+      </xs:choice>
+      <xs:attribute name="form" type="xs:NMTOKEN"/>
+      <xs:attribute name="i1"/>
+      <xs:attribute name="i2"/>
+      <xs:attribute name="i3"/>
+      <xs:attribute name="l">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="ad"/>
+            <xs:enumeration value="ep"/>
+            <xs:enumeration value="mp"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="on"/>
+            <xs:enumeration value="p"/>
+            <xs:enumeration value="pad"/>
+            <xs:enumeration value="q"/>
+            <xs:enumeration value="s"/>
+            <xs:enumeration value="t"/>
+            <xs:enumeration value="wos"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="source"/>
+      <xs:attribute name="t">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="m"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="derivatives">
+    <xs:annotation>
+      <xs:documentation>An element controlling how derivative are displayed in the page for this word. If @no-root="true", the derivation trees of child roots are not expanded.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="no-roots" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="element">
+    <xs:annotation>
+      <xs:documentation>Indicates the decomposition of a word or phrase into its elements. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source). If the element is a non-standard form (e.g. a soft-mutation), this is indicated by the @form attribute. The @form attribute is omitted if the link reference already has its inflection indicated by a child inflect element.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="form"/>
+      <xs:attribute name="l" type="xs:NMTOKEN"/>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="source"/>
+      <xs:attribute name="v"/>
+      <xs:attribute name="variant" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="example">
+    <xs:annotation>
+      <xs:documentation>Indicates examples of the topic under discussion, using a source reference (@source). If @t="deriv", it is an example a derivational rule. If @t="inflect", it is an example an inflectional rule.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="t">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="deriv"/>
+            <xs:enumeration value="inflect"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="form">
+    <xs:annotation>
+      <xs:documentation>Controls the subdivision of inflectional tables in the HTML version of the lexicon.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="exclude">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="plural"/>
+            <xs:enumeration value="subjective"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="exclude2">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="dual"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="form" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="grammar" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s grammar page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="inflect">
+    <xs:annotation>
+      <xs:documentation>Indicates this form is inflected grammatically from the base word. If this base form is attested, it is linked by a source reference (@source); if there is no @source attribute, then the base form is not attested. The @form attribute indicates the natures of the inflection, which may be a space-delimited list, such as form="soft-mutation plural". The @variant attribute indicates it is a nonstandard variation of the inflection.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="form" use="required"/>
+      <xs:attribute name="source"/>
+      <xs:attribute name="v"/>
+      <xs:attribute name="variant"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="inflect-table">
+    <xs:annotation>
+      <xs:documentation>Controls the generation of inflectional tables in the HTML version of the lexicon.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="form"/>
+      </xs:sequence>
+      <xs:attribute name="exclude" type="xs:NMTOKEN"/>
+      <xs:attribute name="form"/>
+      <xs:attribute name="from">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="inflect"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="hide">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="key" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="class"/>
+            <xs:enumeration value="inflect-form-and-class-ref"/>
+            <xs:enumeration value="inflect-form-ref"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="l"/>
+      <xs:attribute name="omit"/>
+      <xs:attribute name="show-element-of">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="show-form">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="class"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="show-glosses">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="false"/>
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="show-variants">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="speech">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="adj"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="vb"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="language">
+    <xs:annotation>
+      <xs:documentation>Defines a language in the lexicon, identified by its @id attribute and labeled by its @name attribute. Child languages are historical descendants of the language. Other child elements provide documentation for the various index pages for the language.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="grammar"/>
+        <xs:element ref="language"/>
+        <xs:element ref="names"/>
+        <xs:element ref="notes"/>
+        <xs:element ref="phonetics"/>
+        <xs:element ref="phrases"/>
+        <xs:element ref="words"/>
+      </xs:choice>
+      <xs:attribute name="id" use="required" type="xs:ID"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="language-cat">
+    <xs:annotation>
+      <xs:documentation>A category of languages that is not itself a language, labeled by its @name.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="language"/>
+        <xs:element ref="language-cat"/>
+      </xs:choice>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="names" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s name page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="notes" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Notes for the parent item, which may contain (escaped) HTML markup.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="order-example">
+    <xs:annotation>
+      <xs:documentation>An example supporting the ordering of phonetic rules indicated by the containing before element, linked using a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phonetics" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s phonetics page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="phrases" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s phrases page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ref">
+    <xs:annotation>
+      <xs:documentation>Reference to an attested form (@v) in Tolkien’s writing, identified by its @source attribute. Child elements indicate relationships to other attested forms. The @gloss attribute contains any attested glosses.The @mark attribute indicates the notation markers associated with the form. The @l attribute indicates its language if it is different from the language of the containing word. The @rl, @rule and @from attributes link to associated phonetic rules, if any.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="change"/>
+        <xs:element ref="cognate"/>
+        <xs:element ref="correction"/>
+        <xs:element ref="deriv"/>
+        <xs:element ref="element"/>
+        <xs:element ref="example"/>
+        <xs:element ref="inflect"/>
+        <xs:element ref="related"/>
+      </xs:choice>
+      <xs:attribute name="from"/>
+      <xs:attribute name="gloss"/>
+      <xs:attribute name="l" type="xs:NMTOKEN"/>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="rl"/>
+      <xs:attribute name="rule"/>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="related">
+    <xs:annotation>
+      <xs:documentation>A generic relationship between forms. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="l" type="xs:NMTOKEN"/>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="source"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rule">
+    <xs:annotation>
+      <xs:documentation>A phonetic rule, specifying the language (@l), the original phonetic form (@from) and the new form (@rule). This triplet (@l, @rule, @form) is used to link to examples of the phonetic rule.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="from" use="required"/>
+      <xs:attribute name="l" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="rule" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rule-example">
+    <xs:annotation>
+      <xs:documentation>An example of phonetic rule within a derivation, linked by the triplet (@l, @rule, @form) = (language, new phonetic form, original phonetic form). The @to attribute indicates the resulting word form after this phonetic change, derived from the previous rule-example or rule-start.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="from"/>
+      <xs:attribute name="l" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="ad"/>
+            <xs:enumeration value="at"/>
+            <xs:enumeration value="dan"/>
+            <xs:enumeration value="edan"/>
+            <xs:enumeration value="ep"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="ilk"/>
+            <xs:enumeration value="mp"/>
+            <xs:enumeration value="mq"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="ns"/>
+            <xs:enumeration value="on"/>
+            <xs:enumeration value="os"/>
+            <xs:enumeration value="p"/>
+            <xs:enumeration value="pad"/>
+            <xs:enumeration value="s"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="rule" use="required"/>
+      <xs:attribute name="to" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rule-start">
+    <xs:annotation>
+      <xs:documentation>Starting point for a set of phonetic rule change, contained in its @to attribute. Phonetic changes are described by the following rule-example elements. If the @l attribute is present, it specifies which linguistic stage is the starting point for the phonetic changes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="on"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="to" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see">
+    <xs:annotation>
+      <xs:documentation>Linked to another word discussing this form, using a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="ed"/>
+            <xs:enumeration value="eilk"/>
+            <xs:enumeration value="en"/>
+            <xs:enumeration value="ep"/>
+            <xs:enumeration value="eq"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="ilk"/>
+            <xs:enumeration value="mp"/>
+            <xs:enumeration value="mq"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="nan"/>
+            <xs:enumeration value="ns"/>
+            <xs:enumeration value="on"/>
+            <xs:enumeration value="p"/>
+            <xs:enumeration value="q"/>
+            <xs:enumeration value="s"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see-further">
+    <xs:annotation>
+      <xs:documentation>Linked to another word with further discussion of this word, using a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="dan"/>
+            <xs:enumeration value="ed"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="ilk"/>
+            <xs:enumeration value="mp"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="nan"/>
+            <xs:enumeration value="ns"/>
+            <xs:enumeration value="q"/>
+            <xs:enumeration value="s"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see-notes">
+    <xs:annotation>
+      <xs:documentation>Linked to another word with notes discussing this word, using a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="dan"/>
+            <xs:enumeration value="ed"/>
+            <xs:enumeration value="ilk"/>
+            <xs:enumeration value="mq"/>
+            <xs:enumeration value="n"/>
+            <xs:enumeration value="nan"/>
+            <xs:enumeration value="ns"/>
+            <xs:enumeration value="p"/>
+            <xs:enumeration value="q"/>
+            <xs:enumeration value="s"/>
+            <xs:enumeration value="un"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="source">
+    <xs:annotation>
+      <xs:documentation>Identifies a particular bibliographical source, identified by its @prefix and labeled by its @name. The optional @type attribute is used to group similar references in the generated reference documentation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="cite"/>
+        <xs:element ref="notes"/>
+      </xs:choice>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="prefix" use="required" type="xs:ID"/>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="adunaic"/>
+            <xs:enumeration value="appendix"/>
+            <xs:enumeration value="index"/>
+            <xs:enumeration value="minor"/>
+            <xs:enumeration value="quenya"/>
+            <xs:enumeration value="secondary"/>
+            <xs:enumeration value="sindarin"/>
+            <xs:enumeration value="telerin"/>
+            <xs:enumeration value="work"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="word">
+    <xs:annotation>
+      <xs:documentation>An entry in the lexicon with its own word page. Uses the XML element-name "word" for historical reasons, but these elements also represent other lexicon entries such as phonetic rules or grammatical entries. Child elements indicate relationships to other words, while ref elements indicate attested forms of the word. Child words are generally conceptual predecessor’s of this word, though such relationships are often subjective. The @l attribute indicates the word’s language and the @v attribute the base word form. The @gloss attribute assembles the words glosses; this attribute may be omitted if the word has only one non-change, non-correction attested reference (ref). The @speech attribute is the (possibly space-delimited) part of speech for the word. The @mark attribute indicates the notation markers for the word. The @page-id is the numeric identifier of the generated HTML Lexicon, and can be used to link to the lexicon. Other attributes have specialized uses that will eventually be cleaned up and documented.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="before"/>
+        <xs:element ref="class"/>
+        <xs:element ref="cognate"/>
+        <xs:element ref="deriv"/>
+        <xs:element ref="derivatives"/>
+        <xs:element ref="element"/>
+        <xs:element ref="inflect"/>
+        <xs:element ref="inflect-table"/>
+        <xs:element ref="notes"/>
+        <xs:element ref="ref"/>
+        <xs:element ref="related"/>
+        <xs:element ref="rule"/>
+        <xs:element ref="see"/>
+        <xs:element ref="see-further"/>
+        <xs:element ref="see-notes"/>
+        <xs:element ref="word"/>
+      </xs:choice>
+      <xs:attribute name="cat"/>
+      <xs:attribute name="from"/>
+      <xs:attribute name="gloss"/>
+      <xs:attribute name="l" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="order" type="xs:NMTOKEN"/>
+      <xs:attribute name="orthography"/>
+      <xs:attribute name="page-id" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="phone-col">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="phone-row">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="rule"/>
+      <xs:attribute name="speech" use="required"/>
+      <xs:attribute name="stem"/>
+      <xs:attribute name="tengwa"/>
+      <xs:attribute name="tengwar"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="word-data">
+    <xs:annotation>
+      <xs:documentation>The root element of the XML data, with a @version attribute indicating the current version of the lexicon data.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="language-cat"/>
+        <xs:element maxOccurs="unbounded" ref="source"/>
+        <xs:element ref="cats"/>
+        <xs:element maxOccurs="unbounded" ref="word"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="words" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s words list page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

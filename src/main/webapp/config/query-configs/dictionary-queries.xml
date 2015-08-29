@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+    <query-controller uri-pattern="/data-model/eldamo-data.xml">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xsl-renderer content-type="xml" mime-type="text/xml" file="data-model.xsl"/>
+        </renderers>
+        <description>The data model.</description>
+        <example><![CDATA[data-model.xml]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/test/test.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="test.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/sort.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xsl-renderer content-type="xml" mime-type="text/xml" file="sort.xsl"/>
+        </renderers>
+        <description>A sorted data set.</description>
+        <example><![CDATA[sort.xml]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/sort-merge.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xsl-renderer content-type="xml" mime-type="text/xml" file="sort-merge.xsl"/>
+        </renderers>
+        <description>A merged and sorted data set.</description>
+        <example><![CDATA[sort-merge.xml]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/compare-refs.*">
+        <simple-request-parser >
+            <extra-param name="old-data" value="data/eldarin-data-old.xml" />
+        </simple-request-parser>
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xsl-renderer content-type="html" mime-type="text/html" file="compare-refs.xsl"/>
+        </renderers>
+        <description>A comparison of references.</description>
+        <example><![CDATA[compare-refs.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/languages/index.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="language-index.xq"/>
+        </renderers>
+        <description>A list of languages for the dictionary.</description>
+        <example><![CDATA[index.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/language-pages/*">
+        <uri-template-parser template='lang-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="language-page.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/word-indexes/*">
+        <uri-template-parser template='words-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="word-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/words/*">
+        <uri-template-parser template='word-{code}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="word-page.xq"/>
+        </renderers>
+        <description>A word page.</description>
+    </query-controller>
+    <query-controller uri-pattern="/category-indexes/*">
+        <uri-template-parser template='categories-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="categories-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/root-indexes/*">
+        <uri-template-parser template='roots-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="root-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/name-indexes/*">
+        <uri-template-parser template='names-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="name-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/phrase-indexes/*">
+        <uri-template-parser template='phrases-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="phrase-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/grammar-indexes/*">
+        <uri-template-parser template='/grammars-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="grammar-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/phonetic-indexes/*">
+        <uri-template-parser template='/phonetics-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="phonetic-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/references/*">
+        <uri-template-parser template='ref-{prefix}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="reference-page.xq"/>
+        </renderers>
+        <description>A reference page.</description>
+        <example><![CDATA[CO.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/references/index.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="reference-index.xq"/>
+        </renderers>
+        <description>A list of references for the dictionary.</description>
+        <example><![CDATA[index.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/references/*">
+        <uri-template-parser template='ref-{prefix}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="reference-page.xq"/>
+        </renderers>
+        <description>A reference page.</description>
+        <example><![CDATA[CO.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/errors/unmatched-links.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="unmatched-links.xq"/>
+        </renderers>
+        <description>Unmatched links.</description>
+        <example><![CDATA[unmatched-links.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/errors/misordered-rules.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="misordered-rules.xq"/>
+        </renderers>
+        <description>Misordered rules.</description>
+        <example><![CDATA[misordered-rules.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/search/search-index.js">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="js" mime-type="application/javascript" file="search-index.xq"/>
+        </renderers>
+        <description>A search index.</description>
+        <example><![CDATA[search-index.js]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/search/search.html">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="search.xq"/>
+        </renderers>
+        <description>The search page.</description>
+        <example><![CDATA[search.html]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/sindarin-dictionary/export.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="sindarin-dictionary.xq"/>
+        </renderers>
+        <description>The search page.</description>
+        <example><![CDATA[search.html]]></example>
+    </query-controller>
+</configs>

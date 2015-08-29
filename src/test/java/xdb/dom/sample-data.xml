@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product-data xmlns:star="http://schemas.sun.com/star-ns/">
+    <categorization>
+        <category id="PG20" name="Servers" publish-date="2006-11-17">
+            <translation locale="en" name="Servers" />
+            <children>
+                <category id="Blade_Servers_1" name="Blade Servers" publish-date="2006-11-17">
+                    <translation locale="en" name="Blade Servers" />
+                    <children>
+                        <product id="SB_6000_VMF_10GBE" name="Sun Blade 6000 Virtualized Multi-Fabric 10GbE Network Express Module" publish-date="2009-03-10" uuid="9b06d70f-9fd5-11dd-a2a2-080020a9ed93">
+                            <translation locale="en" name="Sun Blade 6000 Virtualized Multi-Fabric 10GbE Network Express Module" />
+                            <children>
+                                <part-ref idref="X4238" ecom-base-part="true" />
+                            </children>
+                        </product>
+                        <product id="Sun_Blade_6000_Modu" name="Sun Blade 6000 Modular System" publish-date="2007-05-14" uuid="f2ef019c-d283-11db-9135-080020a9ed93">
+                            <translation locale="en" name="Sun Blade 6000 Modular System" />
+                            <children>
+                                <part-ref idref="A90-A" catalog-base-part="true" ecom-base-part="true" />
+                            </children>
+                        </product>
+                    </children>
+                </category>
+            </children>
+        </category>
+    </categorization>
+    <parts>
+        <part id="A90-A" unspsc="43211502" publish-date="2007-06-05">
+            <translation locale="en" description="1 Sun Blade 6000 Modular System Chassis, 10U, 2 x 6000W Power Supply Modules, 6 Redundant Rear Fan Modules, 1 Chassis Monitoring Module, Rackmount Rail Kit, Accessory Kit with Dongle and RJ45-DB9 Adapter, Filler Panels, 9 Server Module, 20 EM, 2 NEM, RoHS-5 Compliant" />
+            <price list="HARDWARE AND SYSTEM SOFTWARE CURRENT COMMERCIAL" price="3395.00" from="2001-01-01" to="2036-12-31"/>
+        </part>
+        <part id="X4238" unspsc="43201404" publish-date="2009-03-10">
+            <translation locale="en" description="Sun Blade 6000 Virtualized Network Express Module with 10-Port 1 GbE, 4-Port SAS and 2-Port 10 GbE, RoHS Compliant" />
+            <price list="HARDWARE AND SYSTEM SOFTWARE CURRENT COMMERCIAL" price="2000.00" from="2001-01-01" to="2036-12-31"/>
+        </part>
+    </parts>
+    <venues>
+        <venue id="sun-store-us">
+            <channel name="st" />
+            <venue-pricing currency="USD">
+                <price-list-ref idref="HARDWARE AND SYSTEM SOFTWARE CURRENT COMMERCIAL" />
+            </venue-pricing>
+        </venue>
+    </venues>
+</product-data>
