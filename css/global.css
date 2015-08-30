@@ -1,0 +1,41 @@
+@font-face {
+  font-family: GentiumPlusW;
+  src: url("GentiumPlus-R.woff");
+}
+@font-face {
+  font-family: GentiumPlusW;
+  font-style: italic;
+  src: url("GentiumPlus-I.woff");
+}
+@font-face {
+    font-family: Tengwar_Eldamar_Eldamo;
+    src: url('tengwar-eldamar-glaemscrafu.woff') format('woff');
+}
+
+.tengwar {
+    font-family: Tengwar_Eldamar_Eldamo;
+    font-size: 100%;
+}
+body    { font-family: 'GentiumPlusW', 'Times New Roman', san-serif; line-height: 130%; }
+
+a:link  { text-decoration: none }
+a:hover { text-decoration: underline }
+table   { border: solid 1px black; border-collapse: collapse }
+td, th  { border: solid 1px black; padding: 0.2em; vertical-align: top }
+th      { background: #CCCCCC }
+
+.entry-section { font-weight: bold; text-align : center; text-decoration: underline }
+
+.primary { font-weight: bold }
+.secondary { font-style: italic }
+.deleted { text-decoration: line-through }
+.deleted-section { border-bottom: dashed 1px }
+
+li.c-bullet { list-style-type:none; text-indent: -1em }
+
+table.nav-table    { border: none; width: 100% }
+table.nav-table td { border: none }
+
+hr { border: none; height: 1px; color: #000; background-color: #000; }
+
+.sf-logo { position: absolute; top: 18px; right: 18px; }

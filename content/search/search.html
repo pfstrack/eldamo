@@ -1,0 +1,85 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta content="text/css" http-equiv="Content-Style-Type">
+      <title>Eldamo : Search</title>
+      <link rel="stylesheet" type="text/css" href="../../css/global.css">
+   </head><script src="search-index.js"></script><script src="../../js/search.js"></script><body onload="initSearch()">
+      <p>[<a href="../../index.html">Home</a>]
+      </p>
+      <hr>
+      <p><b>Search:</b>&nbsp;&nbsp;<input id="searchBox" value="" onkeyup="doSearch()"> &nbsp;|
+         &nbsp;<select id="langSelect" onchange="doSearch()">
+            <option value="">All Languages</option>
+            <option value="" disabled>─────────────</option>
+            <option value="eq|mq|q">All Quenya</option>
+            <option value="g|n|en|s">Sindarin/Noldorin/Gnomish</option>
+            <option value="p|mp|ep">All Primitive Elvish</option>
+            <option value="" disabled>─────────────</option>
+            <option value="q|s|p">All Late Elvish</option>
+            <option value="mq|n|mp">All Middle Elvish</option>
+            <option value="eq|en|g|ep">All Early Elvish</option>
+            <option value="" disabled>─────────────</option>
+            <option value="q">Quenya</option>
+            <option value="s">Sindarin</option>
+            <option value="mq">Middle Quenya</option>
+            <option value="n">Noldorin</option>
+            <option value="en">Early Noldorin</option>
+            <option value="eq">Early Quenya</option>
+            <option value="g">Gnomish</option>
+            <option value="p">Primitive Elvish</option>
+            <option value="mp">Middle Primitive Elvish</option>
+            <option value="ep">Early Primitive Elvish</option>
+            <option value="" disabled>─────────────</option>
+            <option value="ad">Adûnaic</option>
+            <option value="aq">Ancient Quenya</option>
+            <option value="at">Ancient Telerin</option>
+            <option value="av">Avarin</option>
+            <option value="bs">Black Speech</option>
+            <option value="cir">Cirth</option>
+            <option value="dan">Danian/Ossiriandic</option>
+            <option value="dun">Dunlending</option>
+            <option value="eas">Easterling</option>
+            <option value="ed">Edain</option>
+            <option value="eilk">Early Ilkorin</option>
+            <option value="ent">Entish</option>
+            <option value="et">Solosimpi/Early Telerin</option>
+            <option value="ilk">Ilkorin/Doriathrin</option>
+            <option value="kh">Khuzdul</option>
+            <option value="khx">Khuzdul (External)</option>
+            <option value="lem">Lemberin</option>
+            <option value="mt">Middle Telerin</option>
+            <option value="nan">Nandorin</option>
+            <option value="ns">North Sindarin</option>
+            <option value="on">Old Noldorin</option>
+            <option value="os">Old Sindarin</option>
+            <option value="pad">Primitive Adûnaic</option>
+            <option value="roh">Rohirric</option>
+            <option value="sar">Sarati</option>
+            <option value="t">Telerin</option>
+            <option value="tal">Taliska</option>
+            <option value="teng">Tengwar</option>
+            <option value="un">Unknown</option>
+            <option value="val">Valarin</option>
+            <option value="van">Vanyarin</option>
+            <option value="wes">Westron</option>
+            <option value="wos">Wose</option></select> &nbsp;
+         
+         <p style="line-height: 0"><select id="targetSelect" onchange="doSearch()">
+               <option value="word-and-gloss">Search word and gloss</option>
+               <option value="word-only">Search word only</option>
+               <option value="gloss-only">Search gloss only</option></select> &nbsp;|&nbsp;
+            <select id="positionSelect" onchange="doSearch()">
+               <option value="anywhere">Match anywhere</option>
+               <option value="start">Match start</option>
+               <option value="end">Match end</option></select> &nbsp;|
+            <input id="noNamesBox" onclick="doSearch()" type="checkbox"> No Names
+            
+         </p>
+         <p style="line-height: 0"><button id="firstButton" onclick="goFirst()">&lt;&lt;</button><button id="backButton" onclick="goBack()">&lt;</button><span id="matchCount"></span><button id="forwardButton" onclick="goForward()">&gt;</button><button id="lastButton" onclick="goLast()">&gt;&gt;</button> &nbsp;|&nbsp;
+            <button id="resetButton" onclick="reset()">Reset</button></p>
+      </p>
+      <hr>
+      <div id="resultDiv"></div>
+   </body>
+</html>
