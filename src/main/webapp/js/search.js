@@ -30,7 +30,7 @@ words = [];
 for (var i = 0; i < index.length; i++) {
     var item = index[i];
     var array = item.split('%');
-    if (array.length < 6) continue;
+    if (array.length < 7) continue;
     var word = {};
     word.lang = array[0];
     word.value = array[1];
@@ -42,6 +42,7 @@ for (var i = 0; i < index.length; i++) {
     word.key = array[5];
     word.altlang = array[6];
     word.see = array[7];
+    word.seeLang = array[8];
     word.match = toMatch(word.value);
     word.matchgloss = toMatch(word.gloss);
     words.push(word);
@@ -211,17 +212,21 @@ function doSearch() {
         if (!word.see) {
             html += '<a href="../words/word-' + word.key + '.html">';
         }
-        html += '<span style="font-weight: bold" class="' + markclass + '">' + word.value + '</span></a>'
+        html += '<span style="font-weight: bold" class="' + markclass + '">' + word.value + '</span></a>';
         if (!word.see) {
-            html += '</a>'
+            html += '</a>';
         }
         html += ' <i>' + convertSpeech(word.speech) + '</i> ';
         if (word.gloss) {
         	html += ' “' + word.gloss + '”';
         }
         if (word.see) {
-            html += ' see <a href="../words/word-' + word.key + '.html">';
-            html += '<span style="font-weight: bold" class="' + markclass + '">' + word.see + '</span></a>'
+            html += ' see ';
+            if (word.seeLang) {
+                html += word.seeLang;
+            }
+            html += '<a href="../words/word-' + word.key + '.html">';
+            html += '<span style="font-weight: bold" class="' + markclass + '">' + word.see + '</span></a>';
         }
         html += '<br/>';
     }

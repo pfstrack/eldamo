@@ -933,6 +933,7 @@ if ($phonetic-rule-refs) then (
 ) else (),
 
 (: Etymologies :)
+(:
 let $etymology-refs := $valid-refs/etymology return
 if ($etymology-refs) then (
     <p><u>Etymologies</u></p>,
@@ -949,6 +950,7 @@ if ($etymology-refs) then (
         </li>
     } </ul>
 ) else (),
+:)
 
 (: Rules :)
 let $from-rule-refs := $valid-refs[@rule]
