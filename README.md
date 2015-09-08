@@ -2,8 +2,8 @@
 
 An Elvish Data Model in XML.
 
-Most consumers of this project are probably interested in the finished product, the generate Elvish lexicon. This can be
-found at http://eldamo.org and project releases are zip files of this site.
+Most consumers of this project are probably interested in the finished product, the generated Elvish lexicon. This can
+be found at http://eldamo.org and project releases are zip files of this site.
 
 This document provides information for those interested in how the Eldamo site is generated. To fully understand this
 process, you need to know:
@@ -51,7 +51,7 @@ http://localhost:8080/eldamo/
 
 ## Building in Eclipse
 
-If you want to use an Java development tool, here is how to set the project up in Eclipse:
+If you want to use an Java development tool, here is how to set the project up in Eclipse.
 
 1) Use gradle generate an Eclipse project:
 
