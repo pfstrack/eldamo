@@ -44,7 +44,7 @@
     </query-controller>
     <query-controller uri-pattern="/compare-refs.*">
         <simple-request-parser >
-            <extra-param name="old-data" value="data/eldarin-data-old.xml" />
+            <extra-param name="old-data" value="data/eldamo-data-old.xml" />
         </simple-request-parser>
         <query>
             <whole-doc-query />

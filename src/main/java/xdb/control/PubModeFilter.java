@@ -25,8 +25,8 @@ public class PubModeFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         
         String uri = request.getRequestURI();
-        if (uri.startsWith("/pub")) {
-            uri = uri.substring(4);
+        if (uri.contains("/pub/")) {
+            uri = uri.substring(4 + request.getContextPath().length());
             request.setAttribute(PUB_MODE, "true");
             RequestDispatcher dispatcher = request.getRequestDispatcher(uri);
             dispatcher.forward(req, res);

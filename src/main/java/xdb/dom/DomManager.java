@@ -40,7 +40,7 @@ public final class DomManager {
     private DomManager() {
     }
 
-    private static final String PATH = "/eldarin/data/eldarin-data.xml";
+    private static final String PATH = "/eldarin/data/eldamo-data.xml";
     private static String dataRoot = FileUtil.findDirectoryFromClasspath(DomManager.class, PATH);
     private static final Logger LOGGER = Logger.getLogger(DomManager.class.getName());
     private static volatile DocumentImpl data;
@@ -383,7 +383,7 @@ public final class DomManager {
     }
 
     public static String getDataHome() {
-        return getDataRoot() + "/eldarin-data.xml";
+        return getDataRoot() + "/eldamo-data.xml";
     }
 
     private static String getPatchHome() {

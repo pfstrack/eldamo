@@ -8,7 +8,7 @@ FileUtil.pullFileFromUrl("http://" + server + ":" + port + context + "/content/s
 FileUtil.moveTempFile(tmp, dataHome);
 
 String parent = new File(dataHome).getParent();
-String oldFile = parent + "/eldarin-data-old.xml";
+String oldFile = parent + "/eldamo-data-old.xml";
 FileUtil.copyFile(dataHome, oldFile);
 response.sendRedirect("index.html");
 %>
