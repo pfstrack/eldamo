@@ -15,7 +15,7 @@ process, you need to know:
 
 1. Git
 2. Java 1.6+
-3. Gradle 2.0+ (which will download other dependencies)
+3. Gradle 2.6+ (which will download other dependencies)
 4. A good text editor (I use TextWrangler on OS X).
 5. For generating the site, a web crawler (I use SiteSucker on OS X)
 
@@ -75,6 +75,16 @@ gradle :eclipse
 
 ```
 http://localhost:8080/eldamo/
+```
+
+7) For best performance, you will need to increase the memory in JVM arguments for the Jetty run configurations:
+
+* Run > Run Configurations
+* Jetty Webapp > eldamo
+* Arguments > VM Arguments
+
+```
+-Xmx1024m
 ```
 
 ## Building the Eldamo Site
