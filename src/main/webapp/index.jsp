@@ -22,7 +22,7 @@ actually is an abbreviation for <u>El</u>vish <u>Da</u>ta <u>Mo</u>del, since it
 Started</a> document. More experienced readers may want to start with the discussion of the
 <a href="general/motivations-and-methodology.html">Motivations and Methodology</a> for this lexicon. Everyone is invited
 to look at the <a href="content/languages/index.html">Language Index</a>, particularly the sections on
-<a href="content/language-pages/lang-q.html">Quenya</a> and <a href="content/language-pages/lang-q.html">Sindarin</a>.
+<a href="content/language-pages/lang-q.html">Quenya</a> and <a href="content/language-pages/lang-s.html">Sindarin</a>.
 Information about the source material used to compile this lexicon can be found in the
 <a href="content/references/index.html">References Index</a>.</p>
 <p>The material in this lexicon, including its XML data model, can be used freely in accordance with the
