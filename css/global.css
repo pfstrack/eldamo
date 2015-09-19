@@ -8,12 +8,12 @@
   src: url("GentiumPlus-I.woff");
 }
 @font-face {
-    font-family: Tengwar_Eldamar_Eldamo;
+    font-family: Tengwar_Eldamar_Glaemscrafu;
     src: url('tengwar-eldamar-glaemscrafu.woff') format('woff');
 }
 
 .tengwar {
-    font-family: Tengwar_Eldamar_Eldamo;
+    font-family: Tengwar_Eldamar_Glaemscrafu;
     font-size: 100%;
 }
 body    { font-family: 'GentiumPlusW', 'Times New Roman', san-serif; line-height: 130%; }
