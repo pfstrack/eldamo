@@ -80,7 +80,7 @@ declare function local:print-word-control($show-lang as xs:boolean) as element()
 
 declare function local:ref-sig($ref as element()*, $ref-name) as xs:string {
     let $att-values :=
-        <element>{$ref/@*[not(name()='source')][not(name()='mark')][$ref-name != 'element' or not(name()='gloss')]/string()}:{
+        <element>{$ref/@*[not(name()='source')][$ref-name != 'element' or not(name()='gloss')]/string()}:{
             $ref/*[name()=$ref-name]/@*[not(name()='source') and not(name()='v')]/string()}:{
             $ref/*[name()=$ref-name]/string()}</element>
     return $att-values/string()

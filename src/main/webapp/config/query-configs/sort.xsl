@@ -40,7 +40,7 @@
                     [@l=$word/@l]
                     [@speech=$word/@speech]
                     [@order lt $word/@order]
-                ) * 100 + 100, '0000')"/>
+                ) * 100 + 100, '00000')"/>
             </xsl:if>
             <xsl:copy-of select="@mark"/>
             <xsl:apply-templates select="*[not(name()='word' or name()='ref')]"/>
