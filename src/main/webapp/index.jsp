@@ -81,6 +81,12 @@ created by Benjamin Babut and Bertrand Bellet for the <a rel="license" href="htt
 web site, also used with permission. Please consult the owners of this font and the relevant licenses before using it in
 other projects.
 </p>
+<p>
+The tengwar transcriptions in this lexicon are processed via the 
+<a href="https://github.com/BenTalagan/glaemscribe">Glǽmscribe Javascript Library</a>, © Benjamin Babut, used in
+accordance with its
+<a rel="license" href="https://raw.githubusercontent.com/BenTalagan/glaemscribe/master/LICENSE.txt">license</a>.
+</p>
 <!--
 <div class="sf-logo">
 <a href="https://sourceforge.net/p/eldamo/" rel="nofollow"><img alt="Download Eldamo" src="https://sourceforge.net/sflogo.php?type=13&group_id=2399536"></a>

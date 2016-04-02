@@ -12,6 +12,14 @@ declare variable $secondary-word := <control show-link="y"/>;
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Eldamo : {$lang-name} Words</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
+
+<script src="../../js/glaemscribe.min.js"></script>
+<script src="../../js/tengwar_ds.cst.js"></script>
+<script src="../../js/quenya.glaem.js"></script>
+<script src="../../js/sindarin-beleriand.glaem.js"></script>
+<script src="../../js/sindarin-classical.glaem.js"></script>
+<script src="../../js/transcribe.js"></script>
+
 </head>
 <body>
 <p>
@@ -42,6 +50,20 @@ return (
         { if ($word/see) then c:print-word($word, <control style="bold"/>) else c:print-word($word, $primary-word) }
         { if ($word/@stem) then <span> (<b>{$word/@stem/string()}</b>)</span> else () }
         { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
+        { if (($word/@l = 's' or $word/@l = 'q') and
+             not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
+             not($word/@l='q' and starts-with($word/@v, '-d'))
+            )
+            then (', ',
+                <span class="transcribe"
+                    data-value="{
+                        if ($word/@tengwar='ñ') then
+                            translate($word/@v/lower-case(.), 'n', 'ñ') 
+                        else if ($word/@tengwar='þ') then
+                            translate($word/@v/lower-case(.), 's', 'þ') 
+                        else $word/@v/lower-case(.)
+                    }" data-lang="{$word/@l}"></span>
+            , ' ') else ()}
         { c:print-speech($word) }
         { c:print-gloss($word) }
         { if ($word/see) then (' see ', c:print-word(c:get-word($word/see),

@@ -48,10 +48,7 @@ for (var i = 0; i < index.length; i++) {
     words.push(word);
 }
 
-function charReplace(value) {
-	var charReplace1 = 'ƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřš -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
-	var charReplace2 = 'hietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrs    ';
-
+function doReplace(charReplace1, charReplace2, value) {
 	var result = value;
 	for (var i = 0; i < charReplace1.length; i++) {
 		if (i < charReplace2.length) {
@@ -61,6 +58,12 @@ function charReplace(value) {
 		}
 	}
 	return result;
+}
+
+function charReplace(value) {
+	var charReplace1 = 'ƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřš -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
+	var charReplace2 = 'hietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrs    ';
+	return doReplace(charReplace1, charReplace2, value);
 }
 
 function toMatch(value) {
