@@ -29,7 +29,8 @@ return (
 ) }
 <h1>Unprocessed References</h1>
 {
-let $refs := //ref[not(c:get-ref(.)) or not(contains(@source, '.')) or ends-with(@source, '.00000')]
+let $refs := //ref[not(c:get-ref(.)) or not(contains(@source, '.')) or ends-with(@source, '.00000')
+                       or *[@source][not(c:get-ref(.))]]
 let $sources := distinct-values($refs/substring-before(concat(@source, '/'), '/'))
 return (
 <p>count: {count($refs)}</p>,
@@ -37,7 +38,7 @@ return (
     for $source in $sources
     let $count := count($refs[@source = $source or starts-with(@source, concat($source, '/'))])
     order by -1 * $count return
-    <li>{$source}: {$count}</li>
+    <li><a href="../references/ref-{$source}.html">{$source}</a>: {$count}</li>
 } </ul>,
 for $ref in $refs
 order by c:normalize-for-sort($ref/@source)
