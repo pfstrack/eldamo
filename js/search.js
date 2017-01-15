@@ -219,9 +219,6 @@ function doSearch() {
         if (!word.see) {
             html += '</a>';
         }
-        if (word.tengwar) {
-            html += ' |<span class="tengwar">' + word.tengwar + '</span>| ';
-        }
         html += ' <i>' + convertSpeech(word.speech) + '</i> ';
         if (word.gloss) {
         	html += ' “' + word.gloss + '”';
