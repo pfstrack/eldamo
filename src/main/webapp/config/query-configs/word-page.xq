@@ -1001,7 +1001,7 @@ if ($rule-refs) then (
     return
         <tr> { (
             <td><nobr>{ 
-                c:print-word($general-rule, <print-word show-lang="y" show-link="y"/>)
+                c:print-word($general-rule[1], <print-word show-lang="y" show-link="y"/>)
             }</nobr></td>,
             <td style="border-right: none; text-align: right"><nobr>{c:print-wordlet($rule, '')}</nobr></td>,
             <td style="border-left: none; border-right: none">{'&lt;'}</td>,
@@ -1017,7 +1017,7 @@ if ($rule-refs) then (
     return
         <tr> { (
             <td><nobr>{ 
-                c:print-word($general-rule, <print-word show-lang="y" show-link="y"/>)
+                c:print-word($general-rule[1], <print-word show-lang="y" show-link="y"/>)
             }</nobr></td>,
             <td style="border-right: none; text-align: right"><nobr>{c:print-wordlet($from, '')}</nobr></td>,
             <td style="border-left: none; border-right: none">&gt;</td>,

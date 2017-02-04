@@ -3,7 +3,7 @@
     xmlns:q="quenya"
     exclude-result-prefixes="q">
 
-    <xsl:variable name="working" select="'PE22'"/>
+    <xsl:variable name="working" select="'PE14'"/>
 
     <xsl:key name="ref" match="ref" use="concat(@v, '::', @source)"/>
     <xsl:param name="old-data"/>
