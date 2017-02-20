@@ -8268,18 +8268,18 @@ was not specified in the links file, <xsl:value-of select="$linksFile"/>.
 
       <xsl:if test="$simpleRestrict/xsd:enumeration">
          <em>value</em>
-         <xsl:text> comes from list: {</xsl:text>
+         <xsl:text> comes from list: { </xsl:text>
 
          <xsl:for-each select="$simpleRestrict/xsd:enumeration">
             <xsl:if test="position()!=1">
-               <xsl:text>|</xsl:text>
+               <xsl:text> | </xsl:text>
             </xsl:if>
             <xsl:text>'</xsl:text>
             <xsl:value-of select="@value"/>
             <xsl:text>'</xsl:text>
          </xsl:for-each>
 
-         <xsl:text>}</xsl:text>
+         <xsl:text> }</xsl:text>
       </xsl:if>
    </xsl:template>
 
