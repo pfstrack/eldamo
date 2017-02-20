@@ -115,7 +115,7 @@
   </xs:element>
   <xs:element name="cat">
     <xs:annotation>
-      <xs:documentation>A semantic category, specified by its @id. An individual word element can be linked to a semantic category by its @cat attributed.</xs:documentation>
+      <xs:documentation>A semantic category, specified by its @id. An individual word element can be linked to a semantic category by its @cat attribute.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:attribute name="id" use="required" type="xs:NMTOKEN"/>
@@ -582,6 +582,7 @@
       <xs:attribute name="phone-col">
         <xs:simpleType>
           <xs:restriction base="xs:token">
+            <xs:enumeration value="0"/>
             <xs:enumeration value="1"/>
             <xs:enumeration value="2"/>
             <xs:enumeration value="3"/>
