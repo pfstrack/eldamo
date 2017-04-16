@@ -72,10 +72,21 @@
             <select id="positionSelect" onchange="doSearch()">
                <option value="anywhere">Match anywhere</option>
                <option value="start">Match start</option>
-               <option value="end">Match end</option></select> &nbsp;|
-            <input id="noNamesBox" onclick="doSearch()" type="checkbox"> No Names
-            
-         </p>
+               <option value="end">Match end</option></select> &nbsp;|&nbsp;
+            <select id="partsOfSpeechSelect" onchange="doSearch()">
+               <option value="">Parts of Speech</option>
+               <option value="" disabled>──────</option>
+               <option value="no-names">Exclude Names</option>
+               <option value="" disabled>──────</option>
+               <option value="n">noun</option>
+               <option value="vb">verb</option>
+               <option value="adj">adjective</option>
+               <option value="adv">adverb</option>
+               <option value="pron">pronoun</option>
+               <option value="prep">preposition</option>
+               <option value="conj">conjugation</option>
+               <option value="pref">prefix</option>
+               <option value="suf">suffix</option></select></p>
          <p style="line-height: 0"><button id="firstButton" onclick="goFirst()">&lt;&lt;</button><button id="backButton" onclick="goBack()">&lt;</button><span id="matchCount"></span><button id="forwardButton" onclick="goForward()">&gt;</button><button id="lastButton" onclick="goLast()">&gt;&gt;</button> &nbsp;|&nbsp;
             <button id="resetButton" onclick="reset()">Reset</button></p>
       </p>

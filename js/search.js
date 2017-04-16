@@ -161,14 +161,16 @@ var max = 0;
 function doSearch() {
     var matchCount = document.getElementById('matchCount');
     var searchBox = document.getElementById('searchBox');
-    var noNamesBox = document.getElementById('noNamesBox');
-    var noNames = noNamesBox.checked == true;
     var langSelect = document.getElementById('langSelect');
     var lang = langSelect.options[langSelect.selectedIndex].value;
     var targetSelect = document.getElementById('targetSelect');
     var target = targetSelect.options[targetSelect.selectedIndex].value;
     var positionSelect = document.getElementById('positionSelect');
     var position = positionSelect.options[positionSelect.selectedIndex].value;
+    var partsOfSpeechSelect = document.getElementById('partsOfSpeechSelect');
+    var partsOfSpeech = partsOfSpeechSelect.options[partsOfSpeechSelect.selectedIndex].value;
+    var noNames = (partsOfSpeech == 'no-names');
+    var partsOfSpeech = (partsOfSpeech == 'no-names') ? '' : partsOfSpeech;
     var langs = [];
     if (lang.length > 0) {
     	langs = lang.split('|');
@@ -181,7 +183,7 @@ function doSearch() {
     var last = [];
     for (var i = 0; i < words.length; i++) {
     	var word = words[i];
-    	if (isMatch(word, searchText, target, position)) {
+    	if (isMatch(word, searchText, target, position, partsOfSpeech)) {
     		if (noNames && word.speech.indexOf('name') > 0) {
     			continue;
     		}
@@ -229,7 +231,7 @@ function doSearch() {
                 html += word.seeLang;
             }
             html += '<a href="../words/word-' + word.key + '.html">';
-            html += '<span style="font-weight: bold" class="' + markclass + '">' + word.see + '</span></a>';
+            html += '<span style="font-weight: bold">' + word.see + '</span></a>';
         }
         html += '<br/>';
     }
@@ -241,7 +243,12 @@ function doSearch() {
     matchCount.innerHTML = matchCountText;
 }
 
-function isMatch(word, searchText, target, position) {
+function isMatch(word, searchText, target, position, partsOfSpeech) {
+	if (partsOfSpeech != '') {
+		if ((' ' + word.speech + ' ').indexOf(' ' + partsOfSpeech + ' ') < 0) {
+			return false;
+		}
+	}
 	var matcher = containsMatch;
 	if (position == 'start') {
 		matcher = startMatch;
@@ -307,7 +314,7 @@ function reset() {
     targetSelect.selectedIndex = 0;
     var positionSelect = document.getElementById('positionSelect');
     positionSelect.selectedIndex = 0;
-    var noNamesBox = document.getElementById('noNamesBox');
-    noNamesBox.checked = false;
+    var partsOfSpeechSelect = document.getElementById('partsOfSpeechSelect');
+    partsOfSpeechSelect.selectedIndex = 0;
     doSearch();
 }
