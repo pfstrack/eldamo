@@ -87,11 +87,6 @@ The tengwar transcriptions in this lexicon are processed via the
 accordance with its
 <a rel="license" href="https://raw.githubusercontent.com/BenTalagan/glaemscribe/master/LICENSE.txt">license</a>.
 </p>
-<!--
-<div class="sf-logo">
-<a href="https://sourceforge.net/p/eldamo/" rel="nofollow"><img alt="Download Eldamo" src="https://sourceforge.net/sflogo.php?type=13&group_id=2399536"></a>
-</div>
--->
 <% } %>
 <% if (!"true".equals(request.getAttribute("PUB_MODE"))) { %>
 <hr>

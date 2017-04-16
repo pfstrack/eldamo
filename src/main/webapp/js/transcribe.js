@@ -37,22 +37,12 @@ String.prototype.replaceAll = function(search, replacement) {
 
 function postprocessTranscription(result) {
 	// Quenya transcription fixes
-//	result = result.replaceAll('9D', '9C').replaceAll('9ÍD', '9ÍC') // h(y)a-
-	result = result.replaceAll('`CdE', '`Dd#').replaceAll('~CdE', '~Dd#') // aha|áha
-	result = result.replaceAll('dE', 'd#') // -ha
-//	result = result.replaceAll('9G', '9B') // hi-
-//	result = result.replaceAll('3E', '3D') // tha
-	result = result.replaceAll('cE', 'c#').replaceAll('cR', 'c$').replaceAll('cT', 'c%') // hw(a|e|i)
-//	result = result.replaceAll('1Í', '1Î').replaceAll('7Í', '7Ï') // (t|r)y
 	result = result.replaceAll('=', ' =').replaceAll('À', ' À') // ',', '?'
 
 	// Mode of Beleriand transcription fixes
-//	result = result.replaceAll(']Õ', ']Ö').replaceAll('lÕ', 'lÖ').replaceAll('.Õ', '.Ö') // (a|e|u)i
 	result = result.replaceAll(']d', '‡d').replaceAll(']s', '‡s').replaceAll(']g', '‡g').replaceAll(']a', '‡a') // a(ch|g|ng|c) - PE22/36
 	
 	// Sindarin Classical Mode transcription fixes
-//	result = result.replaceAll('yD', 'yE') // au
-//	result = result.replaceAll('9E', '9C') // ah
 	return result;
 }
 

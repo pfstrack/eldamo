@@ -70,8 +70,22 @@ declare function local:lang-order($lang as xs:string) as xs:string {
         <option value="anywhere">Match anywhere</option>
         <option value="start">Match start</option>
         <option value="end">Match end</option>
-    </select> &#160;|
-    <input id="noNamesBox" type="checkbox" onclick="doSearch()" /> No Names
+    </select> &#160;|&#160;
+    <select id="partsOfSpeechSelect" onchange="doSearch()">
+        <option value="">Parts of Speech</option>
+        <option value="" disabled="disabled">──────</option>
+        <option value="no-names">Exclude Names</option>
+        <option value="" disabled="disabled">──────</option>
+        <option value="n">noun</option>
+        <option value="vb">verb</option>
+        <option value="adj">adjective</option>
+        <option value="adv">adverb</option>
+        <option value="pron">pronoun</option>
+        <option value="prep">preposition</option>
+        <option value="conj">conjugation</option>
+        <option value="pref">prefix</option>
+        <option value="suf">suffix</option>
+    </select>
     </p>
     <p style="line-height: 0">
     <button id="firstButton" onclick="goFirst()">&lt;&lt;</button>

@@ -49,7 +49,7 @@ declare function c:get-gloss($word as element()?) as xs:string? {
 
 declare function c:print-gloss($word as element()?) as node()* {
     let $gloss := c:get-gloss($word)
-    let $css := c:derive-css($word)
+    let $css := () (: c:derive-css($word) :)
     return
         if ($gloss and $css) then (text{' “'}, <span class="{$css}">{$gloss}</span>, text{'”'})
         else if ($gloss) then text{concat(' “', $gloss, '”')}

@@ -299,6 +299,7 @@ declare variable $lang := //language[@id=$l]/@name/string();
 
 <script src="../../js/glaemscribe.min.js"></script>
 <script src="../../js/tengwar_ds.cst.js"></script>
+<script src="../../js/tengwar_ds_eldamar.cst.js"></script>
 <script src="../../js/quenya.glaem.js"></script>
 <script src="../../js/sindarin-beleriand.glaem.js"></script>
 <script src="../../js/sindarin-classical.glaem.js"></script>
@@ -435,6 +436,7 @@ else (),
 
 for $note in $word/notes | $word/inflect-table[not(@hide)]
 let $see-further := $note/following-sibling::*[1][name()='see-further']
+let $see-also := $note/following-sibling::*[1][name()='see-also']/c:get-word(.)
 return if ($note/self::notes)
 then
     <blockquote>
@@ -442,6 +444,10 @@ then
         {if ($see-further) then (
             <p>See {c:print-word(c:get-word($see-further), 
             <print-word style="italic" show-lang="y" show-link="y"/>)} for further discussion.</p>
+        ) else ()}
+        {if ($see-also) then (
+            <p>See also {c:print-word($see-also, 
+            <print-word style="italic" show-lang="y" show-link="y"/>)} {c:print-gloss($see-also)}.</p>
         ) else ()}
     </blockquote>
 else <center><table> {
@@ -786,10 +792,11 @@ if ($inflect-refs) then (
     let $refs := $inflect-refs[local:ref-sig(., 'inflect') = $inflect-sig]
     let $ref := $refs[1]
     let $form := $ref/inflect/@form/string()
+    let $print-word := if ($ref/@l) then <print-word show-lang="y"/> else <print-word/>
     order by $form, $ref/@v
     return
         <tr>{ (
-            <td><i>{c:print-word($ref, <print-word/>)}</i></td>,
+            <td><i>{c:print-word($ref, $print-word)}</i></td>,
             <td>{ local:print-inflections($word, $form) }</td>,
             if (not($has-variants)) then () else
             <td>{ local:print-inflections($word, string($ref/inflect/@variant)) }</td>,
@@ -939,14 +946,14 @@ if ($phonetic-rule-refs) then (
             ) }</td>
             <td>{ (
                 if ($phonetic-rule-ref/deriv[1]/rule-start)
-                then concat('[', $phonetic-rule-ref/deriv[1]/rule-start/@to, ']')
+                then concat('[', $phonetic-rule-ref/deriv[1]/rule-start/@stage, ']')
                 else concat('[', $phonetic-rule-ref/deriv[1]/rule-example[1]/@from, ']'),
                 for $rule in $phonetic-rule-ref/deriv[1]/rule-example
                 let $general-rule := 
                     xdb:key(/, 'rule-to', concat($rule/@l, ':', $rule/@rule, ':', $rule/@from))/parent::word
                 return (
                     c:print-link-to-word(if ($general-rule) then $general-rule else $rule, ' &gt; '),
-                    concat('[', $rule/@to, ']')
+                    concat('[', $rule/@stage, ']')
                 )
             ) }</td>
             <td>{ local:print-ref-set($phonetic-rule-ref, <ref-set/>) }</td>
@@ -1063,19 +1070,19 @@ for $ref in $rule-example-refs
 let $deriv := $ref/parent::deriv
 let $rule-to := 
     xdb:key(/, 'rule-to', concat($ref/@l, ':', $ref/@rule, ':', $ref/@from))
-let $p-delta := xdb:delta($ref/preceding-sibling::*[1]/@to/string(), $ref/@to/string())
+let $p-delta := xdb:delta($ref/preceding-sibling::*[1]/@stage/string(), $ref/@stage/string())
 let $delta :=
     if ($ref/@rule)
     then concat(if ($rule-to/@delta2) then concat('[', $p-delta, '] ') else (), $ref/@from, ' &gt; ', $ref/@rule)
-    else concat(xdb:delta($ref/@from/string(), $ref/@to/string()), ' &gt; ', xdb:delta($ref/@to/string(), $ref/@from/string()))
-order by $delta, c:normalize-for-sort($ref/@to/string())
+    else concat(xdb:delta($ref/@from/string(), $ref/@stage/string()), ' &gt; ', xdb:delta($ref/@stage/string(), $ref/@from/string()))
+order by $delta, c:normalize-for-sort($ref/@stage/string())
 return
 <tr>
 <td style="text-align: center">{
     if ($ref/@rule)
-    then $ref/preceding-sibling::*[1]/@to/string() 
+    then $ref/preceding-sibling::*[1]/@stage/string() 
     else $ref/@from/string()
-} &gt; {$ref/@to/string()}</td>
+} &gt; {$ref/@stage/string()}</td>
 <td style="text-align: center">{$delta}</td>
 <td style="text-align: center">{local:print-deriv($deriv)}</td>
 <td>{local:print-ref-set($deriv/parent::ref, <ref-set/>)}</td>
