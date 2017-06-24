@@ -29,7 +29,7 @@ th      { background: #CCCCCC }
 .primary { font-weight: bold }
 .secondary { font-style: italic }
 .deleted { text-decoration: line-through }
-.deleted-section::before { content: '{{'; } /* ⊣ ⊢ */
+.deleted-section::before { content: '{{'; }
 .deleted-section::after { content: '}}'; }
 
 li.c-bullet { list-style-type:none; text-indent: -1em }
