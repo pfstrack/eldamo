@@ -85,6 +85,7 @@ declare function local:lang-order($lang as xs:string) as xs:string {
         <option value="conj">conjugation</option>
         <option value="pref">prefix</option>
         <option value="suf">suffix</option>
+        <option value="root">root</option>
     </select>
     </p>
     <p style="line-height: 0">

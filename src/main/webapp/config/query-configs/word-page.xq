@@ -39,7 +39,7 @@ declare function local:print-ref($ref as element(), $ref-set) as element()* {
             c:print-wordlet($deref/deriv[1]/@i2, ' &gt; '),
             c:print-wordlet($deref/deriv[1]/@i3, ' &gt; '),
             c:print-word($deref, local:print-word-control($do-print-lang)), 
-            if ($deref/deriv[1]/string()) then concat('; ', $deref/deriv[1]/string()) else (), 
+            if ($deref/deriv[1]/string()) then ('; ', xdb:html($deref/deriv[1])) else (), 
             text {')'}
         ) else 
         if (not($show-value) and not($show-mark != $deref/@mark) and not($show-lang != $deref/@l)) then () else 
@@ -549,10 +549,11 @@ if ($gloss-refs) then (
     for $gloss in $glosses
     let $refs := for $i in $gloss-refs[lower-case(@gloss)=$gloss] order by translate($i/@mark, '-', '→') return $i
     let $value := $word/@v/string()
+    let $gloss-css := c:derive-css($refs[1])
     order by $gloss
     return
         <li>
-           {c:print-gloss($refs[1])}
+           { if ($gloss-css) then <span class="{$gloss-css}">{c:print-gloss($refs[1])}</span> else c:print-gloss($refs[1])}
            {local:print-ref-set($refs, <ref-set v="{$value}"/>)}
         </li>
     } </ul>
@@ -994,9 +995,9 @@ if ($rule-refs) then (
     return
         <tr> { (
             <td>{c:print-lang($refs[1]/..)} <i>[no change]</i></td>,
-            <td style="border-right: none; text-align: right"><nobr>{c:print-wordlet($refs[1]/@v, '')}</nobr></td>,
+            <td style="border-right: none; text-align: right"><nobr><i>{translate($refs[1]/../@v, '[]', '')}</i></nobr></td>,
             <td style="border-left: none; border-right: none">&lt;</td>,
-            <td style="border-left: none"><nobr>{c:print-wordlet($refs[1]/@v, '')}</nobr></td>,
+            <td style="border-left: none"><nobr><i>{translate($refs[1]/../@v, '[]', '')}</i></nobr></td>,
             <td>{ local:print-ref-set($refs, <ref-set show-rule="y"/>) }</td>
         ) } </tr>,
     for $rule-string in distinct-values($from-rule-refs[@from]/concat(@rl, ':', @rule, ':', @from))

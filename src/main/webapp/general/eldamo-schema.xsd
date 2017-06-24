@@ -802,6 +802,7 @@
       <xs:documentation>An example of phonetic rule within a derivation, linked by the triplet (@l, @rule, @form) = (language, new phonetic form, original phonetic form). The @stage attribute indicates the resulting word form at this stage of phonetic change, derived from the previous rule-example or rule-start.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
+      <!-- FIXME: Make this required -->
       <xs:attribute name="from"/>
       <xs:attribute name="l" use="required" type="language-type"/>
       <xs:attribute name="rule" use="required"/>
@@ -813,6 +814,7 @@
       <xs:documentation>Starting point for a set of phonetic rule change, contained in its original form in its @stage attribute. Phonetic changes are described by the following rule-example elements. If the @l attribute is present, it specifies which linguistic period is the starting point for the phonetic changes.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
+      <!-- FIXME: Make this required -->
       <xs:attribute name="l" type="language-type"/>
       <xs:attribute name="stage" use="required"/>
     </xs:complexType>
@@ -936,6 +938,7 @@
             <xs:enumeration value="5"/>
             <xs:enumeration value="6"/>
             <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>

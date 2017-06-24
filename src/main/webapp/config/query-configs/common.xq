@@ -239,6 +239,7 @@ declare function c:display-speech($ref as element()?) as xs:string? {
         else if ($speech='n adv') then ' n. and adv.'
         else if ($speech='adj adv') then ' adj. and adv.'
         else if ($speech='adv adj') then ' adv. and adj.'
+        else if ($speech='conj adv') then ' conj. and adv.'
         else if ($speech='adv conj') then ' adv. and conj.'
         else if ($speech='prep pref') then ' prep. and pref.'
         else if ($speech='prep adv') then ' prep. and adv.'

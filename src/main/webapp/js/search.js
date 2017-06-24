@@ -129,6 +129,7 @@ function convertSpeech(speech) {
 	else if (speech === 'n adv') speech = 'n. and adv.';
 	else if (speech === 'adj adv') speech = 'adj. and adv.';
 	else if (speech === 'adv adj') speech = 'adv. and adj.';
+	else if (speech === 'conj adv') speech = 'conj. and adv.';
 	else if (speech === 'adv conj') speech = 'adv. and conj.';
 	else if (speech === 'prep pref') speech = 'prep. and pref.';
 	else if (speech === 'prep adv') speech = 'prep. and adv.';
