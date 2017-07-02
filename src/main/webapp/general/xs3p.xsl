@@ -2577,6 +2577,7 @@ div#legend div.hint {
             </td>
          </tr>
          <!-- Nillable -->
+         <!--
          <tr>
             <th>
                <xsl:call-template name="PrintGlossaryTermRef">
@@ -2590,7 +2591,9 @@ div#legend div.hint {
                </xsl:call-template>
             </td>
          </tr>
+         -->
          <!-- Abstract -->
+         <!--
          <tr>
             <th>
                <xsl:call-template name="PrintGlossaryTermRef">
@@ -2604,6 +2607,7 @@ div#legend div.hint {
                </xsl:call-template>
             </td>
          </tr>
+         -->
          <!-- Default Value -->
          <xsl:if test="@default">
             <tr>

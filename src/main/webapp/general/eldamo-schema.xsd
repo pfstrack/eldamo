@@ -212,6 +212,7 @@
       <xs:enumeration value="full-form"/>           <!-- The normal root expression in Adûnaic -->
       <xs:enumeration value="inversion"/>           <!-- Reversing a root, LA to AL -->
       <xs:enumeration value="nasal-infixion"/>      <!-- Adding a medial nasal -->
+      <xs:enumeration value="nasal-prefixion"/>     <!-- Adding an initial nasal -->
       <xs:enumeration value="s-fortification"/>     <!-- Adding an "s", usually initially -->
       <xs:enumeration value="strengthened"/>        <!-- Strengthening a consonant, usually by nasalizing it -->
       <xs:enumeration value="subordinate-vowel-variation"/> <!-- Changing the second vowel (Adûnaic term) -->
@@ -476,7 +477,7 @@
       <xs:documentation>Indicate a change on the part of Tolkien from one form to another. The new form is linked by the source reference (@source). Intermediate forms may be indicated by @i1 attributes.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
-      <xs:attribute name="i1" type="xs:NMTOKEN"/>
+      <xs:attribute name="i1"/>
       <xs:attribute name="source" use="required"/>
       <xs:attribute name="v" use="required"/>
     </xs:complexType>
@@ -503,52 +504,62 @@
       </xs:attribute>
     </xs:complexType>
   </xs:element>
-  <xs:element name="cognate">
+  <xs:complexType name="cognate-ref" mixed="true"><!-- FIXME: Remove mixed -->
     <xs:annotation>
-      <xs:documentation>Link to a cognate in another language. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source).</xs:documentation>
+      <xs:documentation>Link to a cognate in another language (for ref elements). As a child of a ref element, uses a source reference (@source).</xs:documentation>
     </xs:annotation>
-    <xs:complexType mixed="true">
-      <xs:attribute name="l" type="language-type"/>
-      <xs:attribute name="mark"/>
-      <xs:attribute name="source"/>
-      <xs:attribute name="v" use="required"/>
-    </xs:complexType>
-  </xs:element>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="cognate-word">
+    <xs:annotation>
+      <xs:documentation>Link to a cognate in another language (for word elements). As a child of a word element, uses a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
   <xs:element name="correction">
     <xs:annotation>
-      <xs:documentation>An editorial correction of an earlier published form. Uses a source reference (@source). Note that the reference value (ref/@v) of the correction reference is the original (uncorrected) form, while the reference value (ref/@v) of the linked/corrected reference is the corrected form. This is to ensure that the corrected form will appear in the relationship of its original references.</xs:documentation>
+      <xs:documentation>An editorial correction of an earlier published form. Uses a source reference (@source). Note that the reference value (ref/@v) of the correction reference is the original (uncorrected) form, while the reference value (ref/@v) of the linked/corrected reference is the corrected form. This is to ensure that the corrected form will appear in the relationships of its original reference.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:attribute name="source" use="required"/>
       <xs:attribute name="v" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="deriv">
+  <xs:complexType name="deriv-ref" mixed="true">
     <xs:annotation>
-      <xs:documentation>Indicates this form is derived etymologically from the linked form. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source). Intermediate forms may be indicated by @i1, @i2 and @i3 attributes, in that chronological order (past to future). @@@ In the final form of the data model, a deriv element should be unique with a word/ref element, but there are some unfinished data corrections preventing enforcement of this rule. These unfinished data elements are indicated by @t="m" attribute values, which will be removed after the data is cleaned up.</xs:documentation>
+      <xs:documentation>Indicates this form is derived etymologically from the linked form (for ref elements). As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source). Intermediate forms may be indicated by @i1, @i2 and @i3 attributes, in that chronological order (past to future). @@@ In the final form of the data model, a deriv element should be unique with a word/ref element, but there are some unfinished data corrections preventing enforcement of this rule. These unfinished data elements are indicated by @t="m" attribute values, which will be removed after the data is cleaned up.</xs:documentation>
     </xs:annotation>
-    <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="rule-example"/>
-        <xs:element ref="rule-start"/>
-      </xs:choice>
-      <xs:attribute name="i1"/>
-      <xs:attribute name="i2"/>
-      <xs:attribute name="i3"/>
-      <xs:attribute name="l" type="language-type"/>
-      <xs:attribute name="mark"/>
-      <xs:attribute name="source"/>
-      <xs:attribute name="t">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="m"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="v" use="required"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="derivatives">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="rule-example"/>
+      <xs:element ref="rule-start"/>
+    </xs:choice>
+    <xs:attribute name="t"> <!-- FIXME: Remove -->
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="m"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="i1"/>
+    <xs:attribute name="i2"/>
+    <xs:attribute name="i3"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="deriv-word">
+    <xs:annotation>
+      <xs:documentation>Indicates this form is derived etymologically from the linked form (for word elements). As a child of a word element, uses a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:element name="derivatives"><!-- FIXME: Remove -->
     <xs:annotation>
       <xs:documentation>An element controlling how derivative are displayed in the page for this word. If @no-root="true", the derivation trees of child roots are not expanded.</xs:documentation>
     </xs:annotation>
@@ -556,19 +567,26 @@
       <xs:attribute name="no-roots" use="required" type="xs:NMTOKEN"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="element">
+  <xs:complexType name="element-ref" mixed="true"><!-- FIXME: Remove "mixed" -->
     <xs:annotation>
-      <xs:documentation>Indicates the decomposition of a word or phrase into its elements. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source). If the element is a non-standard form (e.g. a soft-mutation), this is indicated by the @form attribute. The @form attribute is omitted if the link reference already has its inflection indicated by a child inflect element.</xs:documentation>
+      <xs:documentation>Indicates the decomposition of a word or phrase into its elements (for ref elements). As a child of a ref element, uses a source reference (@source). If the element is a non-standard form (e.g. a soft-mutation), this is indicated by the @form attribute. The @form attribute is omitted if the link reference already has its inflection indicated by a child inflect element.</xs:documentation>
     </xs:annotation>
-    <xs:complexType mixed="true">
-      <xs:attribute name="form" type="inflect-list-type"/>
-      <xs:attribute name="l" type="language-type"/>
-      <xs:attribute name="mark"/>
-      <xs:attribute name="source"/>
-      <xs:attribute name="v"/>
-      <xs:attribute name="variant" type="inflect-variant-list-type"/>
-    </xs:complexType>
-  </xs:element>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="form" type="inflect-list-type"/>
+    <xs:attribute name="variant" type="inflect-variant-list-type"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="element-word">
+    <xs:annotation>
+      <xs:documentation>Indicates the decomposition of a word or phrase into its elements (for word elements). As a child of a word element, uses a word reference (@l + @v). If the element is a non-standard form (e.g. a soft-mutation), this is indicated by the @form attribute.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="form" type="inflect-list-type"/>
+    <xs:attribute name="variant" type="inflect-variant-list-type"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
   <xs:element name="example">
     <xs:annotation>
       <xs:documentation>Indicates examples of the topic under discussion, using a source reference (@source). If @t="deriv", it is an example a derivational rule. If @t="inflect", it is an example an inflectional rule.</xs:documentation>
@@ -616,7 +634,7 @@
   </xs:element>
   <xs:element name="inflect">
     <xs:annotation>
-      <xs:documentation>Indicates this form is inflected grammatically from the base word. If this base form is attested, it is linked by a source reference (@source); if there is no @source attribute, then the base form is not attested. The @form attribute indicates the natures of the inflection, which may be a space-delimited list, such as form="soft-mutation plural". The @variant attribute indicates it is a nonstandard variation of the inflection.</xs:documentation>
+      <xs:documentation>Indicates this form is inflected grammatically from the base word. If this base form is attested, it is linked by a source reference (@source); if there is no @source attribute, then the base form is not attested. The @form attribute indicates the nature of the inflection, which may be a space-delimited list, such as form="soft-mutation plural". The @variant attribute indicates it is a nonstandard variation of the inflection.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:attribute name="form" use="required" type="inflect-list-type"/>
@@ -758,13 +776,13 @@
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="change"/>
-        <xs:element ref="cognate"/>
+        <xs:element name="cognate" type="cognate-ref"/>
         <xs:element ref="correction"/>
-        <xs:element ref="deriv"/>
-        <xs:element ref="element"/>
+        <xs:element name="deriv" type="deriv-ref"/>
+        <xs:element name="element" type="element-ref"/>
         <xs:element ref="example"/>
         <xs:element ref="inflect"/>
-        <xs:element ref="related"/>
+        <xs:element name="related" type="related-ref"/>
       </xs:choice>
       <xs:attribute name="from"/>
       <xs:attribute name="gloss"/>
@@ -776,25 +794,30 @@
       <xs:attribute name="v" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="related">
+  <xs:complexType name="related-ref" mixed="true">
     <xs:annotation>
-      <xs:documentation>A generic relationship between forms. As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source).</xs:documentation>
+      <xs:documentation>A generic relationship between forms (for ref elements). As a child of a ref element, uses a source reference (@source).</xs:documentation>
     </xs:annotation>
-    <xs:complexType mixed="true">
-      <xs:attribute name="l" type="language-type"/>
-      <xs:attribute name="mark"/>
-      <xs:attribute name="source"/>
-      <xs:attribute name="v" use="required"/>
-    </xs:complexType>
-  </xs:element>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="related-word" mixed="true">
+    <xs:annotation>
+      <xs:documentation>A generic relationship between forms (for word elements). As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
   <xs:element name="rule">
     <xs:annotation>
       <xs:documentation>A phonetic rule, specifying the language (@l), the original phonetic form (@from) and the new form (@rule). This triplet (@l, @rule, @form) is used to link to examples of the phonetic rule.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:attribute name="from" use="required"/>
       <xs:attribute name="l" use="required" type="language-type"/>
       <xs:attribute name="rule" use="required"/>
+      <xs:attribute name="from" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="rule-example">
@@ -802,10 +825,9 @@
       <xs:documentation>An example of phonetic rule within a derivation, linked by the triplet (@l, @rule, @form) = (language, new phonetic form, original phonetic form). The @stage attribute indicates the resulting word form at this stage of phonetic change, derived from the previous rule-example or rule-start.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <!-- FIXME: Make this required -->
-      <xs:attribute name="from"/>
       <xs:attribute name="l" use="required" type="language-type"/>
       <xs:attribute name="rule" use="required"/>
+      <xs:attribute name="from"/><!-- FIXME: Make this required -->
       <xs:attribute name="stage" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
@@ -814,8 +836,7 @@
       <xs:documentation>Starting point for a set of phonetic rule change, contained in its original form in its @stage attribute. Phonetic changes are described by the following rule-example elements. If the @l attribute is present, it specifies which linguistic period is the starting point for the phonetic changes.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <!-- FIXME: Make this required -->
-      <xs:attribute name="l" type="language-type"/>
+      <xs:attribute name="l" type="language-type"/><!-- FIXME: Make this required -->
       <xs:attribute name="stage" use="required"/>
     </xs:complexType>
   </xs:element>
@@ -885,21 +906,21 @@
   </xs:element>
   <xs:element name="word">
     <xs:annotation>
-      <xs:documentation>An entry in the lexicon with its own word page. Uses the XML element-name "word" for historical reasons, but these elements also represent other lexicon entries such as phonetic rules or grammatical entries. Child elements indicate relationships to other words, while ref elements indicate attested forms of the word. Child words are generally conceptual predecessor’s of this word, though such relationships are often subjective. The @l attribute indicates the word’s language and the @v attribute the base word form. The @gloss attribute assembles the words glosses; this attribute may be omitted if the word has only one non-change, non-correction attested reference (ref). The @speech attribute is the (possibly space-delimited) part of speech for the word. The @mark attribute indicates the notation markers for the word. The @page-id is the numeric identifier of the generated HTML Lexicon, and can be used to link to the lexicon. Other attributes have specialized uses that will eventually be cleaned up and documented.</xs:documentation>
+      <xs:documentation>An entry in the lexicon with its own word page. Uses the XML element-name "word" for historical reasons, but these elements also represent other lexicon entries such as phonetic rules or grammatical entries. Child elements indicate relationships to other words, while ref elements indicate attested forms of the word. Child words are generally conceptual predecessor’s of this word, though such relationships are often subjective. The @l attribute indicates the word’s language and the @v attribute the base word form. The @gloss attribute assembles the words glosses. The @speech attribute is the (possibly space-delimited) part of speech for the word. The @mark attribute indicates the notation markers for the word. The @page-id is the numeric identifier of the generated HTML Lexicon, and can be used to link to the lexicon. Other attributes have specialized uses that will eventually be cleaned up and documented.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="before"/>
         <xs:element ref="class"/>
-        <xs:element ref="cognate"/>
-        <xs:element ref="deriv"/>
+        <xs:element name="cognate" type="cognate-word"/>
+        <xs:element name="deriv" type="deriv-word"/>
         <xs:element ref="derivatives"/>
-        <xs:element ref="element"/>
+        <xs:element name="element" type="element-word"/>
         <xs:element ref="inflect"/>
         <xs:element ref="inflect-table"/>
         <xs:element ref="notes"/>
         <xs:element ref="ref"/>
-        <xs:element ref="related"/>
+        <xs:element name="related" type="related-word"/>
         <xs:element ref="rule"/>
         <xs:element ref="see"/>
         <xs:element ref="see-also"/>

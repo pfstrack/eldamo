@@ -15,8 +15,32 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
         <xsl:apply-templates/>
     </xsl:template>
 
+    <xsl:key name="word" match="word" use="@v"/> 
+
     <xsl:template match="*">
         <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="word/deriv | word/element | word/related">
+        <xsl:copy>
+            <xsl:if test="not(@l)">
+               <xsl:variable name="word" select="key('word', @v)"/>
+               <xsl:variable name="lang" select="ancestor-or-self::word[@l][1]/@l"/>
+               <xsl:choose>
+                  <xsl:when test="@v='?'">
+                     <xsl:attribute name="l" select="$lang"/>
+                  </xsl:when>
+                  <xsl:when test="count($word)=1">
+                     <xsl:attribute name="l" select="$word/@l"/>
+                  </xsl:when>
+                  <xsl:when test="count($word[@l=$lang])=1">
+                     <xsl:attribute name="l" select="$word[@l=$lang]/@l"/>
+                  </xsl:when>
+               </xsl:choose>
+            </xsl:if>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
         </xsl:copy>
@@ -53,11 +77,5 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
     </xsl:template>
     
     <xsl:template match="notes[parent::ref]"/>
-    
-    <xsl:template match="etymology"/>
-
-    <xsl:template match="etymology-change"/>
-
-    <xsl:template match="transform"/>
 </xsl:stylesheet>
 

@@ -265,55 +265,6 @@ return
     if ($ref[@rule = 'ø' and not(@from)]) then '; [rule = ø]' else (),
     if ($ref[@rule != 'ø' or @from]) then concat('; [', $ref/@rule/string(), ' &lt; ', $ref/@from/string(), ']') else (),
  
-    (: show etymology info :)
-    for $etymology in $ref/etymology
-    let $etymology-v := $etymology/@v
-    let $etymology-source := $etymology/@source/string()
-    let $etymology-refs := xdb:key($ref, 'ref', $etymology-source)
-    let $etymology-ref := $etymology-refs[@v=$etymology-v][1]
-    let $show-ref := local:is-different-page($ref/@source, $etymology-ref/@source)
-    let $etymology-deriv := $etymology-ref/deriv[not(@t)]
-    let $etymology-deriv-v := $etymology-deriv/@v
-    let $etymology-deriv-source := $etymology-deriv/@source/string()
-    let $etymology-deriv-refs := if ($etymology-ref) 
-        then xdb:key($etymology-ref, 'ref', $etymology-deriv-source) else ()
-    let $etymology-deriv-ref := $etymology-deriv-refs[@v=$etymology-deriv-v][1]
-    let $show-deriv-language := not(local:get-lang($etymology-ref) = local:get-lang($etymology-deriv-ref))
-    let $show-deriv-ref := local:is-different-page($etymology-ref/@source, $etymology-deriv-ref/@source)
-    return (
-        text {'; ⇐ ('},
-        if (not(count($etymology-refs) = 1) or not(count($etymology-ref) = 1)) then '[ERROR:MISLINK] ' else (),
-        local:show-word($etymology-ref, false(), (), false(), false()),
-        text {' < '},
-        local:show-word($etymology-deriv-ref, $show-deriv-language, (), false(), $show-ref),
-        if ($etymology-deriv != '') then xdb:html(concat(' ', $etymology-deriv/string())) else (),
-        (: if ($etymology-ref != '') then xdb:html(concat('; ', $etymology-ref/string())) else (), :)
-        text {')'}
-    ),
- 
-    (: show transforms :)
-    if ($ref/transform and ($ref/inflect or $ref/deriv)) then '; ⇐ ' else if ($ref/transform) then ' ⇐ ' else (),
-    for $transform in $ref/transform
-    let $transform-v := $transform/@v
-    let $transform-source := $transform/@source/string()
-    let $transform-refs := xdb:key($ref, 'ref', $transform-source)
-    let $transform-ref := $transform-refs[@v=$transform-v][1]
-    let $show-language := not(local:get-lang($ref) = local:get-lang($transform-ref))
-    let $show-ref := local:is-different-page($ref/@source, $transform-ref/@source)
-    return (
-        if (not(count($transform-refs) = 1) or not(count($transform-ref) = 1)) then '[ERROR:MISLINK] ' else (),
-        if ($transform/@mark != '') then text{$transform/@mark} else (),
-        local:wordlet($transform/@i3, ' ⇐ '),
-        local:wordlet($transform/@i2, ' ⇐ '),
-        local:wordlet($transform/@i1, ' ⇐ '),
-        if ($transform-ref) then
-            local:show-word($transform-ref, $show-language, (), false(), $show-ref)
-        else (),
-        if ($transform/@form != '') then concat(' (', $transform/@form, ')') else (),
-        if ($transform != '') then xdb:html(concat(' (', $transform/string(), ')')) else (),
-        if ($transform/following-sibling::transform) then text { ' // ' } else ()
-    ),
- 
     (: show elements :)
     if ($ref/element and ($ref/inflect or $ref/deriv)) then '; ⇐ ' else if ($ref/element) then ' ⇐ ' else (),
     for $element in $ref/element
@@ -426,35 +377,6 @@ return
         if (not(count($change-refs) = 1) or not(count($change-ref) = 1)) then '[ERROR:MISLINK] ' else (),
         if ($change-ref) then local:show-word($change-ref, $show-language, $show-gloss, false(), $show-ref) else (),
         if ($change != '') then xdb:html(concat(' (', $change/string(), ')')) else ()
-    ),
- 
-    (: show etymology-change info :)
-    for $etymology-change in $ref/etymology-change
-    let $etymology-change-v := $etymology-change/@v
-    let $etymology-change-source := $etymology-change/@source/string()
-    let $etymology-change-refs := xdb:key($ref, 'ref', $etymology-change-source)
-    let $etymology-change-ref := $etymology-change-refs[@v=$etymology-change-v][1]
-    let $show-ref := local:is-different-page($ref/@source, $etymology-change-ref/@source)
-    let $etymology-change-deriv := $etymology-change-ref/deriv[not(@t)]
-    let $etymology-change-deriv-v := $etymology-change-deriv/@v
-    let $etymology-change-deriv-source := $etymology-change-deriv/@source/string()
-    let $etymology-change-deriv-refs := if ($etymology-change-ref) 
-        then xdb:key($etymology-change-ref, 'ref', $etymology-change-deriv-source) else ()
-    let $etymology-change-deriv-ref := $etymology-change-deriv-refs[@v=$etymology-change-deriv-v][1]
-    let $show-deriv-language := not(local:get-lang($etymology-change-ref) = local:get-lang($etymology-change-deriv-ref))
-    let $show-deriv-ref := local:is-different-page($etymology-change-ref/@source, $etymology-change-deriv-ref/@source)
-    return (
-        text {'; >> ('},
-        if (not(count($etymology-change-refs) = 1) or not(count($etymology-change-ref) = 1)) then '[ERROR:MISLINK] ' else (),
-        local:show-word($etymology-change-ref, false(), (), false(), false()),
-        text {' < '},
-        local:wordlet($etymology-change-deriv/@i3, ' < '),
-        local:wordlet($etymology-change-deriv/@i2, ' < '),
-        local:wordlet($etymology-change-deriv/@i1, ' < '),
-        local:show-word($etymology-change-deriv-ref, $show-deriv-language, (), false(), $show-ref),
-        if ($etymology-change-deriv != '') then xdb:html(concat('; ', $etymology-change-deriv/string())) else (),
-        (: if ($etymology-change-ref != '') then xdb:html(concat('; ', $etymology-change-ref/string())) else (), :)
-        text {')'}
     ),
  
     (: show corrections :)

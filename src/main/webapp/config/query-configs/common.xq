@@ -67,20 +67,6 @@ declare function c:print-gloss-no-space($word as element()?) as node()? {
 
 (: lang :)
 
-declare function c:get-lang-strata($ref as element()?) as xs:string* {
-    let $lang := c:get-lang($ref) return
-    if ($lang = ('p', 'q', 's', 'os', 'ns', 'ln', 'lon', 'nan', 't', 'val')) then ('p', 'q', 's', 'os', 'ns', 'ln', 'lon', 'nan', 't', 'val')
-    else if ($lang = ('mp', 'mq', 'n', 'ilk', 'dor', 'dan', 'mt')) then ('mp', 'mq', 'n', 'ilk', 'dor', 'dan', 'mt')
-    else if ($lang = ('ep', 'eq', 'en', 'eon', 'eoq', 'g', 'sol', 'et', 'eilk')) then ('ep', 'eq', 'en', 'eon', 'eoq', 'g', 'sol', 'et', 'eilk')
-    else ($lang)
-};
-
-declare function c:get-deriv-lang($ref as element()?) as xs:string* {
-    let $lang := c:get-lang($ref) return
-    if ($lang = ('mp', 'er', 'ep')) then c:get-lang-strata($ref)
-    else $lang
-};
-
 declare function c:get-lang($ref as element()*) as xs:string? {
     $ref/ancestor-or-self::*[@l][1]/@l/string()
 };
@@ -328,11 +314,9 @@ declare function c:print-word($word as element()?, $control as element()?) as no
 declare function c:get-word($ref as element()?) as element()* {
     let $ref-lang := c:get-lang($ref)
     let $generic-words := $ref/xdb:key($ref, 'word', $ref/@v)
-    let $in-strata-words := $generic-words[c:get-lang(.) = c:get-lang-strata($ref)]
     let $words :=
         if ($ref/@l) then $generic-words[c:get-lang(.) = $ref-lang]
         else if (count($generic-words) = 1) then $generic-words
-        else if (count($in-strata-words) = 1) then $generic-words[c:get-lang(.) = c:get-lang-strata($ref)]
         else $generic-words[c:get-lang(.) = $ref-lang]
     return $words
 };

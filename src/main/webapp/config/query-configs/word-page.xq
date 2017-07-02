@@ -962,26 +962,6 @@ if ($phonetic-rule-refs) then (
     } </table>
 ) else (),
 
-(: Etymologies :)
-(:
-let $etymology-refs := $valid-refs/etymology return
-if ($etymology-refs) then (
-    <p><u>Etymologies</u></p>,
-    <ul> {
-    for $etymology-ref in $etymology-refs
-    let $ref := $etymology-ref/c:get-ref(.)
-    return
-        <li>
-            { c:print-word($ref, <print-word/>) } &lt; 
-            { c:print-word($ref/deriv[not(@t)]/c:get-ref(.), <print-word show-lang="y"/>) }
-            { if ($ref/deriv/text()) then (' (', xdb:html($ref/deriv/text()), ')') else () }
-            { if ($etymology-ref/text()) then (' ', xdb:html($etymology-ref/text())) else () }
-            { local:print-ref-set($etymology-ref, <ref-set/>) }
-        </li>
-    } </ul>
-) else (),
-:)
-
 (: Rules :)
 let $from-rule-refs := $valid-refs[@rule]
 let $to-rule-refs := $valid-refs/xdb:key(., 'rule-to-ref', @source)
