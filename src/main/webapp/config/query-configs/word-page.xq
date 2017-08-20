@@ -427,6 +427,27 @@ return (
         else ()}
 </p>,
 
+let $texts-in := xdb:key($word, 'element-in', $word/@v)[@speech='text'][@l=$word/@l]
+return if (not($texts-in)) then () else
+    <blockquote> { if (not($texts-in)) then () else (
+            for $text-in in $texts-in
+            let $text-element := $text-in/element[@v=$word/@v]
+            let $previous-phrase := $text-element/preceding-sibling::element[1]
+            let $next-phrase := $text-element/following-sibling::element[1]
+            return
+            <p>
+                {if (not($previous-phrase)) then () else ('[&lt; ', 
+                    <a href='word-{xdb:hashcode(c:get-word($previous-phrase))}.html'>Previous Phrase</a>,
+                '] ')}
+                {c:print-word($text-in, <print-word style="italic" show-link="y"/>)}
+                {if (not($next-phrase)) then () else (' [', 
+                    <a href='word-{xdb:hashcode(c:get-word($next-phrase))}.html'>Next Phrase</a>,
+                ' &gt;]')}
+            </p>,
+            <hr/>
+        ) }
+    </blockquote>,
+
 if ($word/see-notes) then 
    <blockquote>
        See {c:print-word(c:get-word($word/see-notes), 

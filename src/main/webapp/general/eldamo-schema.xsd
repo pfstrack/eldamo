@@ -72,9 +72,12 @@
       <xs:enumeration value="stative-future"/>
 
       <!-- verbal moods -->
+      <xs:enumeration value="conditional"/>
       <xs:enumeration value="imperative"/>
       <xs:enumeration value="suffixed-imperative"/>
       <xs:enumeration value="subjunctive"/>
+      <xs:enumeration value="past-subjunctive"/>
+      <xs:enumeration value="present-subjective"/>
 
       <!-- verbal voice -->
       <xs:enumeration value="impersonal"/>
@@ -116,6 +119,9 @@
       <xs:enumeration value="3rd-sg-neut"/>
       <xs:enumeration value="3rd-sg-reflexive"/>
       <xs:enumeration value="3rd-dual"/>
+      <xs:enumeration value="3rd-dual-fem"/>
+      <xs:enumeration value="3rd-dual-masc"/>
+      <xs:enumeration value="3rd-dual-neut"/>
       <xs:enumeration value="3rd-pl"/>
       <xs:enumeration value="3rd-pl-fem"/>
       <xs:enumeration value="3rd-pl-masc"/>
@@ -168,11 +174,13 @@
       <xs:enumeration value="genitive"/>
       <xs:enumeration value="instrumental"/>
       <xs:enumeration value="locative"/>
+      <xs:enumeration value="nominative"/>
       <xs:enumeration value="possessive"/>
 
       <!-- obscure noun cases -->
       <xs:enumeration value="s-case"/>
       <xs:enumeration value="old-genitive"/>
+      <xs:enumeration value="comitative"/>
       <xs:enumeration value="similative"/>
       <xs:enumeration value="partitive"/>
       <xs:enumeration value="objective"/>
@@ -296,6 +304,7 @@
       <xs:enumeration value="archaic-strong-subjective"/>
       <xs:enumeration value="assimilated"/>
       <xs:enumeration value="augmentless"/>
+      <xs:enumeration value="bare-stem"/>
       <xs:enumeration value="colloquial-possessive"/>
       <xs:enumeration value="dialectical"/>
       <xs:enumeration value="draft"/>
@@ -317,6 +326,8 @@
       <xs:enumeration value="plural-with-linking-consonant"/>
       <xs:enumeration value="possessive-second"/>
       <xs:enumeration value="pronoun-prefix"/>
+      <xs:enumeration value="r-locative"/>
+      <xs:enumeration value="short-instrumental"/>
       <xs:enumeration value="strong-I-without-syncope"/>
       <xs:enumeration value="suffixed-imperative"/>
       <xs:enumeration value="u-dual"/>

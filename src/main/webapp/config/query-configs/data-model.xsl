@@ -57,17 +57,17 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
             </xsl:if>
             <xsl:if test="not(@gloss)">
                 <xsl:choose>
-                    <xsl:when test="ref[not(change)][not(correction)]/@gloss">
-                       <xsl:copy-of select="ref[not(change)][not(correction)][1]/@gloss"/>
+                    <xsl:when test="count(ref) = 0 and count(word/@gloss) = 1">
+                       <xsl:copy-of select="word/@gloss"/>
                     </xsl:when>
-                    <xsl:when test="ref[not(correction)]/@gloss">
-                       <xsl:copy-of select="ref[not(correction)][1]/@gloss"/>
+                    <xsl:when test="count(ref) = 0 and count(word/ref[not(correction)][not(inflect) or ../speech='root']/@gloss) = 1">
+                       <xsl:copy-of select="word/ref[not(correction)][not(inflect) or ../speech='root']/@gloss"/>
                     </xsl:when>
-                    <xsl:when test="word/@gloss">
-                       <xsl:copy-of select="word[1]/@gloss"/>
+                    <xsl:when test="count(ref[not(correction)][not(inflect) or ../speech='root']/@gloss) = 1">
+                       <xsl:copy-of select="ref[not(correction)][not(inflect) or ../speech='root']/@gloss"/>
                     </xsl:when>
-                    <xsl:when test="word[ref[not(change)][not(correction)]]/@gloss">
-                       <xsl:copy-of select="word[ref[not(change)][not(correction)]][1]/ref[not(change)][not(correction)][1]/@gloss"/>
+                    <xsl:when test="count(ref[not(correction)][not(inflect) or ../speech='root'][not(contains(@mark, '-'))]/@gloss) = 1">
+                       <xsl:copy-of select="ref[not(correction)][not(inflect) or ../speech='root'][not(contains(@mark, '-'))]/@gloss"/>
                     </xsl:when>
                 </xsl:choose>
             </xsl:if>

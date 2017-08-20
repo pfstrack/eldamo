@@ -15,9 +15,9 @@ declare function local:print-phrase($word as element()) as element() {
         { c:print-word($word, $primary-word) }
         { text {' '} }
         { c:print-gloss($word) }
-        { if (not($word/word)) then () else
+        { if (not($word/word[@l=$id])) then () else
             <ul> {
-            for $child in $word/word return local:print-phrase($child)
+            for $child in $word/word[@l=$id] return local:print-phrase($child)
             } </ul>
         }
     </li>

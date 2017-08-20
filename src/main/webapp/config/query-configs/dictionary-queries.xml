@@ -20,6 +20,15 @@
             <xquery-renderer content-type="html" mime-type="text/html" file="test.xq"/>
         </renderers>
     </query-controller>
+    <query-controller uri-pattern="/etym/etym.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="etym.xq"/>
+        </renderers>
+    </query-controller>
     <query-controller uri-pattern="/sort.*">
         <simple-request-parser />
         <query>
