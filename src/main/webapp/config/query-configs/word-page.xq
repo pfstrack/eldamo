@@ -380,7 +380,7 @@ return (
 </tr>
 </table>
 {
-for $word in $words | $words//word[not(see)]
+for $word in $words | (if ($words/see) then () else $words//word[not(see)])
 let $valid-refs := $word/ref[c:get-ref(.)]
 let $alt-lang := c:alt-lang($word)
 return (
@@ -537,7 +537,9 @@ if (count($valid-refs) = 1 and count($valid-refs[not(inflect) or c:is-root($word
 let $ref := $valid-refs[1] return
 <p>
     <u>Reference</u>
-    {local:print-ref-set($ref, <ref-set/>)}
+    {if ($pubmode = 'true') then
+        (' ✧ ', $ref/@source/replace(replace(substring-before(concat(., '.'), '.'), '/0', '/'), '/0', '/'))
+        else local:print-ref-set($ref, <ref-set/>)}
     {if ($ref/@v != $word/@v or $ref/@l != $word/@l or ($ref/notes and $pubmode != 'true') or $ref/example or $ref/@gloss) then ' ✧ ' else ()}
     {
         if ($ref/@l != $word/@l) then c:print-word($ref, <print-word style="bold" show-lang="y"/>) 
@@ -552,11 +554,38 @@ let $ref := $valid-refs[1] return
 </p>
 ) else (
 (: References :)
-let $base-refs := $valid-refs return
+let $base-refs := $valid-refs
+let $short-refs := distinct-values($base-refs/@source/replace(replace(substring-before(concat(., '.'), '.'), '/0', '/'), '/0', '/'))
+return
 if ($base-refs) then (
 <p>
     <u>References</u>
-    {local:print-ref-set($base-refs, <ref-set/>)}
+    {if ($pubmode = 'true' or count($short-refs) lt count($base-refs))
+     then (' ✧ ', 
+        let $normalized-short-refs := <div> {
+            for $short-ref in $short-refs return
+            <ref src="{substring-before($short-ref, '/')}" page="{replace(substring-after($short-ref, '/'), ' ', '&#160;')}"/>
+        } </div>
+        let $short-ref-sources := distinct-values($normalized-short-refs/ref/@src/string())
+        let $short-ref-by-sources := for $short-ref-source in $short-ref-sources
+            return <ref src="{$short-ref-source}" pages="{
+                for $ref in $normalized-short-refs/ref[@src = $short-ref-source]
+                return
+                    if($ref/@page/number() and
+                        ($ref/@page = $ref/following-sibling::ref[@src = $short-ref-source][1]/@page - 1) and 
+                        ($ref/@page = $ref/preceding-sibling::ref[@src = $short-ref-source][1]/@page + 1))
+                    then ()
+                    else if($ref/@page/number() and 
+                        ($ref/@page = $ref/following-sibling::ref[@src = $short-ref-source][1]/@page - 1))
+                    then concat($ref/@page, '-')
+                    else $ref/@page
+            }"/>
+        let $ref-list := replace(concat(string-join($short-ref-by-sources/concat(./@src, '/', 
+            replace(replace(@pages, '- ', '-'), ' ', ', ')
+        ), '; '), ';'), concat('I/', $word/@v, ';'), 'I;')
+        return substring($ref-list, 1, string-length($ref-list) - 1)
+     )
+     else local:print-ref-set($base-refs, <ref-set/>)}
 </p>
 ) else (),
 

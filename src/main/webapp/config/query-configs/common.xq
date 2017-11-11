@@ -258,9 +258,9 @@ declare function c:print-wordlet($ref as attribute()?, $postfix as xs:string) as
         let $end := if ($has-brackets) then text {']'} else ()
         return
             if (starts-with($ref/../../@mark, '-')) then
-                (<strike>{($start, if ($has-brackets) then text{$word-text} else <i>{$word-text}</i>, $end)}</strike>, text{$postfix})
+                (<span class="deleted">{($start, if ($has-brackets) then text{$word-text} else <i>{$word-text}</i>, $end)}</span>, text{$postfix})
             else if (starts-with($ref/../../@mark, '|')) then
-                (<u>{($start, if ($has-brackets) then text{$word-text} else <i>{$word-text}</i>, $end)}</u>, text{$postfix})
+                (<span class="deleted-section">{($start, if ($has-brackets) then text{$word-text} else <i>{$word-text}</i>, $end)}</span>, text{$postfix})
             else
                 ($start, if ($has-brackets) then text{$word-text} else <i>{$word-text}</i>, $end, text{$postfix})
     else ()
@@ -397,8 +397,7 @@ declare function c:show-hierarchy-list($items as element()*, $grouping as xs:str
 };
 
 declare function c:alt-lang($word as element()) as xs:string {
-    let $alt := $word[not($word/ref)][not(starts-with(@speech, 'phon') or @speech='grammar' or @speech='text')]//word[ref][@l][@l != $word/@l] |
-                $word[not($word/ref)][not(starts-with(@speech, 'phon') or @speech='grammar' or @speech='text')]/word[1][@l][@l != $word/@l]
+    let $alt := $word[not($word/ref)][not(starts-with(@speech, 'phon') or @speech='grammar' or @speech='text')]//word[ref][1][@l][@l != $word/@l]
     return if ($alt)
     then translate(c:print-lang($alt[1]), ' ', '')
     else ''
