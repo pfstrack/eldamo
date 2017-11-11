@@ -136,6 +136,7 @@
       <xs:enumeration value="with-remote-pl-object"/>
       <xs:enumeration value="with-1st-sg-object"/>
       <xs:enumeration value="with-1st-pl-object"/>
+      <xs:enumeration value="with-2nd-sg-object"/>
       <xs:enumeration value="with-2nd-pl-object"/>
       <xs:enumeration value="with-1st-sg-dative"/>
 
@@ -176,6 +177,7 @@
       <xs:enumeration value="locative"/>
       <xs:enumeration value="nominative"/>
       <xs:enumeration value="possessive"/>
+      <xs:enumeration value="possessive-adjectival"/>
 
       <!-- obscure noun cases -->
       <xs:enumeration value="s-case"/>
