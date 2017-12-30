@@ -30,14 +30,14 @@ Information about the source material used to compile this lexicon can be found 
 allows you to do whatever you want with it provided you credit my work. However, these documents are based on
 the copyrighted materials of other authors, most notably those owned by the Tolkien Estate, and nothing in these
 documents should be considered a challenge to or indemnification against those copyrights.</p>
-<p>As it stands, this lexicon is currently in an early draft or “alpha” state. It includes most of the words from the
-major vocabulary lists of Tolkien’s languages: <i><a href="content/references/ref-Ety.html">The Etymologies</a></i>,
+<p>As it stands, this lexicon is currently in a draft or “beta” state. It includes nearly all of Tolkien’s published
+Elvish words most of the words, including the major vocabulary lists of Tolkien’s languages:
+<i><a href="content/references/ref-Ety.html">The Etymologies</a></i>,
 the <i><a href="content/references/ref-GL.html">Gnomish</a></i> and <i><a href="content/references/ref-QL.html">Qenya
 Lexicons</a></i>, <a href="content/references/ref-PE17.html">“Words, Phrases and Passages from <i>The Lord of the
 Rings</i>”</a> (PE17) as well as <i><a href="content/references/ref-LotR.html">The Lord of the Rings</a></i> itself.
-However, there is a great deal of published material not yet included in the data model, and the material within the
-lexicon has only undergone minimal review for errors. As such, I have barely begun the work of analyzing and comparing
-the various word forms, and any conclusions in the current version of the lexicon must be considered preliminary.</p>
+However, I have barely begun the work of analyzing and comparing the various word forms, and any conclusions in the
+current version of the lexicon must be considered preliminary.</p>
 <hr/>
 <p><b>Primary Content</b></p>
 <% } %>

@@ -599,11 +599,10 @@ if ($gloss-refs) then (
     for $gloss in $glosses
     let $refs := for $i in $gloss-refs[lower-case(@gloss)=$gloss] order by translate($i/@mark, '-', '→') return $i
     let $value := $word/@v/string()
-    let $gloss-css := c:derive-css($refs[1])
     order by $gloss
     return
         <li>
-           { if ($gloss-css) then <span class="{$gloss-css}">{c:print-gloss($refs[1])}</span> else c:print-gloss($refs[1])}
+           {c:print-gloss-no-space($refs[1])}
            {local:print-ref-set($refs, <ref-set v="{$value}"/>)}
         </li>
     } </ul>

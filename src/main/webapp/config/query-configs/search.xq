@@ -70,6 +70,7 @@ declare function local:lang-order($lang as xs:string) as xs:string {
         <option value="anywhere">Match anywhere</option>
         <option value="start">Match start</option>
         <option value="end">Match end</option>
+        <option value="interior">Match interior</option>
     </select> &#160;|&#160;
     <select id="partsOfSpeechSelect" onchange="doSearch()">
         <option value="">Parts of Speech</option>
