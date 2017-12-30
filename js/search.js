@@ -255,6 +255,8 @@ function isMatch(word, searchText, target, position, partsOfSpeech) {
 		matcher = startMatch;
 	} else if (position == 'end') {
 		matcher = endMatch;
+	} else if (position == 'interior') {
+		matcher = interiorMatch;
 	}
 	if (matcher(word.match, searchText) && target.indexOf('word') >= 0) {
 		return true;
@@ -276,6 +278,10 @@ function startMatch(text, searchText) {
 function endMatch(text, searchText) {
 	if (searchText.length > text.length) return false;
 	return text.lastIndexOf(searchText) == (text.length - searchText.length);
+}
+
+function interiorMatch(text, searchText) {
+	return containsMatch(text, searchText) && !startMatch(text, searchText) && !endMatch(text, searchText);
 }
 
 function maxPos() {
