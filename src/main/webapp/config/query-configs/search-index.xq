@@ -5,6 +5,10 @@ declare function local:lang-order($lang as xs:string) as xs:string {
        '0'
     ) else if ($lang = 's') then (
        '1'
+    ) else if ($lang = 'nq') then (
+       '12'
+    ) else if ($lang = 'ns') then (
+       '13'
     ) else if ($lang = 'mq') then (
        '2'
     ) else if ($lang = 'n') then (
@@ -17,6 +21,8 @@ declare function local:lang-order($lang as xs:string) as xs:string {
        '6'
     ) else if ($lang = 'p') then (
        '7'
+    ) else if ($lang = 'np') then (
+       '71'
     ) else if ($lang = 'mp') then (
        '8'
     ) else if ($lang = 'ep') then (

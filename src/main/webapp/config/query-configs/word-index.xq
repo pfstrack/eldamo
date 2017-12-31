@@ -4,8 +4,6 @@ declare variable $id external;
 declare variable $pubmode external;
 declare variable $lang := /*//language[@id=$id];
 declare variable $lang-name := $lang/@name/string();
-declare variable $primary-word := <control style="bold" show-link="y"/>;
-declare variable $secondary-word := <control show-link="y"/>;
 
 <html>
 <head>
@@ -32,7 +30,18 @@ declare variable $secondary-word := <control show-link="y"/>;
 <h1>{$lang-name} Words</h1>
 {xdb:html($lang/words/string())}
 <hr/> { 
-let $words := xdb:key(/*, 'language', $id)
+let $words :=
+    if ($id = 'nq') then 
+        (xdb:key(/*, 'language', 'nq') | xdb:key(/*, 'language', 'q') | xdb:key(/*, 'language', 'mq') | xdb:key(/*, 'language', 'eq'))
+        [not(parent::word) or (see and not(parent::word/parent::word))]
+        [not(contains(@mark, '-'))][not(contains(@mark, '|'))]
+    else if ($id = 'ns') then (xdb:key(/*, 'language', 'ns') | xdb:key(/*, 'language', 's') | xdb:key(/*, 'language', 'n') | xdb:key(/*, 'language', 'en') | xdb:key(/*, 'language', 'g'))
+        [not(parent::word) or (see and not(parent::word/parent::word))]
+        [not(contains(@mark, '-'))][not(contains(@mark, '|'))]
+    else if ($id = 'np') then (xdb:key(/*, 'language', 'np') | xdb:key(/*, 'language', 'p') | xdb:key(/*, 'language', 'mp') | xdb:key(/*, 'language', 'ep'))
+        [not(parent::word) or (see and not(parent::word/parent::word))]
+        [not(contains(@mark, '-'))][not(contains(@mark, '|'))]
+    else xdb:key(/*, 'language', $id)
 let $word-list := $words
         [not(ends-with(c:get-speech(.), '-name'))]
         [not(c:get-speech(.)='text')]
@@ -44,14 +53,19 @@ return (
 <dl> {
 for $word in $word-list
 let $alt-lang := c:alt-lang($word)
-order by c:normalize-for-sort($word/@v)
+let $neo-lang := if ($id = 'nq' or $id = 'ns' or $id = 'np') then true() else false()
+let $normalize := if ($id = 'nq' or $id = 'ns') then true() else false()
+order by if ($neo-lang) then c:normalize-for-sort(c:normalize-spelling($word/@v/string()))
+    else c:normalize-for-sort($word/@v)
 return (
     <dt>
+        { if ($neo-lang) then c:print-lang($word) else () }
         { if ($alt-lang) then concat('[', $alt-lang, if (c:is-primitive($word)) then ']' else '] ') else () }
-        { if ($word/see) then c:print-word($word, <control style="bold"/>) else c:print-word($word, $primary-word) }
+        { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)
+          else c:print-word($word, <control style="bold" show-link="y" normalize="{$normalize}"/>) }
         { if ($word/@stem) then <span> (<b>{$word/@stem/string()}</b>)</span> else () }
         { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
-        { if (($word/@l = 's' or $word/@l = 'q') and
+        { if (($id = 'ns' or $id = 'q') and
              not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
              not($word/@l='q' and starts-with($word/@v, '-d'))
             )
@@ -68,8 +82,8 @@ return (
         { c:print-speech($word) }
         { c:print-gloss($word) }
         { if ($word/see) then (' see ', c:print-word(c:get-word($word/see),
-            <control show-link="y"> {
-              if (c:get-lang($word) != $word/see/@l) then attribute show-lang {'y'} else ()
+            <control show-link="y" normalize="{$normalize}"> {
+              if ($neo-lang or c:get-lang($word) != $word/see/@l) then attribute show-lang {'y'} else ()
             } </control>
         ))  else () } 
     </dt>
@@ -82,7 +96,7 @@ if (not($unglossed)) then () else (
 <dl> {
 for $word in $unglossed
 order by c:normalize-for-sort($word/@v)
-return <dt>{c:print-word($word, $primary-word) }</dt>
+return <dt>{c:print-word($word, <control style="bold" show-link="y"/>) }</dt>
 } </dl>
 ) ) 
 ) ) }

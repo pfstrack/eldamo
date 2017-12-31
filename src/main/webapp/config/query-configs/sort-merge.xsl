@@ -127,6 +127,7 @@
             <xsl:when test="$word='n'">s</xsl:when>
             <xsl:when test="$word='ln'">s</xsl:when>
             <xsl:when test="$word='ns'">s</xsl:when>
+            <xsl:when test="$word='norths'">s</xsl:when>
             <xsl:when test="$word='ilk'">ilk</xsl:when>
             <xsl:when test="$word='dor'">ilk</xsl:when>
             <xsl:when test="$word='fal'">ilk</xsl:when>
@@ -142,8 +143,10 @@
             <xsl:when test="$word='aq'">q</xsl:when>
             <xsl:when test="$word='mq'">q</xsl:when>
             <xsl:when test="$word='eq'">q</xsl:when>
+            <xsl:when test="$word='nq'">q</xsl:when>
             <xsl:when test="$word='mp'">p</xsl:when>
             <xsl:when test="$word='ep'">p</xsl:when>
+            <xsl:when test="$word='np'">p</xsl:when>
             <xsl:when test="$word='pad'">ad</xsl:when>
             <xsl:when test="$word='?'">zzz</xsl:when>
             <xsl:otherwise><xsl:value-of select="$word"/></xsl:otherwise>

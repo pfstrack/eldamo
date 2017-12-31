@@ -87,7 +87,7 @@ declare function local:show-word2(
 
     (: show the lang :)
     let $lang := local:get-lang($ref) return 
-    if ($show-lang and not($lang='p' or $lang='mp' or $lang='ep')) then
+    if ($show-lang and not($lang='p' or $lang='mp' or $lang='ep' or $lang='np')) then
         if ($lang='on') then text {'ON. '}
         else if ($lang='ln') then text {'ᴸN. '}
         else if ($lang='lon') then text {'ᴸON. '}
@@ -97,13 +97,15 @@ declare function local:show-word2(
         else if ($lang='eilk') then text {'ᴱIlk. '}
         else if ($lang='eq') then text {'ᴱQ. '}
         else if ($lang='mq') then text {'ᴹQ. '}
+        else if ($lang='nq') then text {'ᴺQ. '}
         else if ($lang='et') then text {'ᴱT. '}
         else if ($lang='mt') then text {'ᴹT. '}
         else if ($lang='aq') then text {'AQ. '}
         else if ($lang='at') then text {'AT. '}
         else if ($lang='os') then text {'OS. '}
         else if ($lang='edan') then text {'ED. '}
-        else if ($lang='ns') then text {'NS. '}
+        else if ($lang='norths') then text {'North S. '}
+        else if ($lang='ns') then text {'ᴺS. '}
         else if ($lang='bs') then text {'BS. '}
         else if ($lang='pad') then text {'✶Ad. '}
         else text {concat(upper-case(substring($lang, 1, 1)), substring($lang, 2), '. ')}
@@ -123,9 +125,10 @@ declare function local:show-word2(
     let $speech := $ref/ancestor::*[@speech][1]/@speech
     let $lang := local:get-lang($ref) return (
         if ($lang='mp') then (text {'ᴹ'})
-        else if ($lang='ep') then (text {'ᴱ'}) else (),
+        else if ($lang='ep') then (text {'ᴱ'}) else ()
+        else if ($lang='np') then (text {'ᴺ'}) else (),
         if ($speech='root') then (text {'√'}, $start, <i>{$word-text}</i>, $end)
-        else if ($lang='p' or $lang='mp' or $lang='ep') then (text {'✶'}, $start, <i>{$word-text}</i>, $end)
+        else if ($lang='p' or $lang='mp' or $lang='ep' or $lang='np') then (text {'✶'}, $start, <i>{$word-text}</i>, $end)
         else if ($speech='phrase' or $speech='text') then ($start, <b><i>{$word-text}</i></b>, $end)
         else ($start, <i>{$word-text}</i>, $end)
     ),
@@ -195,7 +198,7 @@ return
     <a name="{$ref-source}"></a>,
     text {$ref-source},
     text {' '},
-    <a href="{if ($word) then concat('../words/word-', xdb:hashcode($word), '.html') else 'error.html'}">✧</a>,
+    <a href="{if ($word) then c:to-word-link($word) else 'error.html'}">✧</a>,
     c:print-speech($word),
     text {' '},
     if (not(count($matching-refs)=1)) then '[ERROR:DUP-REF] ' else (),

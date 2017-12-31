@@ -55,6 +55,18 @@ public class UriTemplateParserTest extends TestCase {
         assertEquals("fr", result.get("locale")[0]);
     }
 
+    public void testMultiParameters() {
+        Map<String, String[]> emptyMap = Collections.emptyMap();
+        String template = "word-{l}-{v}.{content-type}";
+        UriTemplateParser instance = new UriTemplateParser(template, emptyMap);
+
+        HttpServletRequest request = new MockRequest("/word-s-raen-pain.html", emptyMap);
+        Map<String, String[]> result = instance.deriveParameters(request);
+        assertEquals("s", result.get("l")[0]);
+        assertEquals("raen-pain", result.get("v")[0]);
+        assertEquals("html", result.get("content-type")[0]);
+    }
+
     private static Document parse(String xml) throws Exception {
         StringReader reader = new StringReader(xml);
         InputSource is = new InputSource(reader);

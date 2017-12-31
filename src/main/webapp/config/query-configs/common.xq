@@ -77,7 +77,7 @@ declare function c:get-langs($ref as element()*) as xs:string* {
 
 declare function c:is-primitive($ref as element()*) as xs:boolean {
     let $lang := c:get-lang($ref) return
-    $lang = ('p', 'mp', 'ep')
+    $lang = ('p', 'mp', 'ep', 'np')
 };
 
 declare function c:is-root($ref as element()*) as xs:boolean {
@@ -96,10 +96,16 @@ declare function c:convert-lang($lang as xs:string?) as xs:string {
         then 'ᴹ✶'
     else if ($lang='ep')
         then 'ᴱ✶'
+    else if ($lang='np')
+        then 'ᴺ✶'
     else if ($lang='mq')
         then 'ᴹQ. '
+    else if ($lang='nq')
+        then 'ᴺQ. '
     else if ($lang='mt')
         then 'ᴹT. '
+    else if ($lang='ns')
+        then 'ᴺS. '
     else if ($lang='ln')
         then 'ᴸN. '
     else if ($lang='lon')
@@ -275,13 +281,14 @@ declare function c:print-link-to-word($ref as element(), $text) as element() {
     if (starts-with($ref/@v, 'ø')) then <span>{$text}</span> else
     if ($ref/@v='?' or $ref/@rule='?') then <span> ? </span> else
     if (not($word)) then <span> !!! </span> else
-    <a title="{c:print-lang($word)}({string($word/@order)}) {string($word/@v)}" href="{concat('../words/word-', xdb:hashcode($word), '.html')}">{$text}</a>
+    <a title="{c:print-lang($word)}({string($word/@order)}) {string($word/@v)}" href="{c:to-word-link($word)}">{$text}</a>
 };
 
 declare function c:print-word($word as element()?, $control as element()?) as node()* {
     let $show-lang := $control/@show-lang
     let $show-link := $control/@show-link
     let $hide-mark := $control/@hide-mark
+    let $normalize := $control/@normalize
     let $style := $control/@style
     let $has-brackets := c:has-brackets($word)
     return
@@ -294,12 +301,14 @@ declare function c:print-word($word as element()?, $control as element()?) as no
         if (not($show-link)) then
             ()
         else if ($show-link = 'parent') then
-            concat('../words/word-', xdb:hashcode($word/ancestor-or-self::word[1]), '.html')
+            c:to-word-link($word/ancestor-or-self::word[1])
         else if (name($word) = 'ref') then 
             concat('../references/ref-', substring-before($word/@source, '/'), '.html#', $word/@source)
         else
-            concat('../words/word-', xdb:hashcode($word), '.html')
-    let $value := $word/@v/string()
+            c:to-word-link($word)
+    let $value := if ($normalize = 'true')
+        then c:normalize-spelling($word/@v/string())
+        else $word/@v/string()
     return (
         if (not($hide-mark) and c:is-primitive($word)) then text {$word/translate(@mark, '-|', '')} else (),
         if ($show-lang) then text {c:print-lang($word)} else (),
@@ -309,6 +318,20 @@ declare function c:print-word($word as element()?, $control as element()?) as no
             else $value
         }</span>
     )
+};
+
+declare function c:normalize-spelling($value) as xs:string {
+    replace(replace(translate($value, 'këä', 'cea'), 'q', 'qu'), 'quu', 'qu')
+};
+
+declare function c:to-word-link($word) as xs:string {
+    concat('../words/word-', xdb:hashcode($word), '.html')
+    (: concat('../entries/entry-', c:get-lang($word), '-', translate($word/@v, ' ', '_'), '.html') :)
+};
+
+declare function c:word-lookup($root as element()?, $l, $v) as element()* {
+    let $generic-words := $root/xdb:key($root, 'word', $v)
+    return $generic-words[c:get-lang(.) = $l]
 };
 
 declare function c:get-word($ref as element()?) as element()* {

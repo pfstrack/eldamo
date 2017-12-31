@@ -218,7 +218,7 @@ declare function local:print-inflections($ref as element()?, $inflections as xs:
     let $inflect-word := xdb:key($word, 'inflect-table', $inflection)
         [not(@speech) or @speech=c:get-speech($word)]/
         ..[c:get-lang(.) = c:get-lang($word)]
-    let $link := if ($inflect-word) then concat('../words/word-', xdb:hashcode($inflect-word), '.html') else () 
+    let $link := if ($inflect-word) then c:to-word-link($inflect-word) else () 
     return
     if ($inflect-word)
     then (<a href="{$link}">{$inflection}</a>, if ($pos = count($inflect-list)) then () else text {' '})
@@ -373,8 +373,8 @@ let $following-word := $match-in-word-set/following-sibling::*[1]
 let $parent := $words[1]/ancestor::word[not(see)][1]
 return (
     if (not($parent)) then '' else (' [↑', c:print-word($parent, <print-word show-lang="y" show-link="y"/>), ']'),
-    if ($preceding-word) then (' [', <a href="{concat('../words/word-', xdb:hashcode($preceding-word), '.html')}">&lt; Previous</a>, ']') else (),
-    if ($following-word) then (' [', <a href="{concat('../words/word-', xdb:hashcode($following-word), '.html')}">Next &gt;</a>, ']') else (),
+    if ($preceding-word) then (' [', <a href="{c:to-word-link($preceding-word)}">&lt; Previous</a>, ']') else (),
+    if ($following-word) then (' [', <a href="{c:to-word-link($following-word)}">Next &gt;</a>, ']') else (),
     ('[', <a href="../search/search.html">Search</a>, ']')
 ) } </td>
 </tr>

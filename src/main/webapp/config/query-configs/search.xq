@@ -5,6 +5,10 @@ declare function local:lang-order($lang as xs:string) as xs:string {
        '0'
     ) else if ($lang = 's') then (
        '1'
+    ) else if ($lang = 'nq') then (
+       '12'
+    ) else if ($lang = 'ns') then (
+       '13'
     ) else if ($lang = 'mq') then (
        '2'
     ) else if ($lang = 'n') then (
@@ -17,6 +21,8 @@ declare function local:lang-order($lang as xs:string) as xs:string {
        '6'
     ) else if ($lang = 'p') then (
        '7'
+    ) else if ($lang = 'np') then (
+       '71'
     ) else if ($lang = 'mp') then (
        '8'
     ) else if ($lang = 'ep') then (
@@ -44,13 +50,14 @@ declare function local:lang-order($lang as xs:string) as xs:string {
     &#160;<select id="langSelect" onchange="doSearch()">
         <option value="">All Languages</option>
         <option value="" disabled="disabled">─────────────</option>
-        <option value="eq|mq|q">All Quenya</option>
-        <option value="g|n|en|s">Sindarin/Noldorin/Gnomish</option>
-        <option value="p|mp|ep">All Primitive Elvish</option>
+        <option value="eq|mq|q|nq">All Quenya</option>
+        <option value="g|n|en|s|ns">Sindarin/Noldorin/Gnomish</option>
+        <option value="p|mp|ep|np">All Primitive Elvish</option>
         <option value="" disabled="disabled">─────────────</option>
         <option value="q|s|p">All Late Elvish</option>
         <option value="mq|n|mp">All Middle Elvish</option>
         <option value="eq|en|g|ep">All Early Elvish</option>
+        <option value="nq|ns|np">All Neo-Elvish</option>
         <option value="" disabled="disabled">─────────────</option> {
             for $lang in //language[@id]
             order by local:lang-order($lang/@id)
