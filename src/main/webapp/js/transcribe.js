@@ -6,7 +6,8 @@ var sindarinTranscriber = Glaemscribe.resource_manager.loaded_modes["sindarin-be
 var eldamarCharset = Glaemscribe.resource_manager.loaded_charsets["tengwar_ds_eldamar"]
 
 function doTranscribe(lang, value) {
-	var transcriber = (lang == 'q') ? quenyaTranscriber : (lang == 's') ? sindarinTranscriber : null;
+	var transcriber = (lang == 'q' || lang == 'mq' || lang == 'eq' || lang == 'nq') ? quenyaTranscriber 
+			: (lang == 's' || lang == 'n' || lang == 'en' || lang == 'g' || lang == 'ns') ? sindarinTranscriber : null;
 	if (transcriber == null) return null;
 
 	// Transcription pre-processing to fix extraneous characters

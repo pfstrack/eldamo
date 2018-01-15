@@ -425,6 +425,7 @@ return (
     {if ($word/see)
         then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y"/>))
         else ()}
+    {if ($pubmode and $word/@combine) then ' [combine^^]' else ()}
 </p>,
 
 let $texts-in := xdb:key($word, 'element-in', $word/@v)[@speech='text'][@l=$word/@l]
@@ -614,7 +615,9 @@ let $variation-refs := $base-variation-refs[not(local:is-match(@v, $word/@v))]
 let $non-variation-refs := $base-variation-refs[local:is-match(@v, $word/@v)]
 return
 if ($variation-refs or $non-variation-refs[@l] or ($base-variation-refs and $valid-refs[inflect])) then (
-<p><u>Variations</u></p>,
+<p><u>Variations</u> {if ($pubmode and $word/word/see)
+then concat(' [also ', string-join($word/word[see]/@v, ', '), ']')
+else ()}</p>,
 <ul> { (
     if (not($non-variation-refs)) then () else
     for $value in distinct-values($non-variation-refs/@v/c:normalize-for-match(.))

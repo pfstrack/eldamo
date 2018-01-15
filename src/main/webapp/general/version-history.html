@@ -12,10 +12,12 @@
 <h1>Version History</h1>
 <p>v0.6.1</p>
 <ul>
+<li>See below: <a href="#v0.6.1">Breaking Changes in v0.6.1</a>.</li>
 <li>Cleanup usage of word reliability markers.</li>
 <li>Introduced Neo-Quenya (ᴺQ), Neo-Sindarin (ᴺS), and Neo-Primitive (ᴺ✶) languages.</li>
-<li>Changed North Sindarin code/abbreviation from "ns/NS" to "norths/North S." to better distinguish it from Neo-Sindarin.</li>
-<li>TBD: Created alternate "neo" navigation for walking through Neo-languages.</li>
+<li>Changed North Sindarin code/abbreviation from “ns/NS.” to “norths/North S.” to better distinguish it from Neo-Sindarin.</li>
+<li>Reorganized Quenya and Sindarin entries to fit new “Neo” language structures.</li>
+<li>TBD: Created alternate “neo” navigation for walking through Neo-languages.</li>
 <li>TBD: Began Quenya phonetic analysis.</li>
 </ul>
 <p>v0.6.0 (December 29, 2017)</p>
@@ -189,5 +191,38 @@
 <li>A comprehensive description of the Adûnaic language, as a proof of concept.</li>
 <li>Partial analysis of Noldorin and Ilkorin phonetic histories, as a proof of concept.</li>
 </ul>
+<h2><a name="v0.6.1"></a>Breaking Changes in v0.6.1</h2>
+<p>As of v0.6.1, the Eldamo data model is going through a major reorganization. Eldamo has always had two missions: (1)
+describing what Tolkien wrote about his languages and (2) suggesting which words might be used for new Elvish writing.
+With this release, the data is being reorganized to better reflect this dual mission.</p>
+<p>In particular, prior to v0.6.1, Eldamo had many empty “Sindarin” and “Quenya” entries (with no page references) that
+were simply placeholders that indicated which Noldorin and (Middle) Qenya words from the 1930s and 1940s might be
+reasonably used in Neo-Sindarin and Neo-Quenya composition. Most of these entries have been removed, leaving only the
+corresponding Noldorin and Middle Quenya entries. The Sindarin and Quenya languages are now reserved almost exclusively
+for words that Tolkien himself used for those languages in his later writings (1950s and beyond).</p>
+<p>In some cases, previous “Sindarin” and (more rarely) “Quenya” entries were reformation of earlier words to fit the
+phonetic and conceptual structures of Tolkien’s later languages from the 1950s and beyond. These reformations are
+indicated by the “^” marker. Such reformations have been correctly recategorized as Neo-Sindarin (l="ns" or ᴺS.) and
+Neo-Quenya (l="nq" or ᴺQ.). Over time I intend to start including more neologism, reformations or otherwise, with these
+ᴺS. and ᴺQ. designations.</p>
+<p>The Neo-Quenya and Neo-Sindarin language lists now serve as a suggested list of words to use in new Elvish
+composition. The Neo-Quenya list includes all published Quenya words created by Tolkien from the 1910s to the 1970s,
+including “Early Qenya”. Similarly, the Neo-Sindarin list also includes Noldorin and Gnomish words. Words are clearly
+labeled by language (S., N., G.; Q., ᴹQ., ᴱQ.) so that authors can exclude earlier words if they wish.</p>
+<p>Words that remained essentially the same across multiple periods are collapsed into a single entry in the lists. For
+example, the Quenya word <i>aha</i> appeared in both the 1940s and 1950s, and is listed as: Q., ᴹQ. <b>aha</b> “rage”.
+Similarly, the Sindarin word <i>adar</i> appears as: S., N. <b>adar</b> “father”. In the data model, these combinations
+are indicated by the @combine attribute in child &lt;word&gt; elements. Where a specific gloss appeared only in an older version
+of the language, this is also indicated, as in: Q., ᴹQ. <b>mól</b> “slave, [ᴹQ.] thrall”.</p>
+<p>The Neo-Quenya and Neo-Sindarin word lists use the ⚠️  symbol to indicate that some words are not recommended for
+new Elvish compositions, with alternate suggestions if they are available. In the data model, these recommendations
+are indicated by the &lt;deprecated&gt; element. These “unrecommended words” are only my opinion, and can be ignored if
+desired. The ⚠️ symbol also appears in glosses for recommendation against using words with certain meanings.</p>
+<p>People using Eldamo data to populate their own dictionaries will need to make some decisions on how to incorporate
+these changes. If you want to ignore my deprecation suggestions, simply ignore the &lt;deprecated&gt; element and strip
+out the ⚠️ symbol from glosses (Unicode Emoji U+26A0 U+FE0F, or XML encoding &amp;#9888;&amp;#65039;). You may also want to pre-process the glosses to strip out older
+meanings. You may need to make decisions about whether you want to treat Noldorin words as Sindarin, and Middle Qenya
+words as Quenya. I can’t tell you exactly how you should use the data, but am happy to make suggestions, and perhaps
+makes some enhancements to the data model to simplify common use-cases.</p>
 </body>
 </html>

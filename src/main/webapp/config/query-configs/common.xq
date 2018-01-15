@@ -149,6 +149,24 @@ declare function c:print-lang($ref as element()?) as xs:string {
     return if ($speech = 'root') then translate($converted, '✶', '√') else $converted
 };
 
+declare function c:print-lang2($ref as element()?) as xs:string {
+    translate(c:print-lang($ref), ' ', '')
+};
+
+declare function c:lang-words($root as element(), $id) as element()* {
+    if ($id = 'nq') then
+        (xdb:key($root, 'language', 'nq') | xdb:key($root, 'language', 'q') | xdb:key($root, 'language', 'mq') | xdb:key($root, 'language', 'eq'))
+        [not(@combine)]
+        (: [starts-with(c:normalize-spelling(lower-case(c:normalize-for-sort(@v))), 'a')] :)
+    else if ($id = 'ns') then
+        (xdb:key($root, 'language', 'ns') | xdb:key($root, 'language', 's') | xdb:key($root, 'language', 'n') | xdb:key($root, 'language', 'en') | xdb:key($root, 'language', 'g'))
+        [not(@combine)]
+    else if ($id = 'np') then 
+        (xdb:key($root, 'language', 'np') | xdb:key($root, 'language', 'p') | xdb:key($root, 'language', 'mp') | xdb:key($root, 'language', 'ep'))
+        [not(@combine)]
+    else xdb:key($root, 'language', $id)
+};
+
 (: source :)
 
 declare function c:print-source($ref as element()?) as xs:string {
@@ -287,6 +305,7 @@ declare function c:print-link-to-word($ref as element(), $text) as element() {
 declare function c:print-word($word as element()?, $control as element()?) as node()* {
     let $show-lang := $control/@show-lang
     let $show-link := $control/@show-link
+    let $show-gloss := $control/@show-gloss
     let $hide-mark := $control/@hide-mark
     let $normalize := $control/@normalize
     let $style := $control/@style
@@ -313,15 +332,19 @@ declare function c:print-word($word as element()?, $control as element()?) as no
         if (not($hide-mark) and c:is-primitive($word)) then text {$word/translate(@mark, '-|', '')} else (),
         if ($show-lang) then text {c:print-lang($word)} else (),
         if (not($hide-mark) and not(c:is-primitive($word))) then text {$word/translate(@mark, '-|', '')} else (),
-        <span class="{$css}">{
-            if ($link) then <a href="{$link}">{$value}</a>
-            else $value
-        }</span>
+        (
+            <span class="{$css}">{
+                if ($link) then <a href="{$link}">{$value}</a>
+                else $value
+            }</span>,
+            if ($show-gloss) then c:print-gloss($word) else ()
+        )
     )
 };
 
 declare function c:normalize-spelling($value) as xs:string {
-    replace(replace(translate($value, 'këä', 'cea'), 'q', 'qu'), 'quu', 'qu')
+    let $v1 := translate(replace(replace(replace($value, 'q', 'qu'), 'quu', 'qu'), 'ks', 'x'), 'këä', 'cea')
+    return $v1
 };
 
 declare function c:to-word-link($word) as xs:string {

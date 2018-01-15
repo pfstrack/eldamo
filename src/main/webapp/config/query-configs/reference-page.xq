@@ -125,7 +125,7 @@ declare function local:show-word2(
     let $speech := $ref/ancestor::*[@speech][1]/@speech
     let $lang := local:get-lang($ref) return (
         if ($lang='mp') then (text {'ᴹ'})
-        else if ($lang='ep') then (text {'ᴱ'}) else ()
+        else if ($lang='ep') then (text {'ᴱ'})
         else if ($lang='np') then (text {'ᴺ'}) else (),
         if ($speech='root') then (text {'√'}, $start, <i>{$word-text}</i>, $end)
         else if ($lang='p' or $lang='mp' or $lang='ep' or $lang='np') then (text {'✶'}, $start, <i>{$word-text}</i>, $end)

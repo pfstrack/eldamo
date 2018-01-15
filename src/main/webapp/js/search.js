@@ -45,7 +45,12 @@ for (var i = 0; i < index.length; i++) {
     word.seeLang = array[8];
     word.match = toMatch(word.value);
     word.matchgloss = toMatch(word.gloss);
+    word.normalized = (word.lang == 'mq' && !(word.speech.indexOf('name') >= 0)) ? word.normalized = normalizeSpelling(word.match) : '';
     words.push(word);
+}
+
+function normalizeSpelling(value) {
+	return value.replace('k', 'c').replace('q', 'qu').replace('quu', 'qu').replace('ks', 'x');
 }
 
 function doReplace(charReplace1, charReplace2, value) {
@@ -78,10 +83,18 @@ function convertLang(lang, speech) {
         converted = 'ᴹ✶';
     else if (lang === 'ep')
         converted = 'ᴱ✶';
+    else if (lang === 'np')
+        converted = 'ᴺ✶';
     else if (lang === 'mq')
         converted = 'ᴹQ. ';
+    else if (lang === 'nq')
+        converted = 'ᴺQ. ';
     else if (lang === 'mt')
         converted = 'ᴹT. ';
+    else if (lang === 'ns')
+        converted = 'ᴺS. ';
+    else if (lang === 'norths')
+        converted = 'North S. ';
     else if (lang === 'ln')
         converted = 'ᴸN. ';
     else if (lang === 'en')
@@ -218,9 +231,13 @@ function doSearch() {
         if (!word.see) {
             html += '<a href="../words/word-' + word.key + '.html">';
         }
-        html += '<span style="font-weight: bold" class="' + markclass + '">' + word.value + '</span></a>';
+        var value = word.value;
+        html += '<span style="font-weight: bold" class="' + markclass + '">' + value + '</span></a>';
         if (!word.see) {
             html += '</a>';
+        }
+        if ((word.lang == 'mq') && (normalizeSpelling(value) != value)) {
+            html += ' [Q. <b>' + normalizeSpelling(value) + '</b>] ';
         }
         html += ' <i>' + convertSpeech(word.speech) + '</i> ';
         if (word.gloss) {
@@ -258,7 +275,7 @@ function isMatch(word, searchText, target, position, partsOfSpeech) {
 	} else if (position == 'interior') {
 		matcher = interiorMatch;
 	}
-	if (matcher(word.match, searchText) && target.indexOf('word') >= 0) {
+	if ((matcher(word.match, searchText) || matcher(word.normalized, searchText)) && target.indexOf('word') >= 0) {
 		return true;
 	}
 	if (matcher(word.matchgloss, searchText) && target.indexOf('gloss') >= 0) {

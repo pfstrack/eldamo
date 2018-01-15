@@ -34,8 +34,9 @@ declare function local:has-lang($lang as xs:string?) as xs:boolean {
 <h1>Language Index</h1>
 <p>Here is a list of the languages included in this lexicon, broken down by time period (Early, Middle and Late). Within
 each period, languages are arranged hierarchically by descent: child languages that were derived from more ancient
-languages. The “Combined Languages” assemble words from various periods, including fan creations (neologisms), for lists
-of words that might be useful in new Elvish writing. Use these collections of “Neo-Elvish” words with caution, however,
+languages.</p>
+<p>The “Combined” or “Neo” languages assemble words from various periods, including fan creations (neologisms). These
+are lists of words that might be useful for new Elvish writing. Be cautious using these collections of words, however,
 since they mix words from various periods. The source period of each word is indicated by its language marker, and there
 are various other “<a href="../../general/terminology-and-notations.html#reliability-markers">reliability markers</a>”
 that can be used a guide for the level of quality of a word.</p>
