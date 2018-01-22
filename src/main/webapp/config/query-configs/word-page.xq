@@ -310,7 +310,8 @@ li ul li {{list-style-type:none}}
 </style>
 </head>
 <body>
-<table class="nav-table">
+
+<table id="nav-table" class="nav-table">
 <tr>
 <td>
     [<a href="../../index.html">Home</a>] »
@@ -380,6 +381,81 @@ return (
 </tr>
 </table>
 {
+let $neo-lang := //language[@id=c:get-neo-lang($words[1])]
+let $l := $neo-lang/@id/string()
+let $lang := $neo-lang/@name/string()
+return
+if (not($neo-lang)) then () else (
+<table id="neo-nav-table" class="neo-nav-table">
+<tr>
+<td>
+    [<a href="../../index.html">Home</a>] »
+    [<a href="../languages/index.html">Languages</a>] »
+    [<a href="../language-pages/lang-{$neo-lang/@id/string()}.html">{$lang}</a>] »
+[{
+if (ends-with(c:get-speech($words[1]), '-name')) then    
+    <a href="../name-indexes/names-{$l}.html">{$lang} Names</a>
+else if (c:get-speech($words[1]) = 'phrase' or c:get-speech($words[1]) = 'text') then    
+    <a href="../phrase-indexes/phrases-{$l}.html">{$lang} Phrases</a>
+else if (c:get-speech($words[1]) = 'grammar') then    
+    <a href="../grammar-indexes/grammars-{$l}.html">{$lang} Grammar</a>
+else if (c:get-speech($words[1]) = 'root') then    
+    <a href="../root-indexes/roots-{$l}.html">{$lang} Roots</a>
+else if (starts-with(c:get-speech($words[1]), 'phone')) then    
+    <a href="../phonetic-indexes/phonetics-{$l}.html">{$lang} Phonetics</a>
+else
+    <a href="../word-indexes/words-{$l}.html">{$lang} Words</a>
+}]
+</td>
+<td align="right"> {
+let $lang := $l
+let $base-word := if ($words[1]/combine) then c:get-word($words[1]/combine) else $words[1]
+let $base-word-speech := c:get-speech($base-word)
+let $base-word-set := c:lang-words(/*, $lang)
+let $word-set := 
+    if (ends-with($base-word-speech, '-name')) then    
+        $base-word-set[ends-with(c:get-speech(.), '-name')]
+    else if ($base-word-speech = 'phrase' or $base-word-speech = 'text') then    
+        $base-word-set[c:get-speech(.)='phrase' or c:get-speech(.)='text']
+    else if ($base-word-speech = 'grammar') then    
+        $base-word-set[c:get-speech(.)='grammar']
+    else if ($base-word-speech = 'phonetic-group') then    
+        $base-word-set[c:get-speech(.)='phonetic-group']
+    else if ($base-word-speech = 'phonetic-rule') then    
+        $base-word-set[c:get-speech(.)='phonetic-rule']
+    else if ($base-word-speech = 'phoneme') then    
+        $base-word-set[c:get-speech(.)='phoneme']
+    else if ($base-word-speech = 'root') then    
+        $base-word-set[c:get-speech(.)='root']
+    else
+        $base-word-set
+            [not(ends-with(c:get-speech(.), '-name'))]
+            [not(c:get-speech(.)='phrase' or c:get-speech(.)='text')]
+            [not(starts-with(c:get-speech(.), 'phone'))]
+            [not(c:get-speech(.)='grammar')]
+            [not(c:get-speech(.)='root')]
+let $sorted-word-set :=
+    <group> {
+        for $item in $word-set
+        order by $item/@order, c:normalize-for-sort($item/@v)
+        return
+        <word l="{c:get-lang($item)}" v="{$item/@v}"> {
+            if (xdb:hashcode($item) = xdb:hashcode($base-word)) then 'match' else ()
+        } </word>
+    } </group>
+let $match-in-word-set := $sorted-word-set/*[text()='match'][1]
+let $preceding-word := $match-in-word-set/preceding-sibling::*[1]
+let $following-word := $match-in-word-set/following-sibling::*[1]
+return (
+    if ($preceding-word) then (' [', <a href="{c:to-word-link($preceding-word)}">&lt; Previous</a>, ']') else (),
+    if ($following-word) then (' [', <a href="{c:to-word-link($following-word)}">Next &gt;</a>, ']') else (),
+    ('[', <a href="../search/search.html">Search</a>, ']')
+) } </td>
+</tr>
+</table>
+)}
+
+{
 for $word in $words | (if ($words/see) then () else $words//word[not(see)])
 let $valid-refs := $word/ref[c:get-ref(.)]
 let $alt-lang := c:alt-lang($word)
@@ -425,7 +501,7 @@ return (
     {if ($word/see)
         then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y"/>))
         else ()}
-    {if ($pubmode and $word/@combine) then ' [combine^^]' else ()}
+    {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
 </p>,
 
 let $texts-in := xdb:key($word, 'element-in', $word/@v)[@speech='text'][@l=$word/@l]
@@ -615,7 +691,7 @@ let $variation-refs := $base-variation-refs[not(local:is-match(@v, $word/@v))]
 let $non-variation-refs := $base-variation-refs[local:is-match(@v, $word/@v)]
 return
 if ($variation-refs or $non-variation-refs[@l] or ($base-variation-refs and $valid-refs[inflect])) then (
-<p><u>Variations</u> {if ($pubmode and $word/word/see)
+<p><u>Variations</u> {if ($pubmode = 'false' and $word/word/see)
 then concat(' [also ', string-join($word/word[see]/@v, ', '), ']')
 else ()}</p>,
 <ul> { (

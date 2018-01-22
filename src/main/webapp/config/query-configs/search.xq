@@ -43,12 +43,13 @@ declare function local:lang-order($lang as xs:string) as xs:string {
 <script src="search-index.js"></script>
 <script src="../../js/search.js"></script>
 <body onload="initSearch()">
-<p>[<a href="../../index.html">Home</a>]</p>
-<hr />
 <p>
-    <b>Search:</b>&#160;&#160;<input id="searchBox" value="" onkeyup="doSearch()" /> &#160;|
-    &#160;<select id="langSelect" onchange="doSearch()">
+	[<a href="../../index.html">Home</a>] &#160;|&#160;
+    <b>Search:</b>&#160;&#160;<input id="searchBox" value="" onkeyup="doSearch()" /> &#160; <select id="langSelect" onchange="doSearch()">
         <option value="">All Languages</option>
+        <option value="" disabled="disabled">─────────────</option>
+        <option value="mq|q|nq">(Neo) Quenya</option>
+        <option value="n|s|ns">(Neo) Sindarin</option>
         <option value="" disabled="disabled">─────────────</option>
         <option value="eq|mq|q|nq">All Quenya</option>
         <option value="g|n|en|s|ns">Sindarin/Noldorin/Gnomish</option>
@@ -80,7 +81,7 @@ declare function local:lang-order($lang as xs:string) as xs:string {
         <option value="interior">Match interior</option>
     </select> &#160;|&#160;
     <select id="partsOfSpeechSelect" onchange="doSearch()">
-        <option value="">Parts of Speech</option>
+        <option value="">Parts of speech</option>
         <option value="" disabled="disabled">──────</option>
         <option value="no-names">Exclude Names</option>
         <option value="" disabled="disabled">──────</option>
@@ -96,16 +97,8 @@ declare function local:lang-order($lang as xs:string) as xs:string {
         <option value="root">root</option>
     </select>
     </p>
-    <p style="line-height: 0">
-    <button id="firstButton" onclick="goFirst()">&lt;&lt;</button>
-    <button id="backButton" onclick="goBack()">&lt;</button>
-    <span id="matchCount"></span>
-    <button id="forwardButton" onclick="goForward()">&gt;</button>
-    <button id="lastButton" onclick="goLast()">&gt;&gt;</button> &#160;|&#160;
-    <button id="resetButton" onclick="reset()">Reset</button>
-    </p>
 </p>
 <hr />
-<div id="resultDiv"></div>
+<dl id="resultList"></dl>
 </body>
 </html>

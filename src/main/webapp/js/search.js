@@ -130,31 +130,26 @@ function convertLang(lang, speech) {
 }
 
 function convertSpeech(speech) {
-	if (speech === 'masc-name') speech = 'm.';
+	if (speech.indexOf(' ') > 0) {
+		var a = speech.split(' ');
+		var result = convertSpeech(a[0]);
+		for (var i = 1; i < a.length; i++) {
+			result += " and " + convertSpeech(a[i]);
+		}
+		return result;
+	}
+	else if (speech === 'masc-name') speech = 'm.';
 	else if (speech === 'fem-name') speech = 'f.';
 	else if (speech === 'place-name') speech = 'loc.';
 	else if (speech === 'collective-name') speech = 'coll.';
 	else if (speech === 'collective-noun') speech = 'coll.';
 	else if (speech === 'proper-name') speech = 'pn.';
 	else if (speech === 'vb') speech = 'v.';
-	else if (speech === 'adj n') speech = 'adj. and n.';
-	else if (speech === 'n adj') speech = 'n. and adj.';
-	else if (speech === 'n adv') speech = 'n. and adv.';
-	else if (speech === 'adj adv') speech = 'adj. and adv.';
-	else if (speech === 'adv adj') speech = 'adv. and adj.';
-	else if (speech === 'conj adv') speech = 'conj. and adv.';
-	else if (speech === 'adv conj') speech = 'adv. and conj.';
-	else if (speech === 'prep pref') speech = 'prep. and pref.';
-	else if (speech === 'prep adv') speech = 'prep. and adv.';
-	else if (speech === 'adv interj') speech = 'adv. and interj.';
-	else if (speech === 'pron conj') speech = 'pron. and conj.';
 	else speech += '.';
 	return speech;
 };
 
 function initSearchBox() {
-    var matchCount = document.getElementById('matchCount');
-    matchCount.innerHTML = langs.length;
 }
 
 function initSearch() {
@@ -169,11 +164,17 @@ function initSearch() {
     doSearch();
 }
 
+var BUFFER = 50;
 var pos = 0;
 var max = 0;
 
 function doSearch() {
-    var matchCount = document.getElementById('matchCount');
+	searchIt(50);
+}
+
+function searchIt(buffer) {
+	BUFFER = buffer;
+	pos = 0; // Clear buffer
     var searchBox = document.getElementById('searchBox');
     var langSelect = document.getElementById('langSelect');
     var lang = langSelect.options[langSelect.selectedIndex].value;
@@ -189,7 +190,7 @@ function doSearch() {
     if (lang.length > 0) {
     	langs = lang.split('|');
     }
-    var resultDiv = document.getElementById('resultDiv');
+    var resultList = document.getElementById('resultList');
     var searchText = toMatch(searchBox.value);
     var first = [];
     var second = [];
@@ -214,12 +215,22 @@ function doSearch() {
     var result = first.concat(second).concat(third).concat(last);
     max = result.length;
     if (pos > maxPos()) pos = maxPos();
-    var html = '';
     var count = pos;
-    for (; count < result.length && count < pos + 10; count++) {
+    var html = wordsToHtml(result, pos);
+    if (pos + BUFFER < max) {
+    	html += '<dt id="loadingZone">Loading...</dt>';
+    }
+    resultList.innerHTML = html;
+	var loadingZone = document.getElementById('loadingZone');
+}
+
+function wordsToHtml(result, pos) {
+    var count = pos;
+    var html = '';
+    for (; count < result.length && count < pos + BUFFER; count++) {
     	var word = result[count];
     	var markclass = (word.deletemark === '-') ? 'deleted' : (word.deletemark === '|') ? 'deleted-section' : ''; 
-        html += '';
+        html += '<dt>';
         if (word.altlang && (word.altlang.indexOf('√') > 0 || word.altlang.indexOf('✶') > 0)) {
             html += '[' + word.altlang.substring(0, 1) +']';
         }
@@ -251,14 +262,9 @@ function doSearch() {
             html += '<a href="../words/word-' + word.key + '.html">';
             html += '<span style="font-weight: bold">' + word.see + '</span></a>';
         }
-        html += '<br/>';
+        html += '</dt>';
     }
-    resultDiv.innerHTML = html;
-    var start = pos + 1;
-    if (count === 0) start = 0;
-    var matchCountText = '&#160;Matches ' + start + ' - ' + count + ' of ';
-    matchCountText += max + '&#160;';
-    matchCount.innerHTML = matchCountText;
+    return html;
 }
 
 function isMatch(word, searchText, target, position, partsOfSpeech) {
@@ -303,32 +309,11 @@ function interiorMatch(text, searchText) {
 
 function maxPos() {
 	var result = max - 1;
-	result = result - (result % 10);
+	result = result - (result % BUFFER);
 	return result;
 }
 
-function goBack() {
-    pos -= 10;
-    if (pos < 0) pos = 0;
-    doSearch();
-}
-
-function goForward() {
-    pos += 10;
-    if (pos > maxPos()) pos = maxPos();
-    doSearch();
-}
-
-function goFirst() {
-    pos = 0;
-    doSearch();
-}
-
-function goLast() {
-    pos = maxPos();
-    doSearch();
-}
-
+// FIXME: New reset mechanism?
 function reset() {
     var searchBox = document.getElementById('searchBox');
     searchBox.value = '';
@@ -342,3 +327,57 @@ function reset() {
     partsOfSpeechSelect.selectedIndex = 0;
     doSearch();
 }
+
+//-----------------//
+// Infinite Scroll //
+//-----------------//
+
+function posY(elmt) {
+    var test = elmt, top = 0;
+    while(!!test && test.tagName.toLowerCase() !== "body") {
+        top += test.offsetTop;
+        test = test.offsetParent;
+    }
+    return top;
+}
+
+function viewPortHeight() {
+	var de = document.documentElement;
+	if (!!window.innerWidth) {
+		return window.innerHeight;
+	} else if (de && !isNaN(de.clientHeight)) {
+		return de.clientHeight;
+	}
+	return 0;
+}
+
+function scrollY() {
+	if (window.pageYOffset) {
+		return window.pageYOffset;
+	}
+	return Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+}
+
+function isInViewport(elmt) {
+	if (elmt == null) return false;
+    var vpH = viewPortHeight();
+    var st = scrollY();
+    var y = posY(elmt);
+
+    return !(y > (vpH + st));
+}
+
+var scrollLock = false;
+
+function checkLoading() {
+	if (scrollLock) return;
+	scrollLock = true;
+	var loadingZone = document.getElementById('loadingZone');
+	if (isInViewport(loadingZone)) {
+		console.log('BUFFER=' + (BUFFER + 50));
+		searchIt(BUFFER + 50);
+	}
+	scrollLock = false;
+}
+
+window.onscroll = checkLoading;

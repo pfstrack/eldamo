@@ -537,6 +537,15 @@
     <xs:attribute name="v" use="required"/>
     <xs:attribute name="mark"/>
   </xs:complexType>
+  <xs:element name="combine">
+    <xs:annotation>
+      <xs:documentation>Indicates that this entry is an earlier version of another, and they may be combined.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="correction">
     <xs:annotation>
       <xs:documentation>An editorial correction of an earlier published form. Uses a source reference (@source). Note that the reference value (ref/@v) of the correction reference is the original (uncorrected) form, while the reference value (ref/@v) of the linked/corrected reference is the corrected form. This is to ensure that the corrected form will appear in the relationships of its original reference.</xs:documentation>
@@ -962,7 +971,6 @@
         <xs:element ref="word"/>
       </xs:choice>
       <xs:attribute name="cat"/>
-      <xs:attribute name="combine" type="xs:boolean"/>
       <xs:attribute name="from"/>
       <xs:attribute name="gloss"/>
       <xs:attribute name="l" use="required" type="language-type"/>

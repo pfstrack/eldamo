@@ -21,11 +21,16 @@ declare variable $lang-name := $lang/@name/string();
 
 </head>
 <body>
-<p>
+<table id="nav-table" class="nav-table"><tr><td>
     [<a href="../../index.html">Home</a>] »
     [<a href="../languages/index.html">Languages</a>] »
     [<a href="../language-pages/lang-{$id}.html">{$lang-name}</a>]
-</p>
+</td></tr></table>
+<table id="neo-nav-table" class="neo-nav-table"><tr><td>
+    [<a href="../../index.html">Home</a>] »
+    [<a href="../languages/index.html">Languages</a>] »
+    [<a href="../language-pages/lang-{$id}.html">{$lang-name}</a>]
+</td></tr></table>
 <hr/>
 <h1>{$lang-name} Words</h1>
 {xdb:html($lang/words/string())}
@@ -49,9 +54,13 @@ order by if ($neo-lang)
     else c:normalize-for-sort($word/@v)
 return (
     <dt>
-        { if ($neo-lang and $word/deprecated) then '⚠️ ' else () }
+        { if (
+            $neo-lang and $word/deprecated
+            or $word/@gloss='[unglossed]'
+            or contains($word/@mark, '-') or contains($word/@mark, '|')
+          ) then <span>⚠️</span> else () }
         { if (not($neo-lang)) then () else (
-            let $lang-list := (c:print-lang2($word), for $w in $word//word[@combine][ancestor::word[not(@combine)][1]/@l = $word/@l] return c:print-lang2($w))
+            let $lang-list := (c:print-lang2($word), for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]] return c:print-lang2($w))
             return concat(string-join($lang-list, ', '), ' ')
         ) }
         { if ($alt-lang) then concat('[', $alt-lang, if (c:is-primitive($word)) then ']' else '] ') else () }
@@ -63,7 +72,7 @@ return (
              not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
              not($word/@l='q' and starts-with($word/@v, '-d'))
             )
-            then (', ',
+            then ( (: ', DISABLED TENGWAR ',
                 <span class="transcribe"
                     data-value="{
                         if ($word/@tengwar='ñ') then
@@ -72,7 +81,7 @@ return (
                             translate($word/@v/lower-case(.), 's', 'þ') 
                         else $word/@v/lower-case(.)
                     }" data-lang="{$word/@l}"></span>
-            , ' ') else ()}
+            , ' ' :) ) else ()}
         { c:print-speech($word) }
         { c:print-gloss($word) }
         { if ($word/see and not($neo-lang and $word/deprecated/@v))
@@ -81,14 +90,10 @@ return (
               if ($neo-lang or c:get-lang($word) != $word/see/@l) then attribute show-lang {'y'} else ()
             } </control>
         )) else () } 
-        { if ($neo-lang and $word/deprecated/@v) then ('; see instead: ',
-            if (count($word/deprecated/@v) = 1)
-            then c:print-word(c:get-word($word/deprecated), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y"/>)
-            else <ul> {
-                for $deprecated in $word/deprecated return <li> {
-                    c:print-word(c:get-word($deprecated), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y"/>)
-                } </li>
-            } </ul>
+        { if ($neo-lang and $word/deprecated/@v) then ('; see instead:',
+            for $deprecated in $word/deprecated return <dd class="see-instead"> {
+                c:print-word(c:get-word($deprecated), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y"/>)
+            } </dd>
         )  else () } 
     </dt>
 ) } </dl>,

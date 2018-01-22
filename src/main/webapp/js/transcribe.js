@@ -60,6 +60,21 @@ function doReplace(charReplace1, charReplace2, value) {
 }
 
 function transcribeSpans() {
+	var isNeo = window.location.toString().indexOf('?neo') > 0;
+	if (isNeo) {
+		var baseNav = document.getElementById('nav-table');
+		var neoNav = document.getElementById('neo-nav-table');
+		baseNav.style.display = 'none';
+		neoNav.style.display = 'table';
+		var anchors = document.getElementsByTagName('a');
+		for (var i = 0; i < anchors.length; i++) {
+			var a = anchors[i];
+			if (a.name) continue;
+			if (a.href.indexOf('#') > 0) continue;
+			a.href = a.href + "?neo";
+		}
+	}
+
 	var clsElements = document.getElementsByClassName("transcribe");
 	for (var i = clsElements.length - 1; i >= 0; i--) {
 		var transcribeSpan = clsElements[i];

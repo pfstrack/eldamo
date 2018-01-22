@@ -43,7 +43,8 @@
                 ) * 100 + 100, '00000')"/>
             </xsl:if>
             <xsl:copy-of select="@mark"/>
-            <xsl:apply-templates select="*[not(name()='word' or name()='ref')]"/>
+            <xsl:apply-templates select="notes"/>
+            <xsl:apply-templates select="*[not(name()='notes' or name()='word' or name()='ref')]"/>
             <xsl:apply-templates select="*[name()='ref']">
                 <xsl:sort select="q:normalize(@source)"/>
             </xsl:apply-templates>

@@ -80,6 +80,26 @@ declare function c:is-primitive($ref as element()*) as xs:boolean {
     $lang = ('p', 'mp', 'ep', 'np')
 };
 
+declare function c:is-neo-lang($ref as element()*) as xs:boolean {
+    let $lang := c:get-lang($ref) return
+    $lang = ('nq', 'q', 'mq', 'eq', 'ns', 's', 'n', 'en', 'g', 'np', 'p', 'mp', 'ep')
+};
+
+declare function c:get-neo-lang($ref as element()*) as xs:string {
+    let $lang := c:get-lang($ref) return
+    if ($lang = ('nq', 'q', 'mq', 'eq')) then 'nq'
+    else if ($lang = ('ns', 's', 'n', 'en', 'g')) then 'ns'
+    else if ($lang = ('np', 'p', 'mp', 'ep')) then 'np'
+    else ''
+};
+
+declare function c:get-neo-lang-group($lang as xs:string) as xs:string* {
+    if ($lang = 'nq') then ('nq', 'q', 'mq', 'eq')
+    else if ($lang = 'ns') then ('ns', 's', 'n', 'en', 'g')
+    else if ($lang = 'np') then ('ns', 's', 'n', 'en', 'g')
+    else $lang
+};
+
 declare function c:is-root($ref as element()*) as xs:boolean {
     let $speech := c:get-speech($ref) return
     $speech = 'root'
@@ -156,14 +176,14 @@ declare function c:print-lang2($ref as element()?) as xs:string {
 declare function c:lang-words($root as element(), $id) as element()* {
     if ($id = 'nq') then
         (xdb:key($root, 'language', 'nq') | xdb:key($root, 'language', 'q') | xdb:key($root, 'language', 'mq') | xdb:key($root, 'language', 'eq'))
-        [not(@combine)]
+        [not(combine)]
         (: [starts-with(c:normalize-spelling(lower-case(c:normalize-for-sort(@v))), 'a')] :)
     else if ($id = 'ns') then
         (xdb:key($root, 'language', 'ns') | xdb:key($root, 'language', 's') | xdb:key($root, 'language', 'n') | xdb:key($root, 'language', 'en') | xdb:key($root, 'language', 'g'))
-        [not(@combine)]
+        [not(combine)]
     else if ($id = 'np') then 
         (xdb:key($root, 'language', 'np') | xdb:key($root, 'language', 'p') | xdb:key($root, 'language', 'mp') | xdb:key($root, 'language', 'ep'))
-        [not(@combine)]
+        [not(combine)]
     else xdb:key($root, 'language', $id)
 };
 
@@ -229,7 +249,11 @@ declare function c:print-speech($ref as element()?) as element()? {
 declare function c:display-speech($ref as element()?) as xs:string? {
     let $speech := c:get-speech($ref)
     let $display :=
-        if ($speech='masc-name') then ' m.'
+        if (contains($speech, ' ')) then
+            let $a := tokenize($speech, '\s')
+            let $r := string-join($a, '. and ')
+            return concat(' ', $r, '.')
+        else if ($speech='masc-name') then ' m.'
         else if ($speech='fem-name') then ' f.'
         else if ($speech='place-name') then ' loc.'
         else if ($speech='collective-name') then ' coll.'
@@ -243,18 +267,6 @@ declare function c:display-speech($ref as element()?) as xs:string? {
         else if ($speech='phonetic-group') then ''
         else if ($speech='phoneme') then ''
         else if ($speech='phonetic-rule') then ''
-        else if ($speech='adj n') then ' adj. and n.'
-        else if ($speech='adv n') then ' adv. and n.'
-        else if ($speech='n adj') then ' n. and adj.'
-        else if ($speech='n adv') then ' n. and adv.'
-        else if ($speech='adj adv') then ' adj. and adv.'
-        else if ($speech='adv adj') then ' adv. and adj.'
-        else if ($speech='conj adv') then ' conj. and adv.'
-        else if ($speech='adv conj') then ' adv. and conj.'
-        else if ($speech='prep pref') then ' prep. and pref.'
-        else if ($speech='prep adv') then ' prep. and adv.'
-        else if ($speech='adv interj') then ' adv. and interj.'
-        else if ($speech='pron conj') then ' pron. and conj.'
         else if (ends-with($speech, '?')) then concat(' ', $speech)
         else concat(' ', $speech, '.')
     return $display
@@ -343,8 +355,18 @@ declare function c:print-word($word as element()?, $control as element()?) as no
 };
 
 declare function c:normalize-spelling($value) as xs:string {
-    let $v1 := translate(replace(replace(replace($value, 'q', 'qu'), 'quu', 'qu'), 'ks', 'x'), 'këä', 'cea')
-    return $v1
+    let $v1 := translate(replace(replace(replace($value, 'q', 'qu'), 'quu', 'qu'), 'ks', 'x'), 'k', 'c')
+    let $v2 := replace($v1, 'ea', 'ëa')
+    let $v3 := if ($v2 = 'nye' or $v2 = 'lye') then $v2
+        else if (string-length(translate($v2, '¹²³⁴', '')) < 3) then $v2
+        else if (ends-with($v2, 'e')) then concat(substring($v2, 1, string-length($v2) - 1), 'ë')
+        else if (ends-with($v2, 'e)')) then concat(substring($v2, 1, string-length($v2) - 2), 'ë)')
+        else if (ends-with($v2, 'e¹')) then concat(substring($v2, 1, string-length($v2) - 2), 'ë¹')
+        else if (ends-with($v2, 'e²')) then concat(substring($v2, 1, string-length($v2) - 2), 'ë²')
+        else if (ends-with($v2, 'e³')) then concat(substring($v2, 1, string-length($v2) - 2), 'ë³')
+        else if (ends-with($v2, 'e⁴')) then concat(substring($v2, 1, string-length($v2) - 2), 'ë⁴')
+        else $v2
+    return $v3
 };
 
 declare function c:to-word-link($word) as xs:string {
