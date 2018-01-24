@@ -24,7 +24,9 @@ table   { border: solid 1px black; border-collapse: collapse }
 td, th  { border: solid 1px black; padding: 0.2em; vertical-align: top }
 th      { background: #CCCCCC }
 
-dd.see-instead { list-style: none; margin-left: 1em; }
+dt { list-style: none; text-indent: -1.5em; margin-left: 1.5em; }
+dt::first-line { list-style: none; margin-left: 2em; }
+dd.see-instead { list-style: none; text-indent: -1.25em; margin-left: 2.25em; }
 dd.see-instead::before { content: '→ '; }
 
 .entry-section { font-weight: bold; text-align : center; text-decoration: underline }

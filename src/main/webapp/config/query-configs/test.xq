@@ -5,6 +5,32 @@ import module namespace c = "common.xq" at "common.xq";
 <table> {
 let $l := 'q'
 let $exclusions := <exclusions>
+<word l="q" v="ca"/>
+<word l="q" v="et(e)-"/>
+<word l="q" v="epetai"/>
+<word l="q" v="opo"/>
+<word l="q" v="en(a)"/>
+<word l="q" v="coiv(i)ë"/>
+<word l="q" v="castol(o)"/>
+<word l="q" v="cas(ta)"/>
+<word l="q" v="Casar"/>
+<word l="q" v="ca(na)sta"/>
+<word l="q" v="axë"/>
+<word l="q" v="auta-¹"/>
+<word l="q" v="au-"/>
+<word l="q" v="atya¹"/>
+<word l="q" v="at(a)-"/>
+<word l="q" v="asëa"/>
+<word l="q" v="as(a)-"/>
+<word l="q" v="árë"/>
+<word l="q" v="arata"/>
+<word l="q" v="ar(a)-"/>
+<word l="q" v="ar(a)"/>
+<word l="q" v="ar"/>
+<word l="q" v="an(a)"/>
+<word l="q" v="ar(i)-"/>
+<word l="q" v="an(a)-"/>
+<word l="q" v="amya"/>
 <word l="q" v="alcarin(qua)"/>
 <word l="q" v="al(a)-²"/>
 <word l="q" v="al(a)-¹"/>
@@ -15,7 +41,6 @@ let $exclusions := <exclusions>
 <word l="mq" v="an(ner)"/>
 <word l="mq" v="at(a)-"/>
 <word l="mq" v="au(ve)"/>
-<word l="mq" v="kuiv(i)e"/>
 <word l="mq" v="ear"/>
 <word l="mq" v="elen"/>
 <word l="mq" v="kalarin(a)"/>
@@ -71,13 +96,14 @@ let $exclusions := <exclusions>
 for $word in c:lang-words(/*, $l)
     [not(contains(c:get-speech(.), 'phon'))][not(contains(c:get-speech(.), 'name'))]
     [not(contains(c:get-speech(.), 'grammar'))][not(contains(c:get-speech(.), 'text'))][not(contains(c:get-speech(.), 'phrase'))]
-    [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(correction)]/@v/translate(c:normalize-for-sort(.), '’', ''))) gt 1]
+    [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))]
+    [not(correction)][not(change)]/@v/translate(c:normalize-for-sort(.), '’', ''))) gt 1]
 let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(correction)]/@v
-    [not(translate(c:normalize-for-sort(.), 'c()', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/lower-case(.)), '; ')
+    [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/lower-case(.)), '; ')
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
     word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³', ''), '; ')
 return
-if (translate($variants, 'ăāē-[]', 'aáé') = translate($see-refs, 'ë-', 'e')) then () else
+if (translate($variants, 'ăĕĭŏŭāēīōūk-[]', 'aeiouáéíóúc') = translate($see-refs, 'ë-', 'e')) then () else
 if ($exclusions/word[@l = $word/@l and @v=$word/@v]) then () else
 <tr>
 <td>word l="{c:get-lang($word)}" v="{c:print-word($word, <print-word show-link="y"/>)}"</td>

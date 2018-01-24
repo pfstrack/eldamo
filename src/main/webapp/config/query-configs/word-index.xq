@@ -55,9 +55,9 @@ order by if ($neo-lang)
 return (
     <dt>
         { if (
-            $neo-lang and $word/deprecated
+            $neo-lang and ($word/deprecated
             or $word/@gloss='[unglossed]'
-            or contains($word/@mark, '-') or contains($word/@mark, '|')
+            or contains($word/@mark, '-') or contains($word/@mark, '|'))
           ) then <span>⚠️</span> else () }
         { if (not($neo-lang)) then () else (
             let $lang-list := (c:print-lang2($word), for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]] return c:print-lang2($w))

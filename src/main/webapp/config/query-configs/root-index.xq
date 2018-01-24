@@ -55,7 +55,7 @@ return (
         { if ($word/see) then (' see ', c:print-word(c:get-word($word/see), $secondary-word))  else () } 
         { if ($neo-lang and $word/deprecated/@v) then ('; see instead:',
             for $deprecated in $word/deprecated return <dd class="see-instead"> {
-                c:print-word(c:get-word($deprecated), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y"/>)
+                c:print-word(c:get-word($deprecated), <control show-link="y" show-lang="y" show-gloss="y"/>)
             } </dd>
         )  else () } 
     </dt>
