@@ -2,8 +2,8 @@ module namespace c="common.xq";
 
 declare function c:normalize-for-sort($value as xs:string?) as xs:string {
     let $w0 := replace(replace($value, 'yá²', 'yá%²'), 'yá¹', 'yá%¹')
-    let $w1 := translate(lower-case($w0), 'χƕıǝçƀɟḷḹẏýṣṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúäëïöüāēīōūâêîôûăĕĭŏŭæǣǭχřš¹²³⁴⁵⁶⁷⁸⁹ .?-–·‘’[]{}()!̆,`¯̯̥́̄̂', 
-                                             'hhiecbjllyysmnrrnnaeiouaeiouaeiouaeiouaeiouaeiouaeoxrs123456789')
+    let $w1 := translate(lower-case($w0), 'χƕıǝçƀɟḷḹẏýṣṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúäëïöüāēīōūâêîôûăĕĭŏŭãæǣǭχřš¹²³⁴⁵⁶⁷⁸⁹ .?-–~·‘’[]{}()!̆,`¯̯̥́̄̂', 
+                                          'hhiecbjllyysmnrrnnaeiouaeiouaeiouaeiouaeiouaeiouaaeoxrs123456789')
     let $w2 := replace($w1, 'ð', 'dzz')
     let $w3 := replace($w2, 'þ', 'tzz')
     let $w4 := replace($w3, 'θ', 'tzz')
@@ -30,6 +30,11 @@ declare function c:derive-css($word as element()?) as xs:string {
 
 (: gloss :)
 
+declare function c:get-neo-gloss($word as element()?) as xs:string? {
+    if ($word/@ngloss) then $word/@ngloss/string()
+    else c:get-gloss($word)
+};
+
 declare function c:get-gloss($word as element()?) as xs:string? {
     let $gloss :=
         if ($word/@gloss) then $word/@gloss/string()
@@ -45,6 +50,15 @@ declare function c:get-gloss($word as element()?) as xs:string? {
                 then 'ERROR:MULTIGLOSS'
                 else $glosses[1]/@gloss/string()
     return $gloss
+};
+
+declare function c:print-neo-gloss($word as element()?) as node()* {
+    let $gloss := c:get-neo-gloss($word)
+    let $css := () (: c:derive-css($word) :)
+    return
+        if ($gloss and $css) then (text{' “'}, <span class="{$css}">{$gloss}</span>, text{'”'})
+        else if ($gloss) then text{concat(' “', $gloss, '”')}
+        else ()
 };
 
 declare function c:print-gloss($word as element()?) as node()* {
@@ -320,6 +334,7 @@ declare function c:print-word($word as element()?, $control as element()?) as no
     let $show-gloss := $control/@show-gloss
     let $hide-mark := $control/@hide-mark
     let $normalize := $control/@normalize
+    let $is-neo := $control/@is-neo
     let $style := $control/@style
     let $has-brackets := c:has-brackets($word)
     return
@@ -349,7 +364,8 @@ declare function c:print-word($word as element()?, $control as element()?) as no
                 if ($link) then <a href="{$link}">{$value}</a>
                 else $value
             }</span>,
-            if ($show-gloss) then c:print-gloss($word) else ()
+            if ($show-gloss and $is-neo) then c:print-neo-gloss($word)
+            else if ($show-gloss) then c:print-gloss($word) else ()
         )
     )
 };

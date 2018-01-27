@@ -16,7 +16,8 @@
     font-family: Tengwar_Eldamar_Glaemscrafu;
     font-size: 100%;
 }
-body    { font-family: 'Times New Roman', 'GentiumPlusW', san-serif; line-height: 130%; }
+
+body    { font-family: 'Times New Roman', 'GentiumPlusW', san-serif; }
 
 a:link  { text-decoration: none }
 a:hover { text-decoration: underline }
@@ -24,9 +25,11 @@ table   { border: solid 1px black; border-collapse: collapse }
 td, th  { border: solid 1px black; padding: 0.2em; vertical-align: top }
 th      { background: #CCCCCC }
 
+ul { padding-left: 1.5em; }
+
 dt { list-style: none; text-indent: -1.5em; margin-left: 1.5em; }
 dt::first-line { list-style: none; margin-left: 2em; }
-dd.see-instead { list-style: none; text-indent: -1.25em; margin-left: 2.25em; }
+dd.see-instead { list-style: none; text-indent: -1.25em; margin-left: 2.75em; }
 dd.see-instead::before { content: '→ '; }
 
 .entry-section { font-weight: bold; text-align : center; text-decoration: underline }
@@ -44,5 +47,7 @@ table.nav-table td { border: none }
 
 table.neo-nav-table    { display: none; border: none; width: 100% }
 table.neo-nav-table td { border: none }
+
+p.neo-lang-word    { display: none; }
 
 hr { border: none; height: 1px; color: #000; background-color: #000; }

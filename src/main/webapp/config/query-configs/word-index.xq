@@ -7,7 +7,7 @@ declare variable $lang-name := $lang/@name/string();
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 <title>Eldamo : {$lang-name} Words</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
@@ -49,13 +49,17 @@ for $word in $word-list
 let $alt-lang := c:alt-lang($word)
 let $neo-lang := if ($id = 'nq' or $id = 'ns' or $id = 'np') then true() else false()
 let $normalize := if ($id = 'nq') then true() else false()
+let $deprecated :=
+    if ($word/deprecated) then $word/deprecated
+    else if ($word/see/c:get-word(.)/deprecated) then $word/see/c:get-word(.)/deprecated
+    else ()
 order by if ($neo-lang)
     then c:normalize-for-sort(c:normalize-spelling($word/@v))
     else c:normalize-for-sort($word/@v)
 return (
     <dt>
         { if (
-            $neo-lang and ($word/deprecated
+            $neo-lang and ($deprecated
             or $word/@gloss='[unglossed]'
             or contains($word/@mark, '-') or contains($word/@mark, '|'))
           ) then <span>⚠️</span> else () }
@@ -83,16 +87,16 @@ return (
                     }" data-lang="{$word/@l}"></span>
             , ' ' :) ) else ()}
         { c:print-speech($word) }
-        { c:print-gloss($word) }
-        { if ($word/see and not($neo-lang and $word/deprecated/@v))
+        { if ($neo-lang) then c:print-neo-gloss($word) else c:print-gloss($word) }
+        { if ($word/see and not($neo-lang and $deprecated))
           then (' see ', c:print-word(c:get-word($word/see),
             <control show-link="y" normalize="{$normalize}"> {
               if ($neo-lang or c:get-lang($word) != $word/see/@l) then attribute show-lang {'y'} else ()
             } </control>
         )) else () } 
-        { if ($neo-lang and $word/deprecated/@v) then ('; see instead:',
-            for $deprecated in $word/deprecated return <dd class="see-instead"> {
-                c:print-word(c:get-word($deprecated), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y"/>)
+        {   if ($neo-lang and $deprecated/@v) then ('; see instead:',
+            for $x in $deprecated return <dd class="see-instead"> {
+                c:print-word(c:get-word($x), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y" is-neo="y"/>)
             } </dd>
         )  else () } 
     </dt>

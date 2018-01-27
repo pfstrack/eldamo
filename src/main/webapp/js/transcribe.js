@@ -66,6 +66,12 @@ function transcribeSpans() {
 		var neoNav = document.getElementById('neo-nav-table');
 		baseNav.style.display = 'none';
 		neoNav.style.display = 'table';
+		var neoLangWord = document.getElementById('neo-lang-word');
+		if (neoLangWord) {
+			var langWord = document.getElementById('lang-word');
+			langWord.style.display = 'none';
+			neoLangWord.style.display = 'block';
+		}
 		var anchors = document.getElementsByTagName('a');
 		for (var i = 0; i < anchors.length; i++) {
 			var a = anchors[i];

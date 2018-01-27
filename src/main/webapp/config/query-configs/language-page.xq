@@ -10,7 +10,7 @@ declare function local:get-speech($word as element()?) as xs:string? {
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 <title>Eldamo : {$lang-name}</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 </head>
@@ -21,7 +21,6 @@ declare function local:get-speech($word as element()?) as xs:string? {
 </p>
 <hr/>
 <h1>{$lang-name}</h1>
-{xdb:html($lang/notes/string())}
 {
 let $all := c:lang-words(/*, $id)
 let $is-neo-lang := $id = ('nq', 'ns', 'np')
@@ -49,5 +48,6 @@ return
     if ($categories) then <li><a href="../category-indexes/categories-{$id}.html{$post-fix}">Semantic Categories</a> ({count($categories)})</li> else ()
 ) }</ul>
 }
+{xdb:html($lang/notes/string())}
 </body>
 </html>

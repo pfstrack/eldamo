@@ -24,7 +24,7 @@ declare function local:has-lang($lang as xs:string?) as xs:boolean {
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 <title>Eldamo : Language Index</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 </head>
@@ -32,11 +32,11 @@ declare function local:has-lang($lang as xs:string?) as xs:boolean {
 <p>[<a href="../../index.html">Home</a>]</p>
 <hr/>
 <h1>Language Index</h1>
-<p>Here is a list of the languages included in this lexicon, broken down by time period (Early, Middle and Late). Within
+<p>The languages included in this lexicon, broken down by time period (Early, Middle and Late). Within
 each period, languages are arranged hierarchically by descent: child languages that were derived from more ancient
 languages.</p>
 <p>The “Combined” or “Neo” languages assemble words from various periods, including fan creations (neologisms). These
-are lists of words that might be useful for new Elvish writing. Be cautious using these collections of words, however,
+“Combined” lists are most useful for new Elvish writing. Be cautious using these collections of words, however,
 since they mix words from various periods. The source period of each word is indicated by its language marker, and there
 are various other “<a href="../../general/terminology-and-notations.html#reliability-markers">reliability markers</a>”
 that can be used a guide for the level of quality of a word.</p>

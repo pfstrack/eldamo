@@ -290,10 +290,11 @@ declare variable $code external;
 declare variable $words := xdb:key(/*, 'word-code', $code);
 declare variable $l := c:get-lang($words[1]);
 declare variable $lang := //language[@id=$l]/@name/string();
+declare variable $neo-lang-word := if ($words[1]/combine) then c:get-word($words[1]/combine) else $words[1];
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 <title>Eldamo : {$lang} : {$words[1]/@v/string()}</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
@@ -461,10 +462,9 @@ let $valid-refs := $word/ref[c:get-ref(.)]
 let $alt-lang := c:alt-lang($word)
 return (
 <hr/>,
-<div style="margin-left: {3 * (if ($word/see) then 0 else
-                               count($word/ancestor::*[name()='word' and not(see)]) -
-                               count($words[name()='word' and not(see)][1]/ancestor::*[name()='word' and not(see)]))}em"> { (
+<div> { (
 <p>
+    { if (xdb:hashcode($word) = xdb:hashcode($words[1])) then attribute id { 'lang-word'} else () }
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
     { if ($alt-lang and not(c:is-primitive($word))) then concat('[', $alt-lang, '] ') else () }
@@ -477,7 +477,6 @@ return (
                                  } </print-word>)}
     {if ($word/@orthography) then concat(' ‹', $word/@orthography/string(), '›') else ()}
     {if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else ()}
-    {if ($word/@stem) then <span> (<b>{$word/@stem/string()}</b>)</span> else ()}
     {if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else ()}
     { if (($word/@l = 's' or $word/@l = 'q') and
          not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
@@ -500,6 +499,54 @@ return (
     if ($rule) then concat('; [', $rule/@from, '] &gt; [', $rule/@rule, ']') else ()}
     {if ($word/see)
         then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y"/>))
+        else ()}
+    {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
+</p>,
+
+if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
+    if (xdb:hashcode($word) = xdb:hashcode($words[1])) then
+        <script>
+            if (location.href.indexOf('?neo') > 0)
+            location.replace(location.href.replace('{xdb:hashcode($word)}', '{xdb:hashcode($neo-lang-word)}'))
+        </script>
+    else ()
+) else 
+<p id="neo-lang-word" class="neo-lang-word">
+    { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
+    { if (c:is-primitive($word)) then () else c:print-lang($word) }
+    { if ($alt-lang and not(c:is-primitive($word))) then concat('[', $alt-lang, '] ') else () }
+    {if (xdb:hashcode($word) = xdb:hashcode($words[1]))
+        then c:print-word($word, <print-word style="bold" normalize="true"> {
+                                     if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
+                                 } </print-word>)
+        else c:print-word($word, <print-word style="bold" normalize="true" show-link="y"> {
+                                     if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
+                                 } </print-word>)}
+    {if ($word/@orthography) then concat(' ‹', $word/@orthography/string(), '›') else ()}
+    {if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else ()}
+    { if ($word/@stem) then <span> (<b>{if (c:get-lang($word) = ('q', 'mq', 'eq', 'nq')) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
+    {if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else ()}
+    { if (($word/@l = 's' or $word/@l = 'q') and
+         not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
+         not($word/@l='q' and starts-with($word/@v, '-d'))
+        )
+        then (', ',
+            <span class="transcribe"
+                data-value="{
+                    if ($word/@tengwar='ñ') then
+                        translate($word/@v/lower-case(.), 'n', 'ñ') 
+                    else if ($word/@tengwar='þ') then
+                        translate($word/@v/lower-case(.), 's', 'þ') 
+                    else $word/@v/lower-case(.)
+                }" data-lang="{$word/@l}"></span>
+        , ' ') else ()}
+    {c:print-speech($word)}
+    {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@form, ' ', $word/class/@variant))), ') ') else ()}
+    {c:print-neo-gloss($word)}
+    {let $rule := if ($word/@rule) then $word else $word/rule return
+    if ($rule) then concat('; [', $rule/@from, '] &gt; [', $rule/@rule, ']') else ()}
+    {if ($word/see)
+        then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y" normalize="true"/>))
         else ()}
     {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
 </p>,

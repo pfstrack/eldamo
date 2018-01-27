@@ -7,7 +7,7 @@ declare variable $lang-name := $lang/@name/string();
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 <title>Eldamo : {$lang-name} Semantic Categories</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
@@ -90,7 +90,7 @@ return (
         { if ($word/@stem) then <span> (<b>{if ($normalize) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
         { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
         { c:print-speech($word) }
-        { c:print-gloss($word) }
+        { if ($neo-lang) then c:print-neo-gloss($word) else c:print-gloss($word) }
         { if ($word/see and not($neo-lang and $word/deprecated/@v))
           then (' see ', c:print-word(c:get-word($word/see),
             <control show-link="y" normalize="{$normalize}"> {
@@ -99,7 +99,7 @@ return (
         )) else () } 
         { if ($neo-lang and $word/deprecated/@v) then ('; see instead:',
             for $deprecated in $word/deprecated return <dd class="see-instead"> {
-                c:print-word(c:get-word($deprecated), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y"/>)
+                c:print-word(c:get-word($deprecated), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y" is-neo="y"/>)
             } </dd>
         )  else () } 
     </dt>

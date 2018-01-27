@@ -8,7 +8,7 @@ declare variable $secondary-word := <control show-link="y"/>;
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 <title>Eldamo : {$lang-name} Roots</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
@@ -51,11 +51,11 @@ return (
         { if (not($word/ref) and $word/word[1][@l]) then concat('[', translate(c:print-lang($word/word[1][@l]), ' ', ''), if (c:is-primitive($word)) then ']' else '] ') else () }
         { if ($word/see) then c:print-word($word, <control style="bold"/>) else c:print-word($word, $primary-word) }
         { c:print-speech($word) }
-        { c:print-gloss($word) }
+        { if ($neo-lang) then c:print-neo-gloss($word) else c:print-gloss($word) }
         { if ($word/see) then (' see ', c:print-word(c:get-word($word/see), $secondary-word))  else () } 
         { if ($neo-lang and $word/deprecated/@v) then ('; see instead:',
             for $deprecated in $word/deprecated return <dd class="see-instead"> {
-                c:print-word(c:get-word($deprecated), <control show-link="y" show-lang="y" show-gloss="y"/>)
+                c:print-word(c:get-word($deprecated), <control show-link="y" show-lang="y" show-gloss="y" is-neo="y"/>)
             } </dd>
         )  else () } 
     </dt>

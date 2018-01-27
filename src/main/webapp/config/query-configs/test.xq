@@ -5,6 +5,40 @@ import module namespace c = "common.xq" at "common.xq";
 <table> {
 let $l := 'q'
 let $exclusions := <exclusions>
+<word l="q" v="nórë"/>
+<word l="q" v="niquis(së)"/>
+<word l="q" v="net(ë)"/>
+<word l="q" v="ne(re)sta"/>
+<word l="q" v="nenda"/>
+<word l="q" v="nel(e)quë"/>
+<word l="q" v="nel(d)esta"/>
+<word l="q" v="-(n)dur"/>
+<word l="q" v="-ndon"/>
+<word l="q" v="-(n)dil"/>
+<word l="q" v="minquë"/>
+<word l="q" v="-lmë¹"/>
+<word l="q" v="mar(da)"/>
+<word l="q" v="maqua"/>
+<word l="q" v="man"/>
+<word l="q" v="Maia"/>
+<word l="q" v="lunca"/>
+<word l="q" v="luinë"/>
+<word l="q" v="-lta"/>
+<word l="q" v="lón(a)"/>
+<word l="q" v="li(n)-"/>
+<word l="q" v="lepekan(t)"/>
+<word l="q" v="lempë"/>
+<word l="q" v="it(ë)"/>
+<word l="q" v="-itë"/>
+<word l="q" v="-ion"/>
+<word l="q" v="inquë"/>
+<word l="q" v="ilvan(y)a"/>
+<word l="q" v="-ien¹"/>
+<word l="q" v="-iel"/>
+<word l="q" v="-ië²"/>
+<word l="q" v="hrú(y)a"/>
+<word l="q" v="hlón(a)"/>
+<word l="q" v="heru"/>
 <word l="q" v="ca"/>
 <word l="q" v="et(e)-"/>
 <word l="q" v="epetai"/>
@@ -99,14 +133,14 @@ for $word in c:lang-words(/*, $l)
     [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))]
     [not(correction)][not(change)]/@v/translate(c:normalize-for-sort(.), '’', ''))) gt 1]
 let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(correction)]/@v
-    [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/lower-case(.)), '; ')
+    [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/translate(lower-case(.), 'ë-', 'e')), '; ')
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
     word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³', ''), '; ')
 return
-if (translate($variants, 'ăĕĭŏŭāēīōūk-[]', 'aeiouáéíóúc') = translate($see-refs, 'ë-', 'e')) then () else
+if (translate($variants, 'ăĕĭŏŭāēīōūök-[]()·', 'aeiouáéíóúoc') = translate($see-refs, 'ëö()-', 'eo')) then () else
 if ($exclusions/word[@l = $word/@l and @v=$word/@v]) then () else
 <tr>
-<td>word l="{c:get-lang($word)}" v="{c:print-word($word, <print-word show-link="y"/>)}"</td>
+<td>&lt;word l="{c:get-lang($word)}" v="{c:print-word($word, <print-word show-link="y"/>)}"</td>
 <td>{$variants}</td>
 <td>{$see-refs}</td>
 </tr>

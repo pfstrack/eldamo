@@ -35,7 +35,7 @@ declare function local:lang-order($lang as xs:string) as xs:string {
 
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <meta http-equiv="Content-Style-Type" content="text/css"></meta>
     <title>Eldamo : Search</title>
     <link rel="stylesheet" type="text/css" href="../../css/global.css"></link>
@@ -95,7 +95,8 @@ declare function local:lang-order($lang as xs:string) as xs:string {
         <option value="pref">prefix</option>
         <option value="suf">suffix</option>
         <option value="root">root</option>
-    </select>
+    </select> &#160;|&#160;
+    <button id="resetButton" onclick="reset()">Reset</button>
     </p>
 </p>
 <hr />
