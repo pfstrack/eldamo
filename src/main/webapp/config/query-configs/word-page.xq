@@ -116,8 +116,8 @@ declare function local:print-element-in($word as element()?) as node()* {
         let $control := <ref-set>{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
         order by $element-in/@l, c:normalize-for-sort($element-in/@v)
         return
-            <li class="c-bullet">
-                ⇒ {c:print-word($element-in, <print-word show-lang="y" show-link="y"/>)}
+            <li>
+                {c:print-word($element-in, <print-word show-lang="y" show-link="y"/>)}
                 {c:print-gloss($element-in)}
                 {local:print-ref-set($element-in-refs[c:get-ref(.)[../@v = $element-in/@v]], $control)}
             </li>,
@@ -125,8 +125,8 @@ declare function local:print-element-in($word as element()?) as node()* {
         let $control := <ref-set>{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
         order by $element-in/@l, c:normalize-for-sort($element-in/@v)
         return
-            <li class="c-bullet">
-                ⇒ {c:print-word($element-in, <print-word show-lang="y" show-link="y"/>)}
+            <li>
+                {c:print-word($element-in, <print-word show-lang="y" show-link="y"/>)}
                 {c:print-gloss($element-in)}
                 {local:print-ref-set($element-in-refs[c:get-ref(.)[../@v = $element-in/@v]], $control)}
             </li>

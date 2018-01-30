@@ -3,8 +3,61 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body>
 <table> {
-let $l := 'q'
+let $l := 'n'
 let $exclusions := <exclusions>
+<word l="n" v="amben(n)"/>
+<word l="q" v="yondë"/>
+<word l="q" v="yó(m)"/>
+<word l="q" v="-xë¹"/>
+<word l="q" v="wingë"/>
+<word l="q" v="wendë"/>
+<word l="q" v="-wë"/>
+<word l="q" v="vaiwë"/>
+<word l="q" v="úvanë(a)"/>
+<word l="q" v="usquë"/>
+<word l="q" v="ua-"/>
+<word l="q" v="-ttë¹"/>
+<word l="q" v="to(lo)sta"/>
+<word l="q" v="tillë"/>
+<word l="q" v="tassë"/>
+<word l="q" v="tasar(ë)"/>
+<word l="q" v="tar(a)"/>
+<word l="q" v="tar(a)"/>
+<word l="q" v="-tar"/>
+<word l="q" v="tancal(a)"/>
+<word l="q" v="tal(da)"/>
+<word l="q" v="talda"/>
+<word l="q" v="tai¹"/>
+<word l="q" v="sís"/>
+<word l="q" v="-ilco"/>
+<word l="q" v="siar(ë)"/>
+<word l="q" v="sir(a)"/>
+<word l="q" v="sá"/>
+<word l="q" v="ron(go)"/>
+<word l="q" v="-rya¹"/>
+<word l="q" v="ro-"/>
+<word l="q" v="-r(o)"/>
+<word l="q" v="riel(lë)"/>
+<word l="q" v="rauco"/>
+<word l="q" v="quín(ë)"/>
+<word l="q" v="qui"/>
+<word l="q" v="quet-"/>
+<word l="q" v="Quenyarin"/>
+<word l="q" v="Quenya"/>
+<word l="q" v="quenta"/>
+<word l="q" v="Quendë"/>
+<word l="q" v="quén"/>
+<word l="q" v="quár(ë)"/>
+<word l="q" v="cëa(n)"/>
+<word l="q" v="palantír"/>
+<word l="q" v="otso"/>
+<word l="q" v="o(to)sta"/>
+<word l="q" v="ontari(l)"/>
+<word l="q" v="omentië"/>
+<word l="q" v="olass(i)ë"/>
+<word l="q" v="oia(la)"/>
+<word l="q" v="-nta"/>
+<word l="q" v="nos(së)"/>
 <word l="q" v="nórë"/>
 <word l="q" v="niquis(së)"/>
 <word l="q" v="net(ë)"/>
@@ -133,11 +186,11 @@ for $word in c:lang-words(/*, $l)
     [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))]
     [not(correction)][not(change)]/@v/translate(c:normalize-for-sort(.), '’', ''))) gt 1]
 let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(correction)]/@v
-    [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/translate(lower-case(.), 'ë-', 'e')), '; ')
+    [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/translate(lower-case(.), 'ūë-', 'úe')), '; ')
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
-    word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³', ''), '; ')
+    word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³⁴', ''), '; ')
 return
-if (translate($variants, 'ăĕĭŏŭāēīōūök-[]()·', 'aeiouáéíóúoc') = translate($see-refs, 'ëö()-', 'eo')) then () else
+if (translate($variants, 'ăĕĭŏŭāēīōūök-[]()·', 'aeiouáéíóúoc') = translate($see-refs, 'ëök()-', 'eoc')) then () else
 if ($exclusions/word[@l = $word/@l and @v=$word/@v]) then () else
 <tr>
 <td>&lt;word l="{c:get-lang($word)}" v="{c:print-word($word, <print-word show-link="y"/>)}"</td>

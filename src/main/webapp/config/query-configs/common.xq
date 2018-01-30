@@ -170,6 +170,8 @@ declare function c:convert-lang($lang as xs:string?) as xs:string {
         then 'Av. '
     else if ($lang='un')
         then 'Un. '
+    else if ($lang='norths')
+        then 'North S. '
     else if (string-length($lang) = 1 or string-length($lang) = 2)
         then concat(upper-case($lang), '. ')
     else
@@ -191,7 +193,7 @@ declare function c:lang-words($root as element(), $id) as element()* {
     if ($id = 'nq') then
         (xdb:key($root, 'language', 'nq') | xdb:key($root, 'language', 'q') | xdb:key($root, 'language', 'mq') | xdb:key($root, 'language', 'eq'))
         [not(combine)]
-        (: [starts-with(c:normalize-spelling(lower-case(c:normalize-for-sort(@v))), 'a')] :)
+        (: [starts-with(c:normalize-spelling(lower-case(c:normalize-for-sort(@v))), 'ah')] :)
     else if ($id = 'ns') then
         (xdb:key($root, 'language', 'ns') | xdb:key($root, 'language', 's') | xdb:key($root, 'language', 'n') | xdb:key($root, 'language', 'en') | xdb:key($root, 'language', 'g'))
         [not(combine)]

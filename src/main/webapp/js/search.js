@@ -313,7 +313,6 @@ function maxPos() {
 	return result;
 }
 
-// FIXME: New reset mechanism?
 function reset() {
     var searchBox = document.getElementById('searchBox');
     searchBox.value = '';
@@ -326,6 +325,16 @@ function reset() {
     var partsOfSpeechSelect = document.getElementById('partsOfSpeechSelect');
     partsOfSpeechSelect.selectedIndex = 0;
     doSearch();
+}
+
+function advanced() {
+    var searchSelectors = document.getElementById('search-selectors');
+    display = getComputedStyle(searchSelectors, null).getPropertyValue('display');
+    if (display == 'block') {
+    	searchSelectors.style.display = 'none';
+    } else {
+    	searchSelectors.style.display = 'block';
+    }
 }
 
 //-----------------//

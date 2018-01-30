@@ -32,7 +32,7 @@ declare variable $lang-name := $lang/@name/string();
     [<a href="../language-pages/lang-{$id}.html">{$lang-name}</a>]
 </td></tr></table>
 <hr/>
-<h1>{$lang-name} Semantic Categories</h1>
+<h1>{$lang-name} Semantic&#160;Categories</h1>
 <hr/>
 <ul>
 {
