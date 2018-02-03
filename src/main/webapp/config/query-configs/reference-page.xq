@@ -180,11 +180,11 @@ return
 <body>
 <p>
    [<a href="../../index.html">Home</a>] »
-   [<a href="index.html">Reference Index</a>]
+   <a href="index.html">Reference Index</a>
 </p>
 <hr/>
 <h1>{$name} ({$prefix})</h1>
-{if ($source/cite/text()) then <blockquote>— {xdb:html($source/cite/text())}</blockquote> else ()}
+{if ($source/cite/text()) then <ul><li>{xdb:html($source/cite/text())}</li></ul> else ()}
 <p>{xdb:html($source/notes/text())}</p>
 <hr/>
 {

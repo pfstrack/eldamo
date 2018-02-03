@@ -3,9 +3,28 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body>
 <table> {
-let $l := 'n'
+let $l := 's'
 let $exclusions := <exclusions>
-<word l="n" v="amben(n)"/>
+<word l="s" v="teitha-"/>
+<word l="s" v="thind"/>
+<word l="s" v="thoron"/>
+<word l="s" v="tolodh"/>
+<word l="n" v="orchal"/>
+<word l="n" v="-(i)ol"/>
+<word l="n" v="hae"/>
+<word l="n" v="merilin(n)"/>
+<word l="n" v="lham(b)"/>
+<word l="n" v="-iel"/>
+<word l="n" v="forn(en)"/>
+<word l="n" v="heledir(n)"/>
+<word l="n" v="haudh"/>
+<word l="n" v="hann"/>
+<word l="n" v="glaer"/>
+<word l="n" v="galadh"/>
+<word l="n" v="oer"/>
+<word l="n" v="dúlin(n)"/>
+<word l="n" v="car(dh)"/>
+<word l="n" v="ambenn"/>
 <word l="q" v="yondë"/>
 <word l="q" v="yó(m)"/>
 <word l="q" v="-xë¹"/>
@@ -183,9 +202,9 @@ let $exclusions := <exclusions>
 for $word in c:lang-words(/*, $l)
     [not(contains(c:get-speech(.), 'phon'))][not(contains(c:get-speech(.), 'name'))]
     [not(contains(c:get-speech(.), 'grammar'))][not(contains(c:get-speech(.), 'text'))][not(contains(c:get-speech(.), 'phrase'))]
-    [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))]
+    [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))]
     [not(correction)][not(change)]/@v/translate(c:normalize-for-sort(.), '’', ''))) gt 1]
-let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(correction)]/@v
+let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))][not(correction)]/@v
     [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/translate(lower-case(.), 'ūë-', 'úe')), '; ')
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
     word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³⁴', ''), '; ')

@@ -26,6 +26,7 @@ td, th  { border: solid 1px black; padding: 0.2em; vertical-align: top }
 th      { background: #CCCCCC }
 
 ul { padding-left: 1.5em; }
+blockquote { margin-left: 1.5em; margin-right: 0em; }
 
 dt { list-style: none; text-indent: -1.5em; margin-left: 1.5em; }
 dt::first-line { list-style: none; margin-left: 2em; }
@@ -42,11 +43,31 @@ dd.see-instead::before { content: '→ '; }
 
 li.c-bullet { list-style-type:none; text-indent: -1em }
 
-table.nav-table    { border: none; width: 100% }
-table.nav-table td { border: none }
+div.neo-nav-block    { display: none; }
 
-table.neo-nav-table    { display: none; border: none; width: 100% }
-table.neo-nav-table td { border: none }
+span.hierachy-nav { display: block; }
+span.search-nav-link { display: block; float: right }
+span.previous-nav-link { display: block; float: left }
+span.next-nav-link { display: block; text-align: right }
+span.parent-nav-link { display: none; }
+span.search-nav-link2 { display: none; }
+hr.nav-break { display: block; }
+@media only screen and (min-width: 450px) {
+	span.hierachy-nav { display: block; float: left }
+	span.list-nav { display: block; float: right }
+    span.search-nav-link { display: none }
+    span.parent-nav-link { display: inline-block }
+	span.previous-nav-link { display: inline-block; float: none }
+	span.next-nav-link { display: inline-block; float: none }
+    span.search-nav-link2 { display: inline-block }
+	hr.nav-break { display: none; }
+	div.notes { margin-left: 1.5em }
+}
+
+span.breadcrumb-nav { display: none; }
+@media only screen and (min-width: 750px) {
+    span.breadcrumb-nav { display: inline-block; }
+}
 
 p.neo-lang-word    { display: none; }
 

@@ -13,12 +13,13 @@
 <p>v0.6.1</p>
 <ul>
 <li>See below: <a href="#v0.6.1">Breaking Changes in v0.6.1</a>.</li>
+<li>Various usability enhancements to better support mobile.</li>
 <li>Cleanup usage of word reliability markers.</li>
 <li>Introduced Neo-Quenya (ᴺQ), Neo-Sindarin (ᴺS), and Neo-Primitive (ᴺ✶) languages.</li>
 <li>Changed North Sindarin code/abbreviation from “ns/NS.” to “norths/North S.” to better distinguish it from Neo-Sindarin.</li>
 <li>Reorganized Quenya and Sindarin entries to fit new “Neo” language structures.</li>
-<li>TBD: Created alternate “neo” navigation for walking through Neo-languages.</li>
-<li>TBD: Began Quenya phonetic analysis.</li>
+<li>Alternate “neo” navigation for walking through Neo-languages.</li>
+<li>Added linked (&lt;see&gt;) entries for many variant forms so they show up in search.</li>
 </ul>
 <p>v0.6.0 (December 29, 2017)</p>
 <ul>
@@ -208,21 +209,30 @@ Neo-Quenya (l="nq" or ᴺQ.). Over time I intend to start including more neologi
 <p>The Neo-Quenya and Neo-Sindarin language lists now serve as a suggested list of words to use in new Elvish
 composition. The Neo-Quenya list includes all published Quenya words created by Tolkien from the 1910s to the 1970s,
 including “Early Qenya”. Similarly, the Neo-Sindarin list also includes Noldorin and Gnomish words. Words are clearly
-labeled by language (S., N., G.; Q., ᴹQ., ᴱQ.) so that authors can exclude earlier words if they wish.</p>
-<p>Words that remained essentially the same across multiple periods are collapsed into a single entry in the lists. For
-example, the Quenya word <i>aha</i> appeared in both the 1940s and 1950s, and is listed as: Q., ᴹQ. <b>aha</b> “rage”.
-Similarly, the Sindarin word <i>adar</i> appears as: S., N. <b>adar</b> “father”. In the data model, these combinations
-are indicated by the @combine attribute in child &lt;word&gt; elements. Where a specific gloss appeared only in an older version
-of the language, this is also indicated, as in: Q., ᴹQ. <b>mól</b> “slave, [ᴹQ.] thrall”.</p>
-<p>The Neo-Quenya and Neo-Sindarin word lists use the ⚠️  symbol to indicate that some words are not recommended for
-new Elvish compositions, with alternate suggestions if they are available. In the data model, these recommendations
-are indicated by the &lt;deprecated&gt; element. These “unrecommended words” are only my opinion, and can be ignored if
-desired. The ⚠️ symbol also appears in glosses for recommendation against using words with certain meanings.</p>
+labeled by language (S., N., G.; Q., ᴹQ., ᴱQ.) so that authors can exclude earlier words if they wish. To help those
+who want to use only later words, the search page now has a “Later Quenya” and “Sindarin/Noldorin” search option that
+includes only words from 1930-1973.</p>
+<p>Words that remained essentially the same across multiple periods are collapsed into a single entry in the Neo-Eldarin
+word lists. For example, the Quenya word <i>aha</i> appeared in both the 1940s and 1950s, and is listed as: Q., ᴹQ.
+<b>aha</b> “rage”. Similarly, the Sindarin word <i>adar</i> appears as: S., N. <b>adar</b> “father”. In the data model
+these combinations are indicated by the &lt;combine&gt; elements in child &lt;word&gt; elements.</p>
+<p>Gloss attributes are also being modified to include only glosses from the specific time period of the word. Thus, the
+gloss for Q. <b>mól</b> is “slave”, while ᴹQ. <b>mól</b> has the glosses “slave, thrall”. There is a new @ngloss
+attribute (neo-gloss) for the Neo-Eldarin entries that has gloss across multiple time periods. Where a specific gloss
+appears only in an older version of the language, this is also indicated in the @ngloss, as in: Q., ᴹQ. <b>mól</b>
+“slave, [ᴹQ.] thrall”.</p>
+<p>The Neo-Quenya and Neo-Sindarin word lists use the ⚠️  and ⛔️ symbols to indicate that some words are not recommended
+for new Elvish compositions, with alternate suggestions if they are available. In the data model, these recommendations
+are indicated by the &lt;deprecated&gt; element, with a @weak attribute to distinguish ⚠️ (weak) from ⛔️ (strong) 
+recommendations. These “unrecommended words” are only my opinion, and can be ignored if desired. The ⚠️ symbol also
+appears in glosses for recommendation against using words with certain meanings. Even if there is no &lt;deprecated&gt;
+element, deleted and unglossed words are still marked ⛔️, and words that appear in a deleted section are marked ⚠️.</p>
 <p>People using Eldamo data to populate their own dictionaries will need to make some decisions on how to incorporate
 these changes. If you want to ignore my deprecation suggestions, simply ignore the &lt;deprecated&gt; element and strip
-out the ⚠️ symbol from glosses (Unicode Emoji U+26A0 U+FE0F, or XML encoding &amp;#9888;&amp;#65039;). You may also want to pre-process the glosses to strip out older
-meanings. You may need to make decisions about whether you want to treat Noldorin words as Sindarin, and Middle Qenya
-words as Quenya. I can’t tell you exactly how you should use the data, but am happy to make suggestions, and perhaps
-makes some enhancements to the data model to simplify common use-cases.</p>
+out the ⚠️ symbol from glosses (Unicode Emoji U+26A0 U+FE0F, or XML encoding &amp;#9888;&amp;#65039;). You may also want
+to pre-process the glosses to combine or strip out older meanings. You may need to make decisions about whether you want
+to treat Noldorin words as Sindarin, and Middle Qenya words as Quenya. I can’t tell you exactly how you should use the
+data, but am happy to make suggestions, and perhaps makes some enhancements to the data model to simplify common
+use-cases.</p>
 </body>
 </html>

@@ -62,10 +62,14 @@ function doReplace(charReplace1, charReplace2, value) {
 function transcribeSpans() {
 	var isNeo = window.location.toString().indexOf('?neo') > 0;
 	if (isNeo) {
-		var baseNav = document.getElementById('nav-table');
-		var neoNav = document.getElementById('neo-nav-table');
-		baseNav.style.display = 'none';
-		neoNav.style.display = 'table';
+		var baseNavBlock = document.getElementById('nav-block');
+		if (baseNavBlock) {
+			var neoNavBlock = document.getElementById('neo-nav-block');
+			if (neoNavBlock) {
+				baseNavBlock.style.display = 'none';
+				neoNavBlock.style.display = 'block';
+			}
+		}
 		var neoLangWord = document.getElementById('neo-lang-word');
 		if (neoLangWord) {
 			var langWord = document.getElementById('lang-word');

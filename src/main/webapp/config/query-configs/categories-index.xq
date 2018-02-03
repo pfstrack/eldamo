@@ -21,16 +21,13 @@ declare variable $lang-name := $lang/@name/string();
 
 </head>
 <body>
-<table id="nav-table" class="nav-table"><tr><td>
+<div id="nav-block" class="nav-block">
     [<a href="../../index.html">Home</a>] »
-    [<a href="../languages/index.html">Languages</a>] »
-    [<a href="../language-pages/lang-{$id}.html">{$lang-name}</a>]
-</td></tr></table>
-<table id="neo-nav-table" class="neo-nav-table"><tr><td>
-    [<a href="../../index.html">Home</a>] »
-    [<a href="../languages/index.html">Languages</a>] »
-    [<a href="../language-pages/lang-{$id}.html">{$lang-name}</a>]
-</td></tr></table>
+<span class="breadcrumb-nav">
+    <a href="../languages/index.html">Languages</a> »&#160;
+</span>
+    <a href="../language-pages/lang-{$id}.html">{$lang-name}</a>
+</div>
 <hr/>
 <h1>{$lang-name} Semantic&#160;Categories</h1>
 <hr/>

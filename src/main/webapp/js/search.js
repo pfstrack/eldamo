@@ -222,6 +222,9 @@ function searchIt(buffer) {
     }
     resultList.innerHTML = html;
 	var loadingZone = document.getElementById('loadingZone');
+	if (isInViewport(loadingZone)) {
+		searchIt(BUFFER + 50);
+	}
 }
 
 function wordsToHtml(result, pos) {
@@ -350,12 +353,12 @@ function posY(elmt) {
     return top;
 }
 
-function viewPortHeight() {
-	var de = document.documentElement;
+function viewportHeight() {
+	var docElmt = document.documentElement;
 	if (!!window.innerWidth) {
 		return window.innerHeight;
-	} else if (de && !isNaN(de.clientHeight)) {
-		return de.clientHeight;
+	} else if (docElmt && !isNaN(docElmt.clientHeight)) {
+		return docElmt.clientHeight;
 	}
 	return 0;
 }
@@ -369,11 +372,7 @@ function scrollY() {
 
 function isInViewport(elmt) {
 	if (elmt == null) return false;
-    var vpH = viewPortHeight();
-    var st = scrollY();
-    var y = posY(elmt);
-
-    return !(y > (vpH + st));
+    return !(posY(elmt) > (viewportHeight() + scrollY()));
 }
 
 var scrollLock = false;
@@ -383,7 +382,6 @@ function checkLoading() {
 	scrollLock = true;
 	var loadingZone = document.getElementById('loadingZone');
 	if (isInViewport(loadingZone)) {
-		console.log('BUFFER=' + (BUFFER + 50));
 		searchIt(BUFFER + 50);
 	}
 	scrollLock = false;

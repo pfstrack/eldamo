@@ -312,13 +312,14 @@ li ul li {{list-style-type:none}}
 </head>
 <body>
 
-<table id="nav-table" class="nav-table">
-<tr>
-<td>
+<div id="nav-block" class="nav-block">
+<span class="hierarchy-nav">
+<span class="breadcrumb-nav">
     [<a href="../../index.html">Home</a>] »
-    [<a href="../languages/index.html">Languages</a>] »
-    [<a href="../language-pages/lang-{$l}.html">{$lang}</a>] »
-[{
+    <a href="../languages/index.html">Languages</a> »
+    <a href="../language-pages/lang-{$l}.html">{$lang}</a> »&#160;
+</span>
+{
 if (ends-with(c:get-speech($words[1]), '-name')) then    
     <a href="../name-indexes/names-{$l}.html">{$lang} Names</a>
 else if (c:get-speech($words[1]) = 'phrase' or c:get-speech($words[1]) = 'text') then    
@@ -331,9 +332,11 @@ else if (starts-with(c:get-speech($words[1]), 'phone')) then
     <a href="../phonetic-indexes/phonetics-{$l}.html">{$lang} Phonetics</a>
 else
     <a href="../word-indexes/words-{$l}.html">{$lang} Words</a>
-}]
-</td>
-<td align="right"> {
+}
+</span>
+<span class="search-nav-link">[<a href="../search/search.html">Search</a>]</span>
+<hr class="nav-break"/>
+<span class="list-nav"> {
 let $lang := $words[1]/ancestor-or-self::*[@l][1]/@l/string()
 let $base-word := $words[1]/ancestor-or-self::*[@l=$lang][last()]
 let $base-word-speech := c:get-speech($base-word)
@@ -374,26 +377,33 @@ let $preceding-word := $match-in-word-set/preceding-sibling::*[1]
 let $following-word := $match-in-word-set/following-sibling::*[1]
 let $parent := $words[1]/ancestor::word[not(see)][1]
 return (
-    if (not($parent)) then '' else (' [↑', c:print-word($parent, <print-word show-lang="y" show-link="y"/>), ']'),
-    if ($preceding-word) then (' [', <a href="{c:to-word-link($preceding-word)}">&lt; Previous</a>, ']') else (),
-    if ($following-word) then (' [', <a href="{c:to-word-link($following-word)}">Next &gt;</a>, ']') else (),
-    ('[', <a href="../search/search.html">Search</a>, ']')
-) } </td>
-</tr>
-</table>
+    if (not($parent)) then '' else <span class="parent-nav-link">
+        [↑{c:print-word($parent, <print-word show-lang="y" show-link="y"/>)}]
+    </span>,
+    if ($preceding-word) then <span class="previous-nav-link">
+        [<a href="{c:to-word-link($preceding-word)}">← Previous</a>]
+    </span> else (),
+    <span class="next-nav-link">{ if ($following-word) then
+        ('[', <a href="{c:to-word-link($following-word)}">Next →</a>, ']')
+    else ('&#160;') }</span>,
+    <span class="search-nav-link2">[<a href="../search/search.html">Search</a>]</span>
+) }
+</span>
+</div>
 {
 let $neo-lang := //language[@id=c:get-neo-lang($words[1])]
 let $l := $neo-lang/@id/string()
 let $lang := $neo-lang/@name/string()
 return
 if (not($neo-lang)) then () else (
-<table id="neo-nav-table" class="neo-nav-table">
-<tr>
-<td>
+<div id="neo-nav-block" class="neo-nav-block">
+<span class="hierarchy-nav">
+<span class="breadcrumb-nav">
     [<a href="../../index.html">Home</a>] »
-    [<a href="../languages/index.html">Languages</a>] »
-    [<a href="../language-pages/lang-{$neo-lang/@id/string()}.html">{$lang}</a>] »
-[{
+    <a href="../languages/index.html">Languages</a> »
+    <a href="../language-pages/lang-{$neo-lang/@id/string()}.html">{$lang}</a> »&#160;
+</span>
+{
 if (ends-with(c:get-speech($words[1]), '-name')) then    
     <a href="../name-indexes/names-{$l}.html">{$lang} Names</a>
 else if (c:get-speech($words[1]) = 'phrase' or c:get-speech($words[1]) = 'text') then    
@@ -406,9 +416,11 @@ else if (starts-with(c:get-speech($words[1]), 'phone')) then
     <a href="../phonetic-indexes/phonetics-{$l}.html">{$lang} Phonetics</a>
 else
     <a href="../word-indexes/words-{$l}.html">{$lang} Words</a>
-}]
-</td>
-<td align="right"> {
+}
+</span>
+<span class="search-nav-link">[<a href="../search/search.html">Search</a>]</span>
+<hr class="nav-break"/>
+<span class="list-nav"> {
 let $lang := $l
 let $base-word := if ($words[1]/combine) then c:get-word($words[1]/combine) else $words[1]
 let $base-word-speech := c:get-speech($base-word)
@@ -448,12 +460,16 @@ let $match-in-word-set := $sorted-word-set/*[text()='match'][1]
 let $preceding-word := $match-in-word-set/preceding-sibling::*[1]
 let $following-word := $match-in-word-set/following-sibling::*[1]
 return (
-    if ($preceding-word) then (' [', <a href="{c:to-word-link($preceding-word)}">&lt; Previous</a>, ']') else (),
-    if ($following-word) then (' [', <a href="{c:to-word-link($following-word)}">Next &gt;</a>, ']') else (),
-    ('[', <a href="../search/search.html">Search</a>, ']')
-) } </td>
-</tr>
-</table>
+    if ($preceding-word) then <span class="previous-nav-link">
+        [<a href="{c:to-word-link($preceding-word)}">← Previous</a>]
+    </span> else (),
+    <span class="next-nav-link">{ if ($following-word) then
+        ('[', <a href="{c:to-word-link($following-word)}">Next →</a>, ']')
+    else ('&#160;') }</span>,
+    <span class="search-nav-link2">[<a href="../search/search.html">Search</a>]</span>
+) }
+</span>
+</div>
 )}
 
 {
@@ -498,7 +514,7 @@ return (
     {let $rule := if ($word/@rule) then $word else $word/rule return
     if ($rule) then concat('; [', $rule/@from, '] &gt; [', $rule/@rule, ']') else ()}
     {if ($word/see)
-        then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y"/>))
+        then (' see ', c:print-word(c:get-word($word/see)[1], <print-word style="bold" show-lang="y" show-link="y"/>))
         else ()}
     {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
 </p>,
@@ -515,17 +531,18 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
     { if ($alt-lang and not(c:is-primitive($word))) then concat('[', $alt-lang, '] ') else () }
-    {if (xdb:hashcode($word) = xdb:hashcode($words[1]))
-        then c:print-word($word, <print-word style="bold" normalize="true"> {
+    { let $normalize := $l = ('q', 'nq', 'mq', 'eq') return
+      if (xdb:hashcode($word) = xdb:hashcode($words[1]))
+        then c:print-word($word, <print-word style="bold" normalize="{$normalize}"> {
                                      if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
                                  } </print-word>)
         else c:print-word($word, <print-word style="bold" normalize="true" show-link="y"> {
                                      if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
                                  } </print-word>)}
-    {if ($word/@orthography) then concat(' ‹', $word/@orthography/string(), '›') else ()}
-    {if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else ()}
+    { if ($word/@orthography) then concat(' ‹', $word/@orthography/string(), '›') else () }
+    { if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else () }
     { if ($word/@stem) then <span> (<b>{if (c:get-lang($word) = ('q', 'mq', 'eq', 'nq')) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
-    {if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else ()}
+    { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
     { if (($word/@l = 's' or $word/@l = 'q') and
          not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
          not($word/@l='q' and starts-with($word/@v, '-d'))
@@ -553,7 +570,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
 
 let $texts-in := xdb:key($word, 'element-in', $word/@v)[@speech='text'][@l=$word/@l]
 return if (not($texts-in)) then () else
-    <blockquote> { if (not($texts-in)) then () else (
+    <div class="notes"> { if (not($texts-in)) then () else (
             for $text-in in $texts-in
             let $text-element := $text-in/element[@v=$word/@v]
             let $previous-phrase := $text-element/preceding-sibling::element[1]
@@ -570,13 +587,13 @@ return if (not($texts-in)) then () else
             </p>,
             <hr/>
         ) }
-    </blockquote>,
+    </div>,
 
 if ($word/see-notes) then 
-   <blockquote>
+   <div class="notes">
        See {c:print-word(c:get-word($word/see-notes), 
        <print-word style="italic" show-lang="y" show-link="y"/>)} for discussion.
-   </blockquote>
+   </div>
 else (),
 
 for $note in $word/notes | $word/inflect-table[not(@hide)]
@@ -584,7 +601,7 @@ let $see-further := $note/following-sibling::*[1][name()='see-further']
 let $see-also := $note/following-sibling::*[1][name()='see-also']/c:get-word(.)
 return if ($note/self::notes)
 then
-    <blockquote>
+    <div class="notes">
         {xdb:html($note/node())}
         {if ($see-further) then (
             <p>See {c:print-word(c:get-word($see-further), 
@@ -594,7 +611,7 @@ then
             <p>See also {c:print-word($see-also, 
             <print-word style="italic" show-lang="y" show-link="y"/>)} {c:print-gloss($see-also)}.</p>
         ) else ()}
-    </blockquote>
+    </div>
 else <center><table> {
 let $inflect-display :=
     if ($note/@l/string())

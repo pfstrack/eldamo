@@ -562,6 +562,7 @@
     <xs:complexType>
       <xs:attribute name="l" use="required" type="language-type"/>
       <xs:attribute name="v" use="required"/>
+      <xs:attribute name="weak"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="deriv-ref" mixed="true">
