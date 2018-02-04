@@ -291,6 +291,13 @@ declare variable $words := xdb:key(/*, 'word-code', $code);
 declare variable $l := c:get-lang($words[1]);
 declare variable $lang := //language[@id=$l]/@name/string();
 declare variable $neo-lang-word := if ($words[1]/combine) then c:get-word($words[1]/combine) else $words[1];
+declare variable $allow-neo-nav :=
+    if (ends-with(c:get-speech($words[1]), '-name')) then false()
+    else if (c:get-speech($words[1]) = 'phrase' or c:get-speech($words[1]) = 'text') then false()
+    else if (c:get-speech($words[1]) = 'grammar') then false()
+    else if (c:get-speech($words[1]) = 'root') then true()
+    else if (starts-with(c:get-speech($words[1]), 'phone')) then false()
+    else true();
 
 <html>
 <head>
@@ -395,7 +402,7 @@ let $neo-lang := //language[@id=c:get-neo-lang($words[1])]
 let $l := $neo-lang/@id/string()
 let $lang := $neo-lang/@name/string()
 return
-if (not($neo-lang)) then () else (
+if (not($neo-lang) or not($allow-neo-nav)) then () else (
 <div id="neo-nav-block" class="neo-nav-block">
 <span class="hierarchy-nav">
 <span class="breadcrumb-nav">
