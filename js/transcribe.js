@@ -6,7 +6,8 @@ var sindarinTranscriber = Glaemscribe.resource_manager.loaded_modes["sindarin-be
 var eldamarCharset = Glaemscribe.resource_manager.loaded_charsets["tengwar_ds_eldamar"]
 
 function doTranscribe(lang, value) {
-	var transcriber = (lang == 'q') ? quenyaTranscriber : (lang == 's') ? sindarinTranscriber : null;
+	var transcriber = (lang == 'q' || lang == 'mq' || lang == 'eq' || lang == 'nq') ? quenyaTranscriber 
+			: (lang == 's' || lang == 'n' || lang == 'en' || lang == 'g' || lang == 'ns') ? sindarinTranscriber : null;
 	if (transcriber == null) return null;
 
 	// Transcription pre-processing to fix extraneous characters
@@ -59,6 +60,31 @@ function doReplace(charReplace1, charReplace2, value) {
 }
 
 function transcribeSpans() {
+	var isNeo = window.location.toString().indexOf('?neo') > 0;
+	if (isNeo) {
+		var baseNavBlock = document.getElementById('nav-block');
+		if (baseNavBlock) {
+			var neoNavBlock = document.getElementById('neo-nav-block');
+			if (neoNavBlock) {
+				baseNavBlock.style.display = 'none';
+				neoNavBlock.style.display = 'block';
+			}
+		}
+		var neoLangWord = document.getElementById('neo-lang-word');
+		if (neoLangWord) {
+			var langWord = document.getElementById('lang-word');
+			langWord.style.display = 'none';
+			neoLangWord.style.display = 'block';
+		}
+		var anchors = document.getElementsByTagName('a');
+		for (var i = 0; i < anchors.length; i++) {
+			var a = anchors[i];
+			if (a.name) continue;
+			if (a.href.indexOf('#') > 0) continue;
+			a.href = a.href + "?neo";
+		}
+	}
+
 	var clsElements = document.getElementsByClassName("transcribe");
 	for (var i = clsElements.length - 1; i >= 0; i--) {
 		var transcribeSpan = clsElements[i];

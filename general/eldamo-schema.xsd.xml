@@ -420,7 +420,10 @@
       <xs:enumeration value="p"/>    <!-- Primitive Elvish -->
       <xs:enumeration value="pad"/>  <!-- Primitive Adunaic -->
       <xs:enumeration value="nan"/>  <!-- Nandorin -->
-      <xs:enumeration value="ns"/>   <!-- North Sindarin -->
+      <xs:enumeration value="norths"/> <!-- North Sindarin -->
+      <xs:enumeration value="np"/>   <!-- Neo-Primitive Elvish -->
+      <xs:enumeration value="nq"/>   <!-- Neo-Quenya -->
+      <xs:enumeration value="ns"/>   <!-- Neo-Sindarin -->
       <xs:enumeration value="on"/>   <!-- Old Noldorin -->
       <xs:enumeration value="os"/>   <!-- Old Sindarin -->
       <xs:enumeration value="q"/>    <!-- Quenya -->
@@ -534,6 +537,15 @@
     <xs:attribute name="v" use="required"/>
     <xs:attribute name="mark"/>
   </xs:complexType>
+  <xs:element name="combine">
+    <xs:annotation>
+      <xs:documentation>Indicates that this entry is an earlier version of another, and they may be combined.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="correction">
     <xs:annotation>
       <xs:documentation>An editorial correction of an earlier published form. Uses a source reference (@source). Note that the reference value (ref/@v) of the correction reference is the original (uncorrected) form, while the reference value (ref/@v) of the linked/corrected reference is the corrected form. This is to ensure that the corrected form will appear in the relationships of its original reference.</xs:documentation>
@@ -541,6 +553,16 @@
     <xs:complexType mixed="true">
       <xs:attribute name="source" use="required"/>
       <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deprecated">
+    <xs:annotation>
+      <xs:documentation>Link to an alternate word, which is perhaps preferable for Neo-Elvish writings.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+      <xs:attribute name="weak"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="deriv-ref" mixed="true">
@@ -736,6 +758,7 @@
         <xs:element ref="notes"/>
         <xs:element ref="phonetics"/>
         <xs:element ref="phrases"/>
+        <xs:element ref="roots"/>
         <xs:element ref="words"/>
       </xs:choice>
       <xs:attribute name="id" use="required" type="xs:ID"/>
@@ -824,6 +847,11 @@
     <xs:attribute name="v" use="required"/>
     <xs:attribute name="mark"/>
   </xs:complexType>
+  <xs:element name="roots" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s root list page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="rule">
     <xs:annotation>
       <xs:documentation>A phonetic rule, specifying the language (@l), the original phonetic form (@from) and the new form (@rule). This triplet (@l, @rule, @form) is used to link to examples of the phonetic rule.</xs:documentation>
@@ -856,7 +884,7 @@
   </xs:element>
   <xs:element name="see">
     <xs:annotation>
-      <xs:documentation>Linked to another word discussing this form, using a word reference (@l + @v).</xs:documentation>
+      <xs:documentation>Link to another word discussing this form, using a word reference (@l + @v).</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:attribute name="l" use="required" type="language-type"/>
@@ -865,7 +893,7 @@
   </xs:element>
   <xs:element name="see-also">
     <xs:annotation>
-      <xs:documentation>Linked to a similar word, with relevant discussion, using a word reference (@l + @v).</xs:documentation>
+      <xs:documentation>Link to a similar word, with relevant discussion, using a word reference (@l + @v).</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:attribute name="l" use="required" type="language-type"/>
@@ -874,7 +902,7 @@
   </xs:element>
   <xs:element name="see-further">
     <xs:annotation>
-      <xs:documentation>Linked to another word with further discussion of this word, using a word reference (@l + @v).</xs:documentation>
+      <xs:documentation>Link to another word with further discussion of this word, using a word reference (@l + @v).</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:attribute name="l" use="required" type="language-type"/>
@@ -883,7 +911,7 @@
   </xs:element>
   <xs:element name="see-notes">
     <xs:annotation>
-      <xs:documentation>Linked to another word with notes discussing this word, using a word reference (@l + @v).</xs:documentation>
+      <xs:documentation>Link to another word with notes discussing this word, using a word reference (@l + @v).</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:attribute name="l" use="required" type="language-type"/>
@@ -927,6 +955,7 @@
         <xs:element ref="before"/>
         <xs:element ref="class"/>
         <xs:element name="cognate" type="cognate-word"/>
+        <xs:element ref="deprecated"/>
         <xs:element name="deriv" type="deriv-word"/>
         <xs:element ref="derivatives"/>
         <xs:element name="element" type="element-word"/>
