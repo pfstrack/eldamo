@@ -37,10 +37,22 @@ declare variable $secondary-word := <control show-link="y"/>;
 let $words := c:lang-words(/*, $id)
 let $neo-lang := if ($id = 'nq' or $id = 'ns' or $id = 'np') then true() else false()
 for $word in $words[c:get-speech(.)='root']
+let $deprecated :=
+    if ($word/deprecated) then $word/deprecated
+    else if ($word/see/c:get-word(.)/deprecated) then $word/see/c:get-word(.)/deprecated
+    else ()
 order by c:normalize-for-sort($word/@v)
 return (
     <dt>
-        { if ($neo-lang and $word/deprecated) then '⚠️' else () }
+        { if (
+            $neo-lang and ($deprecated[not(@weak)]
+            or $word/@gloss='[unglossed]'
+            or contains($word/@mark, '-'))
+          ) then <span>⛔️</span>
+          else if (
+            $neo-lang and ($deprecated[@weak]
+            or contains($word/@mark, '|') or contains($word/@mark, '‽'))
+          ) then <span>⚠️</span> else () }
         { if (not($neo-lang)) then () else (
             let $lang-list := (c:print-lang2($word), for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]] return c:print-lang2($w))
             return string-join($lang-list, ', ')

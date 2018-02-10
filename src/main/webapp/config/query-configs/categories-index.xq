@@ -71,12 +71,24 @@ for $word in $cat/xdb:key(., 'category', @id)[@l=$lang-group]
 let $alt-lang := c:alt-lang($word)
 let $neo-lang := if ($id = 'nq' or $id = 'ns' or $id = 'np') then true() else false()
 let $normalize := if ($id = 'nq') then true() else false()
+let $deprecated :=
+    if ($word/deprecated) then $word/deprecated
+    else if ($word/see/c:get-word(.)/deprecated) then $word/see/c:get-word(.)/deprecated
+    else ()
 order by if ($neo-lang)
     then c:normalize-for-sort(c:normalize-spelling($word/@v))
     else c:normalize-for-sort($word/@v)
 return (
     <dt>
-        { if ($neo-lang and $word/deprecated) then '⚠️' else () }
+        { if (
+            $neo-lang and ($deprecated[not(@weak)]
+            or $word/@gloss='[unglossed]'
+            or contains($word/@mark, '-'))
+          ) then <span>⛔️</span>
+          else if (
+            $neo-lang and ($deprecated[@weak]
+            or contains($word/@mark, '|') or contains($word/@mark, '‽'))
+          ) then <span>⚠️</span> else () }
         { if (not($neo-lang)) then () else (
             let $lang-list := (c:print-lang2($word), for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]] return c:print-lang2($w))
             return concat(string-join($lang-list, ', '), ' ')

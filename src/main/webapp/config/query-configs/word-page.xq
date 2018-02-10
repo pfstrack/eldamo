@@ -498,9 +498,10 @@ return (
         else c:print-word($word, <print-word style="bold" show-link="y"> {
                                      if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
                                  } </print-word>)}
-    {if ($word/@orthography) then concat(' ‹', $word/@orthography/string(), '›') else ()}
-    {if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else ()}
-    {if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else ()}
+    { if ($word/@orthography) then concat(' ‹', $word/@orthography/string(), '›') else () }
+    { if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else () }
+    { if ($word/@stem) then <span> (<b>{$word/@stem/string()}</b>)</span> else () }
+    { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
     { if (($word/@l = 's' or $word/@l = 'q') and
          not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
          not($word/@l='q' and starts-with($word/@v, '-d'))

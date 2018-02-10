@@ -5,6 +5,63 @@ import module namespace c = "common.xq" at "common.xq";
 <table> {
 let $l := 's'
 let $exclusions := <exclusions>
+<word l="s" v="aen"/>
+<word l="s" v="a¹"/>
+<word l="s" v="alph"/>
+<word l="s" v="and"/>
+<word l="s" v="annon"/>
+<word l="s" v="ar(a)-"/>
+<word l="s" v="athae"/>
+<word l="s" v="ent"/>
+<word l="s" v="canthui"/>
+<word l="s" v="cîw"/>
+<word l="s" v="cû"/>
+<word l="s" v="dol(l)"/>
+<word l="s" v="dúath"/>
+<word l="s" v="Edhel"/>
+<word l="s" v="Eledh"/>
+<word l="s" v="êl"/>
+<word l="s" v="en¹"/>
+<word l="s" v="enedh"/>
+<word l="s" v="esten(t)"/>
+<word l="s" v="gaearon"/>
+<word l="s" v="galadh"/>
+<word l="s" v="glan(n)"/>
+<word l="s" v="glîn(n)"/>
+<word l="s" v="Golodh"/>
+<word l="s" v="golas"/>
+<word l="s" v="golodh"/>
+<word l="s" v="gwae(w)"/>
+<word l="s" v="hadhro"/>
+<word l="s" v="hadhwa-"/>
+<word l="s" v="haudh"/>
+<word l="s" v="heledh"/>
+<word l="s" v="hí"/>
+<word l="s" v="(h)lô"/>
+<word l="s" v="hwâ"/>
+<word l="s" v="i¹"/>
+<word l="s" v="-ian(d)"/>
+<word l="s" v="-iel¹"/>
+<word l="s" v="-ion²"/>
+<word l="s" v="lam"/>
+<word l="s" v="lass"/>
+<word l="s" v="lind¹"/>
+<word l="s" v="loss"/>
+<word l="s" v="mêd(h)"/>
+<word l="s" v="men¹"/>
+<word l="s" v="míriel"/>
+<word l="s" v="nalla"/>
+<word l="s" v="neledh"/>
+<word l="s" v="nin"/>
+<word l="s" v="nos(s)"/>
+<word l="s" v="ogol"/>
+<word l="s" v="Orbelain"/>
+<word l="s" v="othui"/>
+<word l="s" v="Orgaladhad"/>
+<word l="s" v="othgar(ed)"/>
+<word l="s" v="othol"/>
+<word l="s" v="rem"/>
+<word l="s" v="rhûn"/>
 <word l="s" v="teitha-"/>
 <word l="s" v="thind"/>
 <word l="s" v="thoron"/>
@@ -202,14 +259,14 @@ let $exclusions := <exclusions>
 for $word in c:lang-words(/*, $l)
     [not(contains(c:get-speech(.), 'phon'))][not(contains(c:get-speech(.), 'name'))]
     [not(contains(c:get-speech(.), 'grammar'))][not(contains(c:get-speech(.), 'text'))][not(contains(c:get-speech(.), 'phrase'))]
-    [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))]
+    [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))][not(contains(@mark, '**'))]
     [not(correction)][not(change)]/@v/translate(c:normalize-for-sort(.), '’', ''))) gt 1]
-let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))][not(correction)]/@v
+let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))][not(contains(@mark, '**'))][not(correction)]/@v
     [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/translate(lower-case(.), 'ūë-', 'úe')), '; ')
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
     word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³⁴', ''), '; ')
 return
-if (translate($variants, 'ăĕĭŏŭāēīōūök-[]()·', 'aeiouáéíóúoc') = translate($see-refs, 'ëök()-', 'eoc')) then () else
+if (translate($variants, 'ăĕĭŏŭāēīōūökʼ-[]()·', 'aeiouáéíóúoc') = translate($see-refs, 'ëök()-', 'eoc')) then () else
 if ($exclusions/word[@l = $word/@l and @v=$word/@v]) then () else
 <tr>
 <td>&lt;word l="{c:get-lang($word)}" v="{c:print-word($word, <print-word show-link="y"/>)}"</td>

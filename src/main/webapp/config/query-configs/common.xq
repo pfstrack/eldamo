@@ -2,8 +2,8 @@ module namespace c="common.xq";
 
 declare function c:normalize-for-sort($value as xs:string?) as xs:string {
     let $w0 := replace(replace($value, 'yá²', 'yá%²'), 'yá¹', 'yá%¹')
-    let $w1 := translate(lower-case($w0), 'χƕıǝçƀɟḷḹẏýṣṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúäëïöüāēīōūâêîôûăĕĭŏŭãæǣǭęχřš¹²³⁴⁵⁶⁷⁸⁹ .?-–~·‘’[]{}()!̆,`¯̯̥́̄̂', 
-                                          'hhiecbjllyysmnrrnnaeiouaeiouaeiouaeiouaeiouaeiouaaeoexrs123456789')
+    let $w1 := translate(lower-case($w0), 'χƕıǝçƀɟḷḹẏýṣṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúäëïöüāēīōūâêîôûŷăĕĭŏŭãæǣǭęχřš¹²³⁴⁵⁶⁷⁸⁹ .?-–~·‘’[]{}()!̆,`¯̯̥́̄̂', 
+                                          'hhiecbjllyysmnrrnnaeiouaeiouaeiouaeiouaeiouyaeiouaaeoexrs123456789')
     let $w2 := replace($w1, 'ð', 'dzz')
     let $w3 := replace($w2, 'þ', 'tzz')
     let $w4 := replace($w3, 'θ', 'tzz')

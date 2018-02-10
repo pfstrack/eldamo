@@ -16,7 +16,7 @@ declare function local:lang-name($lang as element()) as xs:string {
     ) else if ($lang/@id = 'en') then (
         concat($lang/@name/string(), ' (1920-30)')
     ) else if ($lang/@id = 'ep') then (
-        'Early Primitive (1930-50)'
+        'Early Primitive (1910-30)'
     ) else (
         $lang/@name/string()
     )
