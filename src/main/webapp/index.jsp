@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
     <title>Eldamo : Home</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
 </head>
@@ -47,12 +47,12 @@ However, I have barely begun the work of analyzing and comparing the various wor
 current version of the lexicon must be considered preliminary.</p>
 <hr/>
 <% } %>
-<p><b>General Information</b></p>
+<h2>General Information</h2>
 <ul>
 <li><a href="general/getting-started.html">Getting Started</a></li>
 <li><a href="general/motivations-and-methodology.html">Motivations and Methodology</a></li>
 <li><a href="general/terminology-and-notations.html">Terminology and Notations</a></li>
-<li><a href="general/conceptual-history.html">Conceptual History of Tolkien’s Languages</a></li>
+<li><a href="general/conceptual-history.html">Conceptual History of Elvish</a></li>
 <li><a href="general/phonetic-descriptions.html">Phonetic Descriptions</a></li>
 <li><a href="general/elvish-fonts.html">Elvish Fonts</a></li>
 <li><a href="general/version-history.html">Version History</a></li>

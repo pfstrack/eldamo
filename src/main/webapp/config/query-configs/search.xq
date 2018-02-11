@@ -51,7 +51,7 @@ declare function local:lang-order($lang as xs:string) as xs:string {
 
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
     <meta http-equiv="Content-Style-Type" content="text/css"></meta>
     <title>Eldamo : Search</title>
     <link rel="stylesheet" type="text/css" href="../../css/global.css"></link>

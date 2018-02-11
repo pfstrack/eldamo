@@ -24,7 +24,7 @@ declare function local:has-lang($lang as xs:string?) as xs:boolean {
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
 <title>Eldamo : Language Index</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 </head>
@@ -32,6 +32,11 @@ declare function local:has-lang($lang as xs:string?) as xs:boolean {
 <p>[<a href="../../index.html">Home</a>]</p>
 <hr/>
 <h1>Language Index</h1>
+<ul> {
+for $lang-cat in /*/language-cat
+return
+<li><b><a href="#{$lang-cat/@id/string()}">{$lang-cat/@name/string()}</a></b></li>
+} </ul>
 <p>This page lists the languages included in this lexicon, broken down into various time periods. Within each period,
 languages are arranged hierarchically by descent: child languages that were derived from more ancient languages.</p>
 <p>The “Combined” or “Neo” languages assemble words from various periods, including fan creations (neologisms). These
@@ -47,7 +52,7 @@ trace the conceptual evolution of individual words in Tolkien’s writing.</p>
 <div> {
 for $lang-cat in /*/language-cat
 return (
-<p><b><u>{$lang-cat/@name/string()}</u></b></p>,
+<p><b><u><a name="{$lang-cat/@id/string()}"></a>{$lang-cat/@name/string()}</u></b></p>,
 <ul> {
 for $lang in $lang-cat/language|$lang-cat/language-cat
 return

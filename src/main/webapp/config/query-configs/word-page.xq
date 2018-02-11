@@ -301,7 +301,7 @@ declare variable $allow-neo-nav :=
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
 <title>Eldamo : {$lang} : {$words[1]/@v/string()}</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
@@ -502,20 +502,6 @@ return (
     { if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else () }
     { if ($word/@stem) then <span> (<b>{$word/@stem/string()}</b>)</span> else () }
     { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
-    { if (($word/@l = 's' or $word/@l = 'q') and
-         not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
-         not($word/@l='q' and starts-with($word/@v, '-d'))
-        )
-        then (', ',
-            <span class="transcribe"
-                data-value="{
-                    if ($word/@tengwar='ñ') then
-                        translate($word/@v/lower-case(.), 'n', 'ñ') 
-                    else if ($word/@tengwar='þ') then
-                        translate($word/@v/lower-case(.), 's', 'þ') 
-                    else $word/@v/lower-case(.)
-                }" data-lang="{$word/@l}"></span>
-        , ' ') else ()}
     {c:print-speech($word)}
     {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@form, ' ', $word/class/@variant))), ') ') else ()}
     {c:print-gloss($word)}
@@ -551,7 +537,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     { if ($word/@tengwa) then concat(' (tengwa ', $word/@tengwa/string(), ')') else () }
     { if ($word/@stem) then <span> (<b>{if (c:get-lang($word) = ('q', 'mq', 'eq', 'nq')) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
     { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
-    { if (($word/@l = 's' or $word/@l = 'q') and
+    { if (($word/@l = ('s', 'ns', 'n', 'en', 'g', 'q', 'mq', 'eq', 'nq')) and
          not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
          not($word/@l='q' and starts-with($word/@v, '-d'))
         )
@@ -563,7 +549,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
                     else if ($word/@tengwar='þ') then
                         translate($word/@v/lower-case(.), 's', 'þ') 
                     else $word/@v/lower-case(.)
-                }" data-lang="{$word/@l}"></span>
+                }" data-lang="{if ($word/@l = ('q', 'mq', 'eq', 'nq')) then 'q' else 's'}"></span>
         , ' ') else ()}
     {c:print-speech($word)}
     {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@form, ' ', $word/class/@variant))), ') ') else ()}

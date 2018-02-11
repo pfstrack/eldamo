@@ -3,8 +3,10 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body>
 <table> {
-let $l := 's'
+let $l := 'g'
 let $exclusions := <exclusions>
+<word l="g" v="usc"/>
+<word l="g" v="(n)ada"/>
 <word l="s" v="aen"/>
 <word l="s" v="a¹"/>
 <word l="s" v="alph"/>
@@ -262,7 +264,7 @@ for $word in c:lang-words(/*, $l)
     [count(distinct-values(ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))][not(contains(@mark, '**'))]
     [not(correction)][not(change)]/@v/translate(c:normalize-for-sort(.), '’', ''))) gt 1]
 let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contains(@mark, '†'))][not(contains(@mark, '-'))][not(contains(@mark, '|'))][not(contains(@mark, '?'))][not(contains(@mark, '‽'))][not(contains(@mark, '**'))][not(correction)]/@v
-    [not(translate(c:normalize-for-sort(.), 'c()|', 'k') = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/translate(lower-case(.), 'ūë-', 'úe')), '; ')
+    [not(c:normalize-for-sort(translate(., 'c()|¹²³', 'k')) = c:normalize-for-sort(translate($word/@v, 'c¹²³', 'k')))]/translate(lower-case(.), 'ūë-', 'úe')), '; ')
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
     word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³⁴', ''), '; ')
 return

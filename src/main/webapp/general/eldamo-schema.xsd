@@ -774,6 +774,7 @@
         <xs:element ref="language"/>
         <xs:element ref="language-cat"/>
       </xs:choice>
+      <xs:attribute name="id" type="xs:ID"/>
       <xs:attribute name="name" use="required"/>
     </xs:complexType>
   </xs:element>
