@@ -206,13 +206,19 @@ declare function c:lang-words($root as element(), $id) as element()* {
 (: source :)
 
 declare function c:print-source($ref as element()?) as xs:string {
-    substring-before(replace(replace(concat($ref/@source, '.'), '/0', '/'), '/0', '/'), '.')
+    c:short-ref($ref/@source)
 };
 
-declare function c:print-source-link($ref as element()) as element() {
+declare function c:short-ref($source) as xs:string {
+    $source/replace(replace(substring-before(concat(., '.'), '.'), '/0', '/'), '/0', '/')
+};
+
+declare function c:print-source-link($ref as element(), $short-mode as xs:boolean) as element() {
     let $link := concat('../references/ref-', substring-before($ref/@source, '/'), '.html#', $ref/@source)
     let $src := c:print-full-source($ref)
-    return <a href="{$link}" style="color: black">{$src}</a>
+    return <a href="{$link}" style="color: black">{
+        if ($short-mode) then c:print-source($ref) else c:print-full-source($ref)
+    }</a>
 };
 
 declare function c:print-sources($refs as element()*) as xs:string {

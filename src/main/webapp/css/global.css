@@ -66,7 +66,7 @@ span.next-nav-link { display: block; text-align: right }
 span.parent-nav-link { display: none; }
 span.search-nav-link2 { display: none; }
 hr.nav-break { display: block; }
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 530px) {
 	span.hierachy-nav { display: block; float: left }
 	span.list-nav { display: block; float: right }
     span.search-nav-link { display: none }
@@ -79,10 +79,10 @@ hr.nav-break { display: block; }
 }
 
 span.breadcrumb-nav { display: none; }
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 860px) {
     span.breadcrumb-nav { display: inline-block; }
 }
 
-p.neo-lang-word    { display: none; }
+dl.neo-lang-word    { display: none; }
 
 hr { border: none; height: 1px; color: #000; background-color: #000; }

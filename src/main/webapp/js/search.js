@@ -277,7 +277,9 @@ function isMatch(word, searchText, target, position, partsOfSpeech) {
 		}
 	}
 	var matcher = containsMatch;
-	if (position == 'start') {
+	if (searchText.indexOf('*') >= 0) {
+		matcher = wildcardMatch;
+	} else if (position == 'start') {
 		matcher = startMatch;
 	} else if (position == 'end') {
 		matcher = endMatch;
@@ -291,6 +293,31 @@ function isMatch(word, searchText, target, position, partsOfSpeech) {
 		return true;
 	}
 	return false;
+}
+
+function wildcardMatch(text, searchText) {
+	var parts = searchText.split('*');
+	if (parts.length == 0) return true;
+	var atStart = searchText.charAt(0) == '*';
+	var atEnd = searchText.charAt(searchText.length - 1) == '*';
+
+	if (!atStart && parts[0] && !startMatch(text, parts[0])) {
+		return false;
+	}
+	if (!atEnd && parts[parts.length - 1] && !endMatch(text, parts[parts.length - 1])) {
+		return false;
+	}
+	var pos = new Array();
+	for (var i = 0; i < parts.length; i++) {
+		if (!parts[i]) continue;
+		pos[i] = text.indexOf(parts[i]);
+		if (pos[i] < 0) return false;
+		if (i > 0) {
+			pos[i] = text.indexOf(parts[i], pos[i - 1]);
+			if (pos[i] < 0) return false;
+		}
+	}
+	return true;
 }
 
 function containsMatch(text, searchText) {

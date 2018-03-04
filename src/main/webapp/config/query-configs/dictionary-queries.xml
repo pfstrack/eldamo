@@ -20,6 +20,15 @@
             <xquery-renderer content-type="html" mime-type="text/html" file="test.xq"/>
         </renderers>
     </query-controller>
+    <query-controller uri-pattern="/valid/note-check.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="valid-note-check.xq"/>
+        </renderers>
+    </query-controller>
     <query-controller uri-pattern="/etym/etym.*">
         <simple-request-parser />
         <query>

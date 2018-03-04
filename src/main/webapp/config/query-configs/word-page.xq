@@ -24,11 +24,12 @@ declare function local:print-ref($ref as element(), $ref-set) as element()* {
     let $show-gloss := $ref-set/@gloss
     let $show-rule := $ref-set/@show-rule
     let $show-value := $ref-set/@v
+    let $short-mode := $ref-set/@short-mode
 
     let $notes := $ref[$show-notes]/string()
     return
     if ($deref) then
-    <span>{c:print-source-link($deref)}{
+    <span>{c:print-source-link($deref, $short-mode)}{
         let $do-print-lang := $show-lang != $deref/@l return
         if ($show-rule) then (
             text {' ('}, 
@@ -106,14 +107,14 @@ declare function local:element-sig($ref as element()*) as xs:string {
     return $att-values/string()
 };
 
-declare function local:print-element-in($word as element()?) as node()* {
+declare function local:print-element-in($word as element()?, $pubmode) as node()* {
     let $element-in-refs := $word/ref[c:get-ref(.)]/xdb:key($word, 'element-in-ref', @source)[c:get-ref(.)]
     let $element-ins := xdb:key($word, 'element-in', $word/@v)[element[@v = $word/@v]/@l = c:get-lang($word) or c:get-lang(.) = c:get-lang($word)]
     let $unmatched := $element-in-refs/..[not(@v = $element-ins/@v)]
     return (
         <ul> { (
         for $element-in in $element-ins
-        let $control := <ref-set>{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
+        let $control := <ref-set short-mode="{$pubmode}">{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
         order by $element-in/@l, c:normalize-for-sort($element-in/@v)
         return
             <li>
@@ -122,7 +123,7 @@ declare function local:print-element-in($word as element()?) as node()* {
                 {local:print-ref-set($element-in-refs[c:get-ref(.)[../@v = $element-in/@v]], $control)}
             </li>,
         for $element-in in $unmatched
-        let $control := <ref-set>{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
+        let $control := <ref-set short-mode="{$pubmode}">{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
         order by $element-in/@l, c:normalize-for-sort($element-in/@v)
         return
             <li>
@@ -134,7 +135,7 @@ declare function local:print-element-in($word as element()?) as node()* {
     )
 };
 
-declare function local:print-derivations($word as element()?, $priors as element()*) as node()* {
+declare function local:print-derivations($word as element()?, $priors as element()*, $pubmode) as node()* {
     let $deriv-refs := $word/ref[c:get-ref(.)]/deriv[c:get-ref(.)]
     let $derivs := $deriv-refs/c:get-ref(.)/.. | $word/deriv/c:get-word(.)
     return (
@@ -148,7 +149,7 @@ declare function local:print-derivations($word as element()?, $priors as element
                 {c:print-word($deriv, <print-word show-lang="y" show-link="y"/>)}
                 {$deriv-mark}
                 {c:print-gloss($deriv)}
-                {local:print-ref-set($refs, <ref-set v="{$value}" other-ref="y"/>)}
+                {local:print-ref-set($refs, <ref-set short-mode="{$pubmode}" v="{$value}" other-ref="y"/>)}
                 <ul>{(
                     for $ref in $refs[@i1 or . != ''] return
                     <li style="list-style-type:none; text-indent: -1em;">{(
@@ -158,20 +159,20 @@ declare function local:print-derivations($word as element()?, $priors as element
                         c:print-wordlet($ref/@i1, ' &lt; '),
                         <i>{$ref/@v/string()}</i>,
                         if ($ref != '') then (', ', xdb:html($ref/string())) else (),
-                        local:print-ref-set($ref, <ref-set other-ref="y"/>)
+                        local:print-ref-set($ref, <ref-set short-mode="{$pubmode}" other-ref="y"/>)
                     )}</li>,
-                    if (xdb:hashcode($word) = xdb:hashcode($deriv)) then () else local:print-derivations($deriv, ($priors, $word)))
+                    if (xdb:hashcode($word) = xdb:hashcode($deriv)) then () else local:print-derivations($deriv, ($priors, $word), $pubmode))
                 }</ul>
             </li>
     )
 };
 
-declare function local:print-derivatives($word as element()?) as node()* {
+declare function local:print-derivatives($word as element()?, $pubmode) as node()* {
     if (c:get-speech($word) = 'phoneme') then () else
-    local:print-derivatives($word, true(), ())
+    local:print-derivatives($word, true(), (), $pubmode)
 };
 
-declare function local:print-derivatives($word as element()?, $top-level as xs:boolean, $priors as element()*) as node()* {
+declare function local:print-derivatives($word as element()?, $top-level as xs:boolean, $priors as element()*, $pubmode) as node()* {
     let $is-root := c:is-root($word)
     let $deriv-only := ($top-level and not($is-root)) or c:get-speech($word) = 'phoneme'
     let $deriv-to-refs := $word/ref[c:get-ref(.)]/xdb:key($word, 'deriv-to-ref', @source)[c:get-ref(.)]
@@ -197,11 +198,11 @@ declare function local:print-derivatives($word as element()?, $top-level as xs:b
                 {if (xdb:hashcode($deriv-to) = $deriv-tos/xdb:hashcode(.)) then '&gt; ' else '⇒ '}
                 {c:print-word($deriv-to, <print-word show-lang="y" show-link="y"/>)}
                 {c:print-gloss($deriv-to)}
-                {local:print-ref-set(($deriv-to-refs|$element-in-refs)[c:get-ref(.)[xdb:hashcode(..) = xdb:hashcode($deriv-to)]], <ref-set/>)}
+                {local:print-ref-set(($deriv-to-refs|$element-in-refs)[c:get-ref(.)[xdb:hashcode(..) = xdb:hashcode($deriv-to)]], <ref-set short-mode="{$pubmode}"/>)}
                 {if (xdb:hashcode($word) = xdb:hashcode($deriv-to)) then ()
                 else if ($word/derivatives/@no-roots and c:is-root($deriv-to)) then ()
                 else
-                let $print-derivatives := local:print-derivatives($deriv-to, false(), ($priors, $child-derivs)) return
+                let $print-derivatives := local:print-derivatives($deriv-to, false(), ($priors, $child-derivs), $pubmode) return
                 if (string($print-derivatives) != '' and not(contains(string($print-derivatives), ' compounds')) and $priors[xdb:hashcode(.) = xdb:hashcode($deriv-to)]) then 
                     <ul><li>⇒ [see above]</li></ul>
                 else
@@ -277,12 +278,12 @@ declare function local:print-examples($ref as element()?) as node()* {(
     )
 )};
 
-declare function local:print-matching-refs($value as xs:string, $variation-refs as element()*) as element() {
+declare function local:print-matching-refs($value as xs:string, $variation-refs as element()*, $pubmode) as element() {
     let $matching-refs := for $i in $variation-refs[c:normalize-for-match(@v)=$value] order by translate($i/@mark, '-', '→') return $i
     return
     <li>{c:print-word($matching-refs[1], <print-word style="bold"/>)}
     {local:print-ref-set($matching-refs,
-        <ref-set show-mark="{$matching-refs[1]/@mark}" show-lang="{c:get-lang($matching-refs[1]/..)}"/>)}</li>
+        <ref-set short-mode="{$pubmode}" show-mark="{$matching-refs[1]/@mark}" show-lang="{c:get-lang($matching-refs[1]/..)}"/>)}</li>
 };
 
 declare variable $pubmode external;
@@ -487,6 +488,10 @@ return (
 <hr/>,
 <div> { (
 <p>
+    { if ($pubmode = 'false' and $word/deprecated) then
+        if ($word/deprecated[not(@weak)]) then <span>⛔️</span>
+        else <span>⚠️</span>
+      else () }
     { if (xdb:hashcode($word) = xdb:hashcode($words[1])) then attribute id { 'lang-word'} else () }
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
@@ -521,7 +526,20 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
         </script>
     else ()
 ) else 
-<p id="neo-lang-word" class="neo-lang-word">
+<dl id="neo-lang-word" class="neo-lang-word">
+<dt>
+    { let $deprecated := $word/deprecated return
+      if (
+        $deprecated[not(@weak)]
+        or $word/@gloss='[unglossed]'
+        or contains($word/@mark, '-')
+      ) then <span>⛔️</span>
+      else if (
+        $deprecated[@weak] or
+        contains($word/@mark, '|') or
+        contains($word/@mark, '‽') or
+        $word/@l = ('ep', 'en', 'eq', 'g')
+      ) then <span>⚠️</span> else () }
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
     { if ($alt-lang and not(c:is-primitive($word))) then concat('[', $alt-lang, '] ') else () }
@@ -556,11 +574,17 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     {c:print-neo-gloss($word)}
     {let $rule := if ($word/@rule) then $word else $word/rule return
     if ($rule) then concat('; [', $rule/@from, '] &gt; [', $rule/@rule, ']') else ()}
-    {if ($word/see)
+    {if ($word/see and not ($word/deprecated))
         then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y" normalize="true"/>))
         else ()}
     {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
-</p>,
+</dt>
+{ if ($word/deprecated) then (
+    for $deprecated in $word/deprecated return <dd class="see-instead"> {
+            c:print-word(c:get-word($deprecated), <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" normalize="true"/>)
+        } </dd>
+    ) else () }
+</dl>,
 
 let $texts-in := xdb:key($word, 'element-in', $word/@v)[@speech='text'][@l=$word/@l]
 return if (not($texts-in)) then () else
@@ -664,7 +688,7 @@ return
         )
     ) } </td>,
     if (not($has-sources) or not($ref/@source)) then () else 
-    <td>{local:print-ref-set($ref, <ref-set/>)}</td>
+    <td>{local:print-ref-set($ref, <ref-set short-mode="{$pubmode}"/>)}</td>
 )} </tr>
 ) } </table></center>,
 
@@ -673,8 +697,8 @@ let $ref := $valid-refs[1] return
 <p>
     <u>Reference</u>
     {if ($pubmode = 'true') then
-        (' ✧ ', $ref/@source/replace(replace(substring-before(concat(., '.'), '.'), '/0', '/'), '/0', '/'))
-        else local:print-ref-set($ref, <ref-set/>)}
+        (' ✧ ', c:short-ref($ref/@source))
+        else local:print-ref-set($ref, <ref-set short-mode="{$pubmode}"/>)}
     {if ($ref/@v != $word/@v or $ref/@l != $word/@l or ($ref/notes and $pubmode != 'true') or $ref/example or $ref/@gloss) then ' ✧ ' else ()}
     {
         if ($ref/@l != $word/@l) then c:print-word($ref, <print-word style="bold" show-lang="y"/>) 
@@ -690,7 +714,7 @@ let $ref := $valid-refs[1] return
 ) else (
 (: References :)
 let $base-refs := $valid-refs
-let $short-refs := distinct-values($base-refs/@source/replace(replace(substring-before(concat(., '.'), '.'), '/0', '/'), '/0', '/'))
+let $short-refs := distinct-values($base-refs/@source/c:short-ref(.))
 return
 if ($base-refs) then (
 <p>
@@ -720,7 +744,7 @@ if ($base-refs) then (
         ), '; '), ';'), concat('I/', $word/@v, ';'), 'I;')
         return substring($ref-list, 1, string-length($ref-list) - 1)
      )
-     else local:print-ref-set($base-refs, <ref-set/>)}
+     else local:print-ref-set($base-refs, <ref-set short-mode="{$pubmode}"/>)}
 </p>
 ) else (),
 
@@ -738,7 +762,7 @@ if ($gloss-refs) then (
     return
         <li>
            {c:print-gloss-no-space($refs[1])}
-           {local:print-ref-set($refs, <ref-set v="{$value}"/>)}
+           {local:print-ref-set($refs, <ref-set short-mode="{$pubmode}" v="{$value}"/>)}
         </li>
     } </ul>
 ) else (),
@@ -755,9 +779,9 @@ else ()}</p>,
 <ul> { (
     if (not($non-variation-refs)) then () else
     for $value in distinct-values($non-variation-refs/@v/c:normalize-for-match(.))
-    return local:print-matching-refs($value, $non-variation-refs),
+    return local:print-matching-refs($value, $non-variation-refs, $pubmode),
     for $value in distinct-values($variation-refs/@v/c:normalize-for-match(.))
-    return local:print-matching-refs($value, $variation-refs)
+    return local:print-matching-refs($value, $variation-refs, $pubmode)
 ) } </ul>
 ) else (),
 
@@ -773,7 +797,7 @@ if ($note-refs and $pubmode != 'true') then (
         {xdb:html($ref/notes/node())}
         {if ($ref/notes and $ref/example) then text{'; '} else () }
         {local:print-examples($ref)}
-        {local:print-ref-set($ref, <ref-set/>)}
+        {local:print-ref-set($ref, <ref-set short-mode="{$pubmode}"/>)}
     </li>
     } </ul>
 ) else ()
@@ -891,7 +915,7 @@ let $related-print := (
                 c:print-word($related, $control),
                 c:print-gloss($related)
             ),
-            if ($is-ref) then local:print-ref-set($ref, <ref-set/>) else ()
+            if ($is-ref) then local:print-ref-set($ref, <ref-set short-mode="{$pubmode}"/>) else ()
         ) } </li>,
     for $ref-related in $related-from/related[
         if (../name() = 'ref')
@@ -918,7 +942,7 @@ let $related-print := (
                 c:print-word($related, <print-word style="bold"/>),
                 c:print-gloss($related)
             ),
-            if ($is-ref) then local:print-ref-set($ref, <ref-set/>) else ()
+            if ($is-ref) then local:print-ref-set($ref, <ref-set short-mode="{$pubmode}"/>) else ()
         ) } </li>
     ) } </ul>
 )
@@ -962,7 +986,7 @@ if ($change-refs) then (
         {if ($show-gloss) then c:print-gloss($change) else ()}
         {if ($ref/correction | $ref/change != '') then '; ' else ()}
         {xdb:html($ref/correction/node() | $ref/change/node())}
-        {local:print-ref-set($refs, <ref-set/>)}
+        {local:print-ref-set($refs, <ref-set short-mode="{$pubmode}"/>)}
     </li>
     } </ul>
 ) else (),
@@ -990,7 +1014,7 @@ if ($inflect-refs) then (
             if (not($has-glosses)) then () else
             <td>{if ($ref/@gloss) then c:print-gloss($ref) else '&#160;'}</td>,
             <td>{ (
-                local:print-ref-set($refs, <ref-set/>),
+                local:print-ref-set($refs, <ref-set short-mode="{$pubmode}"/>),
                 if ($ref/inflect/text() != '') then (': ', xdb:html($ref/inflect/text()))
                 else ()
             ) }</td>
@@ -1010,7 +1034,7 @@ let $form := if ($element-ref/@form) then $element-ref/@form else $element-deref
 let $show-lang := c:get-lang($word) != c:get-lang($element)
 let $print-word := local:print-word-control($show-lang, 'y')
 let $ref-set :=
-    <ref-set>{$element/@v}</ref-set>
+    <ref-set short-mode="{$pubmode}">{$element/@v}</ref-set>
 return
     <tr> {(
         <td>{c:print-word($element, $print-word)}</td>,
@@ -1040,7 +1064,7 @@ return (
         let $show-lang := c:get-lang($word) != c:get-lang($element-word)
         let $print-word := local:print-word-control($show-lang, 'y')
         let $ref-set :=
-            <ref-set other-ref="y">{$element-word/@v}</ref-set>
+            <ref-set short-mode="{$pubmode}" other-ref="y">{$element-word/@v}</ref-set>
         order by $element-word/@order
         return
         <tr> {(
@@ -1065,7 +1089,7 @@ return (
         let $show-lang := c:get-lang($word) != c:get-lang($element)
         let $print-word := local:print-word-control($show-lang, 'y')
         let $ref-set :=
-            <ref-set other-ref="y" show-notes="y">{$element/@v}</ref-set>
+            <ref-set short-mode="{$pubmode}" other-ref="y" show-notes="y">{$element/@v}</ref-set>
         return
         <tr> {(
             <td>{c:print-word($element, $print-word)}</td>,
@@ -1080,10 +1104,10 @@ return (
 ),
 
 (: Element In :)
-let $print-element-in := local:print-element-in($word) return
+let $print-element-in := local:print-element-in($word, $pubmode) return
 if ($print-element-in != '' and not(c:is-root($word))) then (
     <p><u>Element In</u></p>,
-    local:print-element-in($word)
+    local:print-element-in($word, $pubmode)
 ) else (),
 
 (: Cognates :)
@@ -1094,7 +1118,7 @@ return if (not($cognates)) then () else (
     <ul> {
         for $cognate in $cognates
         let $this-cognate-refs := $cognate-refs[xdb:isSame(.., $cognate)]
-        let $ref-set := <ref-set>{$cognate/@v}</ref-set>
+        let $ref-set := <ref-set short-mode="{$pubmode}">{$cognate/@v}</ref-set>
         order by $cognate/@l
         return if ($cognate/@l = $word/@l) then () else
         <li>
@@ -1109,10 +1133,10 @@ return if (not($cognates)) then () else (
 let $deriv-refs := if (c:get-speech($word) != 'phoneme') then $valid-refs/deriv[c:get-ref(.)] else ()
 let $derivs := $deriv-refs/c:get-ref(.)/.. | $word/deriv/c:get-word(.)
 return if ($derivs) then <p><u>Derivations</u></p> else (),
-<ul>{if (c:get-speech($word) != 'phoneme') then local:print-derivations($word, ()) else ()}</ul>,
+<ul>{if (c:get-speech($word) != 'phoneme') then local:print-derivations($word, (), $pubmode) else ()}</ul>,
 
 (: Derivatives :)
-local:print-derivatives($word),
+local:print-derivatives($word, $pubmode),
 
 (: Phonetic Rule Developments :)
 let $phonetic-rule-refs := $valid-refs[deriv/rule-example | deriv/rule-start] return
@@ -1143,7 +1167,7 @@ if ($phonetic-rule-refs) then (
                     concat('[', $rule/@stage, ']')
                 )
             ) }</td>
-            <td>{ local:print-ref-set($phonetic-rule-ref, <ref-set/>) }</td>
+            <td>{ local:print-ref-set($phonetic-rule-ref, <ref-set short-mode="{$pubmode}"/>) }</td>
         </tr>
     } </table>
 ) else (),
@@ -1164,7 +1188,7 @@ if ($rule-refs) then (
             <td style="border-right: none; text-align: right"><nobr><i>{translate($refs[1]/../@v, '[]', '')}</i></nobr></td>,
             <td style="border-left: none; border-right: none">&lt;</td>,
             <td style="border-left: none"><nobr><i>{translate($refs[1]/../@v, '[]', '')}</i></nobr></td>,
-            <td>{ local:print-ref-set($refs, <ref-set show-rule="y"/>) }</td>
+            <td>{ local:print-ref-set($refs, <ref-set short-mode="{$pubmode}" show-rule="y"/>) }</td>
         ) } </tr>,
     for $rule-string in distinct-values($from-rule-refs[@from]/concat(@rl, ':', @rule, ':', @from))
     let $refs := $from-rule-refs[concat(@rl, ':', @rule, ':', @from) = $rule-string]
@@ -1180,7 +1204,7 @@ if ($rule-refs) then (
             <td style="border-right: none; text-align: right"><nobr>{c:print-wordlet($rule, '')}</nobr></td>,
             <td style="border-left: none; border-right: none">{'&lt;'}</td>,
             <td style="border-left: none"><nobr>{c:print-wordlet($from, '')}</nobr></td>,
-            <td>{ local:print-ref-set($refs, <ref-set show-rule="y"/>) }</td>
+            <td>{ local:print-ref-set($refs, <ref-set short-mode="{$pubmode}" show-rule="y"/>) }</td>
         ) } </tr>,
     for $rule-string in distinct-values($to-rule-refs[@from]/concat(@rl, ':', @rule, ':', @from))
     let $refs := $to-rule-refs[concat(@rl, ':', @rule, ':', @from) = $rule-string]
@@ -1196,7 +1220,7 @@ if ($rule-refs) then (
             <td style="border-right: none; text-align: right"><nobr>{c:print-wordlet($from, '')}</nobr></td>,
             <td style="border-left: none; border-right: none">&gt;</td>,
             <td style="border-left: none"><nobr>{c:print-wordlet($rule, '')}</nobr></td>,
-            <td>{ local:print-ref-set($refs, <ref-set show-rule="y"/>) }</td>
+            <td>{ local:print-ref-set($refs, <ref-set short-mode="{$pubmode}" show-rule="y"/>) }</td>
         ) } </tr>
     ) } </table>
 ) else (),
@@ -1216,7 +1240,7 @@ if ($rule-element-refs) then (
             <td style="border-right: none; text-align: right"><nobr>[{$from/string()}]</nobr></td>,
             <td style="border-left: none; border-right: none">{'&gt;'}</td>,
             <td style="border-left: none"><nobr>[{$rule/string()}]</nobr></td>,
-            <td>{ local:print-ref-set($refs, <ref-set show-rule="y"/>) }</td>,
+            <td>{ local:print-ref-set($refs, <ref-set short-mode="{$pubmode}" show-rule="y"/>) }</td>,
             if ($pubmode = 'true') then () else
             <td><nobr>&lt;rule-example l="{$rule-element/@l/string()}"
                 rule="{$rule-element/@rule/string()}"
@@ -1252,7 +1276,7 @@ return
 } &gt; {$ref/@stage/string()}</td>
 <td style="text-align: center">{$delta}</td>
 <td style="text-align: center">{local:print-deriv($deriv)}</td>
-<td>{local:print-ref-set($deriv/parent::ref, <ref-set/>)}</td>
+<td>{local:print-ref-set($deriv/parent::ref, <ref-set short-mode="{$pubmode}"/>)}</td>
 </tr>
 } </table>
 ) else ()
