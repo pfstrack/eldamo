@@ -3,8 +3,158 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body>
 <table> {
-let $l := 'eq'
+let $l := 'ep'
 let $exclusions := <exclusions>
+<word l="eq" v="neldor"/>
+<word l="eq" v="ya(n)"/>
+<word l="eq" v="yere(n)"/>
+<word l="eq" v="yak(k)o"/>
+<word l="eq" v="yara"/>
+<word l="eq" v="yakse¹"/>
+<word l="eq" v="yaim-"/>
+<word l="eq" v="-(w)inte"/>
+<word l="eq" v="wereven(da)"/>
+<word l="eq" v="wen(di)"/>
+<word l="eq" v="-wen"/>
+<word l="eq" v="wal(i)na"/>
+<word l="eq" v="vor(o)"/>
+<word l="eq" v="vilina"/>
+<word l="eq" v="vaqi(e)"/>
+<word l="eq" v="Valis"/>
+<word l="eq" v="-va"/>
+<word l="eq" v="-uran(do)"/>
+<word l="eq" v="úqil"/>
+<word l="eq" v="unqilla(r)"/>
+<word l="eq" v="-(u)ma"/>
+<word l="eq" v="ulun"/>
+<word l="eq" v="ulban"/>
+<word l="eq" v="tuksa"/>
+<word l="eq" v="tengwet(ta)"/>
+<word l="eq" v="tan(y)a"/>
+<word l="eq" v="tanta(ra)"/>
+<word l="eq" v="tala(no)ite"/>
+<word l="eq" v="tala¹"/>
+<word l="eq" v="qi"/>
+<word l="eq" v="-tya²"/>
+<word l="eq" v="súru"/>
+<word l="eq" v="-sse¹"/>
+<word l="eq" v="sor(ne)"/>
+<word l="eq" v="sist(e)"/>
+<word l="eq" v="simp(in)a"/>
+<word l="eq" v="silmerána"/>
+<word l="eq" v="silk(in)a"/>
+<word l="eq" v="siliq(in)a"/>
+<word l="eq" v="sild(r)a"/>
+<word l="eq" v="sa"/>
+<word l="eq" v="seste"/>
+<word l="eq" v="sár(e)a"/>
+<word l="eq" v="saita-"/>
+<word l="eq" v="-(a)r"/>
+<word l="eq" v="rimp(in)a"/>
+<word l="eq" v="(a)rauke"/>
+<word l="eq" v="Rána"/>
+<word l="eq" v="rambe¹"/>
+<word l="eq" v="qent"/>
+<word l="eq" v="qele-"/>
+<word l="eq" v="qanta"/>
+<word l="eq" v="qinde"/>
+<word l="eq" v="qim(en)ea"/>
+<word l="eq" v="-qil(e)a"/>
+<word l="eq" v="qets(im)a"/>
+<word l="eq" v="-qet(se)"/>
+<word l="eq" v="qe²"/>
+<word l="eq" v="pirúk(end)ea"/>
+<word l="eq" v="piqis(se)"/>
+<word l="eq" v="pi(pi)nektar"/>
+<word l="eq" v="pi(o)pin"/>
+<word l="eq" v="pinqisil(da)"/>
+<word l="eq" v="pampil(e)a"/>
+<word l="eq" v="paluva"/>
+<word l="eq" v="palis(te)"/>
+<word l="eq" v="ó(vo)"/>
+<word l="eq" v="otoke"/>
+<word l="eq" v="os"/>
+<word l="eq" v="orqin(di)"/>
+<word l="eq" v="oro"/>
+<word l="eq" v="ongo-"/>
+<word l="eq" v="on(d)"/>
+<word l="eq" v="yolme"/>
+<word l="eq" v="omohére"/>
+<word l="eq" v="oli-"/>
+<word l="eq" v="oldo(s)"/>
+<word l="eq" v="olde"/>
+<word l="eq" v="olwe(n)"/>
+<word l="eq" v="oive"/>
+<word l="eq" v="nyan(yo)"/>
+<word l="eq" v="nelkaiya"/>
+<word l="eq" v="nounonda"/>
+<word l="eq" v="nond(in)a"/>
+<word l="eq" v="nond(in)a"/>
+<word l="eq" v="noldare"/>
+<word l="eq" v="nuo"/>
+<word l="eq" v="-nta"/>
+<word l="eq" v="niqetil"/>
+<word l="eq" v="ninqe"/>
+<word l="eq" v="nier"/>
+<word l="eq" v="mike"/>
+<word l="eq" v="olme(t)"/>
+<word l="eq" v="-inen"/>
+<word l="eq" v="nelkesto"/>
+<word l="eq" v="neldorin"/>
+<word l="eq" v="nelde"/>
+<word l="eq" v="-ndon"/>
+<word l="eq" v="Narqelion"/>
+<word l="eq" v="nan"/>
+<word l="eq" v="nal"/>
+<word l="eq" v="móre"/>
+<word l="eq" v="moar(do)"/>
+<word l="eq" v="minya yukainen(ya)"/>
+<word l="eq" v="mindorinya"/>
+<word l="eq" v="milnar(wa)"/>
+<word l="eq" v="-pin(ke)"/>
+<word l="eq" v="meles(se)"/>
+<word l="eq" v="melin"/>
+<word l="eq" v="mavar(do)"/>
+<word l="eq" v="maptale-lehesta"/>
+<word l="eq" v="man"/>
+<word l="eq" v="lúne"/>
+<word l="eq" v="lóte"/>
+<word l="eq" v="lon(de)"/>
+<word l="eq" v="-llo"/>
+<word l="eq" v="liqin(a)"/>
+<word l="eq" v="linqe"/>
+<word l="eq" v="li(n)-"/>
+<word l="eq" v="lenqelénu"/>
+<word l="eq" v="lámarin"/>
+<word l="eq" v="lirit(ta)"/>
+<word l="eq" v="karpalima"/>
+<word l="eq" v="karmalin(da)"/>
+<word l="eq" v="kandóra"/>
+<word l="eq" v="kal(l)u-"/>
+<word l="eq" v="kalain(e)a"/>
+<word l="eq" v="kainendan"/>
+<word l="eq" v="is"/>
+<word l="eq" v="-ion"/>
+<word l="eq" v="ingwil(in)"/>
+<word l="eq" v="-ine"/>
+<word l="eq" v="-íne(a)"/>
+<word l="eq" v="-ina"/>
+<word l="eq" v="il(l)aika"/>
+<word l="eq" v="iluin(do)"/>
+<word l="eq" v="on(t)"/>
+<word l="eq" v="i"/>
+<word l="eq" v="hualtya"/>
+<word l="eq" v="hara(nda)"/>
+<word l="eq" v="hos(se)"/>
+<word l="eq" v="kópa"/>
+<word l="eq" v="hón(a)"/>
+<word l="eq" v="hon(do)"/>
+<word l="eq" v="holále"/>
+<word l="eq" v="unk(o)"/>
+<word l="eq" v="ankar"/>
+<word l="eq" v="hil(de)"/>
+<word l="eq" v="ilweran(ta)"/>
+<word l="eq" v="iluqinga"/>
 <word l="eq" v="filqe"/>
 <word l="eq" v="fandor"/>
 <word l="eq" v="falas(se)"/>
@@ -452,7 +602,7 @@ let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contain
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
     word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³⁴', ''), '; ')
 return
-if (translate($variants, 'ăĕĭŏŭāēīōūökʼ-[]()·¹²', 'aeiouáéíóúoc') = translate($see-refs, 'ëök[]()-', 'eoc')) then () else
+if (translate($variants, 'ăĕĭŏŭāēīōūökʼ-[]()·¹²’', 'aeiouáéíóúoc') = translate($see-refs, 'ëök[]()-’', 'eoc')) then () else
 if ($exclusions/word[@l = $word/@l and @v=$word/@v]) then () else
 <tr>
 <td>&lt;word l="{c:get-lang($word)}" v="{c:print-word($word, <print-word show-link="y"/>)}"</td>

@@ -50,7 +50,7 @@ for (var i = 0; i < index.length; i++) {
 }
 
 function normalizeSpelling(value) {
-	return value.replace('k', 'c').replace('q', 'qu').replace('quu', 'qu').replace('ks', 'x');
+	return value.replace('ks', 'x').replace('kw', 'q').replace('k', 'c').replace('q', 'qu').replace('quu', 'qu');
 }
 
 function doReplace(charReplace1, charReplace2, value) {
@@ -312,6 +312,7 @@ function wildcardMatch(text, searchText) {
 		if (!parts[i]) continue;
 		pos[i] = text.indexOf(parts[i]);
 		if (pos[i] < 0) return false;
+		if (atStart && atEnd && !interiorMatch(text, parts[i])) return false;
 		if (i > 0) {
 			pos[i] = text.indexOf(parts[i], pos[i - 1]);
 			if (pos[i] < 0) return false;

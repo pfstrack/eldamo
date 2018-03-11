@@ -74,10 +74,11 @@ return (
                 c:print-lang2($word),
                 if ($alt-lang) then concat(' [', $alt-lang, ']') else ()
             ),
-            for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]] return 
+            for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]]
+                    [not(c:print-lang2(.) = $alt-lang)] return 
                 (c:print-lang2($w))
             )
-            return concat(string-join($lang-list, ', '), if (c:is-primitive($word)) then '' else ' ')
+            return concat(string-join(distinct-values($lang-list), ', '), if (c:is-primitive($word)) then '' else ' ')
         ) }
         { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)
           else c:print-word($word, <control style="bold" show-link="y" normalize="{$normalize}"/>) }

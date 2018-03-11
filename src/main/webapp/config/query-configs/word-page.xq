@@ -458,7 +458,7 @@ let $word-set :=
 let $sorted-word-set :=
     <group> {
         for $item in $word-set
-        order by $item/@order, c:normalize-for-sort($item/@v)
+        order by $item/@order, c:normalize-for-sort(c:normalize-spelling($item/@v))
         return
         <word l="{c:get-lang($item)}" v="{$item/@v}"> {
             if (xdb:hashcode($item) = xdb:hashcode($base-word)) then 'match' else ()
@@ -488,11 +488,11 @@ return (
 <hr/>,
 <div> { (
 <p>
+    { if (xdb:hashcode($word) = xdb:hashcode($words[1])) then attribute id { 'lang-word'} else () }
     { if ($pubmode = 'false' and $word/deprecated) then
         if ($word/deprecated[not(@weak)]) then <span>⛔️</span>
         else <span>⚠️</span>
       else () }
-    { if (xdb:hashcode($word) = xdb:hashcode($words[1])) then attribute id { 'lang-word'} else () }
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
     { if ($alt-lang and not(c:is-primitive($word))) then concat('[', $alt-lang, '] ') else () }
@@ -581,7 +581,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
 </dt>
 { if ($word/deprecated) then (
     for $deprecated in $word/deprecated return <dd class="see-instead"> {
-            c:print-word(c:get-word($deprecated), <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" normalize="true"/>)
+            c:print-word(c:get-word($deprecated), <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" is-neo="y" normalize="true"/>)
         } </dd>
     ) else () }
 </dl>,
@@ -1008,9 +1008,13 @@ if ($inflect-refs) then (
     return
         <tr>{ (
             <td><i>{c:print-word($ref, $print-word)}</i></td>,
-            <td>{ local:print-inflections($word, $form) }</td>,
-            if (not($has-variants)) then () else
-            <td>{ local:print-inflections($word, string($ref/inflect/@variant)) }</td>,
+            <td>{ (
+                local:print-inflections($word, $form),
+                if (not($ref/inflect/@variant)) then () else
+                ('; ', local:print-inflections($word, string($ref/inflect/@variant)))
+            ) }</td>,
+            (: if (not($has-variants)) then () else
+            <td>{ local:print-inflections($word, string($ref/inflect/@variant)) }</td>, :)
             if (not($has-glosses)) then () else
             <td>{if ($ref/@gloss) then c:print-gloss($ref) else '&#160;'}</td>,
             <td>{ (
