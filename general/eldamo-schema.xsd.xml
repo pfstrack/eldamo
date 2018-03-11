@@ -774,6 +774,7 @@
         <xs:element ref="language"/>
         <xs:element ref="language-cat"/>
       </xs:choice>
+      <xs:attribute name="id" type="xs:ID"/>
       <xs:attribute name="name" use="required"/>
     </xs:complexType>
   </xs:element>
@@ -955,6 +956,7 @@
         <xs:element ref="before"/>
         <xs:element ref="class"/>
         <xs:element name="cognate" type="cognate-word"/>
+        <xs:element ref="combine"/>
         <xs:element ref="deprecated"/>
         <xs:element name="deriv" type="deriv-word"/>
         <xs:element ref="derivatives"/>
@@ -974,6 +976,7 @@
       <xs:attribute name="cat"/>
       <xs:attribute name="from"/>
       <xs:attribute name="gloss"/>
+      <xs:attribute name="ngloss"/>
       <xs:attribute name="l" use="required" type="language-type"/>
       <xs:attribute name="mark"/>
       <xs:attribute name="order" type="xs:NMTOKEN"/>

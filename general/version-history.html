@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
     <meta http-equiv="Content-Style-Type" content="text/css">
     <title>Eldamo : Version History</title>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
@@ -10,7 +10,17 @@
 <p>[<a href="../index.html">Home</a>]</p>
 <hr>
 <h1>Version History</h1>
-<p>v0.6.1</p>
+<p>v0.6.2</p>
+<ul>
+<li>More tweaks for better mobile support.</li>
+<li>Wildcard searches (e.g. “si*f”).</li>
+<li>Better validations on &lt;notes&gt; elements.</li>
+<li>More linked (&lt;see&gt;) entries for earlier languages (Early Qenya, Gnomish).</li>
+<li>Changed treatment of early words (1910-1930: Early Quenya, Early Noldorin and Gnomish) in Neo-Quenya/Neo-Sindarin
+word lists. They are now marked ⚠️ by default, or by ⛔️ when there is a later replacement. Any “rescued” early words
+are treated as Neo-Quenya or Neo-Sindarin, even if the form itself is unchanged.</li>
+</ul>
+<p>v0.6.1 (February 9, 2018)</p>
 <ul>
 <li>See below: <a href="version-history.html#v0.6.1">Breaking Changes in v0.6.1</a>.</li>
 <li>Various usability enhancements to better support mobile.</li>
@@ -226,7 +236,9 @@ for new Elvish compositions, with alternate suggestions if they are available. I
 are indicated by the &lt;deprecated&gt; element, with a @weak attribute to distinguish ⚠️ (weak) from ⛔️ (strong) 
 recommendations. These “unrecommended words” are only my opinion, and can be ignored if desired. The ⚠️ symbol also
 appears in glosses for recommendation against using words with certain meanings. Even if there is no &lt;deprecated&gt;
-element, deleted and unglossed words are still marked ⛔️, and words that appear in a deleted section are marked ⚠️.</p>
+element, deleted and unglossed words are still marked ⛔️, and words that appear in a deleted section are marked ⚠️.
+Early words (1910-1930) are also marked ⚠️ by default; any “rescued” early words are treated as Neo-Quenya or
+Neo-Sindarin, even if the form remains unchanged.</p>
 <p>People using Eldamo data to populate their own dictionaries will need to make some decisions on how to incorporate
 these changes. If you want to ignore my deprecation suggestions, simply ignore the &lt;deprecated&gt; element and strip
 out the ⚠️ symbol from glosses (Unicode Emoji U+26A0 U+FE0F, or XML encoding &amp;#9888;&amp;#65039;). You may also want
