@@ -3,8 +3,13 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body>
 <table> {
-let $l := 'ep'
+let $l := 'p'
 let $exclusions := <exclusions>
+<word l="p" v="am-"/>
+<word l="p" v="AL(A)"/>
+<word l="p" v="aklari(n)kwā"/>
+<word l="p" v="aklar(a)"/>
+<word l="p" v="airō"/>
 <word l="eq" v="neldor"/>
 <word l="eq" v="ya(n)"/>
 <word l="eq" v="yere(n)"/>
@@ -602,7 +607,7 @@ let $variants := string-join(distinct-values($word/ref[not(inflect)][not(contain
 let $see-refs := string-join($word/ancestor-or-self::word[last()]//
     word[see[@v = $word/@v and @l = $word/@l]]/@v/translate(lower-case(.), '¹²³⁴', ''), '; ')
 return
-if (translate($variants, 'ăĕĭŏŭāēīōūökʼ-[]()·¹²’', 'aeiouáéíóúoc') = translate($see-refs, 'ëök[]()-’', 'eoc')) then () else
+if (translate($variants, 'ăĕĭŏŭāēīōūökʼ-[]()·¹²’', 'aeiouáéíóúoc') = translate($see-refs, 'āēīōūëök[]()-’', 'áéíóúeoc')) then () else
 if ($exclusions/word[@l = $word/@l and @v=$word/@v]) then () else
 <tr>
 <td>&lt;word l="{c:get-lang($word)}" v="{c:print-word($word, <print-word show-link="y"/>)}"</td>

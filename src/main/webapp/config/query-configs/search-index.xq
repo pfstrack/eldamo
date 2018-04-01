@@ -53,7 +53,10 @@ concat(
             if (c:get-word($word/see)) then xdb:hashcode(c:get-word($word/see)) else xdb:hashcode($word), '%',
             c:alt-lang($word), '%',
             if ($word/see) then $word/see/@v else '', '%',
-            if ($word/see and $word/see/@l != c:get-lang($word)) then c:print-lang($word/see) else '',
+            if ($word/see and $word/see/@l != c:get-lang($word)) then c:print-lang($word/see) else '', '%',
+            $word/@ngloss, '%',
+            if (c:get-word($word/combine)) then xdb:hashcode(c:get-word($word/combine)) else '', '%',
+            string-join($word/deprecated/c:get-word(.)/xdb:hashcode(.), '|'),
             '",'
         ),
     '&#10;'),

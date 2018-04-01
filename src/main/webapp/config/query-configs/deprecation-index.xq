@@ -8,7 +8,7 @@ declare variable $lang-name := $lang/@name/string();
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
-<title>Eldamo : {$lang-name} Words</title>
+<title>Eldamo : {$lang-name} Deprecated Words</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
 <script src="../../js/glaemscribe.min.js"></script>
@@ -29,8 +29,8 @@ declare variable $lang-name := $lang/@name/string();
     <a href="../language-pages/lang-{$id}.html">{$lang-name}</a>
 </div>
 <hr/>
-<h1>{$lang-name} Words</h1>
-{xdb:html($lang/words/string())}
+<h1>{$lang-name} Deprecated Words</h1>
+{xdb:html($lang/deprecations/string())}
 <hr/> { 
 let $words := c:lang-words(/*, $id)
 let $word-list := $words
@@ -39,7 +39,7 @@ let $word-list := $words
         [not(c:get-speech(.)='phrase' or c:get-speech(.)='text')]
         [not(c:get-speech(.)='grammar')]
         [not(starts-with(c:get-speech(.), 'phone'))]
-        [not(c:get-speech(.)='root')]
+        [deprecated]
 return (
 <dl> {
 for $word in $word-list
@@ -106,12 +106,6 @@ return (
             , ' ' :) ) else ()}
         { c:print-speech($word) }
         { if ($neo-lang) then c:print-neo-gloss($word) else c:print-gloss($word) }
-        { if (not($word/@created or $word/@vetted)) then () else
-          concat(' [',
-            if ($word/@created) then concat('created by ', $word/@created/string()) else '',
-            if ($word/@created and $word/vetted) then ', ' else '',
-            if ($word/@vetted) then concat('vetted by ', $word/@vetted/string()) else '',
-          ']') }
         { if ($word/see and not($neo-lang and $deprecated))
           then (' see ', c:print-word(c:get-word($word/see),
             <control show-link="y" normalize="{$normalize}"> {

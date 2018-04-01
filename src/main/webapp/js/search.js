@@ -26,6 +26,8 @@ if (![].includes) {
   };
 }
 
+var isNeo = window.location.toString().indexOf('?neo') > 0;
+
 words = [];
 for (var i = 0; i < index.length; i++) {
     var item = index[i];
@@ -43,6 +45,9 @@ for (var i = 0; i < index.length; i++) {
     word.altlang = array[6];
     word.see = array[7];
     word.seeLang = array[8];
+    word.ngloss = array[9];
+    word.combine = array[11];
+    word.deprecated = array[12];
     word.match = toMatch(word.value);
     word.matchgloss = toMatch(word.gloss);
     word.normalized = (word.lang == 'mq' && !(word.speech.indexOf('name') >= 0)) ? word.normalized = normalizeSpelling(word.match) : '';
@@ -50,7 +55,7 @@ for (var i = 0; i < index.length; i++) {
 }
 
 function normalizeSpelling(value) {
-	return value.replace('ks', 'x').replace('kw', 'q').replace('k', 'c').replace('q', 'qu').replace('quu', 'qu');
+	return value.replace(/ks/g, 'x').replace(/kw/g, 'q').replace(/k/g, 'c').replace(/q/g, 'qu').replace(/quu/g, 'qu');
 }
 
 function doReplace(charReplace1, charReplace2, value) {
@@ -242,8 +247,9 @@ function wordsToHtml(result, pos) {
             html += '[' + word.altlang +'] ';
         }
         html += word.mark;
+        var ext = '.html' + (isNeo ? '?neo' : '');
         if (!word.see) {
-            html += '<a href="../words/word-' + word.key + '.html">';
+            html += '<a href="../words/word-' + word.key + ext + '">';
         }
         var value = word.value;
         html += '<span style="font-weight: bold" class="' + markclass + '">' + value + '</span></a>';
@@ -262,7 +268,7 @@ function wordsToHtml(result, pos) {
             if (word.seeLang) {
                 html += word.seeLang;
             }
-            html += '<a href="../words/word-' + word.key + '.html">';
+            html += '<a href="../words/word-' + word.key + ext + '">';
             html += '<span style="font-weight: bold">' + word.see + '</span></a>';
         }
         html += '</dt>';

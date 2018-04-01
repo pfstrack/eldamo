@@ -528,7 +528,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
 ) else 
 <dl id="neo-lang-word" class="neo-lang-word">
 <dt>
-    { let $deprecated := $word/deprecated return
+    { let $deprecated := $word/deprecated | c:get-word($word/see)/deprecated return
       if (
         $deprecated[not(@weak)]
         or $word/@gloss='[unglossed]'
@@ -548,7 +548,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
         then c:print-word($word, <print-word style="bold" normalize="{$normalize}"> {
                                      if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
                                  } </print-word>)
-        else c:print-word($word, <print-word style="bold" normalize="true" show-link="y"> {
+        else c:print-word($word, <print-word style="bold" normalize="{$normalize}" show-link="y"> {
                                      if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
                                  } </print-word>)}
     { if ($word/@orthography) then concat(' ‹', $word/@orthography/string(), '›') else () }
@@ -572,16 +572,24 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     {c:print-speech($word)}
     {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@form, ' ', $word/class/@variant))), ') ') else ()}
     {c:print-neo-gloss($word)}
+    { if (not($word/@created or $word/@vetted)) then () else
+      concat(' [',
+        if ($word/@created) then concat('created by ', $word/@created/string()) else '',
+        if ($word/@created and $word/vetted) then ', ' else '',
+        if ($word/@vetted) then concat('vetted by ', $word/@vetted/string()) else '',
+      ']') }
     {let $rule := if ($word/@rule) then $word else $word/rule return
     if ($rule) then concat('; [', $rule/@from, '] &gt; [', $rule/@rule, ']') else ()}
-    {if ($word/see and not ($word/deprecated))
-        then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y" normalize="true"/>))
+    { let $normalize := $l = ('q', 'nq', 'mq', 'eq') return
+      if ($word/see and not ($word/deprecated))
+        then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y" normalize="{$normalize}"/>))
         else ()}
     {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
 </dt>
-{ if ($word/deprecated) then (
-    for $deprecated in $word/deprecated return <dd class="see-instead"> {
-            c:print-word(c:get-word($deprecated), <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" is-neo="y" normalize="true"/>)
+{  let $normalize := $l = ('q', 'nq', 'mq', 'eq') return
+   if ($word/deprecated[@v]) then (
+    for $deprecated in $word/deprecated[@v] return <dd class="see-instead"> {
+            c:print-word(c:get-word($deprecated), <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" is-neo="y" normalize="{$normalize}"/>)
         } </dd>
     ) else () }
 </dl>,

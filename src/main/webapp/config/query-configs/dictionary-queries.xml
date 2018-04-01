@@ -102,6 +102,33 @@
             <xquery-renderer content-type="html" mime-type="text/html" file="word-index.xq"/>
         </renderers>
     </query-controller>
+    <query-controller uri-pattern="/vocabulary-indexes/*">
+        <uri-template-parser template='vocabulary-words-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="vocabulary-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/neologism-indexes/*">
+        <uri-template-parser template='neologisms-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="neologism-index.xq"/>
+        </renderers>
+    </query-controller>
+    <query-controller uri-pattern="/deprecation-indexes/*">
+        <uri-template-parser template='deprecations-{id}.{content-type}' />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="deprecation-index.xq"/>
+        </renderers>
+    </query-controller>
     <query-controller uri-pattern="/words/*">
         <uri-template-parser template='word-{code}.{content-type}' />
         <query>

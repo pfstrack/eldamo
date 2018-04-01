@@ -8,7 +8,7 @@ declare variable $lang-name := $lang/@name/string();
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
-<title>Eldamo : {$lang-name} Words</title>
+<title>Eldamo : {$lang-name} Neologisms</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
 <script src="../../js/glaemscribe.min.js"></script>
@@ -29,17 +29,17 @@ declare variable $lang-name := $lang/@name/string();
     <a href="../language-pages/lang-{$id}.html">{$lang-name}</a>
 </div>
 <hr/>
-<h1>{$lang-name} Words</h1>
-{xdb:html($lang/words/string())}
+<h1>{$lang-name} Neologisms</h1>
+{xdb:html($lang/neologisms/string())}
 <hr/> { 
-let $words := c:lang-words(/*, $id)
+let $words := xdb:key(/*, 'language', $id)
 let $word-list := $words
         [not(ends-with(c:get-speech(.), '-name'))]
         [not(c:get-speech(.)='text')]
         [not(c:get-speech(.)='phrase' or c:get-speech(.)='text')]
         [not(c:get-speech(.)='grammar')]
         [not(starts-with(c:get-speech(.), 'phone'))]
-        [not(c:get-speech(.)='root')]
+        [not(deprecated)]
 return (
 <dl> {
 for $word in $word-list

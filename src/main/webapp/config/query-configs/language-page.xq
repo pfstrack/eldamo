@@ -36,18 +36,28 @@ let $phrases := $all[local:get-speech(.)='phrase' or local:get-speech(.)='text']
 let $phonetics := $all[starts-with(local:get-speech(.), 'phone')][not($is-neo-lang)]
 let $grammar := $all[local:get-speech(.)='grammar'][not($is-neo-lang)]
 let $categories := ($words | $roots)[ancestor-or-self::*[@cat and not(@cat='?')]]
-return
+return (
 <ul> { (
-    if ($roots) then <li><a href="../root-indexes/roots-{$id}.html">Roots</a> ({count($roots)})</li> else (),
-    if ($words) then <li><a href="../word-indexes/words-{$id}.html">Words</a> ({count($words)})</li> else (),
+    if ($is-neo-lang) then <li><a href="../vocabulary-indexes/vocabulary-words-{$id}.html">Vocabulary</a></li> else (),
+    if (not($is-neo-lang) and $roots) then <li><a href="../root-indexes/roots-{$id}.html">Roots</a> ({count($roots)})</li> else (),
+    if (not($is-neo-lang) and $words) then <li><a href="../word-indexes/words-{$id}.html">Words</a> ({count($words)})</li> else (),
     if ($names) then <li><a href="../name-indexes/names-{$id}.html">Names</a> ({count($names)})</li> else (),
     if ($phrases) then <li><a href="../phrase-indexes/phrases-{$id}.html">Phrases</a> ({count($phrases)})</li> else (),
     if ($grammar) then <li><a href="../grammar-indexes/grammars-{$id}.html">Grammar</a> ({count($grammar)})</li> else (),
     if ($phonetics) then <li><a href="../phonetic-indexes/phonetics-{$id}.html">Phonetics</a> ({count($phonetics)})</li> else (),
-    if ($categories) then <li><a href="../category-indexes/categories-{$id}.html">Semantic Categories</a> ({count($categories)})</li> else ()
+    if (not($is-neo-lang) and $categories) then <li><a href="../category-indexes/categories-{$id}.html">Semantic Categories</a> ({count($categories)})</li> else ()
+) }</ul>,
+xdb:html($lang/notes/string()),
+if (not($is-neo-lang)) then () else
+<p>For more information about how this vobulary list was assembled, see:</p>,
+<ul> { (
+    if ($is-neo-lang and $roots) then <li><a href="../root-indexes/roots-{$id}.html">Full List of Roots</a></li> else (),
+    if ($is-neo-lang and $words) then <li><a href="../word-indexes/words-{$id}.html">Full Word List</a></li> else (),
+    if ($categories) then <li><a href="../category-indexes/categories-{$id}.html">Semantic Categories</a></li> else (),
+    if ($is-neo-lang) then <li><a href="../neologism-indexes/neologisms-{$id}.html">Neologisms</a></li> else (),
+    if ($is-neo-lang) then <li><a href="../deprecation-indexes/deprecations-{$id}.html">Deprecated Words</a></li> else ()
 ) }</ul>
-}
-{xdb:html($lang/notes/string())}
+) }
 </body>
 {if (not($is-neo-lang)) then () else (
 <script>

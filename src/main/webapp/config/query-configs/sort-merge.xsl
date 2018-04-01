@@ -44,8 +44,13 @@
     </xsl:template>
 
     <xsl:template match="word">
+        <xsl:variable name="l" select="@l"/>
+        <xsl:variable name="v" select="@v"/>
         <xsl:copy>
             <xsl:copy-of select="@*[not(name()='mark')]"/>
+            <xsl:for-each select="$merge.xml/*/word[@v=$v and @l=$l]">
+                <xsl:copy-of select="@vetted"/>
+            </xsl:for-each>
             <xsl:copy-of select="@mark"/>
             <xsl:apply-templates select="*[not(name()='word' or name()='ref')]"/>
             <xsl:apply-templates select="*[name()='ref']">
@@ -54,8 +59,6 @@
             <xsl:apply-templates select="*[name()='word']">
                 <xsl:sort select="concat(if (@l) then (@l) else '1', '::', translate(q:normalize(self::word/@v), ' ', ''))"/>
             </xsl:apply-templates>
-            <xsl:variable name="l" select="@l"/>
-            <xsl:variable name="v" select="@v"/>
             <xsl:for-each select="$merge.xml/*/word[@v=$v and @l=$l]">
                 <xsl:copy-of select="ref"/>
             </xsl:for-each>

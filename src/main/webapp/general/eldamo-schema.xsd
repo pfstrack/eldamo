@@ -557,11 +557,11 @@
   </xs:element>
   <xs:element name="deprecated">
     <xs:annotation>
-      <xs:documentation>Link to an alternate word, which is perhaps preferable for Neo-Elvish writings.</xs:documentation>
+      <xs:documentation>Indicates that a word is out-of-date, optionally with a link to a word that might be better. These are all in the opinion of the author.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:attribute name="l" use="required" type="language-type"/>
-      <xs:attribute name="v" use="required"/>
+      <xs:attribute name="l" type="language-type"/>
+      <xs:attribute name="v"/>
       <xs:attribute name="weak"/>
     </xs:complexType>
   </xs:element>
@@ -974,6 +974,7 @@
         <xs:element ref="word"/>
       </xs:choice>
       <xs:attribute name="cat"/>
+      <xs:attribute name="created"/>
       <xs:attribute name="from"/>
       <xs:attribute name="gloss"/>
       <xs:attribute name="ngloss"/>
@@ -1014,6 +1015,7 @@
       <xs:attribute name="stem"/>
       <xs:attribute name="tengwar"/>
       <xs:attribute name="v" use="required"/>
+      <xs:attribute name="vetted"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="word-data">
