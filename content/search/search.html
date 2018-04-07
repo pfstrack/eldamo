@@ -23,7 +23,7 @@ button { border-radius: 4px; background-color: #EEE; border: 1px solid #444 }
 }
 
     </style></head><script src="search-index.js"></script><script src="../../js/search.js"></script><body onload="initSearch()">
-      <div class="search-header"><span class="label-holder"><big>[<a href="../../index.html">Home</a>]</big></span><span class="button-holder"><button id="advancedButton" onclick="advanced()" class="advancedButton">...</button></span><span class="search-holder"><input id="searchBox" placeholder="Search..." value="" onkeyup="doSearch()" class="searchBox" type="text"></span></div>
+      <div class="search-header"><span class="label-holder"><big>[<a href="../../index.html">Home</a>]</big></span><span class="button-holder"><button id="advancedButton" onclick="advanced()" class="advancedButton">...</button></span><span class="search-holder"><input id="searchBox" placeholder="Search..." value="" onkeyup="doSearchTyping()" class="searchBox" type="text"></span></div>
       <div id="search-selectors" class="search-selectors"><select id="langSelect" class="langSelect" onchange="doSearch()">
             <option value="">All Languages</option>
             <option value="" disabled>─────────────</option>

@@ -26,7 +26,11 @@ if (![].includes) {
   };
 }
 
+var isNeo = window.location.toString().indexOf('?neo') > 0;
+
 words = [];
+combines = {};
+wordLookup = {};
 for (var i = 0; i < index.length; i++) {
     var item = index[i];
     var array = item.split('%');
@@ -43,14 +47,25 @@ for (var i = 0; i < index.length; i++) {
     word.altlang = array[6];
     word.see = array[7];
     word.seeLang = array[8];
+    word.ngloss = array[9];
+    word.combine = array[10];
+    word.deprecated = array[11];
     word.match = toMatch(word.value);
     word.matchgloss = toMatch(word.gloss);
+    word.matchNgloss = toMatch(word.ngloss);
     word.normalized = (word.lang == 'mq' && !(word.speech.indexOf('name') >= 0)) ? word.normalized = normalizeSpelling(word.match) : '';
     words.push(word);
+    wordLookup[word.key] = word;
+    if (word.combine) {
+    	if (!combines[word.combine]) {
+    		combines[word.combine] = [];
+    	}
+		combines[word.combine].push(word);
+    }
 }
 
 function normalizeSpelling(value) {
-	return value.replace('ks', 'x').replace('kw', 'q').replace('k', 'c').replace('q', 'qu').replace('quu', 'qu');
+	return value.replace(/ks/g, 'x').replace(/kw/g, 'q').replace(/k/g, 'c').replace(/q/g, 'qu').replace(/quu/g, 'qu');
 }
 
 function doReplace(charReplace1, charReplace2, value) {
@@ -72,7 +87,7 @@ function charReplace(value) {
 }
 
 function toMatch(value) {
-    return charReplace(value.toLowerCase());
+    return charReplace(value.toLowerCase()).trim();
 }
 
 function convertLang(lang, speech) {
@@ -168,6 +183,16 @@ var BUFFER = 50;
 var pos = 0;
 var max = 0;
 
+var lastSearchText = '';
+
+function doSearchTyping() {
+	var searchText = document.getElementById('searchBox').value;
+	if (searchText != lastSearchText) {
+		doSearch();
+		lastSearchText = searchText;
+	}
+}
+
 function doSearch() {
 	searchIt(50);
 }
@@ -191,7 +216,7 @@ function searchIt(buffer) {
     	langs = lang.split('|');
     }
     var resultList = document.getElementById('resultList');
-    var searchText = toMatch(searchBox.value);
+    var searchText = searchBox.value;
     var first = [];
     var second = [];
     var third = [];
@@ -234,16 +259,33 @@ function wordsToHtml(result, pos) {
     	var word = result[count];
     	var markclass = (word.deletemark === '-') ? 'deleted' : (word.deletemark === '|') ? 'deleted-section' : ''; 
         html += '<dt>';
-        if (word.altlang && (word.altlang.indexOf('√') > 0 || word.altlang.indexOf('✶') > 0)) {
+        if (isNeo &&
+        		(word.deprecated || word.lang == 'ep' || word.lang == 'eq' || word.lang == 'g' || word.lang == 'en'
+        			|| markclass)) {
+        	html += '⚠️';
+        }
+        if (word.altlang && (word.altlang.indexOf('√') > 0 || word.altlang.indexOf('✶') > 0)
+        		&& word.mark.indexOf('!') < 0) {
             html += '[' + word.altlang.substring(0, 1) +']';
         }
-        html += convertLang(word.lang, word.speech);
-        if (word.altlang && !(word.altlang.indexOf('√') > 0 || word.altlang.indexOf('✶') > 0)) {
+        var langList = convertLang(word.lang, word.speech);
+        if (isNeo && combines[word.key]) {
+        	for (var i = 0; i < combines[word.key].length; i++) {
+        		var convertedCombineLang = convertLang(combines[word.key][i].lang);
+        		if (langList.indexOf(convertedCombineLang) < 0) {
+            		langList = langList.trim() + ', ' + convertLang(combines[word.key][i].lang);
+        		}
+        	}
+        }
+        html += langList;
+        if (word.altlang && !(word.altlang.indexOf('√') > 0 || word.altlang.indexOf('✶') > 0)
+        		&& word.mark.indexOf('!') < 0) {
             html += '[' + word.altlang +'] ';
         }
         html += word.mark;
+        var ext = '.html' + (isNeo ? '?neo' : '');
         if (!word.see) {
-            html += '<a href="../words/word-' + word.key + '.html">';
+            html += '<a href="../words/word-' + word.key + ext + '">';
         }
         var value = word.value;
         html += '<span style="font-weight: bold" class="' + markclass + '">' + value + '</span></a>';
@@ -254,23 +296,62 @@ function wordsToHtml(result, pos) {
             html += ' [Q. <b>' + normalizeSpelling(value) + '</b>] ';
         }
         html += ' <i>' + convertSpeech(word.speech) + '</i> ';
-        if (word.gloss) {
+        if (isNeo && word.ngloss) {
+        	html += ' “' + word.ngloss + '”';
+        } else if (word.gloss) {
         	html += ' “' + word.gloss + '”';
         }
-        if (word.see) {
+        if (word.see && !(isNeo && word.deprecated)) {
             html += ' see ';
             if (word.seeLang) {
                 html += word.seeLang;
             }
-            html += '<a href="../words/word-' + word.key + '.html">';
+            html += '<a href="../words/word-' + word.key + ext + '">';
             html += '<span style="font-weight: bold">' + word.see + '</span></a>';
         }
         html += '</dt>';
+        if (isNeo && word.deprecated) {
+        	var replacements = word.deprecated.split('|');
+        	for (var i = 0; i < replacements.length; i++) {
+        		var replacement = wordLookup[replacements[i]];
+        		if (replacement) {
+                    html += '<dd class="see-instead">';
+                    html += convertLang(replacement.lang, replacement.speech);
+                    html += '<a href="../words/word-' + replacement.key + ext + '">';
+                    html += '<span style="font-weight: bold">' + replacement.value + '</span></a>';
+                    if (isNeo && replacement.ngloss) {
+                    	html += ' “' + replacement.ngloss + '”';
+                    } else if (word.gloss) {
+                    	html += ' “' + replacement.gloss + '”';
+                    }
+                    html += '</dd>';
+        		}
+        	}
+        }
     }
     return html;
 }
 
 function isMatch(word, searchText, target, position, partsOfSpeech) {
+	var searches = searchText.split('+');
+	for (var i = 0; i < searches.length; i++) {
+		if (!orMatch(word, searches[i], target, position, partsOfSpeech)) return false;
+	}
+	return true;
+}
+
+function orMatch(word, searchText, target, position, partsOfSpeech) {
+	var searches = searchText.split(',');
+	for (var i = 0; i < searches.length; i++) {
+		if (checkMatch(word, toMatch(searches[i]), target, position, partsOfSpeech)) return true;
+	}
+	return false;
+}
+
+function checkMatch(word, searchText, target, position, partsOfSpeech) {
+	if (isNeo && word.combine) {
+		return false;
+	}
 	if (partsOfSpeech != '') {
 		if ((' ' + word.speech + ' ').indexOf(' ' + partsOfSpeech + ' ') < 0) {
 			return false;
@@ -290,6 +371,9 @@ function isMatch(word, searchText, target, position, partsOfSpeech) {
 		return true;
 	}
 	if (matcher(word.matchgloss, searchText) && target.indexOf('gloss') >= 0) {
+		return true;
+	}
+	if (isNeo && matcher(word.matchNgloss, searchText) && target.indexOf('gloss') >= 0) {
 		return true;
 	}
 	return false;

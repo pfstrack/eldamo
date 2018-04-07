@@ -557,13 +557,18 @@
   </xs:element>
   <xs:element name="deprecated">
     <xs:annotation>
-      <xs:documentation>Link to an alternate word, which is perhaps preferable for Neo-Elvish writings.</xs:documentation>
+      <xs:documentation>Indicates that a word is out-of-date, optionally with a link to a word that might be better. These are all in the opinion of the author.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:attribute name="l" use="required" type="language-type"/>
-      <xs:attribute name="v" use="required"/>
+      <xs:attribute name="l" type="language-type"/>
+      <xs:attribute name="v"/>
       <xs:attribute name="weak"/>
     </xs:complexType>
+  </xs:element>
+  <xs:element name="deprecations" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s deprecations page.</xs:documentation>
+    </xs:annotation>
   </xs:element>
   <xs:complexType name="deriv-ref" mixed="true">
     <xs:annotation>
@@ -755,11 +760,13 @@
         <xs:element ref="grammar"/>
         <xs:element ref="language"/>
         <xs:element ref="names"/>
+        <xs:element ref="neologisms"/>
         <xs:element ref="notes"/>
         <xs:element ref="phonetics"/>
         <xs:element ref="phrases"/>
         <xs:element ref="roots"/>
         <xs:element ref="words"/>
+        <xs:element ref="vocabulary"/>
       </xs:choice>
       <xs:attribute name="id" use="required" type="xs:ID"/>
       <xs:attribute name="name" use="required"/>
@@ -781,6 +788,11 @@
   <xs:element name="names" type="xs:string">
     <xs:annotation>
       <xs:documentation>Documentation appearing at the top of a language’s name page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="neologisms" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s vocabulary page.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="notes" type="xs:string">
@@ -974,6 +986,7 @@
         <xs:element ref="word"/>
       </xs:choice>
       <xs:attribute name="cat"/>
+      <xs:attribute name="created"/>
       <xs:attribute name="from"/>
       <xs:attribute name="gloss"/>
       <xs:attribute name="ngloss"/>
@@ -1014,6 +1027,7 @@
       <xs:attribute name="stem"/>
       <xs:attribute name="tengwar"/>
       <xs:attribute name="v" use="required"/>
+      <xs:attribute name="vetted"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="word-data">
@@ -1045,6 +1059,11 @@
   <xs:element name="words" type="xs:string">
     <xs:annotation>
       <xs:documentation>Documentation appearing at the top of a language’s words list page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="vocabulary" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s vocabulary page.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>
