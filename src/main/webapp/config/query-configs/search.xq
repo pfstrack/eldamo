@@ -86,7 +86,7 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
         <button id="advancedButton" class="advancedButton" onclick="advanced()">...</button>
     </span>
     <span class="search-holder">
-        <input type="text" id="searchBox" class="searchBox" value="" onkeyup="doSearch()" placeholder="Search..." />
+        <input type="text" id="searchBox" class="searchBox" value="" onkeyup="doSearchTyping()" placeholder="Search..." />
     </span>
 </div>
 <div class="search-selectors" id="search-selectors">

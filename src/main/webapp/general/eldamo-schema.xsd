@@ -565,6 +565,11 @@
       <xs:attribute name="weak"/>
     </xs:complexType>
   </xs:element>
+  <xs:element name="deprecations" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s deprecations page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:complexType name="deriv-ref" mixed="true">
     <xs:annotation>
       <xs:documentation>Indicates this form is derived etymologically from the linked form (for ref elements). As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source). Intermediate forms may be indicated by @i1, @i2 and @i3 attributes, in that chronological order (past to future). @@@ In the final form of the data model, a deriv element should be unique with a word/ref element, but there are some unfinished data corrections preventing enforcement of this rule. These unfinished data elements are indicated by @t="m" attribute values, which will be removed after the data is cleaned up.</xs:documentation>
@@ -755,11 +760,13 @@
         <xs:element ref="grammar"/>
         <xs:element ref="language"/>
         <xs:element ref="names"/>
+        <xs:element ref="neologisms"/>
         <xs:element ref="notes"/>
         <xs:element ref="phonetics"/>
         <xs:element ref="phrases"/>
         <xs:element ref="roots"/>
         <xs:element ref="words"/>
+        <xs:element ref="vocabulary"/>
       </xs:choice>
       <xs:attribute name="id" use="required" type="xs:ID"/>
       <xs:attribute name="name" use="required"/>
@@ -781,6 +788,11 @@
   <xs:element name="names" type="xs:string">
     <xs:annotation>
       <xs:documentation>Documentation appearing at the top of a language’s name page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="neologisms" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s vocabulary page.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="notes" type="xs:string">
@@ -1047,6 +1059,11 @@
   <xs:element name="words" type="xs:string">
     <xs:annotation>
       <xs:documentation>Documentation appearing at the top of a language’s words list page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="vocabulary" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s vocabulary page.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>

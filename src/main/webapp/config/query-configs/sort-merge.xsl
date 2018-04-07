@@ -13,7 +13,7 @@
     <xsl:key name="on-deriv" match="word[@l='n']" use="ref/deriv/@source"/> 
     <xsl:key name="on-ref" match="word[@l='on']" use="ref/@source"/> 
 
-    <xsl:output cdata-section-elements="notes phonetics words names grammar phrases cognate source x-ref element deriv inflect cite related before" indent="yes"/> 
+    <xsl:output cdata-section-elements="notes phonetics words names grammar phrases cognate source x-ref element deriv inflect cite related before vocabulary neologisms deprecations" indent="yes"/> 
     
     <xsl:template match="/*">
         <xsl:variable name="main" select="/"/>

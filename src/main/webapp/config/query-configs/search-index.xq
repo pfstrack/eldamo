@@ -41,6 +41,10 @@ concat(
             [not(c:get-speech(.) = 'phrase')]
             [not(c:get-speech(.) = 'text')]
             [not(c:get-speech(.) = 'grammar')]
+        let $deprecated :=
+            if ($word/deprecated) then $word/deprecated
+            else if ($word/see/c:get-word(.)/deprecated) then $word/see/c:get-word(.)/deprecated
+            else ()
         order by local:lang-order(c:get-lang($word)), c:normalize-for-sort($word/@v)
         return
         concat(
@@ -56,7 +60,7 @@ concat(
             if ($word/see and $word/see/@l != c:get-lang($word)) then c:print-lang($word/see) else '', '%',
             $word/@ngloss, '%',
             if (c:get-word($word/combine)) then xdb:hashcode(c:get-word($word/combine)) else '', '%',
-            string-join($word/deprecated/c:get-word(.)/xdb:hashcode(.), '|'),
+            string-join($deprecated/c:get-word(.)/xdb:hashcode(.), '|'),
             '",'
         ),
     '&#10;'),

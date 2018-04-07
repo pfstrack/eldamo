@@ -75,16 +75,8 @@ return (
           ) then <span>⏳</span>
           else () }
         { if (not($neo-lang)) then () else (
-            let $lang-list := (
-            concat(
-                c:print-lang2($word),
-                if ($alt-lang) then concat(' [', $alt-lang, ']') else ()
-            ),
-            for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]]
-                    [not(c:print-lang2(.) = $alt-lang)] return 
-                (c:print-lang2($w))
-            )
-            return concat(string-join(distinct-values($lang-list), ', '), if (c:is-primitive($word)) then '' else ' ')
+            c:print-lang($word),
+            if ($alt-lang and not(contains($word/@mark, '!'))) then concat(' [', $alt-lang, '] ') else ()
         ) }
         { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)
           else c:print-word($word, <control style="bold" show-link="y" normalize="{$normalize}"/>) }
@@ -123,6 +115,9 @@ return (
                 c:print-word(c:get-word($x), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y" is-neo="y"/>)
             } </dd>
         )  else () } 
+        { if ($word/element) then 
+        <span> ⇐ {c:print-word-elements($word/element, $word, <control show-link="y"/>)}</span>
+        else() }
     </dt>
 ) } </dl>,
 if ($pubmode != 'false') then () else (
