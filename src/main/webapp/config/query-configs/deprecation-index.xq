@@ -56,13 +56,13 @@ order by if ($neo-lang)
 return (
     <dt>
         { if (
-            $neo-lang and ($deprecated[not(@weak)]
+            $neo-lang and ($deprecated[@strong]
             or $word/@gloss='[unglossed]'
             or contains($word/@mark, '-'))
           ) then <span>⛔️</span>
           else if (
             $neo-lang and (
-                $deprecated[@weak] or
+                $deprecated[not(@strong)] or
                 contains($word/@mark, '|') or
                 contains($word/@mark, '‽') or
                 $word/@l = ('ep', 'en', 'eq', 'g')

@@ -55,7 +55,9 @@ for (var i = 0; i < index.length; i++) {
     word.matchNgloss = toMatch(word.ngloss);
     word.normalized = (word.lang == 'mq' && !(word.speech.indexOf('name') >= 0)) ? word.normalized = normalizeSpelling(word.match) : '';
     words.push(word);
-    wordLookup[word.key] = word;
+    if (!word.see) {
+        wordLookup[word.key] = word;
+    }
     if (word.combine) {
     	if (!combines[word.combine]) {
     		combines[word.combine] = [];
@@ -183,24 +185,28 @@ var BUFFER = 50;
 var pos = 0;
 var max = 0;
 
-var lastSearchText = '';
-
 function doSearchTyping() {
-	var searchText = document.getElementById('searchBox').value;
-	if (searchText != lastSearchText) {
-		doSearch();
-		lastSearchText = searchText;
-	}
+	doSearch()
 }
 
 function doSearch() {
+	setTimeout(asyncSearch, 10);
+}
+
+function asyncSearch() {
 	searchIt(50);
 }
+
+var SEARCH_SET = '';
 
 function searchIt(buffer) {
 	BUFFER = buffer;
 	pos = 0; // Clear buffer
     var searchBox = document.getElementById('searchBox');
+    var searchText = searchBox.value;
+    while (searchText.indexOf(' =') > 0) {
+    	searchText = searchText.replace(' =', '=');
+    }
     var langSelect = document.getElementById('langSelect');
     var lang = langSelect.options[langSelect.selectedIndex].value;
     var targetSelect = document.getElementById('targetSelect');
@@ -209,6 +215,12 @@ function searchIt(buffer) {
     var position = positionSelect.options[positionSelect.selectedIndex].value;
     var partsOfSpeechSelect = document.getElementById('partsOfSpeechSelect');
     var partsOfSpeech = partsOfSpeechSelect.options[partsOfSpeechSelect.selectedIndex].value;
+    var currentSearchSet = searchText + '@' + lang + '@' + target + '@' + position + '@' + partsOfSpeech + '@' + BUFFER;
+    if (currentSearchSet != SEARCH_SET) {
+    	SEARCH_SET = currentSearchSet;
+    } else {
+    	return; // Skip
+    }
     var noNames = (partsOfSpeech == 'no-names');
     var partsOfSpeech = (partsOfSpeech == 'no-names') ? '' : partsOfSpeech;
     var langs = [];
@@ -216,11 +228,11 @@ function searchIt(buffer) {
     	langs = lang.split('|');
     }
     var resultList = document.getElementById('resultList');
-    var searchText = searchBox.value;
     var first = [];
     var second = [];
     var third = [];
     var last = [];
+    var count = 0;
     for (var i = 0; i < words.length; i++) {
     	var word = words[i];
     	if (isMatch(word, searchText, target, position, partsOfSpeech)) {
@@ -234,6 +246,9 @@ function searchIt(buffer) {
                 if (word.matchgloss.indexOf(searchText) == 0) set = third;
                 if (word.matchgloss.indexOf(' ' + searchText) > 0) set = third;
     			set.push(word);
+    			if (count >= BUFFER + 1) {
+    				break;
+    			}
     		}
     	}
     }
@@ -271,9 +286,10 @@ function wordsToHtml(result, pos) {
         var langList = convertLang(word.lang, word.speech);
         if (isNeo && combines[word.key]) {
         	for (var i = 0; i < combines[word.key].length; i++) {
-        		var convertedCombineLang = convertLang(combines[word.key][i].lang);
-        		if (langList.indexOf(convertedCombineLang) < 0) {
-            		langList = langList.trim() + ', ' + convertLang(combines[word.key][i].lang);
+        		var combineWord = combines[word.key][i];
+        		var convertedCombineLang = convertLang(combineWord.lang, combineWord.speech);
+        		if (langList.indexOf(convertedCombineLang) < 0 && convertedCombineLang.trim() != word.altlang) {
+            		langList = langList.trim() + ', ' + convertedCombineLang;
         		}
         	}
         }
@@ -341,6 +357,13 @@ function isMatch(word, searchText, target, position, partsOfSpeech) {
 }
 
 function orMatch(word, searchText, target, position, partsOfSpeech) {
+	if (searchText.startsWith('word=')) {
+		target = 'word';
+		searchText = searchText.substring(5);
+	} else if (searchText.startsWith('gloss=')) {
+		target = 'gloss';
+		searchText = searchText.substring(6);
+	}
 	var searches = searchText.split(',');
 	for (var i = 0; i < searches.length; i++) {
 		if (checkMatch(word, toMatch(searches[i]), target, position, partsOfSpeech)) return true;
@@ -449,6 +472,16 @@ function advanced() {
     	searchSelectors.style.display = 'none';
     } else {
     	searchSelectors.style.display = 'block';
+    }
+}
+
+function help() {
+    var helpDiv = document.getElementById('help-div');
+    display = getComputedStyle(helpDiv, null).getPropertyValue('display');
+    if (display == 'block') {
+    	helpDiv.style.display = 'none';
+    } else {
+    	helpDiv.style.display = 'block';
     }
 }
 

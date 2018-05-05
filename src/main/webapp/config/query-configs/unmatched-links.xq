@@ -49,8 +49,12 @@ order by c:normalize-for-sort($ref/@source)
 return <p>v="{$ref/@v/string()}" source="{$ref/@source/string()}"</p>
 ) }
 <!--
+<h1>Extraneous Elements</h1> { (:
+for $word in //word[count(combine) > 1] return
+<p>{name($word)} l="{$word/@l/string()}" v="{c:print-word($word, <control show-link="y" hide-mark="y"/>)}"</p>
+ :) }
 <h1>Extraneous Elements</h1>
-{
+{ (:
 let $words := //word
 let $extra-link-words := $words[not(ref) and not(other-ok) and *[not(name()='ref' or name()='word' or name()='notes')] 
     and not(starts-with(c:get-speech(.), 'phon') or c:get-speech(.) = 'grammar')]
@@ -62,9 +66,9 @@ return (
     return (
     <dt>{name($word)} l="{$word/@l/string()}" v="{c:print-word($word, <control show-link="y" hide-mark="y"/>)}"</dt>
 ) } </dl>
-) }
+) :) }
 <h1>Cross-Word Inflections</h1>
-{
+{ (:
 let $words := //word
 let $cross-inflect-words := $words[ref/inflect/c:get-ref(.)/.. != .]
 return (
@@ -78,7 +82,7 @@ return (
     return
     <dd>v="{$inflect/@v/string()}" source="{$inflect/@source/string()}"</dd>
 ) } </dl>
-) }
+) :) }
 -->
 </body>
 </html>

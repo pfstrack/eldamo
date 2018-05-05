@@ -62,6 +62,7 @@ span.button-holder {{ float: right; display: block }}
 span.search-holder {{ overflow: hidden; display: block; padding-right: 0.5em; }}
 input.searchBox {{ width: 100%; }}
 .search-selectors {{ margin-top: 0.25em; display: none; text-align: center; }}
+.help-div {{ margin-top: 0.25em; display: none; }}
 input[type="text"], select, button {{ font-size: 16px; }}
 button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
 .label-holder {{ display: none; }}
@@ -90,6 +91,7 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
     </span>
 </div>
 <div class="search-selectors" id="search-selectors">
+    <button id="helpButton" class="helpButton" onclick="help()">?</button> &#160;
     <select id="langSelect" class="langSelect" onchange="doSearch()">
         <option value="">All Languages</option>
         <option value="" disabled="disabled">─────────────</option>
@@ -143,6 +145,26 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
         <option value="root">root</option>
     </select> &#160;
     <button id="resetButton" onclick="reset()">Reset</button>
+</div>
+<div class="help-div" id="help-div">
+<p><b>Help:</b> Enter the word or translation you want to search for in the text box to see matching results. The filter
+selectors can be used to further refine the search. By default, the search checks both the word and its glosses
+(translations) but you can further restrict this using the search filters. Note that English translations, like Tolkien,
+use British spellings: “colour” not “color”. There are a few additional “advanced search” options:</p>
+<p><i>Wildcards</i> (*): This can be used as match placeholder. The normal search for “re” matches text ending
+containing the text “re” anywhere. The search “*re” matches text ending with “re”; “re*” matches text beginning “re”;
+“*re*” matches text with “re” in the interior; “r*e” matches text that contains an “r” followed by any number of
+characters and then an “e”.</p>
+<p><i>Multi-match</i> (,): A comma “,” can be used for optional multi-match criteria. The search “dream, sleep”
+will find any word that matches either “dream” or “sleep”.</p>
+<p><i>Multi-match</i> (+): A plus “+” can be used for required multi-match criteria. The search “dream+sleep”
+will find any word that matches both “dream” and “sleep”.</p>
+<p><i>Word-only or Gloss-only:</i> The prefix “word=” means a multi-match criteria applies only to words. The prefix
+“gloss=” means a multi-match criteria applies only to glosses (translations). For example, “word=lor+gloss=dream” will
+match any word containing “lor” whose gloss also contains “dream”.</p>
+<p>All these advanced search options (including wildcards) may be combined. If you use both “,” and “+” then the search
+breaks down across the “+” first, then the “,”. For example, “word=lor+gloss=dream,sleep” matches words containing
+“lor” whose glosses contain either “dream” or “sleep”.</p>
 </div>
 <hr />
 <dl id="resultList"></dl>

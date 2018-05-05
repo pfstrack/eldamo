@@ -23,6 +23,7 @@ import org.xml.sax.InputSource;
 
 import xdb.dom.impl.DocumentImpl;
 import xdb.dom.impl.NodeImpl;
+import xdb.util.XmlUtil;
 
 /**
  * Custom functions for XQuery/XPath/XSLT integration.
@@ -362,7 +363,8 @@ public final class CustomFunctions {
             doc = db.parse(new InputSource(new StringReader("<root>" + html + "</root>")));
         } catch (Exception e) {
             try {
-                doc = db.parse(new InputSource(new StringReader("<root>ERROR:BAD_HTML - " + e + "</root>")));
+                String msg = XmlUtil.xmlEscape(e.toString());
+                doc = db.parse(new InputSource(new StringReader("<root>ERROR:BAD_HTML - " + msg + "</root>")));
             } catch (Exception e1) {
                 return new ArrayList<Node>();
             }

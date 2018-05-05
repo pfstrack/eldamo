@@ -5,9 +5,10 @@ declare function local:fixed-gloss($word as node()?) as xs:string {
     let $stripped := substring-before(concat($gloss, '⚠️'), '⚠️')
     let $no-langs := replace(replace(replace($stripped, '\[Q.\]', ''), '\[ᴹQ.\]', ''), '\[ᴱQ.\]', '')
     let $no-langs2 := replace(replace(replace(replace($no-langs, '\[S.\]', ''), '\[N.\]', ''), '\[ᴱN.\]', ''), '\[G.\]', '')
-    let $final := substring-before(concat($no-langs2, '; '), '; ')
-    let $final2 := substring-before(concat($final, ', '), ', ')
-    return concat(' “', normalize-space($final2), '”')
+    let $no-langs3 := replace($no-langs2, '\[ON.\]', '')
+    let $quoted := concat(' “', normalize-space($no-langs3), '”')
+    let $clean := replace(replace($quoted, ',”', '”'), ';”', '”')
+    return $clean
 };
 
 declare variable $id external;
@@ -68,13 +69,13 @@ order by if ($neo-lang)
 return (
     <dt>
         { if (
-            $neo-lang and ($deprecated[not(@weak)]
+            $neo-lang and ($deprecated[@strong]
             or $word/@gloss='[unglossed]'
             or contains($word/@mark, '-'))
           ) then <span>⛔️</span>
           else if (
             $neo-lang and (
-                $deprecated[@weak] or
+                $deprecated[not(@strong)] or
                 contains($word/@mark, '|') or
                 contains($word/@mark, '‽') or
                 $word/@l = ('ep', 'en', 'eq', 'g')

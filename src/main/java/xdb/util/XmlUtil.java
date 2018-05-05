@@ -484,4 +484,26 @@ public final class XmlUtil {
         }
         return ch3;
     }
+
+    public static String xmlEscape(String text) {
+        StringBuilder sb = new StringBuilder(); 
+        char[] ch = text.toCharArray();
+        for (int j = 0; j < ch.length; j++) {
+            char c = ch[j];
+            if (c == '&') {
+                sb.append("&amp;");
+            } else if (c == '"') {
+                sb.append("&quot;");
+            } else if (c == '<') {
+                sb.append("&lt;");
+            } else if (c == '>') {
+                sb.append("&gt;");
+            } else if (c == '\'') {
+                sb.append("&apos;");
+            } else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
 }

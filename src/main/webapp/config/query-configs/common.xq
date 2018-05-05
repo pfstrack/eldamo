@@ -489,7 +489,7 @@ declare function c:show-hierarchy-list($items as element()*, $grouping as xs:str
 };
 
 declare function c:alt-lang($word as element()) as xs:string {
-    let $alt := $word[not($word/ref)][not(starts-with(@speech, 'phon') or @speech='grammar' or @speech='text')]//word[ref][1][@l][@l != $word/@l]
+    let $alt := $word[not(@mark='!')][not($word/ref)][not(starts-with(@speech, 'phon') or @speech='grammar' or @speech='text')]//word[ref][1][@l][@l != $word/@l]
     return if ($alt)
     then translate(c:print-lang($alt[1]), ' ', '')
     else ''

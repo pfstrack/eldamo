@@ -490,7 +490,7 @@ return (
 <p>
     { if (xdb:hashcode($word) = xdb:hashcode($words[1])) then attribute id { 'lang-word'} else () }
     { if ($pubmode = 'false' and $word/deprecated) then
-        if ($word/deprecated[not(@weak)]) then <span>⛔️</span>
+        if ($word/deprecated[@strong]) then <span>⛔️</span>
         else <span>⚠️</span>
       else () }
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
@@ -530,12 +530,12 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
 <dt>
     { let $deprecated := $word/deprecated | c:get-word($word/see)/deprecated return
       if (
-        $deprecated[not(@weak)]
+        $deprecated[@strong]
         or $word/@gloss='[unglossed]'
         or contains($word/@mark, '-')
       ) then <span>⛔️</span>
       else if (
-        $deprecated[@weak] or
+        $deprecated[not(@strong)] or
         contains($word/@mark, '|') or
         contains($word/@mark, '‽') or
         $word/@l = ('ep', 'en', 'eq', 'g')
