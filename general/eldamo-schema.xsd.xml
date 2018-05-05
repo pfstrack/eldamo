@@ -19,6 +19,19 @@
       <xs:enumeration value="uniconsonantal-form"/>
       <xs:enumeration value="biconsonantal-root"/>
       <xs:enumeration value="triconsonantal-root"/>
+
+      <xs:enumeration value="a-stem"/>
+      <xs:enumeration value="basic-verb"/>
+      <xs:enumeration value="irregular-verb"/>
+      <xs:enumeration value="na-formative"/>
+      <xs:enumeration value="non-verb-derived"/>
+      <xs:enumeration value="ta-causative"/>
+      <xs:enumeration value="ta-formative"/>
+      <xs:enumeration value="talat-stem"/>
+      <xs:enumeration value="u-stem"/>
+      <xs:enumeration value="weak-verb"/>
+      <xs:enumeration value="ya-causative"/>
+      <xs:enumeration value="ya-formative"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="class-form-list-type">
@@ -334,6 +347,8 @@
       <xs:enumeration value="suffixed-imperative"/>
       <xs:enumeration value="u-dual"/>
       <xs:enumeration value="ya-participle"/>
+      <xs:enumeration value="strong-past"/>
+      <xs:enumeration value="strong-perfect"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="inflect-variant-list-type">
@@ -562,7 +577,7 @@
     <xs:complexType>
       <xs:attribute name="l" type="language-type"/>
       <xs:attribute name="v"/>
-      <xs:attribute name="weak"/>
+      <xs:attribute name="strong"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="deprecations" type="xs:string">
@@ -757,6 +772,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="deprecations"/>
         <xs:element ref="grammar"/>
         <xs:element ref="language"/>
         <xs:element ref="names"/>
