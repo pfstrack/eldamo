@@ -232,6 +232,7 @@ function searchIt(buffer) {
     var second = [];
     var third = [];
     var last = [];
+    var deprecated = [];
     var count = 0;
     for (var i = 0; i < words.length; i++) {
     	var word = words[i];
@@ -245,6 +246,7 @@ function searchIt(buffer) {
                 if (word.match.indexOf(' ' + searchText) > 0) set = second;
                 if (word.matchgloss.indexOf(searchText) == 0) set = third;
                 if (word.matchgloss.indexOf(' ' + searchText) > 0) set = third;
+                if (isNeo && word.deprecated) set = deprecated;
     			set.push(word);
     			if (count >= BUFFER + 1) {
     				break;
@@ -252,7 +254,7 @@ function searchIt(buffer) {
     		}
     	}
     }
-    var result = first.concat(second).concat(third).concat(last);
+    var result = first.concat(second).concat(third).concat(last).concat(deprecated);
     max = result.length;
     if (pos > maxPos()) pos = maxPos();
     var count = pos;
@@ -322,8 +324,8 @@ function wordsToHtml(result, pos) {
             if (word.seeLang) {
                 html += word.seeLang;
             }
-            html += '<a href="../words/word-' + word.key + ext + '">';
-            html += '<span style="font-weight: bold">' + word.see + '</span></a>';
+            html += '<a href="../words/word-' + word.see + ext + '">';
+            html += '<span style="font-weight: bold">' + wordLookup[word.see].value + '</span></a>';
         }
         html += '</dt>';
         if (isNeo && word.deprecated) {

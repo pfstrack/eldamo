@@ -346,7 +346,6 @@
       <xs:enumeration value="strong-I-without-syncope"/>
       <xs:enumeration value="suffixed-imperative"/>
       <xs:enumeration value="u-dual"/>
-      <xs:enumeration value="ya-participle"/>
       <xs:enumeration value="strong-past"/>
       <xs:enumeration value="strong-perfect"/>
     </xs:restriction>
