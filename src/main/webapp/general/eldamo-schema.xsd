@@ -1004,9 +1004,10 @@
       <xs:attribute name="created"/>
       <xs:attribute name="from"/>
       <xs:attribute name="gloss"/>
-      <xs:attribute name="ngloss"/>
       <xs:attribute name="l" use="required" type="language-type"/>
       <xs:attribute name="mark"/>
+      <xs:attribute name="neo-version"/>
+      <xs:attribute name="ngloss"/>
       <xs:attribute name="order" type="xs:NMTOKEN"/>
       <xs:attribute name="orthography"/>
       <xs:attribute name="page-id" use="required" type="xs:NMTOKEN"/>

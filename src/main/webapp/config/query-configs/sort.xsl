@@ -7,6 +7,7 @@
     <xsl:key name="on-deriv" match="word[@l='n']" use="ref/deriv/@source"/> 
     <xsl:key name="on-ref" match="word[@l='on']" use="ref/@source"/> 
     <xsl:variable name="ordered-words" select="//word[@order]"/>
+    <xsl:variable name="version" select="/*/@version/string()"/>
 
     <xsl:output cdata-section-elements="notes phonetics words names grammar phrases cognate source x-ref element deriv inflect cite related before vocabulary neologisms deprecations" indent="yes"/> 
     
@@ -41,6 +42,9 @@
                     [@speech=$word/@speech]
                     [@order lt $word/@order]
                 ) * 100 + 100, '00000')"/>
+            </xsl:if>
+            <xsl:if test="@l=('ns', 'nq', 'np') and not(@neo-version)">
+                <xsl:attribute name="neo-version" select="$version"/>
             </xsl:if>
             <xsl:copy-of select="@mark"/>
             <xsl:apply-templates select="notes"/>

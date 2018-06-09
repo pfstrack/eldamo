@@ -68,11 +68,6 @@ return (
                 $word/@l = ('ep', 'en', 'eq', 'g')
             )
           ) then <span>⚠️</span>
-          else if (
-            $neo-lang and 
-                $word/@l = ('np', 'ns', 'nq') and
-                not($word/@vetted)
-          ) then <span>⏳</span>
           else () }
         { if (not($neo-lang)) then () else (
             let $lang-list := (
