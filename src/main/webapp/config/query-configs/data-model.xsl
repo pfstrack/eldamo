@@ -49,9 +49,6 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
     <xsl:template match="word">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
-            <xsl:if test="not(@l)">
-               <xsl:copy-of select="ancestor::word[@l][1]/@l"/>
-            </xsl:if>
             <xsl:if test="not(@speech)">
                <xsl:copy-of select="ancestor::word[@speech][1]/@speech"/>
             </xsl:if>

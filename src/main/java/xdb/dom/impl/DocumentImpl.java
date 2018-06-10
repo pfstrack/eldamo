@@ -3,6 +3,7 @@ package xdb.dom.impl;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,6 +34,7 @@ import org.w3c.dom.Text;
 
 import xdb.config.ModelConfigManager;
 import xdb.config.ModelConfigManager.Key;
+import xdb.dom.CustomFunctions;
 import xdb.dom.XPathEngine;
 
 /**
@@ -352,10 +354,41 @@ public class DocumentImpl extends NodeImpl implements Document, DocumentInfo {
      *             For errors.
      */
     public void buildIndex() throws XPathExpressionException {
-        Map<String, Map<String, List<Node>>> map = new HashMap<String, Map<String, List<Node>>>();
         Element element = getDocumentElement();
+        CustomFunctions.setHashcodeMap(indexHashcodes(element));
+        Map<String, Map<String, List<Node>>> map = new HashMap<String, Map<String, List<Node>>>();
         indexElement(element, map);
         keyMap = map;
+    }
+
+    private Map<String, String> indexHashcodes(Element root) {
+        Map<String, String> hashcodeMap = new HashMap<String, String>();
+        Set<String> pageIds = new HashSet<String>();
+        NodeList words = root.getElementsByTagName("word");
+        // Initialize hashcodes for elements with page ids
+        for (int i = 0; i < words.getLength(); i++) {
+            Element word = (Element) words.item(i);
+            String pageId = word.getAttribute("page-id");
+            if (pageId.length() > 0) {
+                String key = CustomFunctions.hashKey(word.getAttribute("l"), word.getAttribute("v"));
+                hashcodeMap.put(key, pageId);
+                pageIds.add(pageId);
+            }
+        }
+        // Initialize hashcodes for elements without page ids
+        for (int i = 0; i < words.getLength(); i++) {
+            Element word = (Element) words.item(i);
+            if (word.getAttribute("page-id").length() == 0) {
+                String key = CustomFunctions.hashKey(word.getAttribute("l"), word.getAttribute("v"));
+                String pageId = CustomFunctions.hashValue(key);
+                while (pageIds.contains(pageId)) {
+                    pageId = String.valueOf(Long.valueOf(pageId) + 1);
+                }
+                hashcodeMap.put(key, pageId);
+                pageIds.add(pageId);
+            }
+        }
+        return hashcodeMap;
     }
 
     void indexElement(Element element, Map<String, Map<String, List<Node>>> map)
