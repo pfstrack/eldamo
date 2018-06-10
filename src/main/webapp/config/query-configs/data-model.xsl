@@ -68,7 +68,9 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
                     </xsl:when>
                 </xsl:choose>
             </xsl:if>
-            <xsl:attribute name="page-id" select="xdb:hashcode(.)"/>
+            <xsl:if test="not(@page-id)">
+                <xsl:attribute name="page-id" select="xdb:hashcode(.)"/>
+            </xsl:if>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>

@@ -46,6 +46,9 @@
             <xsl:if test="@l=('ns', 'nq', 'np') and not(@neo-version)">
                 <xsl:attribute name="neo-version" select="$version"/>
             </xsl:if>
+            <xsl:if test="not(@page-id)">
+                <xsl:attribute name="page-id" select="xdb:hashcode(.)"/>
+            </xsl:if>
             <xsl:copy-of select="@mark"/>
             <xsl:apply-templates select="notes"/>
             <xsl:apply-templates select="*[not(name()='notes' or name()='word' or name()='ref')]"/>

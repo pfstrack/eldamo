@@ -1010,6 +1010,7 @@
       <xs:attribute name="ngloss"/>
       <xs:attribute name="order" type="xs:NMTOKEN"/>
       <xs:attribute name="orthography"/>
+      <!-- Uniqueness guaranteed by page-id-key -->
       <xs:attribute name="page-id" use="required" type="xs:NMTOKEN"/>
       <xs:attribute name="phone-col">
         <xs:simpleType>
@@ -1059,6 +1060,10 @@
       </xs:sequence>
       <xs:attribute name="version" use="required" type="xs:NMTOKEN"/>
     </xs:complexType>
+    <xs:key name="page-id-key">
+      <xs:selector xpath=".//word"/>
+      <xs:field xpath="@page-id"/>
+    </xs:key>
     <!--
     XSD key processing is too slow
     <xs:key name="word-key">
