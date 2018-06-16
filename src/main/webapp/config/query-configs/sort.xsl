@@ -34,7 +34,8 @@
 
     <xsl:template match="word">
         <xsl:copy>
-            <xsl:copy-of select="@*[not(name()='mark')][not(name()='order')]"/>
+            <xsl:copy-of select="@*[not(name()='mark')][not(name()='page-id')]
+                [not(name()='neo-version')][not(name()='order')]"/>
             <xsl:if test="@order != ''">
 	            <xsl:variable name="word" select="."/>
                 <xsl:attribute name="order" select="format-number(count($ordered-words
@@ -43,12 +44,16 @@
                     [@order lt $word/@order]
                 ) * 100 + 100, '00000')"/>
             </xsl:if>
-            <xsl:if test="@l=('ns', 'nq', 'np') and not(@neo-version)">
-                <xsl:attribute name="neo-version" select="$version"/>
+            <xsl:if test="@l=('ns', 'nq', 'np')">
+                <xsl:if test="not(@neo-version)">
+                    <xsl:attribute name="neo-version" select="$version"/>
+                </xsl:if>
+                <xsl:copy-of select="@neo-version"/>
             </xsl:if>
             <xsl:if test="not(@page-id)">
                 <xsl:attribute name="page-id" select="xdb:hashcode(.)"/>
             </xsl:if>
+            <xsl:copy-of select="@page-id"/>
             <xsl:copy-of select="@mark"/>
             <xsl:apply-templates select="notes"/>
             <xsl:apply-templates select="*[not(name()='notes' or name()='word' or name()='ref')]"/>

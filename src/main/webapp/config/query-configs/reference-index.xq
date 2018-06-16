@@ -35,6 +35,12 @@ dates of probable composition.</p>
 <ul> {
     local:list-references(/*/source[@type='work'])
 } </ul>
+<p><b>Minor Works:</b></p>
+<p>The following are reference to minor or fragmentary works not appearing in other, larger documents (such as Elvish
+quotes in inscriptions or letters), or works that contain only isolated Elvish samples.</p>
+<ul> {
+    local:list-references(/*/source[@type='minor-work'])
+} </ul>
 <p><b>Indices:</b></p>
 <p>To avoid referencing every appearance of a proper name in a given primary source, this lexicon instead references its
 entry in that source’s index. Proper names are only referenced directly in primary sources if its appearance

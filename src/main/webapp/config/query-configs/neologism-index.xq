@@ -145,7 +145,8 @@ return (
           else if (not($word/@mark)) then
              let $combines := $word//word[combine/@l = $word/@l and combine/@v = $word/@v]/c:get-word(.) return
              if (not($combines)) then ' ERROR:NO_COMBINES' else ()
-          else if (not(contains($word/@mark, "!")) and not(contains($word/@mark, "?"))) then ' ERROR:NO_NEO_MARKER'
+          else if (not(contains($word/@mark, "!")) and not(contains($word/@mark, "?")) and
+            not(contains($word/@mark, "*") and $word/@l='np')) then ' ERROR:NO_NEO_MARKER'
           else () }
     </dt>
 ) } </dl>,

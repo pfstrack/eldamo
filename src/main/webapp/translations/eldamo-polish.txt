@@ -1,9 +1,9 @@
 # Polish translations of Eldamo glosses, based on Eldamo v0.6.5 by Paul Strack
 #
-# Tab-delimited file: first value is Eldamo page-id, second is Russian translation.
+# Tab-delimited file: first value is Eldamo page-id, second is Polish translation.
 # Source - https://docs.google.com/spreadsheets/d/1UHG_5mpudMAqT0-FcogcrN4H0RyVvft5p-9qJRVBuqc
 #
-# © 2018, Remy Corbin.
+# © 2018, Przemek Chorobiński.
 # This work is licensed under the Creative Commons Attribution 4.0 International License.
 # To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
 #
