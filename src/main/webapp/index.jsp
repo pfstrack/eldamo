@@ -15,7 +15,12 @@ generated&nbsp;<%= java.text.DateFormat.getDateInstance(java.text.DateFormat.LON
 <ul>
 <li><a href="content/languages/index.html">Languages</a></li>
 <li><a href="content/references/index.html">References</a></li>
-<li><a href="content/search/search.html">Search</a></li>
+</ul>
+<p><b>Word Searches:</b></p>
+<ul>
+<li><a href="content/search/search.html?neo">Neo-Eldarin Word Search</a></li>
+<li><a href="content/search/search.html">Academic Word Search</a></li>
+<li><a href="translations/international-searches.html">International Searches</a></li>
 </ul>
 <% if ("true".equals(request.getAttribute("PUB_MODE"))) { %>
 <p>This collection of documents is a lexicon of Tolkien’s invented languages, particularly his Elvish languages, which
