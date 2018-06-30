@@ -45,15 +45,12 @@ order by c:normalize-for-sort($word/@v)
 return (
     <dt>
         { if (
-            $neo-lang and ($deprecated[@strong]
-            or $word/@gloss='[unglossed]'
-            or contains($word/@mark, '-'))
-          ) then <span>⛔️</span>
-          else if (
             $neo-lang and (
-                $deprecated[not(@strong)] or
+                $deprecated or
                 contains($word/@mark, '|') or
+                contains($word/@mark, '-') or
                 contains($word/@mark, '‽') or
+                $word/@gloss='[unglossed]' or
                 $word/@l = ('ep', 'en', 'eq', 'g')
             )
           ) then <span>⚠️</span> else () }

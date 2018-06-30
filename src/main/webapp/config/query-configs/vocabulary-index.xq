@@ -69,19 +69,15 @@ order by if ($neo-lang)
 return (
     <dt>
         { if (
-            $neo-lang and ($deprecated[@strong]
-            or $word/@gloss='[unglossed]'
-            or contains($word/@mark, '-'))
-          ) then <span>⛔️</span>
-          else if (
             $neo-lang and (
-                $deprecated[not(@strong)] or
+                $deprecated or
                 contains($word/@mark, '|') or
+                contains($word/@mark, '-') or
                 contains($word/@mark, '‽') or
+                $word/@gloss='[unglossed]' or
                 $word/@l = ('ep', 'en', 'eq', 'g')
             )
-          ) then <span>⚠️</span>
-          else () }
+          ) then <span>⚠️</span> else () }
         { if ($word/@l = ('nq', 'ns', 'np')) then '*' else '' }
         { if (contains($word/@mark, '†')) then '†' else '' }
         { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)

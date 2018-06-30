@@ -489,9 +489,8 @@ return (
 <div> { (
 <p>
     { if (xdb:hashcode($word) = xdb:hashcode($words[1])) then attribute id { 'lang-word'} else () }
-    { if ($pubmode = 'false' and $word/deprecated) then
-        if ($word/deprecated[@strong]) then <span>⛔️</span>
-        else <span>⚠️</span>
+    { if ($pubmode = 'false' and $word/deprecated)
+      then <span>⚠️</span>
       else () }
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
@@ -530,12 +529,9 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
 <dt>
     { let $deprecated := $word/deprecated | c:get-word($word/see)/deprecated return
       if (
-        $deprecated[@strong]
-        or $word/@gloss='[unglossed]'
-        or contains($word/@mark, '-')
-      ) then <span>⛔️</span>
-      else if (
-        $deprecated[not(@strong)] or
+        $deprecated or
+        $word/@gloss='[unglossed]' or
+        contains($word/@mark, '-') or
         contains($word/@mark, '|') or
         contains($word/@mark, '‽') or
         $word/@l = ('ep', 'en', 'eq', 'g')
@@ -575,7 +571,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     { if (not($word/@created or $word/@vetted)) then () else
       concat(' [',
         if ($word/@created) then concat('created by ', $word/@created/string()) else '',
-        if ($word/@created and $word/vetted) then ', ' else '',
+        if ($word/@created or $word/vetted) then ', ' else '',
         if ($word/@vetted) then concat('vetted by ', $word/@vetted/string()) else '',
       ']') }
     {let $rule := if ($word/@rule) then $word else $word/rule return

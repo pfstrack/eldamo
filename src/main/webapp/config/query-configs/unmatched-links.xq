@@ -48,6 +48,19 @@ for $ref in $refs
 order by c:normalize-for-sort($ref/@source)
 return <p>v="{$ref/@v/string()}" source="{$ref/@source/string()}"</p>
 ) }
+<h1>Duplicate Page Ids</h1>
+{
+let $bad-words :=
+    //word[@page-id][count(xdb:key(., 'page-id', @page-id)) gt 1] 
+return (
+<p>count: {count($bad-words)}</p>,
+<dl> {
+    for $word in $bad-words
+    order by $word/c:get-lang(.), c:normalize-for-sort($word/@v)
+    return (
+    <dt>{name($word)} l="{$word/@l/string()}" v="{c:print-word($word, <control show-link="y" hide-mark="y"/>)}"</dt>
+) } </dl>
+) }
 <!--
 <h1>Extraneous Elements</h1> { (:
 for $word in //word[count(combine) > 1] return

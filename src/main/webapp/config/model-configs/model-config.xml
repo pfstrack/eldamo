@@ -43,5 +43,7 @@
 
         <key name="word-code" match="word" type="string" use="xdb:hashcode(.)" />
         <key name="ref-code" match="ref" type="string" use="xdb:hashcode(.)" />
+
+        <key name="page-id" match="word" use="@page-id" />
     </index-keys>
 </model-config>

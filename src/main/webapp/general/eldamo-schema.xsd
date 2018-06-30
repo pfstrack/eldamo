@@ -576,7 +576,6 @@
     <xs:complexType>
       <xs:attribute name="l" type="language-type"/>
       <xs:attribute name="v"/>
-      <xs:attribute name="strong"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="deprecations" type="xs:string">
