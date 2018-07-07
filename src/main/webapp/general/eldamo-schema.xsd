@@ -226,6 +226,7 @@
       <xs:enumeration value="stop-mutation"/>
       <xs:enumeration value="mixed-mutation"/>
       <xs:enumeration value="sibilant-mutation"/>
+      <xs:enumeration value="i-mutation"/>
 
       <!-- root variations -->
       <xs:enumeration value="a-fortification"/>     <!-- Adding a medial "a" to diphthongize vowel -->
@@ -963,6 +964,7 @@
             <xs:enumeration value="appendix"/>
             <xs:enumeration value="index"/>
             <xs:enumeration value="minor"/>
+            <xs:enumeration value="minor-work"/>
             <xs:enumeration value="quenya"/>
             <xs:enumeration value="secondary"/>
             <xs:enumeration value="sindarin"/>

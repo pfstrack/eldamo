@@ -100,7 +100,7 @@ return (
         { if (not($word/@created or $word/@vetted)) then () else
           concat(' [',
             if ($word/@created) then concat('created by ', $word/@created/string()) else '',
-            if ($word/@created and $word/vetted) then ', ' else '',
+            if ($word/@created and $word/@vetted) then ', ' else '',
             if ($word/@vetted) then concat('vetted by ', $word/@vetted/string()) else '',
           ']') }
         { if ($word/see and not($neo-lang and $deprecated))
