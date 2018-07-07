@@ -226,6 +226,7 @@
       <xs:enumeration value="stop-mutation"/>
       <xs:enumeration value="mixed-mutation"/>
       <xs:enumeration value="sibilant-mutation"/>
+      <xs:enumeration value="i-mutation"/>
 
       <!-- root variations -->
       <xs:enumeration value="a-fortification"/>     <!-- Adding a medial "a" to diphthongize vowel -->
@@ -576,7 +577,6 @@
     <xs:complexType>
       <xs:attribute name="l" type="language-type"/>
       <xs:attribute name="v"/>
-      <xs:attribute name="strong"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="deprecations" type="xs:string">
@@ -964,6 +964,7 @@
             <xs:enumeration value="appendix"/>
             <xs:enumeration value="index"/>
             <xs:enumeration value="minor"/>
+            <xs:enumeration value="minor-work"/>
             <xs:enumeration value="quenya"/>
             <xs:enumeration value="secondary"/>
             <xs:enumeration value="sindarin"/>
@@ -1004,11 +1005,13 @@
       <xs:attribute name="created"/>
       <xs:attribute name="from"/>
       <xs:attribute name="gloss"/>
-      <xs:attribute name="ngloss"/>
       <xs:attribute name="l" use="required" type="language-type"/>
       <xs:attribute name="mark"/>
+      <xs:attribute name="neo-version"/>
+      <xs:attribute name="ngloss"/>
       <xs:attribute name="order" type="xs:NMTOKEN"/>
       <xs:attribute name="orthography"/>
+      <!-- Uniqueness guaranteed by page-id-key -->
       <xs:attribute name="page-id" use="required" type="xs:NMTOKEN"/>
       <xs:attribute name="phone-col">
         <xs:simpleType>
@@ -1058,6 +1061,10 @@
       </xs:sequence>
       <xs:attribute name="version" use="required" type="xs:NMTOKEN"/>
     </xs:complexType>
+    <xs:key name="page-id-key">
+      <xs:selector xpath=".//word"/>
+      <xs:field xpath="@page-id"/>
+    </xs:key>
     <!--
     XSD key processing is too slow
     <xs:key name="word-key">

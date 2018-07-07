@@ -26,7 +26,41 @@ if (![].includes) {
   };
 }
 
+function getTrans() {
+	var url = window.location.toString();
+	var transPos = url.indexOf('trans=');
+	var isTrans = (transPos > 0);
+	if (isTrans) {
+		var trans = url.substring(transPos + 6, url.length);
+		var csvPath = "../../translations/eldamo-" + trans + ".txt";
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		    	processTransMap(xhttp.responseText);
+		    }
+		};
+		xhttp.open("GET", csvPath, true);
+		xhttp.send();
+	}
+	return isTrans;
+}
+
 var isNeo = window.location.toString().indexOf('?neo') > 0;
+var isTrans = getTrans();
+
+function processTransMap(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    for (var i = 0; i < allTextLines.length; i++) {
+    	var line = allTextLines[i];
+    	if (line.charAt(0) == '#') continue; // Comment line
+        var entries = allTextLines[i].split('\t');
+        var word = wordLookup[entries[0]];
+        if (word) {
+        	word.trans = entries[1];
+        	word.matchtrans = toMatch(entries[1]);
+        }
+    }
+}
 
 words = [];
 combines = {};
@@ -55,9 +89,7 @@ for (var i = 0; i < index.length; i++) {
     word.matchNgloss = toMatch(word.ngloss);
     word.normalized = (word.lang == 'mq' && !(word.speech.indexOf('name') >= 0)) ? word.normalized = normalizeSpelling(word.match) : '';
     words.push(word);
-    if (!word.see) {
-        wordLookup[word.key] = word;
-    }
+    wordLookup[word.key] = word;
     if (word.combine) {
     	if (!combines[word.combine]) {
     		combines[word.combine] = [];
@@ -316,6 +348,11 @@ function wordsToHtml(result, pos) {
         html += ' <i>' + convertSpeech(word.speech) + '</i> ';
         if (isNeo && word.ngloss) {
         	html += ' “' + word.ngloss + '”';
+        } else if (word.trans) {
+        	html += ' “' + word.trans + '”';
+	        if (word.gloss) {
+	        	html += ' [English: “' + word.gloss + '”]';
+	        }
         } else if (word.gloss) {
         	html += ' “' + word.gloss + '”';
         }
@@ -392,13 +429,16 @@ function checkMatch(word, searchText, target, position, partsOfSpeech) {
 	} else if (position == 'interior') {
 		matcher = interiorMatch;
 	}
-	if ((matcher(word.match, searchText) || matcher(word.normalized, searchText)) && target.indexOf('word') >= 0) {
+	if (target.indexOf('word') >= 0 && (matcher(word.match, searchText) || matcher(word.normalized, searchText))) {
 		return true;
 	}
-	if (matcher(word.matchgloss, searchText) && target.indexOf('gloss') >= 0) {
+	if (target.indexOf('gloss') >= 0 && matcher(word.matchgloss, searchText)) {
 		return true;
 	}
-	if (isNeo && matcher(word.matchNgloss, searchText) && target.indexOf('gloss') >= 0) {
+	if (isTrans && target.indexOf('gloss') >= 0 && word.matchtrans && matcher(word.matchtrans, searchText)) {
+		return true;
+	}
+	if (isNeo && target.indexOf('gloss') >= 0 && matcher(word.matchNgloss, searchText)) {
 		return true;
 	}
 	return false;
