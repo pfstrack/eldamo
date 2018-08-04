@@ -78,7 +78,9 @@ return (
                 $word/@l = ('ep', 'en', 'eq', 'g')
             )
           ) then <span>⚠️</span> else () }
-        { if ($word/@l = ('nq', 'ns', 'np')) then '*' else '' }
+        { if ($word/@l = ('nq', 'ns', 'np')) then
+            if ($word/@mark = '!') then '*' else '^'
+          else '' }
         { if (contains($word/@mark, '†')) then '†' else '' }
         { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)
           else c:print-word($word, <control style="bold" show-link="y" hide-mark="y" normalize="{$normalize}"/>) }

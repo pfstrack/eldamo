@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
     <title>Eldamo : Home</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
+    <script src="js/add-queries.js"></script>
 </head>
 <body>
 <h1>Eldamo - An&nbsp;Elvish&nbsp;Lexicon</h1>
@@ -18,7 +19,7 @@ generated&nbsp;<%= java.text.DateFormat.getDateInstance(java.text.DateFormat.LON
 </ul>
 <p><b>Word Searches:</b></p>
 <ul>
-<li><a href="content/search/search.html?neo">Neo-Eldarin Word Search</a></li>
+<li><a href="content/search/search.html" query="neo">Neo-Eldarin Word Search</a></li>
 <li><a href="content/search/search.html">Academic Word Search</a></li>
 <li><a href="translations/international-searches.html">International Searches</a></li>
 </ul>

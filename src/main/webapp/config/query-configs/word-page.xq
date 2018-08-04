@@ -562,6 +562,10 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
                         translate($word/@v/lower-case(.), 'n', 'ñ') 
                     else if ($word/@tengwar='þ') then
                         translate($word/@v/lower-case(.), 's', 'þ') 
+                    else if ($word/@tengwar='ñ-') then
+                        concat('ñ', $word/@v/substring-after(lower-case(.), 'n'))
+                    else if ($word/@tengwar='þ-') then
+                        concat('þ', $word/@v/substring-after(lower-case(.), 's'))
                     else $word/@v/lower-case(.)
                 }" data-lang="{if ($word/@l = ('q', 'mq', 'eq', 'nq')) then 'q' else 's'}"></span>
         , ' ') else ()}

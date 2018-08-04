@@ -115,8 +115,8 @@ function doReplace(charReplace1, charReplace2, value) {
 }
 
 function charReplace(value) {
-	var charReplace1 = 'ƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřš -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
-	var charReplace2 = 'hietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrs    ';
+	var charReplace1 = 'ƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřšё -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
+	var charReplace2 = 'hietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrsе    ';
 	return doReplace(charReplace1, charReplace2, value);
 }
 
@@ -274,10 +274,11 @@ function searchIt(buffer) {
     		}
     		if (langs.length === 0 || langs.includes(word.lang)) {
     			var set = last;
-                if (word.match.indexOf(searchText) == 0) set = first;
-                if (word.match.indexOf(' ' + searchText) > 0) set = second;
-                if (word.matchgloss.indexOf(searchText) == 0) set = third;
-                if (word.matchgloss.indexOf(' ' + searchText) > 0) set = third;
+    			var compare = toMatch(searchText);
+                if (word.match.indexOf(compare) == 0) set = first;
+                if (word.match.indexOf(' ' + compare) > 0) set = second;
+                if (word.matchgloss.indexOf(compare) == 0) set = third;
+                if (word.matchgloss.indexOf(' ' + compare) > 0) set = third;
                 if (isNeo && word.deprecated) set = deprecated;
     			set.push(word);
     			if (count >= BUFFER + 1) {
@@ -317,20 +318,29 @@ function wordsToHtml(result, pos) {
         		&& word.mark.indexOf('!') < 0) {
             html += '[' + word.altlang.substring(0, 1) +']';
         }
-        var langList = convertLang(word.lang, word.speech);
+        var langValue = convertLang(word.lang, word.speech);
+        var combineList = '';
         if (isNeo && combines[word.key]) {
         	for (var i = 0; i < combines[word.key].length; i++) {
         		var combineWord = combines[word.key][i];
         		var convertedCombineLang = convertLang(combineWord.lang, combineWord.speech);
-        		if (langList.indexOf(convertedCombineLang) < 0 && convertedCombineLang.trim() != word.altlang) {
-            		langList = langList.trim() + ', ' + convertedCombineLang;
+        		if (combineList.indexOf(convertedCombineLang) < 0) {
+        			combineList = combineList.trim() + ', ' + convertedCombineLang;
         		}
         	}
         }
-        html += langList;
         if (word.altlang && !(word.altlang.indexOf('√') > 0 || word.altlang.indexOf('✶') > 0)
         		&& word.mark.indexOf('!') < 0) {
-            html += '[' + word.altlang +'] ';
+            html += langValue;
+            if (combineList) {
+                html += '[' + combineList.substring(1).trim() +'] ';
+            } else {
+                html += '[' + word.altlang +'] ';
+            }
+        } else if (combineList) {
+            html += (langValue.trim() + combineList);
+        } else {
+            html += langValue;
         }
         html += word.mark;
         var ext = '.html' + (isNeo ? '?neo' : '');

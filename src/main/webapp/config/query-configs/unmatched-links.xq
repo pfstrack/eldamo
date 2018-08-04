@@ -61,6 +61,19 @@ return (
     <dt>{name($word)} l="{$word/@l/string()}" v="{c:print-word($word, <control show-link="y" hide-mark="y"/>)}"</dt>
 ) } </dl>
 ) }
+<h1>Error Glosses</h1>
+{
+let $bad-words :=
+    //word[c:get-gloss(.) = 'ERROR:MULTIGLOSS']
+return (
+<p>count: {count($bad-words)}</p>,
+<dl> {
+    for $word in $bad-words
+    order by $word/c:get-lang(.), c:normalize-for-sort($word/@v)
+    return (
+    <dt>{name($word)} l="{$word/@l/string()}" v="{c:print-word($word, <control show-link="y" hide-mark="y"/>)}"</dt>
+) } </dl>
+) }
 <!--
 <h1>Extraneous Elements</h1> { (:
 for $word in //word[count(combine) > 1] return
