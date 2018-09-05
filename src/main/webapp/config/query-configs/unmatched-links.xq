@@ -9,6 +9,23 @@ import module namespace c = "common.xq" at "common.xq";
 <body>
 <p>[<a href="../../index.html">Home</a>]</p>
 <hr/>
+<h1>Warning Glosses</h1>
+{
+let $words := //word[not(starts-with(c:get-speech(.), 'phone'))][not(@l = ('np', 'ns', 'nq'))]
+let $bad-words :=
+    $words[contains(@gloss, '⚠️') or contains(@gloss, 'ᴹQ.') or contains(@gloss, 'ᴱQ.') or 
+           contains(@gloss, '[G.]') or contains(@gloss, '[N.]') or contains(@gloss, 'ᴱN.')]
+return (
+<p>count: {count($bad-words)}</p>,
+<dl> {
+    for $word in $bad-words
+    order by $word/c:get-lang(.), c:normalize-for-sort($word/@v)
+    return (
+    <dt>{name($word)} l="{$word/@l/string()}" v="{c:print-word($word, <control show-link="y" hide-mark="y"/>)}"</dt>,
+    for $bad-link in $word/*[not(name()='ref') and @v != '?'][count(c:get-word(.)) ne 1] | $word/cognate[not(@l)] return
+    <dd>{name($bad-link)} v="{$bad-link/@v/string()}"</dd>
+) } </dl>
+) }
 <h1>Unmatched Links</h1>
 {
 let $words := //word[not(starts-with(c:get-speech(.), 'phone'))]

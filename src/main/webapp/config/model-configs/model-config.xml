@@ -45,5 +45,7 @@
         <key name="ref-code" match="ref" type="string" use="xdb:hashcode(.)" />
 
         <key name="page-id" match="word" use="@page-id" />
+
+        <key name="deprecated-to" match="deprecated" use="@v" />
     </index-keys>
 </model-config>

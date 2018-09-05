@@ -592,6 +592,12 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
             c:print-word(c:get-word($deprecated), <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" is-neo="y" normalize="{$normalize}"/>)
         } </dd>
     ) else () }
+{  let $normalize := $l = ('q', 'nq', 'mq', 'eq')
+   for $deprecated-from in xdb:key($word, 'deprecated-to', $word/@v)[@l=$l][$pubmode != 'true']/parent::word[not(ancestor::word = $word)] return
+   <dd class="see-from"> {
+            c:print-word($deprecated-from, <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" is-neo="y" normalize="{$normalize}"/>)
+    } </dd>
+}
 </dl>,
 
 let $texts-in := xdb:key($word, 'element-in', $word/@v)[@speech='text'][@l=$word/@l]

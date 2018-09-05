@@ -384,9 +384,9 @@ function wordsToHtml(result, pos) {
                     html += convertLang(replacement.lang, replacement.speech);
                     html += '<a href="../words/word-' + replacement.key + ext + '">';
                     html += '<span style="font-weight: bold">' + replacement.value + '</span></a>';
-                    if (isNeo && replacement.ngloss) {
+                    if (replacement.ngloss) {
                     	html += ' “' + replacement.ngloss + '”';
-                    } else if (word.gloss) {
+                    } else if (replacement.gloss) {
                     	html += ' “' + replacement.gloss + '”';
                     }
                     html += '</dd>';
