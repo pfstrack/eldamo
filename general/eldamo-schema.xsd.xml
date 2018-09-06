@@ -283,6 +283,8 @@
       <xs:enumeration value="d-mutation"/>
       <xs:enumeration value="dy-mutation"/>
       <xs:enumeration value="g-mutation"/>
+      <xs:enumeration value="gl-mutation"/>
+      <xs:enumeration value="gr-mutation"/>
       <xs:enumeration value="gw-mutation"/>
       <xs:enumeration value="h-mutation"/>
       <xs:enumeration value="lh-mutation"/>
