@@ -52,7 +52,6 @@ let $word-list := $words
         [not(c:get-speech(.)='phrase' or c:get-speech(.)='text')]
         [not(c:get-speech(.)='grammar')]
         [not(starts-with(c:get-speech(.), 'phone'))]
-        [not(deprecated)]
 return (
 <h2><a name="{$version}"></a>Version {$version}</h2>,
 <dl> {
@@ -109,11 +108,6 @@ return (
               if ($neo-lang or c:get-lang($word) != $word/see/@l) then attribute show-lang {'y'} else ()
             } </control>
         )) else () }
-        {   if ($neo-lang and $deprecated/@v) then ('; see instead:',
-            for $x in $deprecated return <dd class="see-instead"> {
-                c:print-word(c:get-word($x), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y" is-neo="y"/>)
-            } </dd>
-        )  else () } 
         { if ($word/element) then 
         <span> ⇐ {c:print-word-elements($word/element, $word, <control show-link="y"/>)}</span>
         else() }
@@ -137,13 +131,18 @@ return (
           , ']') }
         { if (contains($word/@mark, "^")) then
              let $precursor := $word//word[deprecated/@l = $word/@l and deprecated/@v = $word/@v]/c:get-word(.) return
-             if (not($precursor)) then ' ERROR:NO_PRECURSOR' else ()
+             if (not($precursor) and not($word/deprecated)) then ' ERROR:NO_PRECURSOR' else ()
           else if (not($word/@mark)) then
              let $combines := $word//word[combine/@l = $word/@l and combine/@v = $word/@v]/c:get-word(.) return
              if (not($combines)) then ' ERROR:NO_COMBINES' else ()
           else if (not(contains($word/@mark, "!")) and not(contains($word/@mark, "?")) and
             not(contains($word/@mark, "*") and $word/@l='np')) then ' ERROR:NO_NEO_MARKER'
           else () }
+        {   if ($neo-lang and $deprecated/@v) then (
+            for $x in $deprecated return <dd class="see-instead"> {
+                c:print-word(c:get-word($x), <control show-link="y" normalize="{$normalize}" show-lang="y" show-gloss="y" is-neo="y"/>)
+            } </dd>
+        )  else () } 
     </dt>
 ) } </dl>,
 if ($pubmode != 'false') then () else (

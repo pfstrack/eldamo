@@ -81,5 +81,14 @@ original writing by Tolkien. Some are specific to particular languages, as noted
 <ul> {
     local:list-references(/*/source[@type='adunaic'])
 } </ul>
+<h2><a name="Neologisms"></a>Neologisms</h2>
+<p>The following are some of the sources of the neologisms that appear in Eldamo. Not every neologism appearing in these
+sources also appears in Eldamo, and vice versa. In general, neologisms in Eldamo are credited by creator rather than
+source, but there are exceptions in the case of Neo-Eldarin authors with large bodies of work. Furthermore, some sources
+don’t list the original creator, in which case Eldamo credits the source. Uncredited neologisms in Eldamo were either
+created by me (Paul Strack) or have an unknown source.</p>
+<ul> {
+    local:list-references(/*/source[@type='neologisms'])
+} </ul>
 </body>
 </html>
