@@ -115,18 +115,22 @@ declare function local:print-element-in($word as element()?, $pubmode) as node()
         <ul> { (
         for $element-in in $element-ins
         let $control := <ref-set short-mode="{$pubmode}">{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
+        let $is-neo := c:is-neo($element-in)
         order by $element-in/@l, c:normalize-for-sort($element-in/@v)
         return
             <li>
+                { if ($is-neo) then attribute class {'neo'} else () }
                 {c:print-word($element-in, <print-word show-lang="y" show-link="y"/>)}
                 {c:print-gloss($element-in)}
                 {local:print-ref-set($element-in-refs[c:get-ref(.)[../@v = $element-in/@v]], $control)}
             </li>,
         for $element-in in $unmatched
         let $control := <ref-set short-mode="{$pubmode}">{if (c:get-speech($element-in) = 'phrase' or c:get-speech($element-in) = 'text') then () else $element-in/@v}</ref-set>
+        let $is-neo := c:is-neo($element-in)
         order by $element-in/@l, c:normalize-for-sort($element-in/@v)
         return
             <li>
+                { if ($is-neo) then attribute class {'neo'} else () }
                 {c:print-word($element-in, <print-word show-lang="y" show-link="y"/>)}
                 {c:print-gloss($element-in)}
                 {local:print-ref-set($element-in-refs[c:get-ref(.)[../@v = $element-in/@v]], $control)}
@@ -145,7 +149,8 @@ declare function local:print-derivations($word as element()?, $priors as element
         let $refs := $deriv-refs[xdb:key($word, 'ref', @source)[../@v = $deriv/@v]]
         let $value := $deriv/@v/string()
         return
-            <li class="c-bullet"> &lt; 
+            <li class="c-bullet">
+                &lt; 
                 {c:print-word($deriv, <print-word show-lang="y" show-link="y"/>)}
                 {$deriv-mark}
                 {c:print-gloss($deriv)}
@@ -186,14 +191,18 @@ declare function local:print-derivatives($word as element()?, $top-level as xs:b
         if ($top-level and ($deriv-tos or $element-ins)) then <p><u>Derivatives</u></p> else (),
         <ul> { (
         if (not($top-level) and not($deriv-tos) and (count($element-ins) gt 3)) then
-            <li>⇒ {count($element-ins)} compounds</li>
+            <li>
+                ⇒ {count($element-ins)} compounds
+            </li>
         else
         let $child-derivs := $deriv-tos[not(c:get-speech(.) = 'phrase' or c:get-speech(.) = 'text')] |
             $element-ins[not(c:get-speech(.) = 'phrase' or c:get-speech(.) = 'text')][not(xdb:hashcode(.) = $deriv-tos/xdb:hashcode(.))]
         for $deriv-to in $child-derivs
+        let $is-neo := c:is-neo($deriv-to)
         order by c:get-lang($deriv-to), c:normalize-for-sort($deriv-to/@v)
         return
-            <li class="c-bullet">
+            <li>
+                { if ($is-neo) then attribute class {'neo c-bullet'} else attribute class {'c-bullet'} }
                 {$word/derivatives/@no-roots}
                 {if (xdb:hashcode($deriv-to) = $deriv-tos/xdb:hashcode(.)) then '&gt; ' else '⇒ '}
                 {c:print-word($deriv-to, <print-word show-lang="y" show-link="y"/>)}
@@ -384,8 +393,9 @@ let $match-in-word-set := $sorted-word-set/*[text()='match'][1]
 let $preceding-word := $match-in-word-set/preceding-sibling::*[1]
 let $following-word := $match-in-word-set/following-sibling::*[1]
 let $parent := $words[1]/ancestor::word[not(see)][1]
+let $is-neo-parent := c:is-neo($parent)
 return (
-    if (not($parent)) then '' else <span class="parent-nav-link">
+    if (not($parent) or $is-neo-parent) then '' else <span class="parent-nav-link">
         [↑{c:print-word($parent, <print-word show-lang="y" show-link="y"/>)}]
     </span>,
     if ($preceding-word) then <span class="previous-nav-link">
@@ -909,12 +919,15 @@ let $related-print := (
     let $is-ref := ($ref/name()='ref')
     let $all-related := if ($is-ref) then $ref-related/c:get-ref(.) else $ref-related/c:get-word(.)
     let $related := $all-related[1]
+    let $is-neo := c:is-neo($related)
     let $show-link := if ($is-ref) then 'parent' else 'y'
     let $show-lang := c:get-lang($ref) != c:get-lang($related)
     let $control := local:print-word-control($show-lang, $show-link)
     order by if ($is-ref) then c:normalize-for-sort($related/../@v) else c:normalize-for-sort($related/@v)
     return
-        <li> { (
+        <li>
+            { if ($is-neo) then attribute class {'neo'} else () }
+            { (
             if (count($all-related) != 1) then '[ERROR:MISLINK] ' else (),
             if (not($ref-related/node()))
             then (
@@ -1131,15 +1144,21 @@ if ($print-element-in != '' and not(c:is-root($word))) then (
 (: Cognates :)
 let $cognate-refs := $valid-refs/xdb:allReferenceCognates(.)
 let $cognates := $cognate-refs/.. | $word/xdb:allWordCognates(.)
+let $neo-only := not($cognates[not(c:is-neo(.))])
 return if (not($cognates)) then () else (
-    <p><u>Cognates</u></p>,
+    <p>
+        { if ($neo-only) then attribute class {'neo'} else () }
+        <u>Cognates</u>
+    </p>,
     <ul> {
         for $cognate in $cognates
         let $this-cognate-refs := $cognate-refs[xdb:isSame(.., $cognate)]
         let $ref-set := <ref-set short-mode="{$pubmode}">{$cognate/@v}</ref-set>
+        let $is-neo := c:is-neo($cognate)
         order by $cognate/@l
         return if ($cognate/@l = $word/@l) then () else
         <li>
+           { if ($is-neo) then attribute class {'neo'} else () }
            {c:print-word($cognate, local:print-word-control(true(), 'y'))}
            {c:print-gloss($cognate)}
            {local:print-ref-set($this-cognate-refs, $ref-set)}

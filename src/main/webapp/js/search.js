@@ -102,13 +102,27 @@ function normalizeSpelling(value) {
 	return value.replace(/ks/g, 'x').replace(/kw/g, 'q').replace(/k/g, 'c').replace(/q/g, 'qu').replace(/quu/g, 'qu');
 }
 
+function replaceAll(c1, c2, value) {
+	// FIXME: optimize
+	var previous = value;
+	var result = previous.replace(c1, c2);
+	while (result != previous) {
+		previous = result;
+		result = previous.replace(c1, c2);
+	}
+	return result;
+}
+
 function doReplace(charReplace1, charReplace2, value) {
 	var result = value;
 	for (var i = 0; i < charReplace1.length; i++) {
-		if (i < charReplace2.length) {
-			result = result.replace(charReplace1[i], charReplace2[i]);
-		} else {
-            result = result.replace(charReplace1[i], '');
+		var c = charReplace1[i];
+		if (result.indexOf(c) >= 0) {
+			if (i < charReplace2.length) {
+				result = replaceAll(c, charReplace2[i], result);
+			} else {
+	            result = replaceAll(c, '', result);
+			}
 		}
 	}
 	return result;
@@ -442,7 +456,7 @@ function checkMatch(word, searchText, target, position, partsOfSpeech) {
 	if (target.indexOf('word') >= 0 && (matcher(word.match, searchText) || matcher(word.normalized, searchText))) {
 		return true;
 	}
-	if (target.indexOf('gloss') >= 0 && matcher(word.matchgloss, searchText)) {
+	if (target.indexOf('gloss') >= 0 && word.matchgloss.indexOf('unglossed') < 0 && matcher(word.matchgloss, searchText)) {
 		return true;
 	}
 	if (isTrans && target.indexOf('gloss') >= 0 && word.matchtrans && matcher(word.matchtrans, searchText)) {

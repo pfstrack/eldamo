@@ -94,6 +94,11 @@ declare function c:is-primitive($ref as element()*) as xs:boolean {
     $lang = ('p', 'mp', 'ep', 'np')
 };
 
+declare function c:is-neo($ref as element()*) as xs:boolean {
+    let $lang := c:get-lang($ref) return
+    $lang = ('ns', 'nq', 'np')
+};
+
 declare function c:is-neo-lang($ref as element()*) as xs:boolean {
     let $lang := c:get-lang($ref) return
     $lang = ('nq', 'q', 'mq', 'eq', 'ns', 's', 'n', 'en', 'g', 'np', 'p', 'mp', 'ep')

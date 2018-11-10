@@ -958,7 +958,7 @@
         <xs:element ref="notes"/>
       </xs:choice>
       <xs:attribute name="name" use="required"/>
-      <xs:attribute name="prefix" use="required" type="xs:ID"/>
+      <xs:attribute name="prefix" use="required" type="xs:string"/>
       <xs:attribute name="type">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -967,6 +967,7 @@
             <xs:enumeration value="index"/>
             <xs:enumeration value="minor"/>
             <xs:enumeration value="minor-work"/>
+            <xs:enumeration value="neologisms"/>
             <xs:enumeration value="quenya"/>
             <xs:enumeration value="secondary"/>
             <xs:enumeration value="sindarin"/>

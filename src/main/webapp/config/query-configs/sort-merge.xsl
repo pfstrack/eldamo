@@ -51,6 +51,9 @@
             <xsl:for-each select="$merge.xml/*/word[@v=$v and @l=$l]">
                 <xsl:copy-of select="@vetted"/>
             </xsl:for-each>
+            <xsl:for-each select="$merge.xml/*/word[@v=$v and @l=$l]">
+                <xsl:copy-of select="@cat"/>
+            </xsl:for-each>
             <xsl:copy-of select="@mark"/>
             <xsl:apply-templates select="*[not(name()='word' or name()='ref')]"/>
             <xsl:apply-templates select="*[name()='ref']">

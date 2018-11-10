@@ -40,9 +40,9 @@ Information about the source material used to compile this lexicon can be found 
 <a href="content/references/index.html">References Index</a>.</p>
 <p>The information in this lexicon, including its XML data model, can be used freely in accordance with the
 <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons (Attribution) License</a>, which basically
-allows you to do whatever you want with it provided you credit my work. As it stands, this lexicon is currently in a draft or “beta” state. It includes nearly all of Tolkien’s published
-Elvish words most of the words, including the major vocabulary lists of Tolkien’s languages:
-<i><a href="content/references/ref-Ety.html">The Etymologies</a></i>,
+allows you to do whatever you want with it provided you credit my work. As it stands, this lexicon is currently in a
+draft or “beta” state. It includes nearly all of Tolkien’s published Elvish words, including the major vocabulary lists
+of Tolkien’s languages: <i><a href="content/references/ref-Ety.html">The Etymologies</a></i>,
 the <i><a href="content/references/ref-GL.html">Gnomish</a></i> and <i><a href="content/references/ref-QL.html">Qenya
 Lexicons</a></i>, <a href="content/references/ref-PE17.html">“Words, Phrases and Passages from <i>The Lord of the
 Rings</i>”</a> (PE17) as well as <i><a href="content/references/ref-LotR.html">The Lord of the Rings</a></i> itself.

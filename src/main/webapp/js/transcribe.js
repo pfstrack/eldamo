@@ -83,6 +83,12 @@ function transcribeSpans() {
 			if (a.href.indexOf('#') > 0) continue;
 			a.href = a.href + "?neo";
 		}
+	} else {
+		var neoElements = document.getElementsByClassName('neo');
+		for (var i = 0; i < neoElements.length; i++) {
+			var x = neoElements[i];
+			x.style.display = 'none';
+		}
 	}
 
 	var clsElements = document.getElementsByClassName("transcribe");

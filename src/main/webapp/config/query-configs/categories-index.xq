@@ -48,6 +48,9 @@ return (
 let $lang-group := c:get-neo-lang-group($id)
 let $is-neo-lang := count($lang-group) gt 1
 for $cat-group in /*/cats/cat-group
+let $cats := $cat-group/cat[xdb:key(., 'category', @id)[@l=$lang-group]
+        [c:is-word(.)][not($is-neo-lang) or not(combine)]][not(see)]
+        [not(@gloss='[unglossed]')][not(c:get-gloss(.) = '‽')]
 return (
     <h2>
         <u>
@@ -56,11 +59,21 @@ return (
         { $cat-group/@label/string() }
         </u>
     </h2>,
-    for $cat in $cat-group/cat[xdb:key(., 'category', @id)[@l=$lang-group]
-        [c:is-word(.)][not($is-neo-lang) or not(combine)]][not(see)]
+    <ul> {
+    for $cat in $cats
+    return
+        <li>
+            <a href="#{$cat/@id/string()}">
+            { $cat/@num/string() }{' '}
+            { $cat/@label/string() }
+            </a>
+        </li>
+    } </ul>,
+    for $cat in $cats
     return (
         <h3>
             <u>
+            <a name="{$cat/@id}"/>
             { $cat/@num/string() }{' '}
             { $cat/@label/string() }
             </u>
