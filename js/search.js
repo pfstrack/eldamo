@@ -416,6 +416,9 @@ function isMatch(word, searchText, target, position, partsOfSpeech) {
 	for (var i = 0; i < searches.length; i++) {
 		if (!orMatch(word, searches[i], target, position, partsOfSpeech)) return false;
 	}
+	if (!isNeo && (word.lang == 'np' || word.lang == 'nq' || word.lang == 'ns')) {
+		return false;
+	}
 	return true;
 }
 
