@@ -137,7 +137,7 @@ return (
 <div> {
 let $unex-derivs := $lang-words
     [not(starts-with(c:get-speech(.), 'phon'))]
-    [ref/deriv[not(c:is-root(c:get-ref(.)) and false())] and not(ref/deriv/rule-start)]
+    [ref/deriv[not(c:is-root(c:get-ref(.)) and false())][string(.) = ''] and not(ref/deriv/rule-start)]
     [$pubmode != 'true']
 return if (count($unex-derivs) = 0) then () else (
 <p><b>Unexamined Derivatives ({count($unex-derivs)})</b></p>,

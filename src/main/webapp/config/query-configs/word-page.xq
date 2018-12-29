@@ -1282,7 +1282,7 @@ if ($rule-element-refs) then (
             <td><nobr>&lt;rule-example l="{$rule-element/@l/string()}"
                 rule="{$rule-element/@rule/string()}"
                 from="{$rule-element/@from/string()}"
-                to="???" /&gt;</nobr></td>
+                stage="???" /&gt;</nobr></td>
         ) } </tr>
     } </table>
 ) else (),

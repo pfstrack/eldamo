@@ -7,6 +7,7 @@
         <key name="language" match="word" use="ancestor-or-self::*[@l][1]/@l" />
 
         <key name="category" match="word" use="ancestor-or-self::*[@cat][1]/@cat" />
+        <key name="cat-def" match="cat" use="@id" />
 
         <key name="class" match="word" type="string-list" use="normalize-space(concat(class/@form, ' ', class/@variant))" />
 
