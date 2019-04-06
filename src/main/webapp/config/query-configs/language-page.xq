@@ -53,7 +53,7 @@ if (not($is-neo-lang)) then () else
 <ul> { (
     if ($is-neo-lang and $roots) then <li><a href="../root-indexes/roots-{$id}.html">Full List of Roots</a></li> else (),
     if ($is-neo-lang and $words) then <li><a href="../word-indexes/words-{$id}.html">Full Word List</a></li> else (),
-    if ($categories) then <li><a href="../category-indexes/categories-{$id}.html">Semantic Categories</a></li> else (),
+    if ($is-neo-lang and $categories) then <li><a href="../category-indexes/categories-{$id}.html">Semantic Categories</a></li> else (),
     if ($is-neo-lang) then <li><a href="../neologism-indexes/neologisms-{$id}.html">Neologisms</a></li> else (),
     if ($is-neo-lang) then <li><a href="../deprecation-indexes/deprecations-{$id}.html">Deprecated Words</a></li> else ()
 ) }</ul>
