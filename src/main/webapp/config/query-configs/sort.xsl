@@ -55,8 +55,8 @@
             </xsl:if>
             <xsl:copy-of select="@page-id"/>
             <xsl:copy-of select="@mark"/>
-            <xsl:apply-templates select="notes"/>
-            <xsl:apply-templates select="*[not(name()='notes' or name()='word' or name()='ref')]"/>
+            <xsl:apply-templates select="*[name()='notes' or name()='inflect-table']"/>
+            <xsl:apply-templates select="*[not(name()='notes' or name()='inflect-table' or name()='word' or name()='ref')]"/>
             <xsl:apply-templates select="*[name()='ref']">
                 <xsl:sort select="q:normalize(@source)"/>
             </xsl:apply-templates>

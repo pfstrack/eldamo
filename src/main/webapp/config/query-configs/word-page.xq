@@ -109,7 +109,8 @@ declare function local:element-sig($ref as element()*) as xs:string {
 
 declare function local:print-element-in($word as element()?, $pubmode) as node()* {
     let $element-in-refs := $word/ref[c:get-ref(.)]/xdb:key($word, 'element-in-ref', @source)[c:get-ref(.)]
-    let $element-ins := xdb:key($word, 'element-in', $word/@v)[element[@v = $word/@v]/@l = c:get-lang($word) or c:get-lang(.) = c:get-lang($word)]
+    let $element-ins := xdb:key($word, 'element-in', $word/@v)[element[@v = $word/@v]/@l = c:get-lang($word) or
+        (not(element[@v = $word/@v]/@l) and c:get-lang(.) = c:get-lang($word))]
     let $unmatched := $element-in-refs/..[not(@v = $element-ins/@v)]
     return (
         <ul> { (
@@ -499,9 +500,6 @@ return (
 <div> { (
 <p>
     { if (xdb:hashcode($word) = xdb:hashcode($words[1])) then attribute id { 'lang-word'} else () }
-    { if ($pubmode = 'false' and $word/deprecated)
-      then <span>⚠️</span>
-      else () }
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
     { if ($alt-lang and not(c:is-primitive($word))) then concat('[', $alt-lang, '] ') else () }
@@ -549,7 +547,9 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     { if ($alt-lang and c:is-primitive($word)) then concat('[', substring($alt-lang, 1, 1), ']') else () }
     { if (c:is-primitive($word)) then () else c:print-lang($word) }
     { if ($alt-lang and not(c:is-primitive($word))) then concat('[', $alt-lang, '] ') else () }
-    { let $normalize := $l = ('q', 'nq', 'mq', 'eq') return
+    { let $normalize := ($l = ('q', 'nq', 'mq', 'eq')
+                         and not(c:get-speech($word) = 'grammar')
+                         and not(starts-with(c:get-speech($word), 'phone'))) return
       if (xdb:hashcode($word) = xdb:hashcode($words[1]))
         then c:print-word($word, <print-word style="bold" normalize="{$normalize}"> {
                                      if (c:is-primitive($word)) then attribute show-lang {'y'} else ()
@@ -654,7 +654,7 @@ then
             <print-word style="italic" show-lang="y" show-link="y"/>)} {c:print-gloss($see-also)}.</p>
         ) else ()}
     </div>
-else <center><table> {
+else <p><center><table> {
 let $inflect-display :=
     if ($note/@l/string())
     then <print-word show-link="parent" show-lang='y'/>
@@ -714,7 +714,7 @@ return
     if (not($has-sources) or not($ref/@source)) then () else 
     <td>{local:print-ref-set($ref, <ref-set short-mode="{$pubmode}"/>)}</td>
 )} </tr>
-) } </table></center>,
+) } </table></center></p>,
 
 if (count($valid-refs) = 1 and count($valid-refs[not(inflect) or c:is-root($word)]) = 1) then (
 let $ref := $valid-refs[1] return
@@ -844,7 +844,7 @@ let $before-print := (
             <td> { if ($ref/@order gt $word/@order) then '[ERROR] ' else () } After</td>
             <td> { $ref/@order/string() } </td>
             <td> { c:print-word($ref, $control) } </td>
-            <td align="center"><nobr> { 
+            <td align="center"> { 
                 if ($ref-before/order-example) then () else xdb:html($ref-before/node()[1]/string()),
                 for $order-example in $ref-before/order-example
                 return (
@@ -857,7 +857,7 @@ let $before-print := (
                         c:print-word($order-example/c:get-ref(.), <print-word show-link="parent" show-lang="y"/>)
                     )
                 ) 
-            } </nobr></td>
+            } </td>
             <td> { 
                 for $order-example in $ref-before/order-example
                 return (
@@ -879,7 +879,7 @@ let $before-print := (
             <td> { if ($before/@order lt $word/@order) then '[ERROR] ' else if (count($all-before) != 1) then '[ERROR:MISLINK] ' else () } Before</td>
             <td> { $before/@order/string() } </td>
             <td> { c:print-word($before, $control) } </td>
-            <td align="center"><nobr> { 
+            <td align="center"> { 
                 if ($ref-before/order-example) then () else xdb:html($ref-before/node()[1]/string()),
                 for $order-example in $ref-before/order-example
                 return (
@@ -888,7 +888,7 @@ let $before-print := (
                     xdb:html($order-example/node()[1]/string()),
                     if ($order-example/following-sibling::order-example) then <br/> else ()
                 ) 
-            } </nobr></td>
+            } </td>
             <td> { 
                 for $order-example in $ref-before/order-example
                 return (
@@ -955,9 +955,11 @@ let $related-print := (
     let $show-link := if ($is-ref and xdb:hashcode($ref/..) = xdb:hashcode($word)) then () else if ($is-ref) then 'parent' else 'y'
     let $show-lang := c:get-lang($ref) != c:get-lang($related)
     let $control := local:print-word-control($show-lang, $show-link)
+    let $is-neo := c:is-neo($ref/c:get-word(.))
     order by if ($is-ref) then c:normalize-for-sort($related/../@v) else c:normalize-for-sort($related/@v)
     return
         <li> { (
+            if ($is-neo) then attribute class {'neo'} else (),
             c:print-word($ref, $control),
             if (not($ref-related/node()))
             then c:print-gloss($ref)
