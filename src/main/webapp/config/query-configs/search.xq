@@ -140,6 +140,7 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
         <option value="pron">pronoun</option>
         <option value="prep">preposition</option>
         <option value="conj">conjunction</option>
+        <option value="interj">interjection</option>
         <option value="pref">prefix</option>
         <option value="suf">suffix</option>
         <option value="root">root</option>

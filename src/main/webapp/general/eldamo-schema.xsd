@@ -344,6 +344,7 @@
       <xs:enumeration value="plural-with-linking-consonant"/>
       <xs:enumeration value="possessive-second"/>
       <xs:enumeration value="pronoun-prefix"/>
+      <xs:enumeration value="prosodic-lengthening"/>
       <xs:enumeration value="r-locative"/>
       <xs:enumeration value="short-instrumental"/>
       <xs:enumeration value="strong-I-without-syncope"/>
@@ -429,6 +430,7 @@
       <xs:enumeration value="lin"/>  <!-- Lindarin -->
       <xs:enumeration value="ln"/>   <!-- Late Noldorin -->
       <xs:enumeration value="lon"/>  <!-- Late Old Noldorin -->
+      <xs:enumeration value="maq"/>  <!-- Middle Ancient Quenya -->
       <xs:enumeration value="mp"/>   <!-- Middle Primitive Elvish -->
       <xs:enumeration value="mq"/>   <!-- Middle Quenya -->
       <xs:enumeration value="mt"/>   <!-- Middle Telerin -->

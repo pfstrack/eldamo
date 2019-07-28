@@ -115,10 +115,13 @@ return (
         <span> &lt; {c:print-word($word/deriv[1]/c:get-word(.), <control show-lang="y" show-link="y"/>)}</span>
         else() }
         { if (contains($word/@mark, "^")) then 
-        <span> « {
-            let $precursor := $word/word[deprecated/@l = $word/@l and deprecated/@v = $word/@v]/c:get-word(.) return
+        <span> {
+            let $combine := $word//word[combine/@l = $word/@l and combine/@v = $word/@v]/c:get-word(.)
+            let $precursor := if ($combine) then ($combine)
+                else $word/word[deprecated/@l = $word/@l and deprecated/@v = $word/@v]/c:get-word(.)
+            return
             if (not($precursor)) then ''
-            else c:print-word($precursor[1], <control show-lang="y" show-link="y"/>)
+            else (' « ', c:print-word($precursor[1], <control show-lang="y" show-link="y"/>))
         }</span>
         else() }
         { if (not($word/@created or $word/@vetted)) then () else
@@ -130,7 +133,10 @@ return (
             } </span>
           , ']') }
         { if (contains($word/@mark, "^")) then
-             let $precursor := $word//word[deprecated/@l = $word/@l and deprecated/@v = $word/@v]/c:get-word(.) return
+             let $combine := $word//word[combine/@l = $word/@l and combine/@v = $word/@v]/c:get-word(.)
+             let $precursor := if ($combine) then ($combine)
+                 else $word//word[deprecated/@l = $word/@l and deprecated/@v = $word/@v]/c:get-word(.)
+             return
              if (not($precursor) and not($word/deprecated)) then ' ERROR:NO_PRECURSOR' else ()
           else if (not($word/@mark)) then
              let $combines := $word//word[combine/@l = $word/@l and combine/@v = $word/@v]/c:get-word(.) return

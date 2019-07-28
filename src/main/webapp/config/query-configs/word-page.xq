@@ -149,15 +149,18 @@ declare function local:print-derivations($word as element()?, $priors as element
         let $deriv-mark := $deriv-link/@mark/string()
         let $refs := $deriv-refs[xdb:key($word, 'ref', @source)[../@v = $deriv/@v]]
         let $value := $deriv/@v/string()
+        let $is-neo := c:is-neo(c:get-word($deriv))
         return
-            <li class="c-bullet">
+            <li>
+                { attribute class { if ($is-neo) then 'neo c-bullet' else 'c-bullet' } }
                 &lt; 
                 {c:print-word($deriv, <print-word show-lang="y" show-link="y"/>)}
                 {$deriv-mark}
                 {c:print-gloss($deriv)}
                 {local:print-ref-set($refs, <ref-set short-mode="{$pubmode}" v="{$value}" other-ref="y"/>)}
                 <ul>{(
-                    for $ref in $refs[@i1 or . != ''] return
+                    for $ref in $refs[@i1 or . != '']
+                    return
                     <li style="list-style-type:none; text-indent: -1em;">{(
                         ' &lt; ',
                         c:print-wordlet($ref/@i3, ' &lt; '),

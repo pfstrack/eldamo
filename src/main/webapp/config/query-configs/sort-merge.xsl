@@ -141,12 +141,12 @@
             <xsl:when test="$word='on'">so</xsl:when>
             <xsl:when test="$word='os'">so</xsl:when>
             <xsl:when test="$word='eon'">os</xsl:when>
-            <xsl:when test="$word='eoq'">aq</xsl:when>
             <xsl:when test="$word='eilk'">ilk</xsl:when>
             <xsl:when test="$word='at'">t</xsl:when>
             <xsl:when test="$word='mt'">t</xsl:when>
             <xsl:when test="$word='et'">t</xsl:when>
             <xsl:when test="$word='aq'">q</xsl:when>
+            <xsl:when test="$word='maq'">q</xsl:when>
             <xsl:when test="$word='mq'">q</xsl:when>
             <xsl:when test="$word='eq'">q</xsl:when>
             <xsl:when test="$word='nq'">q</xsl:when>

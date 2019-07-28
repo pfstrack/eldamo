@@ -101,6 +101,7 @@ declare function local:show-word2(
         else if ($lang='et') then text {'ᴱT. '}
         else if ($lang='mt') then text {'ᴹT. '}
         else if ($lang='aq') then text {'AQ. '}
+        else if ($lang='maq') then text {'ᴹAQ. '}
         else if ($lang='at') then text {'AT. '}
         else if ($lang='os') then text {'OS. '}
         else if ($lang='edan') then text {'ED. '}

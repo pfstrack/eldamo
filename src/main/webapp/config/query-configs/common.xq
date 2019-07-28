@@ -139,6 +139,8 @@ declare function c:convert-lang($lang as xs:string?) as xs:string {
         then 'ᴺ✶'
     else if ($lang='mq')
         then 'ᴹQ. '
+    else if ($lang='maq')
+        then 'ᴹAQ. '
     else if ($lang='nq')
         then 'ᴺQ. '
     else if ($lang='mt')
@@ -494,7 +496,11 @@ declare function c:show-hierarchy-list($items as element()*, $grouping as xs:str
 };
 
 declare function c:alt-lang($word as element()) as xs:string {
-    let $alt := $word[not(@mark='!')][not($word/ref)][not(starts-with(@speech, 'phon') or @speech='grammar' or @speech='text')]//word[ref][1][@l][@l != $word/@l]
+    let $combine := if ($word/@mark='^')
+        then $word//word[combine/@l = $word/@l and combine/@v = $word/@v]/c:get-word(.)
+        else ()
+    let $alt := if ($combine) then ($combine[1])
+        else $word[not(@mark='!')][not($word/ref)][not(starts-with(@speech, 'phon') or @speech='grammar' or @speech='text')]//word[ref][1][@l][@l != $word/@l]
     return if ($alt)
     then translate(c:print-lang($alt[1]), ' ', '')
     else ''
