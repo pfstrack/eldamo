@@ -1,7 +1,10 @@
-# Polish translations of Eldamo glosses, based on Eldamo v0.6.5 by Paul Strack
-#
+# Polish translations of Eldamo glosses
 # Tab-delimited file: first value is Eldamo page-id, second is Polish translation.
+#
+# v1 based on Eldamo v0.6.5 (Przemek Chorobiński)
 # Source - https://docs.google.com/spreadsheets/d/1UHG_5mpudMAqT0-FcogcrN4H0RyVvft5p-9qJRVBuqc
+# v2 based on Eldamo v0.7.3
+# Source - https://docs.google.com/spreadsheets/d/1EcMH_PwEp7L7CQx-3dt4s2UNUszDsKmCqli9Tkk4WKg
 #
 # © 2018-2019, Przemek Chorobiński.
 # This work is licensed under the Creative Commons Attribution 4.0 International License.
