@@ -841,10 +841,10 @@ let $before-print := (
     let $show-link := 'y'
     let $show-lang := c:get-lang($ref) != c:get-lang($word)
     let $control := local:print-word-control($show-lang, $show-link)
-    order by c:normalize-for-sort($ref/@order)
+    order by $ref/@l, c:normalize-for-sort($ref/@order)
     return
         <tr>
-            <td> { if ($ref/@order gt $word/@order) then '[ERROR] ' else () } After</td>
+            <td> { if (($ref/@order gt $word/@order) and ($ref/@l = $word/@l)) then '[ERROR] ' else () } After</td>
             <td> { $ref/@order/string() } </td>
             <td> { c:print-word($ref, $control) } </td>
             <td align="center"> { 
@@ -876,10 +876,10 @@ let $before-print := (
     let $show-link := 'y'
     let $show-lang := c:get-lang($ref) != c:get-lang($before)
     let $control := local:print-word-control($show-lang, $show-link)
-    order by c:normalize-for-sort($before/@order)
+    order by $before/@l, c:normalize-for-sort($before/@order)
     return
         <tr>
-            <td> { if ($before/@order lt $word/@order) then '[ERROR] ' else if (count($all-before) != 1) then '[ERROR:MISLINK] ' else () } Before</td>
+            <td> { if (($before/@order lt $word/@order and ($before/@l = $word/@l))) then '[ERROR] ' else if (count($all-before) != 1) then '[ERROR:MISLINK] ' else () } Before</td>
             <td> { $before/@order/string() } </td>
             <td> { c:print-word($before, $control) } </td>
             <td align="center"> { 

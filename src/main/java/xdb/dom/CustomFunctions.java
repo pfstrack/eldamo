@@ -391,6 +391,7 @@ public final class CustomFunctions {
                 String hashcode = hashcode(lang, value);
                 link.setAttribute("href", "../words/word-" + hashcode + ".html");
                 link.removeAttribute("l");
+                link.removeAttribute("v");
             }
             String ref = link.getAttribute("ref");
             if (ref != null && ref.length() > 0) {
