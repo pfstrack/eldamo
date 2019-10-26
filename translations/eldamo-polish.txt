@@ -3,24 +3,28 @@
 #
 # v1 based on Eldamo v0.6.5 (Przemek Chorobiński)
 # Source - https://docs.google.com/spreadsheets/d/1UHG_5mpudMAqT0-FcogcrN4H0RyVvft5p-9qJRVBuqc
-# v2 based on Eldamo v0.7.3
+# v2 based on Eldamo v0.7.3 (Orondil)
 # Source - https://docs.google.com/spreadsheets/d/1EcMH_PwEp7L7CQx-3dt4s2UNUszDsKmCqli9Tkk4WKg
 #
-# © 2018-2019, Przemek Chorobiński.
+# © 2018-2019, Przemek Chorobiński, Orondil.
 # This work is licensed under the Creative Commons Attribution 4.0 International License.
 # To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
 #
 23565	*czytać
+260573	dwa miliony
 2389099	teraz
 2471107	niepoliczalny
+3632293	wyniosły, szlachetny, delikatny
+4479415	niewidzialny
 4979145	ork
 6671719	zemsta, mszczenie
 7590397	światło domu, zamieszkujący (ciało) duch, tj. dusza
 7706291	obraz w pamięci (marzeń sennych)
 8195535	[nieprzetłumaczone]
-8771979	miód; plaster miodu
-8990395	nauczający mędrzec, nauczyciel
+8771979	miód
+8990395	nauczający mędrzec, nauczyciel wiedzy ludowej
 10209903	przerażenie, wielki strach, lęk
+10265393	ograniczać, otaczać granicą
 12280031	wołanie, zew
 15294425	kosmyk włosów, włos
 15708095	*sąsiad
@@ -28,11 +32,14 @@
 18160847	ogień, żar
 18603511	[nieprzetłumaczone]
 19674227	teraz, (dosł.) w obecnym czasie
+20845533	[nieprzetłumaczone]
 21369439	przygnębiający lament, pełen żalu tren, elegia
 22584125	świat, Ziemia, (dosł.) osada
 23126171	nagi (dot. osób)
 23535743	pióro
-25793995	przemoczony, zalany
+24412985	rzeczownik czasownikowy
+24965211	budowniczy
+25793995	przemoczony, zalany, zmoknięty
 26862453	seria "k" {głosek tylnojęzykowych}
 27393673	mokry
 27623191	mur
@@ -42,53 +49,74 @@
 28700257	wyniosła sala, wysoko położona rezydencja, wysoka/wyniosła siedziba
 29466041	siódmy
 29957751	miękki
+30390433	krnąbrny
 31641923	dziki
+32546463	pies
 35116351	poza, za, po drugiej stronie, w poprzek
+35386163	[nieprzetłumaczone]
 35838925	okrążać, otaczać
 36412445	marynarz, żeglarz
 36582213	jedyny, sam jeden
 36941855	klątwa, przekleństwo
+37605683	okno
 37799167	zjeżdżać, ześlizgiwać się, spadać
+38094249	oraz
 38852241	wodospad
 39107603	błąd
 39780245	jubiler, złotnik
+40134655	chwała
 41185219	szósty
 41393969	obcy, gość
 42547423	<końcówka oznaczająca wykonawcę czynności>
 44733727	minister, zarządca, (dosł.) królewski sługa
 45705445	równina, dolina
-45944001	?leciwy, wiekowy
+45944001	*wiekowy
 46381411	i
 46898569	mokry
+47625889	Mądrość
 49119991	zły
 49544953	rok (słoneczny, jako następstwo pór roku), (dosł.) wzrost, rozkwit
 50865683	odnowiony
+51673427	smród, odór
 52892965	Wasz (uprzejmie), państwa/panów/pań; <zaimek dzierżawczy 2 os. l.mn. (grzecznościowy)>
+53373085	karafka, dzban, *dzbanek
 53637577	(ty) się <zaimek zwrotny 2 os. l. poj. poufały>
 53696597	dobroć, uprzejmość
-54714613	*wybaczać, ?odpuszczać (winy)
+54714613	*wybaczać
+55019931	róg, poroże
 55558111	żywa istota
-55597677	rozszerzenie, przedłużenie
+55597677	przedłużenie
+55946471	nów, księżyc w nowiu
+57361063	orkowie
+57363363	wilgotny, mokry
 57686767	siedzieć, zostawać
 58057425	szczelina, rozpadlina, przesmyk
 58898925	przewyższający, *lepszy
 59867159	ludzki grot
 60902367	gwiazda; (jasna) iskra, srebrny błysk, migot(anie) światła
 60920479	ciasto, bochenek; chleb
-63924885	osiemnaście
+61275055	rozbrzmiewający echem
+63146577	całość, wszyscy
+63924885	18; osiemnaście
 64131999	herold, zwiastun
 64743683	zły, niewłaściwy, nieodpowiedni, bezużyteczny
+65793819	ziemia
 66126873	żona
+66316877	kobieta
+66920265	wola, konkretna intencja
 67543373	*szczelina, rozpadlina, wąwóz
 69807407	jedna dziewiąta
 70090329	*grzesznik
 70664935	wysoki
 70778061	cienka nić, kosmyk (włosów)
+70780435	dzwonek
 70873007	pozbawiony, odarty
+70904811	ziemia
 71218183	przepiękny
 71439553	święty; świętość
 72649973	*podczas gdy
-74157463	wy (dwoje) <zaimek 2os. l.podwójnej>
+74157463	wy dwoje <zaimek 2os. l.podwójnej>
+74558265	przyrostek rzeczownikowy
 74667267	dwu-
 74743521	<końcówka czasu przeszłego czasowników przechodnich>
 75501495	palec (u ręki)
@@ -103,37 +131,54 @@
 79420061	wąski, (dosł.) nieszeroki
 80117943	śnieżny (?szczyt)
 82443959	kochający, uczuciowy
+82545637	bagno, błoto
 83477805	każdy
-84439671	wasz (dwojga) <zaimek dzierżawczy 2 os. l.podwójej>
+84439671	was dwojga <zaimek dzierżawczy 2 os. l.podwójej>
 84450489	*piątek, dzień Valarów
+84559707	*lord, *pan, *władca
+85004415	ostrzegać
 85102267	dziesiąty
+85533173	przyrostek agensa
 86383055	Ork
 87000831	niezasłonięty, odkryty, jawny
 87390175	naszykować, przygotować (na czas)
 87578837	materia, substancja, ciało (mięso); ciało
 87839189	rdzawy, kasztanowy (kolor), brązowy
 87992701	syn
-90143813	liczyć, rachować, kalkulować
+90077487	przyrostek zwrotny
+90143813	liczyć
 90384767	tak, tak jest
+92440929	przyrostek agensa (wykonawcy czynności)
 92448721	zawsze; wieczny
+92736233	księżyc
 92766143	zmieszany, rozbity, bezładny, chaotyczny, zdruzgotany
 94010735	(anielski) duch
+94848529	ziemia
 95686817	los, przeznaczenie
+97056791	przyrostek zdrabniający
 97573921	niezłomny, niezawodny, wierny, zaufany
-98311109	<rodzaj wiersza>, (dosł.) ?siedmiopieśń
+98311109	rodzaj wiersza, (dosł.) ?siedmiopieśń
+99014689	serce (jako umysł)
 100847577	*ciepły
 101426213	dawać, podarowywać; †dodawać, przysparzać
 101580087	latarnia (ostrzegawcza), watra
+101973203	[nieprzetłumaczone]
 102548631	wróg, nieprzyjaciel
 102558823	wielokwiatowy, ukwiecony
 103609663	*macica, łono
+104720215	korzenie, jadalne warzywa, będące korzeniami
 104805197	chłodny
 106071007	słowo
 106722835	uwieńczona dziewoja, panna ukoronowana świątecznym wiankiem
+107774121	rozumieć
+109798703	wielki
 109857553	wszystko, wszystek, całość
 110313287	wieżyczka
 111268799	przy, obok, blisko
+111480503	będący pod
 111727199	spójrz!, patrzaj!, cóż za ..., co więcej
+111904139	ręka, dłoń
+112597471	[nieprzetłumaczone]
 113209695	dwa
 113388255	róg, trąbka
 113620939	udaremniać
@@ -141,35 +186,57 @@
 115909329	?zamknięty
 116461759	władca, pan
 116467813	punkt
+116682849	kucać
 117181755	jednoczyć
 117252621	podróż, wędrówka
+118738345	przyrostek przymiotnikowy
 120608365	kochać
 121231623	wspomnienie, (dosł.) przywołanie (w pamięci)
 122790671	bojaźń
+123894017	przyrostek zdrabniający
 124348797	*obaj
+124499955	odpływ
 125810311	ósmy
 126621223	przyzwoity, zdrowy
+127144489	telerin (język)
 127488369	przejście, podróż, kierunek podróżny
+127818517	tron, (dosł.) wysokie krzesło
 128683519	hak
+128865861	*ty, *wy
 129192141	mały
 130628019	mowa gestów
 130720965	centrum, środek
 131359355	dom, mieszkanie, siedziba, domostwo, rezydencja, miejsce zamieszkiwane
 133589123	Krasnolud
 133691265	garść, dłoń
+134993309	żółty
+137584863	zaszlachtować, zabić z okrucieństwem
+137876209	kochający, namiętny
 138641759	bezoki
 138683779	oni; <zaimek 3 os. l.mn.>
 139408049	czwarty
 140180655	dwuręki
-140261559	niedźwiedź
+141047539	przyrostek przymiotnikowy
 141135973	nasz (dwojga) (włączając ciebie) <zaimek dzierżawczy 1 os. l. podwójnej włączający>
+142624111	pacjent, (dosł.) leczony
+143327703	budować, ustanawiać, zakładać
+143509023	kciuk
 144658429	sosna
+144905605	upaść (pod wpływem/osłoną czegoś)
+145955715	pani
 146337607	do środka, w
 146778379	długi, daleki
 146793263	szybkość, chyżość; *szybko
 147012101	[nieprzetłumaczone]
-149008853	pozostawać w jednym miejscu, *trwać
+147983167	śpiewak, recytator, trubadur
+149008853	pozostawać, trwać w jednym miejscu
 149504859	my (dwoje) (wyłączając ciebie) <zaimek 1 os. l. podwójnej wykluczający>
+149570645	Potęga, Bóg
+150022303	[nieprzetłumaczone]
+150042661	lord, pan, władca
+150925119	siódmy
+153100695	ukochany
+154471609	ziewający
 159572441	ograniczony, skończony, o wyraźnych granicach, określony
 160049701	duże jezioro
 161299911	mowa
@@ -179,19 +246,30 @@
 167781169	powrót
 168828077	złośliwa lub zła osoba
 170119695	żaba
+170969939	przyrostek przymiotnikowy
 172215301	rozszerzenie
+172222497	[nieprzetłumaczone]
+172257477	[nieprzetłumaczone]
+173033425	zwyczajowy, ⚠️kulturowy
 173632675	mgła, zamglenie
 175256159	wielki klif, urwisko
 175808031	deszczowy
 177064729	lękać się
 177996331	próbować, starać się, usiłować
 178290009	hafciarka, szwaczka
+178769665	żółta lilia
 179204553	wspaniały, doskonały, najwyższy
 179650015	(być) może
 180480173	spólgłoska
 181235805	wschód (kierunek)
 181310233	bezstronny, sprawiedliwy, łaskawy, wspaniałomyślny
+181316049	cień
 184000497	słowo
+185750221	wczoraj
+185890129	radosny, szczęśliwy
+187740673	duży murowany budynek, używany jako mieszkanie
+189080589	?
+189083761	echo
 189139967	głowa
 189424363	zielony
 191574293	mój
@@ -200,36 +278,44 @@
 192604457	owalny kopiec, sztuczne wzgórze
 192650011	smakować, próbować
 193193059	<końcówka rodzaju żeńskiego; córka>
-194898239	śpiewać (radośnie)
+194094635	Mądrość
+194898239	śpiewać
 195870091	pole, odgrodzona łąka, trawnik, murawa
 196213353	łatwo
 196480175	północny (kierunek)
 196604435	popijawa, hulanka
+198666573	obcy, nieznajomy
 201249733	kubek, naczynie lub przyrząd do picia, puchar, czarka
+201442769	człowiek, *ktoś
+202556351	szkło
+203227595	[nieprzetłumaczone]
 203992323	silny, wywierający wielki nacisk, niepohamowany
 204301693	południowy, lewy
 205528829	przed (dot. miejsca); po (dot. czasu)
 205901719	stokrotka
 206012687	święty (dotyczy osób)
 206493443	w związku z tym, dlatego
-206577057	*ich
+206577057	*oni
 206948453	(materialne) ciało, postać cielesna
 207957919	wytwórca lamp, latarenek
 209094789	girlanda, wianek
 209228627	marynarz
 209405349	morze
 209902113	otwierać
-210033215	róg; głośny dźwięk, trąbienie
+210033215	róg
 210523915	niebieski, błękitny
 210642905	powściągliwy, opóźniony, wstrzymany
 213618643	mewa
 214267251	nie
 215201177	nie (jest/było) tak
+215246433	(czas kiedy jest) zimno; mróz; chłód
 215965763	siedem
 216432441	wiaterek, bryza [?]
 216451937	mądry (posiadający wielką wiedzę), wykształcony, uczony, obeznany
+217263897	wydzielina
 217950615	*pokusa
 218341765	szybki, nagły
+220031263	chodzić
 220506559	[nieprzetłumaczone]
 221418079	laska (z drewna drzewa liściastego)
 222345469	odpowiedź, (dosł.) słowo zwrotne
@@ -241,46 +327,78 @@
 224267161	tarcza
 224523669	łuska lodu, szron, płatek śniegu; (opadły) płatek białego kwiatu
 226029215	(skaczący) płomień
-227651571	być, istnieć, [ᴹQ.] być rzeczywistym, istnieć w rzeczywistości
+227651571	być, istnieć
 228011935	daleko (stąd), w dal
 228670213	nasz (dwojga) (włączając ciebie) <zaimek dzierżawczy 1 os. l. podwójnej włączający>
+228748105	Rohirrimowie
+228830511	przyrostek przymiotnikowy
 234493503	Krasnolud
 234675263	święty, czczigodny, szacowny
 235290361	przysparzać sukcesu, błogosławić (pracę), pomagać
+236031913	[nieprzetłumaczone]
+236333649	pilność, werwa, zapał
 238510153	szeroki
+239028445	herold
 239093477	dolny koniuszek {tj. palec u stopy}
 240504201	liść
+240620601	przyrostek przymiotnikowy
 240709727	budowniczy, kowal, twórca, rzemieślnik
 241673277	ptak z rodziny krukowatych, *kruk
+243554109	żelazny
+243761355	mędrzec, czarodziej
 243967261	prawdziwy
+244208925	język migowy
 246715839	wskazywać, wykazywać; kierować się ku, być skierowanym ku; iść naprzód ku
+248086775	pośrodku, w środku, pomiędzy
+248308895	*oni (określenie bezpłciowe)
 249436201	*pokój, dobra wola
-250453173	kształt, zarys, kontur
+249571723	[nieprzetłumaczone]
+249825591	używać, stosować
+250453173	kształt
+250602911	patrzeć na
 250855275	szósty
 251031231	stracony, zapomniany, porzucony, wyjęty spod prawa, wyrzutek, wygnaniec
-253050025	za, z tyłu; [ᴹQ] po
+253050025	za, z tyłu czegoś
+254410595	zgięty
 255004773	wpatrujący się w dal, daleko widzący, (dosł.) to co patrzy daleko
 255467455	odtąd, stamtąd
 255996273	splot, sieć łowiecka lub rybacka
+256437619	język (organ)
 257433983	chleb
 258159641	wiele
-258627455	końcowy
+258627455	*końcowy
+260756181	przyrostek przymiotnikowy
+261172485	gwiazda
 261637557	chwalić, wychwalać, błogosławić
+263228739	razem
 263337339	panować nad, kontrolować, radzić sobie z, posługiwać się, używać, obchodzić się
+265687349	forma przyczynowa (kauzatywna)
+266746281	dłoń
 267774209	twardy, sztywny; trwały, wytrzymały, odporny; uparty, zatwardziały
+268834701	przymuszony, skłoniony do
 269086697	polowanie
-269818229	?Nawiedzone Drzewo
-271980991	mały palec  (u ręki)
+269221997	Ork
+269818229	?Drzewo Dusz
+271116483	?rozkosz
+271702399	[nieprzetłumaczone]
+271980991	mały palec (u ręki)
 272543995	śnieżyć (bezosobowo)
+272597319	nie będący złym, bez zła
+272825689	wielki
 272867645	kształt, struktura
 273512119	promień słońca
+275111413	[nieprzetłumaczone]
 276680883	<końcówka imion żeńskich>
 276710207	władca, pan
 278426309	miejsce
-281453255	srebrzysty, niczym srebro, ⚠️[G] srebrny
+278458297	przyrostek rodzaju męskiego
+279717101	woda
+281453255	srebrzysty, srebrny
 282151107	wzgórzysty, pagórkowaty
 282268547	plugastwo, nieczystość
+282748399	ork
 283731099	zły czyn, wykroczenie, przestępstwo (złe postępowanie, przekraczanie zasad, łamanie prawa)
+284882883	zamarznięty
 285428755	palec wskazujący
 285722173	runa
 285879429	samotność
@@ -288,15 +406,22 @@
 286502085	*mamusia, mama
 286938623	?wbrew, przeciw
 288356129	?obniżający, poniżający
-289139655	płodzić, poczynać, tworzyć
+289139655	płodzić, poczynać
+289991135	rozważać, rozmyślać, zastanowić się
+290079915	wodospad
+290308773	siła, wytrzymałość, wierność
 290692117	kamienny wóz
 291253447	mów, mówi, powiedział
+291831307	piąty
 292514129	kurhan, grób; stos, nasyp, kopiec
+292682585	[nieprzetłumaczone]
 294283349	przyjaciel, towarzysz
+295714611	ogrodzenie
 296052181	ciemnowłosy
 296372249	*panna, młoda dama
 296644287	przybywać, przychodzić
-301365983	osiem
+299492827	*mrok
+301365983	8; osiem
 301395893	kciuk
 302295417	błogosławić
 305372637	*wówczas, więc, zatem
@@ -304,12 +429,13 @@
 307308239	?lina, sznur
 308881645	gwiazda
 309723169	miesiąć; dział, część (szczególnie równa z pozostałymi)
+311107811	światło
 311394245	Elf (ogólnie)
 311678533	trzynaście
 312014401	odnowiony
 312421873	?zamknięty
-312842013	pagórek, kopiec; kula
-312940117	wydobywać się, wychodzić, wydostawać się
+312842013	pagórek, kopiec
+314283359	szpieg
 314754767	niebiosa, nieboskłon, sfera gwiazd
 314875519	stycznie, na, przy, w kontakcie
 315092493	wówczas, wtedy (niedawno)
@@ -318,7 +444,10 @@
 318376889	patyna, śniedź
 319149871	obok, przy; poza
 319331855	*święty
-321095681	światło gwiazd; [ᴹQ.] blask księżyca, †srebrne [światło]; ⚠️[ᴱQ.] księżyc
+319543429	limonka
+320129093	-syn
+321095681	światło gwiazd
+322450491	ręka, dłoń
 322881567	naszykować, przygotować (na czas)
 323464029	po (czymś/kimś)
 323710841	życie; siedlisko, miejsce spotkań
@@ -326,11 +455,13 @@
 326389269	łysy
 326652077	lśnić, błyszczeć
 327295253	(ponowne) zjednoczenie
-328296059	ciemny, czarny; ciemność
+328296059	ciemny, czarny; ciemność, noc
 330495269	córka
 330660893	pomylony, nietrafiony, niewłaściwy
+330681993	[nieprzetłumaczone]
 331625063	życie
 331851661	połączenie
+331961651	*szlachetny
 334290497	ujarzmiać, pokonywać, dominować, wygrywać
 335052629	*śnieżnoliść wysoki
 335870367	palec u stopy
@@ -345,6 +476,7 @@
 345504397	oni sami (we własnej osobie) <zaimek 3 os. l. podwójnej emfatyczny>
 345988573	my (dwoje) (włączając ciebie) <zaimek 1 os. l. podwójnej włączający>
 346566117	zgładzać, zabijać
+347271771	agonia, konanie, śmierć
 347857819	zamierzać, chcieć, mieć na myśli
 348549421	północ (kierunek)
 349203711	umacniać, ustalać, utwierdzać
@@ -352,34 +484,43 @@
 350466761	[nieprzetłumaczone]
 352020555	łagodzić, pomagać, wspierać
 354551323	językowy, mówiony
+355390715	nie zrobię!, nie rób!
+356031339	duża mucha
 356098751	palec córeczny (u ręki) {*serdeczny}
 358859415	-ski, <końcówka oznaczająca rasę lub język>
 359593573	odmawiać, zaprzeczać, sprzeciwiać się
 360345239	ostry, przeszywający
 363441829	ponadto, oprócz tego, poza tym, w dodatku
+363616497	strażnik
 364852161	wcielony
 365208257	wolny, nieskrępowany, niekontrolowany, samowolny
 368969139	marzec, *wietrzny
+369035457	dziewczyna
 369434269	bez; przy; **poza
 369679209	ryczący dźwięk, huk, hałas
 370221201	wszechmocny, wszechmogący, wszechwładny
 371152313	dziecko
 371889619	kwiatek
 375359493	*iść lekkim/skocznym krokiem, żwawo bieżyć
+375621243	wielki pies, ogar
 376464289	kwiatostan, kwiecie
-378761911	aż do
+378761911	aż do, do momentu
 381807465	jesień
 382098943	wasz (dwojga) <zaimek dzierżawczy 2 os. l. podwójnej>
+382458607	wasal, poddany
 382718241	więcej
 382793119	zły
 387896671	pełny, napełniony, wypełniony
+388431339	Potęga, Siła, Bóg
 394457475	krótki
 395019761	ostry, kanciasty
 395406991	*straszliwy, przerażający, potworny
-399232959	możliwy, wykonalny
+399232959	możliwy do zrobienia, wykonalny
 399279737	ludność, lud
 399326519	strach, obawa
 400062103	<końcówka rodzaju żeńskiego - wykonawca czynności>
+402217749	amerykański
+403299173	godny bycia -
 403463271	coś, rzecz, cokolwiek
 403659609	krew
 403686503	śwpiew, pieśń, melodyjny dźwięk
@@ -390,38 +531,53 @@
 408803771	jeździec
 408861623	niepożądany, niemile widziany; przybywający ze złą wróżbą lub zamiarami
 409351575	och!
-409870819	kryształ (krystaliczna biel); [ᴹQ.] srebrny, świecący białym światłem
+409870819	kryształ; krystaliczna (biel)
 410680077	wznosić, unosić, podnosić (się)
 411179491	spółgłoska
 411335277	szybki, natychmiastowy, gotowy, punktualny
 411794521	potężny
 412479267	Ork
 413204657	przybycie
+413496857	dziewczynka
+413541525	[nieprzetłumaczone]
 413821755	duży, wielki
 414348905	jedna czwarta
+414794867	pan, władca, lord
 415051751	temu, w przeszłości
 415262653	nieelficki
+417759339	sprytność
+417760207	służyć
+418152327	(pogański) bóg
 418466653	my (dwoje) (wyłączając ciebie) <zaimek 1 os. l. podwójnej wykluczający>
 418534437	zły, niewłaściwy; ponury
 418562659	nagły
+418650405	istota ludzka
+418799589	posoka, krew
 418849217	*niebezpieczeństwo
 418923719	odpowiadać
 420592741	płynny
 422345303	nadobny niczym elf
 422431135	gładki, wypolerowany
+422971071	*zaprzyjaźniać się, kochać
 423331015	zakazany, zabroniony, odrzucony
 424496007	trzeci
 424755061	tam, w tamtą stronę
+427530675	elf
+428054987	nigdy
 428418531	<przyrostek strony biernej>; <końcówka imiesłowu czynnego (czasowników nieprzechodnich)>
 428713645	wóz, *fura
 429361725	poprzez, na wskroś
 429609191	jeden, sam
+430010439	*tego; 3 os. l.poj. r. nijaki, dzierżawczy zaimek emfatyczny
 433074759	tam
 433451445	*środkowy palec (u ręki)
 436495421	umiejętność, talent, zręczność
 438721635	upadek, spadek, opad
 441051823	tak
+441749975	przyrostek liczby mnogiej
+442116295	ćwiartka
 442126003	okropny, straszliwy
+442414269	?miecz
 443709235	elfi, elfowy
 444055891	kciuk
 444171573	(przenośna) lampa, latarenka
@@ -430,12 +586,14 @@
 445883949	tron
 446542431	hen w oddali, daleko poza
 446568693	ciężki
-446669823	kark
+446669823	kark, kamienisty grzbiet górski
 447183945	szczególny wygląd, (wyjatkowy) styl
 447652703	wasz (poufale); <zaimek dzierżawczy 2 os. l.mn. (poufały)>
-448499521	chabrowy, (dosł. błękitny jak niebo, niebieski)
+448268369	rdzeń
+448499521	chabrowy, (dosł.) błękitny jak niebo
 451527979	nieskazitelny, nieskażony, nieskalany
-452504165	robić, czynić, tworzyć, budować
+452504165	robić, czynić, tworzyć
+452507151	lilia, albo inny duży kwiat
 454617623	złoty kwiat
 454903107	opadanie liści, jesień, (dosł.) *rozdmuchiwanie liści
 455276707	wy sami (we własnej osobie) <zaimek 2 os. l.mn. emfatyczny>
@@ -444,7 +602,9 @@
 457271335	głeboki staw, źródło zasilające rzekę
 457539309	płaskie pole, płaski obszar
 461389919	czubaty, zwieńczony grzebieniem
-466426449	kwiat kształtu białej gwiazdy, {(dosł.) wiecznie śnieżnobiały}
+465327577	[nieprzetłumaczone]
+465939801	wszystkie
+466426449	kwiat kształtu białej gwiazdy
 467254039	mgła
 468773487	pijany
 469137311	*poszukiwanie
@@ -456,65 +616,92 @@
 472146913	nieczynny, nieaktywny, próżnujący
 472269279	gałąź
 474488755	lisi
+474992511	[nieprzetłumaczone]
 475947119	bezwzględny, nieczuły, o sercu z kamienia
+476114749	pobliże, sąsiedztwo, dzielnica
 477581653	kwiecień, *świeżość
 478499025	potężny, władczy
 479841379	jarząb, jarzębina
+479980421	zielony
 480028693	opuszczenie, odejście, odjazd, odpłynięcie, odlot
 480528801	dom (rodzinny), dom (budynek), mieszkanie/siedziba
+481869405	królik
 484336605	podnieść/wybrać; dotykać palcami/opuszkami palców
 485083557	ich <zaimek 3 os. l.mn.>
 485094237	styczny, w kontakcie, na (dotykając z góry); co się tyczy, odnośnie, jeśli chodzi o
 485359295	odbijać się echem
 486867495	z (wewnątrz)
 487256665	wyścig, bieg
-487482785	płynąć (łagodnie)
+487482785	płynąć, przepływać
 489204733	kora
 490027327	nie do ukrycia
 490038565	<rodzaj miejscownika, do określenia daty: "...-go dnia>
+490628665	interakcja
 490671917	ziewać
 490747007	prawo, reguła, zasada, nakaz
 490846311	widzący
 491409011	królestwo
+491661433	przyrostek sposobu
 492190783	zaufany naśladowca, wierny towarzysz
 492215339	woal, zasłona, przesłona
+492542535	Elf
+493891923	?ogień, ?piana
 495239121	i, z
 496617911	(we własnej osobie)
 496630729	szary, siwy, popielaty
 496874211	*żywopłot, ogrodzenie
 497669451	przemijający, nietrwały
-498202135	-ny, -ony <końcówka imiesłowu przymiotnikowego przeszłego biernego>, <końcówka przymiotnika>
+498202135	-ny, -ony <końcówka imiesłowu biernego>, <końcówka przymiotnika>
+500961157	srebro
 502110515	mały
 504698453	trudny do wymówienia, niewymowny
 505024365	sądzić, osądzać
+505128371	[nieprzetłumaczone]
+508687095	jeść
+509093879	[nieprzetłumaczone]
 509187197	czarny, mroczny; noc
 509317949	linia
-511673195	odwrócone árë {tengwa}
+511673195	odwrócone árë
 513114223	(to) które, (tam) gdzie
 513222137	pierwszy; czołowy, znaczący
 514456903	przestępstwo, zbrodnia
+515299293	przyrostek przymiotnikowy
 517579395	jak to
 518126687	obcy, nieznajomy
 518367003	twardy jak stal; stal
+518931137	długi
+520967173	pośladki
+521895863	rzeczownik abstrakcyjny
 522554449	*dziś, dzisiaj, ten dzień
 524470103	pragnąć, chcieć
+524563181	środkowy palec
+524591281	główny, dowodzący
 524774725	zmarły
 524936671	mgła
 525940839	nadciągać, zagrażać, zbliżać się, być nieuchronnym
+526013103	dziedzic, spadkobierca
 526083809	je <zaimek 3 os. l.mn. nieżywotny>
 526549939	*podnosić, unosić, wznosić (coś)
 528345191	niebieski
 529333501	<końcówka pogrubiająca/powiększająca> {dotyczy rozmiaru}
+529403071	zginać się, kłaniać, giąć, zaginać
+531028915	*szlachetny
 531038169	?tylny
 531674177	silny, *mężny
+532501407	dłoń
+533523763	*miecz
+534497479	blady
 535385615	Księżyc
+537015941	Lud Wosów
 537340477	zręczny, uzdolniony; -ręki, posiadający ręce; zgrabny
 537541951	nasz (dwojga) (włączając ciebie) <zaimek dzierżawczy 1 os. l. podwójnej włączający>
+538178447	wielki
 539097955	zły, nikczemnik, niegodziwiec
-539314873	zasłona, przesłona, woal; podcień; sklepienie lasu
+539314873	zasłona, woal, ukrycie; cień
 539367371	padać (o śniegu), śnieżyć
 539805327	drzewo
 542945183	uwalniać, wyzwalać, oswobadzać, wypuszczać
+545014171	[nieprzetłumaczone]
 545997331	wybór, wybieranie
 548725241	*tylko, jedynie
 548969375	dostrzegać (wzrokiem)
@@ -523,32 +710,36 @@
 551313413	ścieżka
 551878759	blady, jasny, płowy
 552592391	jego/jej/jego (potocznie) <zaimek dzierżawczy 3 os. l.poj>
+554062529	przyrostek przymiotnikowy
 555010773	przekraczać, przechodzić, przepływać; przewyższać, prześcigać
-557128587	błędny ognik, świczek, (dosł.) trupia świeca
+557128587	błędny ognik, świczek
 557207259	stracona, zapomniana, porzucona, wyjęta spod prawa, wyrzutek, wygnaniec <rodzaj żeński>
 558452031	raz, jednocześnie
+558716695	łapać, chwytać
+558818071	mokry
 559215421	do dna
 559424671	potwór, zdeprawowane lub złe stworzenie
 559886133	język [jako pojęcie]
-560253695	czarny, ciemny; czarnowłosy; mroczny, ponury, posępny
-562508769	usidlony, złowiony w sieci
+560253695	czarny, ciemny, mroczny; czarnowłosy
 564457667	zbierać, gromadzić
 566038181	jedna dziesiąta
+566178463	rzeczownik odczasownikowy, bezokolicznik, gerundium
 566219347	małomówny, skryty
 568402163	mały (pojedynczy) kwiat
 568820701	ciemność, ciemny
 572554377	uczony, mędrzec
 572761515	sprowadzenie, podanie
 573427619	zięba
+574292015	głos
 575944509	zaufany naśladowca, wierny towarzysz
 576723547	przestrzegać, nawoływać, mieć pragnienie/chęć/żądzę
 576900033	sierp
-577872441	dwanaście , tuzin
+577402533	-syn
 578926463	śpiewać, intonować
 579287119	chmura; mrok, ciemność, cień
 581124593	pokój
 583022677	pożądany, urzekający
-586121369	daleko, szeroko, w oddali, odległy; [ᴹQ.] na wielki zasięg, w rozległą przestrzeń, na odległość
+586121369	daleko, szeroko, w oddali, odległy
 586770569	jasny, słoneczny, (dosł.) oświetlony
 587271637	*winowajcy, (dosł.) lud przewiniający
 587326419	*dziewiczy
@@ -557,58 +748,75 @@
 588073163	czerwony płomień
 588515609	kraj, kraina
 589016555	przyciskać, wywierać presję, forsować, napierać (w określonym kierunku)
+589312225	[nieprzetłumaczone]
 589940275	zakon, porządek
 591007707	pomocnik
 591209383	w górę, do góry, ku górze
-592021215	mówić "jest", zgadzać się, akceptować
+592021215	zgadzać się, akceptować, przyzwalać
+592785491	maluch, dziecko
 593925143	gniewny
 594727041	Elfka, Elfida
+597296415	[nieprzetłumaczone]
 599418975	mówić, powiedzieć
 599940467	ognistoczerwony
 601079373	sześć
 601616467	jego/jej; <zaimek dzierżawczy 3 os. l.poj.>
 601692547	wracać, powracać
-602686523	recytator, mówca, narrator, minstrel, bard
+602686523	recytator, mówca
+603432333	męski przyrostek podmiotu czynnego
+603590945	strzec
 603669853	stos, (sztuczne) wzniesienie, kopiec
 604204537	*smak dźwięku {gust fonetyczny}
 604766391	zły uczynek
+605426845	wiatr
 606304839	*zawsze
 607489779	<końcówka rzeczownika abstrakcyjnego>
 608718335	widzieć
 610050725	łamać
-610154351	być może, niech będzie; możliwe, może być
+610154351	być może, niech będzie; możliwe, może być, jest szansa że
 610330175	rok
 612867785	zimny, chłodny
 613086623	boski
 614934925	południe (kierunek)
-615208449	wiedza, nauka, długie studia; mądrość
+615208449	wiedza, nauka, długie studia
 615438895	w górę, ku górze
 615513863	obaj
 617970291	unieść; sprawić, że się wzniesie; podnieść
 619085077	wąż
-620689743	wyrób rękodzielniczy
+619823437	przyrostek przymiotnikowy
+620689743	rękodzieło
 621911321	śnieg
 623424603	łatwy do spostrzeżenia, widoczny
 623876815	złoczynienie, niegodziwość, podłość
 623993167	on sam, *ona sama, to samo (we własnej osobie) <zaimek 3 os. l.poj. emfatyczny>
+624238443	[nieprzetłumaczone]
 625228551	kryształ; kryształowy (krystalicznie biały)
 627634671	(ten) kto
 627780085	jasny, czysty, piękny; jasnowłosy; dobry, korzystny, przyzwoity
+627869119	2, dwa
+629143649	czarodziej
 629218803	głos
-630017767	wytwarzać, kształtować
+629346819	słuchacz (szpieg lub zwiadowca)
+630017767	formować, kształtować, robić, tworzyć, wycinać; (dosł.) wykształtować
+630248359	więdnąć, usychać, zamierać
 631365181	prawa ręka lub strona
 632005251	tak więc, dlatego, w ten sposób, tym samym
+632764501	(pogańska) bogini
 633702661	piękny (o dźwięku), słodki, miły, melodyjny; miękki, łagodny, lekki
-636187855	tamto <zaimek wskazujący>
+636187855	tamto
 636208897	dźwięk, hałas
 637119903	palec środkowy (u ręki)
 637867655	przebudzenie
 638385031	wzwyż, do góry, w górę
 638670919	bardzo źle, niewłaściwie
+638958671	ktoś, na kim można polegać
 639945257	ocean, morze
 640475817	pasterka
+641325413	tarcza
+644856097	syn
 646169841	*pytać, zadawać pytania
 647031429	*inny niż
+650891257	oskarżać
 652152651	przesyłanie myśli, przekaz mentalny, telepatia
 652641877	*nie jest
 654277655	Śmiertelnik
@@ -619,30 +827,44 @@
 658726887	sztylet
 659275807	lew
 659732605	śmiertelny
+660111331	płot, ogrodzenie
 660115895	twarz
 661005369	szesnaście
 662130851	mądry
 664277375	czynny, zajęty
 665043545	parafrazować
 667014213	do, dla
+667272805	piana, bryzg fali
 668402933	dziesiąty
+668505569	mrok
 669292895	*uświęcony, święty
 669489209	*dzienny, codzienny, powszedni
+670904953	stąd, z daleka, daleko
 671454569	*owoc
+673938801	wino miodowe
 673954951	błysk
+674380965	strażnik
 676043631	owoc
 677121227	płaszcz
+677496485	od, z
+679037709	fort otoczony fosą
 679787045	cztery
+680529317	*to
+680633739	teraz
 680962721	wyswobodzenie z więzów
+681448327	matka
 682744223	przyjaciel króla, rojalista
 683967199	ocean
 684114471	alfabet
+685122157	adoptować
 686726335	wy (dwoje) (uprzejmie) <zaimek 2 os. l. podwójnej grzecznościowy>
 686993189	którego nie wolno wymówić
+689372733	[nieprzetłumaczone]
 689415325	przystań (śródlądowa)
 689621907	podstawa, korzeń; rdzeń, temat wyrazu
 689998709	*wyspa
-692699735	(drobny) deszcz, rosa; piana
+692699735	deszcz; piana
+692716267	przyrostek przymiotnikowy
 693805567	zepsuty, skażony
 693947865	dwanaście
 694581347	zakaz, odmowa
@@ -654,75 +876,103 @@
 700840261	pojedynczy, sam
 700907943	czerwiec, *ognisty
 701052069	grudzień, *zimny dzień
-702350617	<końcówka rzeczownika>
+702350617	końcówka rzeczownika
 703468803	nalewalny, ciekły
 706102471	odnieść porażkę, zawieść, chybić
+706655139	Elf
 707964843	rozdzielać w równych częściach
 709623673	znak graniczny, słupek graniczny, granicznik
-710844887	(mały) dzwonek
-710872661	staw, ?rozlewisko
+710660887	wiele, przyrostek powielający
+710844887	dzwonek
+710872661	staw, sadzawka
 712622999	łza
+713171039	słowa
 714127453	warga, (zamknięte) usta
+714691333	orzeł
 714721019	powyżej
 715171009	przemieniać, zmieniać się {czasownik nieprzechodni}
 715307145	nie!
 715899217	nie mieć
 716407617	rozmawiać, mówić, posługiwać się językiem
 717217573	mówca, recytator
+718209917	strach, lęk, obawa, trwoga
 719618883	szeroki, obszerny, wielki, przestronny, rozległy, ogromny
 720017231	*cienisty
-723386541	gondorskie drzewo liściaste 
+721374731	zdobywca
+721634279	kurczak
+723386541	gondorskie drzewo liściaste
 723457329	ósmy
 724828905	powódź, teren zalewowy; przypływ
 727755329	niezliczony
 729605245	były; wczoraj; jutro
 731610737	<końcówka rzeczownika abstrakcyjnego>
 732275727	kraj, kraina
-733773557	splątany, spowity, złowiony w sieć
+733773557	splątany, opasany, złowiony w sieć
 734403087	siostrzyczka, dziewczynka
 734879943	wściekłość, furia
+737275827	forteca
+739874117	[nieprzetłumaczone]
 739916641	okrężny wał ziemny z groblą, twierdza otoczona szańcem, bastionem
 739925041	opadać, pochylać się
+741525755	[nieprzetłumaczone]
 741527683	naprzód
 742218303	rzeka, strumień
+743994193	Krasnolud
+745853149	15; piętnaście
+746767101	syn, męski potomek, (pra)wnuczek
 746842753	podgrzewać, piec (na słońcu)
 748194959	niemożliwy do zrelacjonowania
+748227581	ryzykowny, dzielny
+748265855	przyrostek przymiotnikowy
+748596617	10; dziesięć
 749112953	upadek, spadek, opad; spadający, upadający
+749230611	(u)krzyż(owanie)
 749594619	wschodni
 749968359	padać (o deszczu)
 750158433	podskakiwać, przeskakiwać
+750801757	[nieprzetłumaczone]
 752585143	miód
 752710265	dolina
 753238821	Człowiek (jako rasa)
-755413635	ziarno, nasienie; osobliwość
+754656851	[nieprzetłumaczone]
+755413635	osobliwość
 757071129	lis
 759021313	sieć
 759632383	stopa
-759925601	szpic, szpikulec, kolec, ostry róg, kieł, ząb., zakończenie
+759925601	szpic, szpikulec, kolec, ostry róg, kieł, ząb, zakończenie
 761943535	tysiąc
 762457019	włócznia
 765613653	*obelga, zniewaga
+766109247	szeptać
 766495201	dziewiąty
 768038407	zły; ciemny, mroczny, ponury, złowieszczy
 768614671	głowa, łeb, wzgórze
 769053695	broda, zarost
 770054847	granica, pogranicze, skraj, krawędź, ogranicznik
+770137779	przyrostek podmiotu czynnego
 770735627	nów
 771124993	królowa
 771183727	*smak
 771384677	na, nad
 772472019	niechęć
 775549045	tym sposobem
+775856689	równina
 776021233	zastęp, rzesza, wielka liczba
 776340551	ochrona, schronienie, tarcza
 777678257	chłodny
+778058337	odchody zwierzęce; śmierdzący
 778130225	przerażenie
+778608849	chwała, splendor
 779460095	dziecko
+780132831	[nieprzetłumaczone]
 780203177	wiąz
-781530941	i, oraz, przy tym; †przy, obok
+780748133	północny (kierunek)
+781530941	i, oraz
 781551153	dygot(anie), drżenie, dreszcz, ciarki
+782759353	razem
 782831771	jeleń
 783270509	nacisk lub wymuszenie (by zrobić coś wbrew własnej woli lub sumieniu)
+783319775	przyrostek podmiotowy pospolity
 783880857	hak, zacięcie
 784175479	dobry znak na pożegnanie
 784231057	mały palec (u ręki)
@@ -730,7 +980,7 @@
 785386149	lodowaty, ziemny jak lód
 785480477	serdecznie, szczerze, (dosł.) ze środka
 786925421	śnieżyć, zamarzać, marznąć, robić się zimno (o pogodzie), być chłodnym
-788555883	samogłoska; dźwięczny
+788555883	samogłoska
 790006745	grzebień, grzbiet
 791895235	(tajemna) dziupla, jama, nora
 793854069	quenya, język elfów wysokiego rodu, †mowa
@@ -741,27 +991,37 @@
 795622623	*pobrzmiewający echem
 796081615	lament
 796453495	podwójny
+796937997	?córka
 799483471	łagodne usposobienie; wola Eru
+799831427	[nieprzetłumaczone]
 800667727	iść
 800668047	<końcówka ogólna liczby mnogiej rzeczowników>
-800769433	na powrót; wstecz, wspak
+800751999	[nieprzetłumaczone]
+800769433	na powrót, znowu
 801110253	przychodzić z pomocą, ocalać, ratować
+801821567	elficki
 801922421	*podróżować
 801957389	antypatyczny, odstręczający
-802286127	plaża
+802286127	plaża, brzeg
+802768515	(bardzo) ciężki
 803497963	ratunek, ocalenie
+804259767	syrena
 806516075	pod, poniżej
+806519975	matka
 806996889	czynny, aktywny; zajęty
 807152383	mężczyzna, osoba płci męskiej
 807725285	dwunożny
 808064509	przed (dot. miejsca)
 808913367	zły, niewłaściwy, nieodpowiedni, bezużyteczny
+808968399	język Eldarów
+809180137	[nieprzetłumaczone]
 809570117	puszcza, las
 810235075	powoli przygasać, zanikać
 810768379	odwrócone s
 811434081	my (włączając ciebie) <zaimek 1 os. l.mn. włączający>
 811461593	witać (coś pomyślengo)
 811844039	ptaszek
+812938249	ktokolwiek
 813551295	zręczność
 813828803	góral, zamieszkujący góry
 813851967	*tak jak
@@ -769,32 +1029,47 @@
 814235583	jedna dziesiąta
 814497133	wonny kwiat
 815823811	straszyć, przerażać (kogoś)
-816804057	podnosić się, wstawać
+816938715	pięść
+818516741	oni
 818642381	*daleki, odległy
-821236263	córka, <końcówka rodzaju żeńskiego>
+819021371	[nieprzetłumaczone]
+821236263	córka, końcówka rodzaju żeńskiego; końcówka patronimiczna żeńska
 821443619	nasz (włączając ciebie) <zaimek dzierżawczy 1 os. l.mn. włączający>
 821543869	ręka (zwłaszcza w ?uścisku)
+821653829	książka
+824993751	Mądrość
 825068199	on/ona/ono <zaimek 3 os. l.poj. żywotny>
 825430617	[nieprzetłumaczone]
 825477441	czuć, odczuwać (emocje)
+825534959	niebiosa
 825561553	podobny do gwiazdy, niczym gwiazda
 826126495	mieć, posiadać
+826525119	rzadki (jako przeciwieństwo gęstego)
 826592847	dzicz; dzika bestia
 827265439	my (wyłączając ciebie) <zaimek 1 os. l.mn. wykluczający>
 828644061	mały owad
 829504469	rozszerzenie
-831232163	śmierć (abstrakt)
+829611761	przyrostek rodzaju męskiego
+831232163	śmierć
+832110591	obcy, zagraniczny
 833072757	posiadać, mieć
+833132283	światło słoneczne
 833957049	*amen, (dosł.) niech będzie
 834311169	wydrążenie, wykop
 834889017	dzień
+835724671	rana
 835773207	zdeterminowany umysł, silna wola
+836181817	kolec, szpic
 837057359	brzoza
+841152071	[nieprzetłumaczone]
+841217125	dom
+841477627	królik
 842096167	wściekać się, szaleć, wpadać w gniew
-843019527	wieczny, nieustający, bezustanny, bezkresny
+843019527	wieczny, nieustający, bezustanny, bezkresny, będący na zawsze
 843068399	iść (na długi czas)
 843292309	*pokusa
 845079923	odchodzić
+845789927	patrzeć daleko
 845989047	długa powieść epicka, historia, legenda
 848301795	wy sami (we własnej osobie) <zaimek 2 os. l.mn. emfatyczny>
 848791205	zacieniać, zaciemniać, zasłaniać, przesłaniać
@@ -802,34 +1077,43 @@
 850441815	głodny
 850518917	wysadzany klejnotami
 850943723	lękać się, bać się, obawiać się
+854669609	gwiazda
 855727975	<końcówka imienia (zazwyczaj męskiego)>
 857424327	jedenaście
 858922167	jedna druga
+859403639	daleki
 859775011	wykroczenie, przestępstwo, (dosł.) występek
 860281465	<końcówka czasu przyszłego>
 861145513	otwarcie umysłu
 861373229	majestat, panowanie, królewskość
 863158895	Księżyc, (dosł.) połysk
-864416875	duże (kamienne) mieszkanie/siedziba
+864416875	duży, murowany budynek mieszkalny
 866931535	drobny mężczyzna
+871241925	z (kimś, czymś)
+871415647	zalewać, topić, namoczyć, zmoczyć
 871819285	może nie
 873198767	mały palec (u ręki)
-873711875	*zdaje się, że
-874080201	bariera ustawiona z pali, słupek graniczny; [ᴹQ, ᴱQ] oś, trzpień
+873468351	armia, zespół, oddział
+873711875	*wydawać się, zdaje się że
+873929317	krawędź, rubież
+874080201	ogrodzenie lub bariera z pali lub słupków; 'granica' (w sensie abstrakcyjnym)
 874161851	oni (końcówka dopełnienia)
 874318655	*pas, obręcz
-874453311	rok (zwrotnikowy), (dosł.) obieg słońca
+874453311	rok (słoneczny), (dosł.) obieg słońca
 875219137	dziedzic, spadkobierca, następca
 876008275	szlachetny
+876127623	forteca, więzienie
 876959471	specjalne wino lub likier
+877935025	dziewiąty
 878641079	*trudniej
 879202415	gniew, wściekłość
 880116221	lipiec, *polecie
 881038351	siedem
-881131867	uczta, biesiada, święto
+881131867	uczta, święto
 881359705	mały, drobny
+881589879	dłoń, ręka
 882199073	tutaj, tu, po tej stronie (z perspektywy mówiącego); †poza [luźne tłumaczenie]
-882964293	sadzać, usadawiać
+882964293	siadać, usadzać
 883070533	*pokusa
 883160203	potok, zdrój, woda spływajaca z kamienistego źródła
 884736687	bądź pozdrowiony!
@@ -838,83 +1122,115 @@
 886356283	materia (fizyczna)
 886949247	zepsuty, skażony
 887288413	rządzić
+887579361	przedni, *przed czymś
+888464515	siostrzyczka
 888470127	zielony
-888760543	wiecznie, bezustannie, nieustająco; bezkresny przedział czasu {wieczność}
+888760543	wiecznie, bezustannie, nieustająco; bezkresny przedział czasu
+889363273	posoka, rozlana krew
 889705519	wiatr, podmuch, bryza
 890459021	okropny, straszny, potworny, nieznośny
 891462027	ocean, (dosł.) wielkie morze
 892006027	jarzyna
 892129439	przybywać, kończyć w (?konkretnym) miejscu
+893107199	mokradło
 893682655	wiatr
 893766403	wypukłość mająca czemuś służyć, gałka, krótka okrągła klamka
 894324115	tylko
+895542259	*wilkołaczyca
 896090345	*dmuchać, dąć, wiać
 897821827	bodziec by złoczynić, *pokusa
 899343815	świadek, obserwator
 899496787	dobrze, szczęśliwie
 899584223	dama, dostojniczka
+899692229	przyrostek kauzatywny
 899841763	otrzymywać
 899919561	?grubieć, gęstnieć, tężeć, krzepnąć, zastygać, ścinać się
+904344051	sługa -
+905586521	blask złota
+910190503	język
 910606383	podążać za, następować po
+911493201	głupiec; plugastwo
 913935791	zarówno, jak i
 915873921	dziecko, młodzieniec
 917240189	kobieta
 917698495	*jak, niczym
-920120461	rozdzielać w równych częściach, (dosł.) wydzielać
+918237133	[nieprzetłumaczone]
+918636179	usta
+920120461	rozdzielać w równych częściach
 920615393	dotykać czegoś, dotyczyć, wpływać na
+920705885	[nieprzetłumaczone]
 921714735	matka
 921772261	pozbawiony praw i wywłaszczony wygnaniec
 922620063	tak
 924737351	piękny (o dziełach sztuki)
 924789935	ja <zaimek 1 os. l.poj.>
+925672717	powiedzieć
 926513155	korzeń
 929151375	zięba
 929980063	my (wyłączając ciebie) <zaimek 1 os. l.mn. wykluczający>
 930051135	<końcówka wyolbrzymienia>
 930367425	dzieło wysokiej jakosci i piękna, proces tworzenia dzieła
+932308805	świecić, lśnić
 933365241	ciężki, ociężały, opasły
 934524111	róża
-936060231	Zmarły
+934531205	rodzajnik wyszczególniający
+936060231	Zmarli
+936370813	w stanie (zrobić)
+937585663	prezent, dar
+938573111	zaciągnąć, zgromadzić siłą
 939186061	niezliczone, poza rachubą
+939749307	kichać
 941248071	?wypasać (owce)
 941589679	droga
+941998839	krzyk
 942379951	łupacz, topór, tasak
 943140797	przyjaciel, miłośnik
 943211241	<końcówka imiesłowu czynnego>
+943381691	przyrostek rodzaju żeńskiego
 943808851	<przedrostek intensyfikujący>
 945097241	przystań (śródlądowa)
 947709017	błogosławić
 948396235	<końcówka rzeczownika abstrakcyjnego/przysłówka>
 949454271	(zawodowy) marynarz, (dosł.) sługa morza
-949552217	napełniać <czasownik nieprzechodni>
+949552217	napełniać, wypełniać
 949730177	palec czwarty (u ręki)
 951258413	panna, *dziewica
+951397869	sprzymierzeniec, sojusznik, asystent
 954319471	wrona
-956996613	pisać, rysować, grawerować
+956996613	pisać, rysować, grawerować, znakować
 959060637	przysięga, ślubowanie, przyrzeczenie
+959804901	[nieprzetłumaczone]
+960997721	do, w kierunku; przyrostek allatywu
 962816459	*leciwy, wiekowy
 962912829	wódz
 963306847	w zasięgu ręki, podręczny, (łatwo) dostępny
+964571287	zapiski, dokumenty
 964582393	każdy, *wszystek
 966567391	poza (granicę lub zakres}
 966733741	*jedna dwunasta
 967027745	drzwi
+967158399	palec wskazujący
 967630311	piana, rozbryzg, mgiełka wodna
 967716749	czwarty
 968402253	świeczka, świeca
 968583411	znak, oznaka, symbol; pismo
+969534677	okulary
 970587683	dobrze uczyniony, dobrze wykonany
 972715351	potężny, wielki, duży
 973501211	królewski liść, asea królów
 974117705	ziemnowodny
 974820991	lękać się, być przerażonym; *pierzchać, umykać (do)
+974937399	ogień
 974958079	czerwonawy, rudy, rudowłosy
+975519541	7; siedem
 975758945	kamieniarz, rzeźbiący w kamieniu
 975764697	wysłanie, wiadomość
+976115029	sza!, cicho
 976128093	skarb
 976808389	dobrze słyszalny
 977239363	chleb
 978702047	powodować
+979294165	[nieprzetłumaczone]
 979655405	odpływ
 980132123	*szyć
 981591989	*śmiać się
@@ -922,51 +1238,69 @@
 984655481	mur tarcz
 985580079	młodość
 985798135	osoba, ktoś (nienazwany)
+986473925	smajal, jama
 986780525	potężny
 987728665	agonia
 987756921	gardzić, pogardzać
 987865247	nie {negacja} (odmowa lub zakaz)
 987889217	śmierć
+987909533	[nieprzetłumaczone]
+990993015	nie-
 991700929	doskonały
 993581959	drogocenny, bardzo cenny, wartościowy, prześliczny
 994621883	pal, pika
 994938795	blask księżyca
+995828525	piąty
+999072967	sok
 999418593	dziewiąty
 1000418973	przed (dot. miejsca); po (dot. czasu)
 1000921727	wypolerowany, wygładzony
+1002860413	przyrostek zwrotny
+1002934213	[nieprzetłumaczone]
 1003595057	niemowlę (mały palec u ręki)
 1004111837	skręcać, wykręcać
 1004811629	styczeń, (dosł.) *koniec zimy
 1004872803	ciąć mieczem
 1005559359	*tak więc, dlatego, w ten sposób, tym samym
+1006125913	Orkowie
+1007159269	przemysł
 1008917403	wiosna
-1009966641	skarlały, karłowaty/karli; krasnolud
+1009966641	krasnolud; skarłowaciały, zdeformowany
+1010223255	diadem, naszyjnik
 1010480069	*czternaście
 1010875705	od (kogo/czego <rodzaj dopełniacza>)
+1011955981	lek, medycyna
+1012850385	przyrostek przymiotnikowy
 1013206201	mżawka, drobny deszcz, kapuśniaczek
+1013562685	wybrzuszenie
 1013705407	posiadać, mieć na własność
 1013902241	wrzesień, *"yavanność"
 1014845633	ale, lecz
 1014874171	runa
 1016501611	trudny do zrobienia, ledwo wykonalny
 1016789517	jedna piąta
-1017752503	głęboka dolina, (szeroki) jar, wąwóz, dolinka
+1017752503	głęboka dolina, (szeroki) jar
 1021953525	klif, urwisko
 1023496633	gęstnieć, tężeć, krzepnąć, zastygać, ścinać się
 1024478997	siedem
 1025195275	pióro (do pisania)
+1026174079	przemijać
 1028578433	wasz (dwojga) <zaimek dzierżawczy 2 os. l.podwójej>
+1029453875	chleb podróżny
 1030806335	*trzydziesty
 1030915269	budować
 1035391949	przeraźliwy, straszny, okropny
+1035611751	przyrostek ułamka
 1041283863	słupek, znak
 1041462575	mama, mamusia, (pierw.) moja matka
-1042453401	srebrna iskra, [ᴱN.] gwiazda; znak, symbol, ciało niebieskie
+1042453401	srebrna iskra
 1042460189	Elf (płci męskiej)
 1044732511	w oddaleniu od
 1046115873	metal
 1046328033	wietrzny
+1046586335	zwołana kawaleria
 1048540655	wznoszenie
+1050210763	przyćmić, zacieniać
 1051206587	władca, obrońca
 1052122909	ugięty, wygięty
 1052679397	krewni, ród, rodzina
@@ -975,8 +1309,9 @@
 1055386559	kraj
 1055634733	królestwo
 1055810531	wąski, (dosł.) nieszeroki
-1056131173	zmiana, przemiana {siebie}
+1056131173	zmiana
 1057523367	(mały) kamień, kamyk, żwirek; kamienisty, żwirowy
+1057643679	[nieprzetłumaczone]
 1058831455	ostatni
 1059986303	my (dwoje) (wyłączając ciebie) <zaimek 1 os. l. podwójnej wykluczający>
 1060041221	ale, lecz, lub; skądinąd, ponadto
@@ -984,13 +1319,17 @@
 1064582707	śnieżny, (śnieżno) biały
 1064816999	maszt
 1064900693	pół-
+1064907937	drzewo
+1066244863	wszechobecność
 1066274757	wielkie drzewo
 1068120297	wygnany, emigrujący
 1068514143	zanikać, więdnąć, przemijać, umierać
 1068518247	wielka strzelista budowla (fort, miasto, zamek), wieża; góra, wzgórze
 1069336479	trudny
 1069406749	muzyka
+1073171351	krzyk; wezwanie; przezwisko
 1073854657	światło słoneczne lub upał
+1074696727	[nieprzetłumaczone]
 1075300687	żelazny, z żelaza
 1078203613	reneta, *(małe, czerwone) jabłko
 1079434239	zstępować, schodzić w dół
@@ -998,9 +1337,13 @@
 1084088573	kamień, skała
 1084245651	ciemność, czerń
 1084314337	ocean
+1084454815	nie-
+1084692209	sterta, stos
+1085443909	przyrostek zdrabniający
 1086177151	ogrodzenie
 1087096531	młody, *nowy
 1088631267	straszliwy, przerażający, okropny, wstrętny
+1089543247	adunaicki, język númenórejski
 1089754911	*podobny, jednakowy
 1092309443	wietrzny
 1092536931	*żyć, być żywym
@@ -1020,23 +1363,38 @@
 1101148547	*błagać, prosić, wnioskować
 1102716429	akt tworzenia (sztuki)
 1103326213	zamierzać, robić coś celowo
+1104725151	przyrostek rodzaju żeńskiego
 1105118389	pod [poza]
 1105424257	dąb
+1105914575	czupryna
 1106432529	sądzić
+1107667435	pogranicze
 1108025009	*odnowa
-1108144049	czarnoksięstwo, czary, magia; †wiedza (tajemna)
+1108144049	czarnoksięstwo, czary, wiedza (o złych rzeczach)
+1108441055	[nieprzetłumaczone]
 1108476903	mój <zaimek dzierżawczy 1 os. l.poj.>
+1109782301	Ork
+1110573153	mały
 1111702701	czwarty
+1112193151	-barwny, barwy -
 1113264857	ptasi
-1113571231	znak diakrytyczny, symbol, oznaczenie (w piśmie)
+1113571231	znak diakrytyczny, oznaczenie, symbol, †litera
 1114552647	daleko z tąd, nie tu, w oddaleniu
 1114592353	kwiat; kwiatostan
+1114946239	mrok, (zła) noc
 1115019499	hełm
+1116494487	[nieprzetłumaczone]
 1116761693	czuć za pomocą dotyku, macać
+1117068485	mięsień
 1118046717	pomiędzy
 1118488723	otaczać, ogradzać, wyznaczać granice
+1119553601	budynek
 1122767743	?ta sama osoba
 1123899243	ten który
+1124901701	mgiełka
+1126452813	przyrostek zgrubiający
+1126505061	Zachód
+1126979511	allatyw
 1127061965	przenikliwy, spostrzegawczy
 1127362241	zdolny udźwignąć, odporny, wytrzymały
 1127545279	piękny, nadobny, nieskazitelny; jasnowłosy (różne odcienie blond)
@@ -1044,26 +1402,44 @@
 1128167763	ostry, kanciasty
 1128183303	gromadzić, zbierać
 1128195167	tam, w tamtą stronę
+1131267433	krasnolud
+1131442509	ucho
 1131725613	kochać
+1132005691	miliard
 1132562537	kształtować, formować, modelować
-1132971103	oczywiście, że się zgadzam; oczywiście tak
+1133037423	[nieprzetłumaczone]
+1133180003	klamra, broszka
 1134862963	paskudny, wstrętny
 1134889687	listopad, *mglisty
+1135242369	mamusia, mama
+1135996413	miasto
 1136269823	*impuls, odruch ciała {popęd}
 1137358351	(ptaszek), ptak
 1137944933	drzewiasty, lesisty, (dosł.) utkany z drzew
 1138081385	złoto (światło lub barwa)
+1139594831	upalny, gorący
 1139845795	żarłoczność, obżarstwo
+1143931885	zostawiający z boku, niewliczający, wykluczający, wyłączający; z wyjątkiem
 1144268691	*dostarczać
 1145289087	spadać, upadać
+1145532637	gnom
+1145830513	futro, płaszcz futrzany
 1147147655	grzmot, burza
 1147340681	czytanie, lektura
+1149336353	końcówka żeńska
 1150233375	pomijając, nie licząc, wykluczając, wyłączając
+1153899743	słońce
+1155827279	sadzawka, miejsce do kąpieli
 1158794081	wyścig, bieg
+1159929809	usunięcie, odsunięcie
+1161713737	srebro
+1162684191	Noldo, jeden z Noldorów
+1162810463	Fenicjanie
 1163638101	pismo
 1166313405	stopień, szczebel; kolejność
 1167008467	jesień, żniwa [pora żniw lub sam zbiór]
 1167312095	brzeg, krawędź
+1168146417	[nieprzetłumaczone]
 1171116671	być chętnym, zgadzać się
 1171257471	róg
 1171347451	zalewać, podtapiać
@@ -1071,69 +1447,97 @@
 1171788961	pasmo górskie
 1173068063	powietrze, niebo
 1174557919	i
+1175931423	Gondorczyk
 1176036159	siedem
 1176252553	jeśli
 1179645293	filar, słup, kolumna
 1179935417	dodawać
-1181013923	przystań (śródlądowa); szlak (morski), tor wodny, wejście do portu; duża zatoka
+1181013923	przystań (śródlądowa)
 1181190183	biały
+1181541887	włochaty, puchaty [szczególnie przy delikatnych włosach]
+1182697055	[nieprzetłumaczone]
 1184258429	w celu, ku końcowi
 1185185097	praworęczny, zręczny
+1185453465	przychodzić
+1185480337	[nieprzetłumaczone]
 1186444265	-awy, -podobny {jak coś, przypominajacy coś}
 1186865343	*modlić się, błagać
 1187169409	?hełm, ?wierzch
 1187250489	czerwony
+1188142253	organ władzy
+1190650991	przykleić, przyczepić, załączyć
+1191017589	koniec
 1191445567	-owy <końcówka pozesywu {czyj?} lub przymiotnika>
 1192435745	*amen, (dosł.) niech będzie
 1197398273	gawędziarz, bajarz
 1198019123	pani, dama
+1198053281	(duża) rzeka
 1199188469	zręczny, wprawny, biegły
+1200097089	razem
 1201659389	krew
 1203187071	z (kimś, czymś)
+1204141663	*jej; 3 os. l.poj. r.ż, dzierżawczy zaimek emfatyczny
+1204185507	[nieprzetłumaczone]
 1208380877	zapas, zasób
 1209194993	lud (jednego rodzaju lub pochodzenia)
 1209535589	radosny śpiew
 1211437307	chodzić, przechadzać się
+1211862037	bryzg fali morskiej
+1213271943	internet
 1216649663	pająk
 1219362297	wita
 1219474109	tak jest, *tak (emfatyczne)
-1219910155	kryształ (krystaliczna biel)
-1220344969	drobny, *mały
+1219838819	miedź
+1219910155	krystaliczna substancja wynaleziona przez Fëanora
+1220344969	drobny
 1220516671	je <zaimek 3 os. l.mn nieżywotny>
 1220852637	pisownia
 1220983633	rodzina, ród, krewni; rasa, szczep, lud
 1222397067	szlachetny, królewski, wysoki
 1223027571	przez, w poprzek, wskroś, na przełaj
-1223050479	północ, (dosł.) kierunek prawej ręki
-1223101599	dziura
+1223050479	północ
+1223101599	dziura, *legowisko
 1223740641	lato
-1224064777	żwir, kamyk
+1224064777	żwir
+1224263575	złoto
 1224327281	materia, substancja
+1224892245	nieślubne dziecko, bękart
 1226530577	odwrócony, (dosł.) podkręcony
 1226991753	określać, wyznaczać, skazywać
 1227185119	bariera ochronna
+1227473301	[nieprzetłumaczone]
 1228832295	gęsty, zwarty
 1229796797	odnowa, odnowienie
 1229903721	most
+1230627833	wiąz
 1231584087	od (kogo/czego <rodzaj dopełniacza>); wraz z, związany z, opatrzony
 1231770377	wysokość
+1231786579	niebieski
+1232090169	jeden, sam
 1232107373	pożądany, uroczy
 1234041223	*dług, przewina
+1234910413	siła (fizyczna)
+1235315161	przyrostek zgrubiający
 1236042975	drogi, ukochany
 1236141771	dźwięk, odgłos
 1236324431	palec serdeczny
 1236499315	lud, rodzina
 1236832491	próbować, starać się, usiłować, dążyć do
+1237404985	trzymać
 1237805601	wróg
 1237937839	*wtorek, dzień Dwóch Drzew
 1237975119	sprzyjający, dobry
+1239400501	powiedzieć
 1240142507	srogi, okrutny, gwałtowny, brutalny
 1240308673	nowe słońce po przesileniu
+1241312127	[nieprzetłumaczone]
 1241402291	trucizna, jad(owitość)
 1243468823	zachwycający, wspaniały, cenny, znakomity, doskonały
 1243673055	tęcza
 1244424501	głośny
 1244661389	panna, *dziewica
+1245432293	biała mgła
+1245794635	przyrostek przymiotnikowy
 1246209169	zgodność, stosowność, odpowiedniość
 1248102351	źle, boleśnie, wstrętnie
 1248540899	Słońce
@@ -1143,31 +1547,43 @@
 1250473367	poimiędzy, pośród
 1252349503	*to
 1252672555	powtarzanie
+1252693759	dawno temu, pewnego razu
+1253112447	on
+1254121493	niezapominka, kwiat
 1254266677	staw, (płytkie ale rozległe) jezioro
 1254733073	niewiedza, nieświadomość, nieznajomość
 1255553271	hełm
 1255811889	wierzbowy
-1257208123	zliczać, *liczyć, rachować
+1257208123	*liczyć, policzyć, kalkulować
 1257714045	siódmy
 1257807725	jedna szósta
 1258418913	dziesiąty
+1259491771	srebro
+1259958049	oddział
 1260023323	ciało, postać cielesna; materia fizyczna
 1261299087	wasz <zaimek dzierżawczy 2 os. l.mn.>
 1262772319	kwiatostan, skupisko kwiatów
 1262847389	post, głodówka
+1263240023	lud Elfów
 1266406213	środa, *Dzień Nieba
 1267384605	starać się, usiłować
 1267511003	niedźwiedź
+1268082831	dwunasty
 1268185039	Śmiertelnik (ogólnie)
+1268470231	lud
 1270155953	wszechwiedzący
 1272131327	dawać, †przydawać
+1272491313	prawica, prawa ręka
 1274666463	brakujący; samogłoska
 1275067921	napotkać, zejść się, spotykać
+1276220043	blady
 1276339543	Elf (ogólnie)
 1276592119	sługa
 1277414107	zły czyn
 1277535077	*muzykować
+1277872167	przedrostek zdrabniający
 1278502481	świeży
+1278701847	przyrostek zgrubiający
 1278836527	wzniosły, szlachetny, dostojny, wysoki, wspaniały
 1279884395	ostatni
 1281555063	Maya, byt anielski
@@ -1176,69 +1592,101 @@
 1283740149	chleb
 1284836923	dar
 1285367433	zachód, kierunek lub region gdzie zachodzi słońce, Zachód, (dosł.) schodzenie
-1290699021	pięć
+1285566287	przyrostek dalszej przyszłości
+1290699021	5; pięć
 1292287749	szczęka
 1293734281	poniedziałek, *Dzień Księżyca
-1294376361	(smagany falami) brzeg, linia brzegowa; plaża
+1294376361	(smagany falami) brzeg, linia brzegowa
 1294639871	(abstrakcyjny) kształt/postać
 1294970137	jedenaście
 1295019719	śmierć
 1295443769	urodzony, zrodzony
-1296043367	po-imię, przydomek 
-1296856217	w; jak, według
-1297973435	<końcówka zdrobnienia/końcówka l.poj.>
-1299906099	panna/dziewczę; <*końcówka żeńska>
+1296043367	po-imię, przydomek
+1296856217	w; ?jak, według
+1297740099	akcja, czyn
+1297973435	przyrostek zdrabniający/l.pojedynczej
+1299906099	panna/dziewczę; *końcówka żeńska
 1301055311	ten który, które
+1301238655	przyrostek rzeczownika abstrakcyjnego
+1302073295	wrostek odmiany dopełnienia w zdaniu
+1302717391	spaść
 1303029907	wściekać się, szaleć, wpadać w gniew
 1305332131	szczęki, rzędy zębów
+1306930783	mężny, *męski
+1307045313	miasto
 1307427645	*amen, (dosł.) niech tak będzie
 1307503003	pojedynczy kwiat
+1309750101	morze
 1310424909	centralny, środkowy
+1311322155	dolina
 1313199847	rąbek, brzeg, krawędź, granica
 1313252895	nieskazitelny, nieskażony, nieskalany
+1314762329	4; cztery
 1315026207	nadane (lub dodane) imię, przydomek, nazwisko
 1316330971	nieporęczny przedmiot lub bryła
+1316815521	przyrostek zdrabniający/l.pojedynczej
+1319028269	potworność
+1319477991	do, w kierunku, naprzeciw, przeciwko
 1319998893	gwiazda
+1320018751	poślubić
+1320300919	gorący
 1320448551	wierzba
+1321180327	zbiory, jesień
 1321351921	wielki, ogromny
-1321375149	nieczysty, brzydki; ochydny, szkaradny
+1321375149	nieczysty, brzydki; ohydny, szkaradny
+1321502889	[nieprzetłumaczone]
 1321915903	bród
 1323679033	gondorskie drzewo liściaste, (dosł.) drzewo palczaste
 1324303307	<przedimek określony>, ów
+1325631329	zmuszać, dominować
 1329477379	jedzący miód, miodożerny
 1329860681	zaplątany, omotany, usidlony, złowiony w sieci, spleciony
 1330131825	szacowny, szanowany
 1332093551	iskrzyć się, błyszczeć
 1332454655	pusta jama, zagłębienie, łono
 1333065305	siedzenie, siedzisko
+1333846273	końcówka żeńska
 1333910335	wzniesienie, kopiec
+1334943975	dwupokojowe mieszkanie lub nora
 1335301839	kamień, skała
+1335330219	z
+1335643039	słuch
 1335823119	niebiosa, firmament, niebo
 1335960739	wcześniejsze zajście
+1336583195	muszysko, duża mucha
 1336598719	piękny, śliczny
 1337462501	klejnot, kamień szlachetny, cacko, cenna rzecz, skarb; cenny, wartościowy
 1337510721	*zawsze
 1337839253	ciemny, mroczny, tajemny, tajemniczy
 1339115679	wilkołak, wilk (nie dziki wilk)
+1339484717	mgła, mgiełka
+1341027523	iskra, migotanie gwiazd
 1341075349	posyłać
+1342856089	lub
+1344136325	policzek
 1345743189	kopalnia, odwiert, tunel, podziemne mieszkanie/siedziba
 1345809821	znak samogłoskowy
 1348758303	trzeci
 1349111999	spółgłoska
+1349341505	dłoń
 1350492121	listowie, zbiór liści
 1350982349	panieństwo, dziewictwo
+1351799247	północny zachód, północno-zachodni
 1351851251	<końcówka rodzaju męskiego>
 1352419403	podziemna siedziba, sztuczna jaskinia lub wykuta w skale sala
 1354167263	nadobny, piękny
 1354322009	*dziękować, dziękczynić
+1354908421	wszędzie
 1354997143	piękny, delikatny, finezyjny, śliczny
 1355184405	nieświadomy, nieznający, niedouczony
 1355197773	początek
+1356231343	łuk
 1357279837	czerwony, szkarłatny
 1357387671	*zatem, dlatego, więc, z tego powodu, (dosł.) przed którym
 1359184277	bardzo, wielce, niezmiernie; (dosł.) zwielokrotniony, powiększony
 1361026697	próbować
-1361082887	broszka, spinka, szpila
+1361082887	broszka, spinka, klamra
+1362534545	ciemnolicy, ciemnowłosy
 1362623159	wschodni
 1363534489	dziewiąty
 1363931379	ostatni, końcowy
@@ -1247,35 +1695,55 @@
 1365514869	*samotny
 1367124795	tyran, ciemiężca, gnębiciel
 1368633889	przewyższać, prześcigać
+1369821233	matka
+1371990661	żółty
 1372190241	[nieprzetłumaczone]
-1372498229	*grzesznik, winowajca
+1372498229	*grzesznik
 1373002601	fonetyczny
-1377240439	<końcówka (dawnego) dopełniacza>
+1373655841	(blady lub srebrnawy) szary
+1375178737	[nieprzetłumaczone]
+1375489393	przyrostek rodzaju męskiego lub przymiotnika
+1377235015	świt
+1377240439	(dawna) końcówka dopełniacza
 1377786941	trzeć
 1377951077	sztuczny; wytwór
 1379423095	*błogosławiony
 1379960551	i {dotyczy par}
+1380238811	[nieprzetłumaczone]
 1380969905	mokradło, rozlewisko, torfowisko
 1381089033	zaprzeczać
 1381185893	długo
 1381260045	letnio-śnieżnobiały, gatunek drzewa w Númenorze
+1381772905	wybrzeże, brzeg
+1382510885	czarny
 1384702509	(zdolny do biegu), ciągły, w toku
+1384806839	podpora, wspornik
 1385064761	jak, w jaki sposób
 1385314499	usta, jama ustna
 1385382661	stąpać, kroczyć, chodzić
 1385399405	lustro, zwierciadło, (dosł.) kryształ do spoglądania
 1386534405	pitny
+1386770899	śmierdzieć
 1387000543	rudy, rudowłosy
-1387580153	<końcówka rzeczownika odsłownego>
+1387201883	człowiek, mężczyzna
+1387580153	przyrostek rzeczownika odczasownikowego
+1387909741	sto dwadzieścia
+1388404611	żołnierz
 1388849685	jeździec
 1388922597	oko
+1389317365	okruch
+1390719319	przyrostek rodzaju żeńskiego
 1391369275	sprawić, że pobiegnie; jeździć na (zwierzęciu)
+1394536995	powódź, przypływ
 1396629407	jedna siódma
+1396743127	chwytać, trzymać
+1399994013	spadać, szybko opadać
 1401827203	kapelusz, czapka, nakrycie głowy
 1402957185	żwir, kamienisty brzeg rzeki
 1403024205	posiłek
 1403666717	palenisko, kominek
-1405406273	wy (dwoje) <zaimek 2os. l.podwójnej>
+1404055533	okno
+1405406273	wy dwoje <przyrostek 2os. l.podwójnej>
 1405651303	osoba, istota, mężczyzna lub kobieta, ktoś
 1405665765	*wybaczać, (dosł.) odczynić, znieść, zlikwidować
 1405976901	kark
@@ -1283,64 +1751,89 @@
 1410009759	trzymać, posiadać, zachowywać
 1410134909	mówić, rozmawiać <czasownik nieprzechodni>
 1410205055	jeśli tak, być może, może
-1411454793	przekraczać
+1411454793	przekraczać, przechodzić (na wskroś)
 1411958217	szata, okrycie, woal, zasłona; (jasny) kształt lub postać; cielesna forma bytu duchowego
 1414245343	winien być; ?niech będzie
 1414698197	występek
+1415882625	"przeczuwam, że to się stanie"
 1416389913	spoglądać wstecz
 1422411993	przebudzenie
+1423214843	król
 1423746157	córka
+1424570293	kopać, zagłębiać się
+1425222655	spojrzenie, wpatrywanie
 1427068187	złoczynić, błędnie oceniać, pozbawiać, usuwać
 1427533867	rosnąć
 1428408761	żeglarz
 1429737613	odpowiadać
+1430402179	przyrostek ułamka
 1431909123	kształtny, foremny
-1432476883	*to, <operator strony biernej>
+1431980761	od-; przedrostek oddalania się
+1432476883	*to, znacznik strony biernej
 1432704977	(wielka) rzeka
 1432768697	*od {określonego punktu w czasie}
 1432966285	cień rzucony
 1433434657	silny, mocny (fizycznie)
 1433906149	przedwiośnie, zalążek wiosny, {rozbudzanie}
+1434490105	Ork
 1434821693	tam, (dosł.) w miejscu (o którym mowa)
 1435558191	wyobraźnia, rozmum, umysł, intelekt
 1437968115	kończyć
 1438153453	nie; niemożliwy
 1438646435	wasz (dwojga) <zaimek 2 os. l. podwójnej>
+1439996967	kruk
 1440526559	<końcówka rodzaju żeńskiego>
+1440859657	zielony
 1442578625	dobro, błogosławieństwo, pomyślność, dola
 1443589061	wyliczenie, suma
 1444210031	gwiazda
 1445880051	płaski
+1447710819	wyrzutek, ktoś opuszczony lub odtrącony przez przyjaciół, ktoś zabłąkany, wyjęty spod prawa
+1447776367	męskość
 1449367445	<przedrostek intensyfikujący>
-1452341695	opowieść, saga
+1449428449	[nieprzetłumaczone]
+1452341695	opowieść
 1452592063	kwiat
+1453735637	wschodzący, rosnący, powstający
 1453854967	być zdecydowanym/zdeterminowanym by
+1455087769	promieniowanie, błysk
+1455097703	dziesiąty
 1455349071	wydłużenie samogłoski
+1457784789	wilkołak
 1457823025	moje dziecko
 1458434525	twardy, trudny, uparty
-1460112939	puszcza
+1460112939	las
 1462721979	nów
 1463106291	*szukać, poszukiwać
 1463127985	<końcówka liczby podwójnej>
 1465239895	lampa
 1465361483	pióro (do pisania)
 1466176061	wciąż nadchodzić (stale się zmieniać)
+1466309239	[nieprzetłumaczone]
 1466471039	powietrze, niebo
 1467064955	<końcówka pojedynczej czynności>
 1468650059	język, mowa, dialekt
 1468711037	Elf (płci męskiej)
 1470740615	kamienisty, żwirowy
+1472224911	studium, długie zgłębianie (danego tematu)
 1474256287	obniżać, zniżać
+1475861357	dawać, dać
 1475881919	gniew, złość
 1476151343	razem, wraz, z, ko-, kon-, kom-
 1476188487	wypowiedź, powiedzenie, przysłowie, cytat
+1477135283	bieg, wyścig
 1477144967	razem, wraz, z, ko-, kon-, kom-
 1477365621	południe, (dosł.) kierunek lewej ręki
+1478747569	5; pięć
 1478875871	kończyć, zakańczać, konkludować, zamykać (np. sprawę)
-1478931821	sok; plaster miodu
+1478931821	sok
 1480623705	brązowy, złotobrązowy
+1482050713	dwudziesty
 1483487927	mur
+1483892281	przyrostek oznaczający "język"
+1484204793	laska
 1485099127	postawny, silny mężczyzna
+1485213857	jeden
 1486276951	posiłek, ziarno do zmielenia
 1487107687	nie, nie (jest)
 1488431229	odpoczynek, wytchnienie, spokój
@@ -1349,46 +1842,64 @@
 1491227003	wznoszenie, wschód słońca, wschód {kierunek}
 1491591289	góra
 1491818759	<końcówka czasu teraźniejszego ciągłego>
+1491955217	mężczyzna
 1495527049	pożoga, pożar
 1495590331	zamiar, cel
 1495590771	szybki, chyży
+1495593213	dwa tysiące
 1495655829	zręczny, sprawny, zwinny
-1495789657	do wewnątrz, do środka, (?w)
 1495944471	[nieprzetłumaczone]
 1497650099	sterta kamieni lub nasyp ziemny
 1497777119	jedna druga
 1500622109	ja; <zaimek 1 os. l.poj.>
+1501486319	17; siedemnaście
 1501503729	<przedrostek bezokolicznika>
+1501586673	Troll
+1501628111	przekupny
 1501834073	*rozmieszczać, układać w określonym porządku
-1503107361	gorzki
+1503107361	*gorzki
+1505182955	odległy
 1505318847	wspaniały, znakomity
 1506719081	postawna kobieta
 1507132685	statek, okręt
+1509085937	[nieprzetłumaczone]
 1512724021	dziecko
 1513319137	ciało
 1513424525	rana, zranienie
+1514817113	kryształowy
 1515150143	nie! {odmawiając czegoś lub komuś}
 1515458015	*dlatego, (dosł.) z tego (powodu)
 1516926191	który, które, że
+1516947303	przyrostek zdrabniający
 1520485343	powiedzenie, przysłowie
-1520572287	miniony, utracony, który odszedł, zniknął, zmarł
+1520572287	miniony, utracony, odeszły, skończony, stracony, martwy, nieżywy
+1522838391	*powrócić, wrócić
+1523053701	długi
+1523320921	podwójnie, dwa razy
 1523724043	do wypowiedzenia z ubolewaniem, żalem lub grozą
 1524907911	dąb
 1525407725	ruda czupryna lub futro
 1526784729	(biała) chmura, obłok, biała i lśniąca [rzecz]
+1529231329	wiosna
+1529987633	3; trzy
+1530400445	rozwiązać, rozsupłać
 1532702043	rządzić
 1535435329	zaufany naśladowca, wierny towarzysz
 1535516459	ósmy
 1535755907	niemiły, nieuprzejmy, odstręczający
 1535897551	sprytny, przebiegły (w błahostkach)
+1537848751	radość z cudzego nieszczęścia
 1538062533	mistrz, pan
+1538187789	czarny
 1539713025	fort, twierdza, warownia, cytadela; umocnione miasto; gród
 1541464741	centrum, środek
 1541508311	otoczony, ogrodzony, objęty
 1543221519	jard, półsążeń, długi krok
+1543647367	nieść owoce
 1543731391	otwartość
+1544224553	[nieprzetłumaczone]
 1545862653	oni <zaimek 3 os. l.mn.>
-1545920711	?biały, czysty
+1545920711	biały
 1548997869	serce; centrum
 1549590607	znak samogłoskowy
 1551575897	pozbawiać
@@ -1397,39 +1908,54 @@
 1553763551	sztuka; wytwórstwo, produkcja; struktura
 1554004061	pierwszy
 1554426941	*za (kogoś), w imieniu
+1555417887	drzewo
 1555814621	ich <zaimek dzierżawczy 3 os. l.mn.>
 1556466901	*ognisty, płomienny
 1556996255	dom, mieszkanie, domostwo
 1557842935	myśl, pogląd, pomysł
 1559656549	(szeroka) dolina
 1563084431	*zło, złośliwość
+1563698859	puch, meszek
 1564335007	ogród, pole, podwórze
+1565097823	budowniczy nor
+1565264571	mędrzec, czarodziej
+1565568703	umysł, myśl
 1565923431	buk
 1566095071	trzepoczący w tę i we w tę
 1566545209	kraj
+1567802751	przysięgać, przyrzekać, zawrzeć układ, porozumienie
 1568175287	zły, (źle) wykorzystany, złowrogi
+1570084223	brat
 1570198767	(ty) się <zaimek zwrotny 2 os. l. poj. grzecznościowy>
 1570580905	zaiste, naprawdę
+1571563727	ćma
+1572721463	przyrostek przymiotnikowy
 1572734003	panna/dziewczę w koronie, ukoronowana
 1574463621	narzędzie
 1575383265	palec (u ręki)
 1576285637	[nieprzetłumaczone]
 1576586721	córka, <końcówka rodzaju żeńskiego>
 1578123857	zrodzony, urodzony
+1579660951	przyrostek czasu przyszłego
 1580128511	?podróż w dal
 1580178729	wiązowy, mający wiele wiązów
+1581535483	przyrostek dopełniacza
 1581851055	szyk bojowy o kształcie klina, (dosł.) ludzki grot
 1581961535	Ty, Ciebie (uprzejmie)
 1583148037	*na
+1583240927	słyszenie (umiejętność)
 1583285833	ledwo widoczny, trudny do zobaczenia
 1583596137	stan umysłu, umysł, (wewnętrzna) myśl, nastrój; wola, determinacja
 1583902929	tu
+1584677079	promieniejący
 1586798661	*trudny do policzenia, niezliczony
 1587707219	niemowlę, malec
 1588992675	podwójny
 1589858173	(złote) kwiecie
 1589987053	trudny
 1590244863	widzieć, dostrzegać, patrzeć
+1591105865	[nieprzetłumaczone]
+1593588931	północ (kierunek)
 1593747351	sądzić
 1594108651	fonetyka
 1594164167	leśniczy
@@ -1437,103 +1963,147 @@
 1594684477	morze
 1594792097	święty, uświęcony
 1597654623	pierścień, kółko
+1598250169	kichnięcie
 1598925071	wierzchołek drzewa
 1602129693	trzeci
 1602264257	wiatr
 1605037407	górujący; wysoki i wielki
 1606273895	<końcówka przymiotnika>
 1606469397	(on, ona) się <zaimek zwrotny 3 os. l. poj.>
+1608974497	partykuła rozkazująca
 1609271555	(ono) się <zaimek zwrotny 3 os. l. poj. rodz. nijakiego>
+1610997421	używany
 1611023939	konieczność
 1613809687	sadzić, rosnąć
+1614386825	rozpadlina, otchłań
+1615908159	przyrostek przymiotnikowy
 1618035363	wgłębiony, wydrążony
 1622669023	słuchać
 1623970613	centrum, środek
 1625057949	niebo {na poziomie chmur}
+1625185557	dwa
+1625287729	posiadacz
 1626064201	(głeboki) staw, rozległe jezioro, źródło zasilające rzekę
 1627174709	córeczka
 1628202833	<końcówka rodzaju żeńskiego>
 1630806239	przemijać
 1630933885	jeżeli
+1633132399	śmiać się
 1633625561	<końcówka rzeczownika odsłownego>
+1633828407	syn
 1634197053	los, przeznaczenie, dola
 1634820671	*błogosławiony, uświęcony
+1635345573	mała mewa, ptak z rzędu rurkonosych
 1635691065	las, puszcza
+1637203073	nie
 1637427851	zielonolistny, zielony jak liście
 1638918765	rozszerzenie samogłoskowe {dodanie do tematu samogłoski identycznej z samogłoską rdzenia}
 1641057619	ostro zakończony
 1641782601	rzędy run, alfabet runiczny
+1643415489	wrostek odmiany liczby mnogiej
+1643697911	[nieprzetłumaczone]
 1643900839	drzwi
-1644048887	dźwięk; dźwięczny odgłos, echo
+1644048887	dźwięk
 1646277815	pośród
 1646501089	niezliczony
 1647088037	oko
 1647781279	święcić, błogosławić, traktować jako świętość
+1648151271	ludzie
 1649487007	pazur, szpon
 1649496695	znośny, lekki (o ciężarach itp., kłopotach, pracach, cierpieniach)
 1649573705	sufiksacja, dodawanie przyrostka
 1649807707	[nieprzetłumaczone]
 1650368141	cienki ostry koniec
+1650572957	zbocze góry
 1651052277	zgromadzenie, zebranie, zbiorowisko
 1651155819	zamazany, wyblakły, mętny
+1651878487	wielki
 1654405493	dobre zdrowie
 1654476757	pamiątka rodowa
 1654675747	szary
-1657626611	półmrok {(dosł.) dwublask, co nawiązuje do czasów, gdy o świcie i o zmierzchu mieszało się światło dwóch drzew Valinoru}, zmrok
+1655099003	pośpieszać, ponaglać
+1657626611	półmrok, zmrok
 1657944789	posyłać, (dosł.) *powodować, że pójdzie
 1658888359	razem
 1659068133	wojownik
 1659391463	górujący; wysoki i wielki
-1659767421	trwać, *pozostawać, przebywać
+1659767421	zostawać, *wytrwać, pozostawać
 1661351839	ostry, przeszywający
+1662098329	prawie
+1662434321	srebrnawy, jak srebro (warty)
 1663621131	rejon, każdy dość rozległy obszar z dobrze zaznaczonymi naturalnymi granicami
 1664034377	mały
 1665676099	głos, rezonans strun głosowych, samogłoska
 1665969189	powstrzymywać, pozbawiać wolności
 1667413721	blady, niewyraźny, nikły
-1667426933	ulica; bieg, koryto, łożysko rzeki
+1667426933	ulica
 1667553797	*wisieć, zwisać
 1668308317	nagi, goły; gładki, ogolony
+1669423061	quendiański, quendejski, od Quendich, należący do Elfów jako ogółu
 1669828031	król
 1669876517	region, kraina
 1670557505	mrok, ciemność, głęboki cień; nocny mrok
 1671354083	wydrążona dziura, jama, nora
+1673348379	szereg run
+1674588273	muł
 1675657295	och!, niestety!
 1675760439	materia (fizyczna)
 1676570745	niezłomny, niezawodny, solidny
+1678608669	kultura
 1678816799	wygładzony, gładki
 1679409661	miesiąc księżycowy
+1679863843	dzik
 1680997061	kciuk
 1681096947	wypatrywać, obserwować, strzec
 1681258657	przeklinać lub bluźnić
 1681276671	rozkwitać/bujać (zielenią), rosnąć
+1681278805	[nieprzetłumaczone]
+1681600947	podziemna sala
 1681774093	region, terytorium, obszar
 1681853829	wspaniałomyślny, sprawiedliwy, życzliwy
 1683236407	(złote) kwiecie
 1683508415	<końcówka oznaczająca ruch w kierunku czegoś>
+1684869881	*jego; 3 os. l.poj. r.m, dzierżawczy zaimek emfatyczny
 1685312837	promienistość, świetlistość, blask
+1686718785	straż, wartownik
 1686866509	zbliżać się, nadchodzić
 1687079711	motyl
+1689787337	przyrostek rodzaju żeńskiego
 1690231959	*środkowy palec (u ręki)
 1690934137	wszystek, cały
 1692018983	fonetyczny
+1692595989	przedwczoraj, (dosł.) wczorajsze wczoraj
+1693132353	przyrostek przymiotnikowy
 1693609421	posiadający włosy, uwłosiony, -włosy
+1693614785	chłopiec
 1693683439	szczególne wino lub likier
-1694409191	znajdować
+1694409191	znajdować, odkryć
 1695854549	wzmocnienie
+1696052211	rodzajnik określony
 1696178947	świecić
 1696525921	(wielka) rzeka
 1698476351	całować
+1698660927	Elf (jako rasa)
+1699829631	i
 1705020753	[nieprzetłumaczone]
+1705907231	[nieprzetłumaczone]
+1705944307	zaprzeczenie czemuś, pozbawienie, coś negatywnego
+1708424133	[nieprzetłumaczone]
 1709219635	morze, wielkie morze
 1711514627	Krasnolud
+1711864815	statek
+1712365037	6; sześć
 1712718167	twarz
+1713663241	chrześcijański, (dosł.) sługa Chrystusa
+1714461959	dusza, duch
 1714731207	rozpadać się, kruszyć się, popadać w ruinę
 1716960619	zepsuty, skażony
 1717330255	<przedimek określony l.poj.>
 1718207319	co
+1718840287	chalebny
 1718974607	*liczenie
 1719567031	*mama, mamusia
+1719916757	[nieprzetłumaczone]
 1723640107	truć, zatruwać, wypełniać jadem
 1724150623	ciemny kształt, zjawa, widziadło
 1724444453	ich (dwojga) <zaimek dzierżawczy 3 os. liczby podwójnej>
@@ -1541,21 +2111,33 @@
 1726393439	rozmawiać, mówić, posługiwać się mową
 1727486629	system ustnego porozumiewania się; w pełni zorganizowany język, włączając składnię, słownictwo, intonację itd.
 1728050275	zachód <kierunek>
+1729612063	nieść, przenosić
+1729939365	klejnot
 1732041269	wóz, *fura, furmanka
+1733086899	broda
 1733139939	orzeł
 1734158879	szkło
+1735393801	osoba, ktoś
 1735688587	ciężki, ociężały, opasły
 1735939767	ostrze tnącego narzędzia lub broni (zwłaszcza ostrze miecza), głownia, brzeszczot, klinga
 1736299199	drobny, mały
 1736318509	pośrodku, pomiędzy
+1736363221	przebiegły, cwany
+1738233795	światło
+1738614955	wino
 1739068697	baszta, twierdza, miasto (z cytadelą i centralną strażnicą)
 1739713327	szczyt górski
 1739892921	od- (ponownie, z powrotem)
-1742350363	solidny, stały
+1740822049	wnuk, potomek
+1742645223	wilk
 1743808691	pożoga, pożar
+1744045045	styczeń
 1744402681	pięknowłosy; czupryna, grzywa, gęstwina długich włosów
 1745367701	(daleko) od; za pośrednictwem, za/z pomocą
 1746877151	mróz; łuska lodu, szron lub płatek śniegu
+1748457435	złoty
+1749826739	północny wschód, północno-wschodni
+1750138517	wschód
 1752105637	skowronek
 1754356439	list
 1754639457	lękać się, bać się, obawiać się
@@ -1563,215 +2145,306 @@
 1754951981	<końcówka oznaczająca prawdopodobieństwo lub zdolność do czegoś>
 1755201123	nie policzony, niezliczony
 1755563875	wystawać
-1755704227	dowódca, przywódca, wódz, władca, zarządca, naczelnik; †krzykacz, herold
+1755704227	dowódca, przywódca, wódz, władca, zarządca; †krzykacz, herold
 1755973411	przybrane imię, imię sobie nadane
+1756126011	oskarżyciel
+1758723441	przyrostek zdrabniający
+1760119475	przyrostek zdrabniający
+1760745957	przyrostek podmiotu mnogiego z określoną płcią
 1761153455	błyszczący, migocący
 1761665533	ty (poufale) <zaimek 2 os. l.poj. poufały>
 1761666635	koniec
+1762064659	trzeci
 1764026529	przewidywanie, (dosł.) *po-wzrok
-1765705229	dziesięć
+1764054623	pierścień
+1764499427	kopiący nory
+1765705229	10; dziesięć
 1767156195	umysł, myśliciel
 1769190327	wykonywać z artyzmem, projektować, komponować
-1770267447	<końcówka przymiotnika>
+1769684351	być
+1770183717	powieka
+1770267447	przyrostek przymiotnikowy
 1771634035	dziewictwo; *dziewica
 1772134283	*popełniać wykroczenie, czynić zło, grzeszyć
+1772633549	mówić
 1772662039	nadgarstek, (dosł.) złącze ręki
 1773047519	iść (odchodzić)
-1774342723	królowa, (dosł.) ukoronowana dama
+1774342723	królowa
 1774819303	noszony, używany; szata, płaszcz
-1777038793	chyżo/prędko biegnący określonym torem
+1775971853	*filar
 1777123357	dom mieszkalny
 1777392127	mały palec (u ręki)
 1778010933	trzy
 1778048987	<końcowka trybu rozkazującego>
 1778091047	strach
+1778190655	wczorajszy
+1778584625	ciemny
+1778619269	Wschód (kierunek)
+1778711489	[nieprzetłumaczone]
 1779557319	tajny, ukryty, sekretny
-1781231823	chybiać, ponosić porażkę, nie spełniać oczekiwań
+1781231823	chybiać, ponosić porażkę, nie spełniać oczekiwań (czasownik przechodni)
 1781456437	piąty
 1781827207	system dziesiętny
 1782056915	błogosławieństwo, dobra wróżba
+1782573217	14; czternaście
 1782765151	rzecz
 1782958961	*wniosek
 1785473727	dobry, w dobrej formie
 1788040147	język (narząd)
+1788086935	podnieść; poczuć palcami
 1788305201	pełny po brzegi, z pełnymi ustami
 1789005665	także, również
 1789162873	chyży, prędki
+1789375935	piana (też morska)
+1789562991	mleko
 1789842635	naczynie do picia
+1789910007	krzyczeć
 1790292639	*czternaście
 1790398907	drewniany
 1790433875	tak jak, jak, tak samo jak
 1791131529	tęsknota, pragnienie, pożądanie czegoś utraconego lub nieobecnego
 1791197021	ojciec
+1791278913	Upiór Pierścienia
 1794289473	szczególne zainteresowanie lub zamiłowanie do czegoś
 1794386207	przesmyk, wąwóz, przejście, parów
-1794727607	bariera, ogrodzenie
 1796211619	wysoki, ?nadrzędny/najwyższy
+1797332163	[nieprzetłumaczone]
 1797359711	skaczący płomień
+1797676593	żelazo
 1798132415	wonny, aromatyczny, pachnący
 1798488247	?raczej, wzamian
+1801738591	żona
 1802295945	niemożliwy, niewykonalny
 1803020671	ładny, misterny
 1803275785	ciemny cień, nieprzenikniony cień, gęsty mrok; głęboko w cieniu
+1803825345	niziołek
 1804524725	wieczne lato (gatunek drzewa)
+1804880359	lord, pan, władca
 1805593065	chwała, wspaniałość, światłość, promienność
 1808187273	*nadzwyczaj twardy
 1808348459	*impuls/pobudka/odruch ducha {tj. emocja}
 1808443107	na czubkach palców
+1809435919	dwunasty
 1810056261	wielki pal, słup
 1810489943	dalej poza, daleko poza
+1811494707	[nieprzetłumaczone]
 1811784975	iść, podążać, zmierzać, poruszać się; przychodzić, przybywać
 1812620909	otrzymywać
 1813349567	powiewać, latać lub unosić się na wietrze
+1815534263	[nieprzetłumaczone]
+1816999629	zasłona
 1818871129	szermierz, miecznik; †płatnerz
+1819576423	*potem, następnie
 1821605697	kroczyć (stawiając długie kroki), pędzić gdzieś, spieszyć dokądś
 1823340377	widzialny
 1823824149	szczyt, najwyższy punkt
 1825769337	półmrok, zmierzch, pora przedwieczorna
+1826933291	oskarżenie
 1826967725	kominek, palenisko
 1827512751	witaj!; spójrz!, podziwiaj!
 1827783683	światło
 1828230125	od, z, spośród
 1828288073	jedna trzecia
 1829080773	wzywać, zwoływać
+1829121605	[nieprzetłumaczone]
 1829940657	*królestwo
 1831180401	nie-; trudno, niełatwo, ledwo
+1832039103	przyrostek zdrabniający
 1832666961	*patronat, (dosł.) patrzenie z góry
 1832722775	niewolnik
 1832918585	*trzynaście
-1833310499	ciężar, drzemkę
+1833310499	ciężar, brzemię
+1833668277	przymuszony, skłoniony do
 1836034401	róg, trąbka
 1836083797	*kciuk
 1836197855	wzrok
 1839269655	tarcza
+1840141901	[nieprzetłumaczone]
+1843193495	[nieprzetłumaczone]
 1844498837	męki, męczarnia, udręka, tortura
 1845327629	dziękczynienie
+1845350335	11; jedenaście
 1845419127	pilność, werwa, zapał
 1847656723	*lecznicze ziele
 1848226355	goły, łysy, nagi
 1850848029	szaroelfickie hw
 1852157055	kłopotliwy, trudny
+1853928635	wilczyca
+1854801399	quenya
 1855451863	okropny, straszliwy, nieznośny
 1860061539	niemowlę
+1860513789	przyrostek dopełniacza liczby pojedynczej
+1861325169	7; siedem
 1861375587	wręcz przeciwnie
+1862334779	dar, prezent
+1862532685	władza, zarządzenie
 1863532469	zwycięzca, dostojnik, szlachcic, władca, król
 1863590853	cień, przyćmione światło
 1863628559	obaj, obie, oba, oboje
 1864027637	zachód słońca, zachód; (dosł.) schodzenie
+1864928253	kwiat, lilia
+1866456821	przyrostek przymiotnikowy
 1866473785	przewidywawczy, przezorny
 1867014333	płodzić, być spłodzonym
 1867835303	?pchła
 1869742143	otwarcie, otwór, rozwarcie
 1869842481	rycerz
-1870701445	sterczący, ten który wystaje {środkowy palec u ręki}
+1870678755	krzyczeć, nazwać; wzywać kogoś po imieniu, nadać komuś imię
+1870701445	*ten który wystaje, sterczy
 1872375367	ten drugi, inny
 1872687865	bez, bez-
+1873363957	[nieprzetłumaczone]
 1873448869	ścieżka lub przesmyk pomiędzy górami lub w bezdrożnym lesie; (dosł.) ścieżka dolinna
 1874559281	?wiatr
+1875433643	bez, nie-
+1875535197	przyrostek przymiotnikowy
 1875848823	*grzeszyć
 1876773471	otwarty (niezamknięty)
+1877446077	obsiane pole, uprawiana ziemia
 1877559665	trudny
-1877589877	lśniący/mieniący się niczym klejnot
+1877589877	mieniący się niczym klejnot, klejnotowaty
 1878372081	wąż
 1882535733	nie być
 1883685741	wierny, niezawodny (w sojuszu, dotrzymaniu przysięgi lub obietnicy)
-1884784175	<końcówka liczby mnogiej przymiotnika>
+1884454073	wyrażenie, powiedzenie, słowo
+1884784175	liczba mnoga przymiotnika
 1886829633	dziewięć
+1887353893	cień
 1889687711	okropny, straszny
 1889777045	zachęta do czynienia zła, *kuszenie
+1890850039	przyrostek przymiotnikowy
 1895531739	miły, uroczy
 1896583629	rąbek, brzeg
 1896772529	jaskinia, kopalnia, podziemna siedziba
 1897475657	zabraniać, zakazywać, odmawiać
 1897959611	włosy, fryzura
+1898576469	mokradło, bagno
+1899403379	związać, powiązać
 1899898197	<końcówka liczby mnogiej zbiorowej>
 1900369253	przerażenie
 1901375807	się sam/-a/o <zaimek zwrotny 3 os. l.poj.>
 1902298835	wolny, nieograniczony, swobodny (o rzeczach)
-1905030175	lapsus językowy, błąd wymowy
+1902684965	piąty
+1903048207	przesiąknięty, przemoczony, ociekający, podmokły
+1904927861	długi
+1905030175	błąd w mowie
+1905178279	łabądź
 1905541541	wstecz, z powrotem, naprzeciw, wbrew
 1905746207	ten który, co
 1906632697	(szeroka) dolina
 1906633975	chleb życia, lembas
 1907646527	*matka biologiczna, (dosł.) ta, która poczęła
+1907775711	świecący połysk, błysk
 1908674521	jedna dziewiąta
+1909053601	łabądź
 1910555103	wyrób rzemieślniczy, rękodzieło
+1910978043	jeden -
 1911879841	oni (dwoje) <zaimek 3 os. l. podwójnej>
 1914574483	lśnienie słońca; *lśnieniący
 1914961899	śnieżyć
 1915354207	piękny, uroczy (tylko o dziełach sztuki)
-1916169473	udawać się na spoczynek, układać się albo siadać, iść odpocząć
+1916204779	duch, dusza
+1916562035	cudzołóstwo
 1917919123	przesmyk, wąwóz, przejście, parów
 1919710639	bladość
 1919773569	*rachuba, rachunek, kalkulacja
 1919811737	woal, zasłona
 1920796469	*czwartek, Dzień Morza
+1920846693	zsunąć się, rozpaść się, zawalić się
 1921175447	kwiat, który otwierał się i zamykał szybko na jakąkolwiek zmianę światła
 1923205941	strażnica, wieża obserwacyjna
 1925514569	teraz
+1925853007	przyrostek przymiotnikowy
 1926942351	lud; region, terytorium, obszar
+1927467357	srebro
 1928193887	w poprzek
 1928819977	siódmy
 1930217087	Słońce
 1932291981	rozszerzenie samogłoskowe {dodanie do tematu samogłoski identycznej z samogłoską rdzenia}
 1933822795	bądź pozdrowiony!
+1934595143	humanizm
 1934599305	jedna piąta
 1935420713	pohamować, powstrzymać przed dopełnieniem, zatrzymać, przerwać przed końcem
 1935575371	my (dwoje) sami, samowtór, ty i ja (we własnej osobie) <zaimek 1 os. l. podwójnej emfatyczny>
+1936002853	gra
 1936414487	nikczemność, niegodziwość, podłość
 1937296393	palec czwarty (u ręki)
 1937622095	wóz
+1938429977	milion
 1938686765	gwiazda
 1938830081	oni <zaimek 3 os. l.mn.>
 1938961599	łuk (w piśmie tengwarowym), zakole, zakręt, zagięcie, krzywizna
 1939403845	zatrzymywać, przestawać
 1939890385	*środa, dzień nieba
+1941023699	Elf
+1941247925	ograniczony
 1941542879	błądzenie
 1942396749	nagły płomień; pożoga, pożar
+1944391711	wzgórze, górka, masyw
 1945083709	odcinać (żeby uzyskać lub użyć potrzebną porcję)
 1945123269	trzy
-1946240063	równina
+1945827373	gwiazda
 1947197613	Elf (ogólnie)
 1947539745	palec środkowy (u ręki)
 1947548939	<końcówka imiesłowu niedokonanego>
 1948839709	ich <zaimek dzierżawczy 3 os. l.mn>
 1949824019	<końcówka oznaczająca osobę lub istotę>
 1950324959	umysł
+1950936679	[nieprzetłumaczone]
 1951238637	Niziołek, Hobbit
 1951514307	mistrzostwo umysłu {inteligencja}
 1952675039	nie
+1953552905	blisko
 1954122067	piękno
 1954231881	szczęki
 1954258045	przyjaciel,  miłośnik
 1954409315	sen
+1955776563	(przyjemna) noc
+1956374559	motyl
 1956569817	oczywiście, że się zgadzam; oczywiście tak
+1956757013	[nieprzetłumaczone]
+1956827331	masło
 1956934057	już, wciąż, dotychczas, teraz; jeszcze [od teraźniejszości]
+1957687621	ognisty
 1959618559	mruczeć, mamrotać, burczeć, bełkotać
+1961933061	piekarnik
+1962611011	wysoki
 1964503441	umocnienie, wzmocnienie
+1964807933	dom, domostwo
+1966028159	szkaradny, paskudny, okropny
 1966526999	pożądanie, pragnienie
+1966644247	niemowlę
 1967206749	palec (u ręki)
 1967231277	uzupełniać, napełniać na nowo
 1967594401	granica, kres, linia graniczna
 1969055347	fryzura, wszystkie włosy na głowie
 1970066459	długi
 1970204413	palczasty, mający palce; kciuk
+1970901959	niewolnik, służący
 1970963147	błysk, blask, lśnienie
+1971861647	plon, zasiew
+1973711563	lud, ród, rodzina
 1973906879	(Wielki) Krasnolud
 1974679647	otwierać (aby zezwolić na wejście)
+1974833659	szlachcic
 1974988543	wy <zaimek 2 os. l.mn.>
 1978498445	świątynia, święte miejsce
 1978574935	zewnętrzne ogrodzenie, otaczający krąg
 1978972889	pozdrawiać
+1981392071	przyrostek bliskiej przyszłości
 1981584421	w
+1982812231	upiór, cień czarnej magii, zjawa; †czarnoksięstwo
 1983200529	*oddech, tchnienie
 1983271601	obcy, gość
 1983781483	żyć
+1984515597	tańczyć
 1984525607	zarządzanie
-1985128915	<końcówka oznaczająca osobę, istotę, zwłaszcza czynną w działaniu>
+1985128915	*przyrostek imienia/nazwiska
 1985703719	widzialny, łatwo widoczny
+1985739253	?
 1985851205	wszechtwórczy, mający nieogranicznoną moc tworzenia
 1986488979	*prowadzić
-1986855745	nie do ugaszenia, nie do zaspokojenia
+1986855745	nieugaszony, niezaspokojony
 1988127397	<przedrostek intensyfikujący>
 1988739825	pospieszny, popędliwy, pochopny
 1989269657	świt, ranek
@@ -1779,48 +2452,73 @@
 1992388353	drzewiasty, lesisty, (dosł.) utkany z drzew
 1993564819	wznosić, unosić, podnosić (się)
 1994017207	zalesiony
+1994412543	zabity, zgładzony, zaszlachtowany
 1995121947	*daleki, w oddali
 1995696881	ćwierć, ćwiartka, jedna czwarta
 1995794591	chwiejny, chybotliwy, niestabilny
+1995826529	przyrostek przymiotnikowy
 1996345027	biały róg
 1996510269	naprzód
+1997657061	męskość, mężność
 1998611193	zawodny, nieprzydatny
 1998998965	nasz
+1999465271	potworny
 2000792191	<końcówka czasowników sprawczych>
+2001234631	przyrostek liczby mnogiej
+2002147673	zaprzyjaźniać, miłować
 2003567977	duży wykop, wydrążenie, zagłębienie, podziemna siedziba/mieszkanie
 2005550399	dolina
+2005681837	opanowanie, zrównoważenie
 2008380149	byk
+2008669843	staruszek
 2009636449	wypiętrzać się, wynosić się ponad, wyłaniać się
+2009643117	[nieprzetłumaczone]
+2009654805	srebro
 2010811701	biec (lub przeskakiwać, dot. zwierząt i ludzi)
 2012277973	kurhan, kopiec pogrzebowy
 2012734115	wojownik
+2013968625	zbieg dróg
+2014215641	kruk
+2014227401	ja
 2018412143	szeroki
 2020516549	tajny, ukryty, sekretny
 2021049279	ale, lecz
+2021661277	dotykać
 2022710153	biały
 2023726719	głęboki,  głęboko dolinny
 2024450751	tamten
 2024937829	oś, sworzeń, obrotowa struktura wewnętrzna
 2024947813	maj, (dosł.) kwiecistość
-2026393629	złoty, ze złota
+2026259493	[nieprzetłumaczone]
+2026393629	złoty
 2026605433	sprzymierzeniec, obserwator
+2027492001	język quendya
 2028190201	biały, biel
 2029522749	doskonały przedmiot, skarb
+2029597887	rozpaczać
 2030028405	biały, połyskujący, lśniący; ciemny, przyćmiony; prześwitujący, delikatnie tkany; (nieokreślona) postać, widziadło; chmura
-2030798103	rozwidlony; widelec, widły
+2030798103	rozwidlony; rozwidlenie
 2031465685	błyskawicznie zrobiony
 2033488711	niezliczone
 2034810271	wspaniały, znakomity
+2035721545	liść
 2036124675	nasz (włączając ciebie) <zaimek dzierżawczy 1 os. l.mn. włączający>
 2036291577	wschód
 2036905623	*obrócony, odwrócony, przekręcony
 2037080787	<końcówka wyolbrzymienia>
 2037292765	komunikacja myśli, wymiana myśli, (dosł.) wspólne (we dwoje) myślenie
 2037747625	ostrze noża
+2038184511	iść
+2038612191	końcówka czasownika (lub imiesłowu)
 2040992351	się sami <zaimek zwrotny 3 os. l.mn>
+2042382033	szyja; przesmyk
+2042384645	końcówka czasownika
 2043077975	zajazd, gospoda
+2043285367	końcówka przymiotnika
 2043917441	jeśli tak, być może, może
+2045227463	szkło
 2047935813	wysoki
+2048510639	chmura
 2048595715	sztywny, drewniany
 2048677741	wóz do przewożenia ciężkiego ładunku
 2049015865	nie lubić, czuć niechęć, odrazę, unikać przykrego i bolesnego
@@ -1832,26 +2530,37 @@
 2057159945	niezliczony, trudny/niemożliwy do policzenia
 2057685855	ale
 2057863699	niedziela, (dosł.) dzień Słońca
+2059535183	[nieprzetłumaczone]
 2062563543	trzymać, dzierżyć, używać, korzystać z; radzić sobie z czymś, kontrolować
 2062652693	robak
 2063202125	uśmiechający się, uprzejmy, słodko wyglądający
 2065398077	świecący, lśniący
+2068202053	wilk (nie dziki)
 2068694825	mnie
 2071044193	złodziej, chwytacz
 2072325305	strzemię
+2072832139	wprowadzać w błąd
+2072888067	długa fala
 2073763897	zepsuty, skażony
+2074449017	głos
+2074765245	rozdzierać
 2075081017	nas (włączając ciebie) {zaimek 1 os. l.mn. włączający}
 2075441377	*dla, w imieniu
 2075712799	schodek, stopień
 2076017911	pół
+2076401465	pod spodem
 2076504837	trudny, skomplikowany, męczący, pracochłonny, żmudny
 2078390465	mowa, przemowa
 2079631361	umierać, gasnąć, wyziewać ducha, wydawać ostatnie tchnienie
+2080893439	z, skądś
 2080937833	wiecznie, bezustannie, nieustająco
+2083991287	ona
 2084279421	noga; pień (tengwy tj. litery)
 2084740127	granica (bariera) {mur graniczny}
 2085188449	Ty (uprzejmie)
+2086309865	?przyrostek liczby mnogiej
 2086508063	wchodzić, wkraczać
+2086959977	nieporządek
 2087314475	centralny, środkowy
 2088167915	burmistrz, (dosł.) mężczyzna-wódz, przywódca
 2088297765	wydawać za (męża/żonę); brać (sobie) za żonę, wychodzić za mąż
@@ -1866,70 +2575,110 @@
 2094586747	mistrz umysłu
 2096374869	niemożliwy do zapalenia (zaświecenia), niezaświecalny
 2097208703	jeśli
+2097774407	zranienie, rana
 2098180505	kosmyk włosów, lok, pukiel
+2098323379	[nieprzetłumaczone]
 2101072375	z trudem uczyniony
 2102686053	*trzynaście
-2106072531	*Dzień Wiosny
+2106072531	*wiosenny dzień
+2106288757	w stanie (zrobić)
 2106601045	krasnolud
 2107077031	wzgórze, góra o stromych stokach; garb, bryła, masyw
+2107189095	sterta, kupa czegoś
 2107190499	szkutnik, stocznik
 2107378239	znak, oznaka, symbol
+2108101917	lewa ręka
+2108556783	[nieprzetłumaczone]
 2109043009	strzeżony, pilnowany
 2109368085	uśmiechnięty, uprzejmy, pogodny
+2110968349	ubierać, ubrać, owinąć
+2111030281	końcówka czasu przyszłego
 2111444057	przeklęty, wyklęty
 2114392075	*trudny do policzenia, niezliczony
 2114664387	jaskinia, kopalnia, podziemna siedziba
+2114705685	bogini
 2115068425	mieć, posiadać
 2116780745	on/ona/ono; <zaimek 3 os. l.poj.>
 2116983179	padanie śniegu, opad śnieżny
 2117547607	ręka
+2117674207	żelazopodobny
 2118028407	przybywać
+2118725103	idący do głowy (alkohol)
+2118974069	język
+2119342787	siostrzyczka
 2120066239	prowincja, dzielnica
+2120600559	dwukrotnie
 2121348095	piosenka, pieśń
 2123110815	negować, zaprzeczać faktom/zarzutom
-2124088235	*sterczący, ten który wystaje {środkowy palec u ręki}
+2123550953	wielbłąd
+2124088235	*ten który wystaje, sterczy
+2124856613	fizyka
 2125969281	chwytać w sieć, łowić
-2129748089	broszka, spinka, szpila
-2130737323	{jego}
+2126178721	ześlizgnąć się, zapaść się, rozpaść się
+2126521731	recytować, opowiadać
+2128411541	klif, strome zbocze, stok
+2128697049	przyrostek przymiotnikowy
+2129748089	broszka, spinka
+2130737323	jego
 2131241825	*szukać, poszukiwać
 2131707871	*cięcie, ?krój
+2133561013	[nieprzetłumaczone]
 2138085565	odnowiony
 2138204605	serce (przeczucie)
 2138250809	piękny, delikatny, finezyjny, śliczny
 2139884465	niebieskawy
+2140469951	jakiś, pewien
 2141101407	nie-
 2144600705	wy (dwoje) <zaimek 2 os. l. podwójnej>
 2144715711	zemsta, pomsta
 2145570473	z (dala od)
-2147500473	pozorny; ⚠️[ᴱQ.] podobny, taki jak
-2153442075	<końcówka ablatywu> {skąd?}
+2147500473	pozorny
+2149884131	grzebać, kopać
+2151583499	głośne kichnięcie
+2153442075	(ruch) skądś, końcówka ablatywu
 2153684101	do, w kierunku, ku
 2154024483	przeszukiwać, badać, sprawdzać (w celu odkrycia czegoś)
-2155025683	śmierć
+2154387193	wezwać, *krzyknąć
 2155292065	domostwo, habitat
 2155444497	robić coś bardzo źle, niewłaściwie
+2155869593	[nieprzetłumaczone]
+2156142375	czyrak, guz
 2156257825	bardzo ciemny, pełen mroku
 2156772613	goły
 2156931509	uśmiechać się
+2157358001	[nieprzetłumaczone]
 2157633161	grać
 2157771091	matka, matula, *mama
 2160417309	sprawić by biegł (zwłaszcza w kontekście jazdy na koniu lub innym zwierzeciu), jeździć (np. konno)
 2160452415	martwy / zmarły
 2161244609	włosy (zwłaszcza na głowie), kosmyk włosów lub warkocz
+2162019097	*pan, lord, władca
+2164270225	przyrostek dopełniacza
 2165237185	nasz (wyłączając ciebie) <zaimek dzierżawczy 1 os. l.mn. wykluczający>
+2165723951	złote drzewo
 2165751177	twierdza lub osada otoczona bastionem
 2167417439	*wciąż, nadal
 2167595199	młody, nowy
-2168038773	mężczyzna; przyrostek oznaczający wykonawcę czynności
+2168038773	mężczyzna
+2168726197	portugalski
 2171075995	<końcówka dopełniacza> {kogo?, czego?, czyj?}
+2171220161	woda
 2171432443	pozbawiony praw i wywłaszczony wygnaniec
+2172969609	klamra, spinka, broszka
 2173140951	mały
+2175987759	słuchacz
+2176891167	przyrostek przymiotnikowy
 2177048085	<końcówka liczebnika porządkowego>
 2177391265	ukrywać
 2178512199	jadalny
 2179120997	demon
+2179391149	z, od
 2179885981	pięść
+2180052067	[nieprzetłumaczone]
+2180145891	[nieprzetłumaczone]
+2180170057	odległość, (dosł.) dalekość
 2180269593	Twój (uprzejmie) <zaimek 2 os. l.poj. grzecznościowy>
+2180641709	rozważny
 2180756113	ekscytacja, uczucie, wzruszenie
 2180820307	czysty, lśniący
 2181143763	słońce, światło dzienne, ciepło (szczególnie słońca); dzień
@@ -1941,9 +2690,11 @@
 2184828547	śnić
 2184885129	*przed (dotyczy czasu)
 2186182997	szczyt
+2186222339	wierny
 2186733265	do- {jak w: dodać, dopełnić, dopowiedzieć}
 2187175505	on/ona/ono <zaimek 3 os. l.poj.>
 2189407691	pośrednik; osoba, która interweniuje; mediator
+2189679135	kwiecie, kwiatostan
 2191009243	widzialny, łatwo widoczny
 2191725775	czynność, aktywność, zajęcie
 2192924659	tam
@@ -1953,37 +2704,49 @@
 2196931809	niemożliwy do rozpalenia, niepalny
 2198351911	zgiełk, wrzawa, bezładny ryk i wycie zwierząt
 2200200093	okup
+2200886475	[nieprzetłumaczone]
+2201165007	antychryst
 2201259605	*wspinacz
+2202774007	panowanie, seniorat
 2204024909	inną osobę, jego (tego drugiego)
 2205424493	podwójnie, drugi raz
 2207486775	wy (poufale) <zaimek 2 os. l.mn.>
 2207605755	my (dwoje) (włączając ciebie) <zaimek 1 os. l. podwójnej włączający>
 2207760583	wonny, pachnący, aromatyczny
 2209763011	spółgłoska
+2210974917	złoto
 2211665597	śnieg; śnieżnobiały, śnieżny
 2213179339	ósmy
 2213400827	mieć
 2214761289	palec wskazujący
 2215927903	ręka
 2216778461	interakcja
-2217388811	dalekowzroczność; ?przezorność/zdolność przewidywania
+2217388811	dalekowzroczność
 2217758753	wasz (poufale) <zaimek dzierżawczy 2 os. l.mn.>
 2218648655	gruby
 2218921843	kwiat
 2219424381	zliczać, rachować, kalkulować
 2220832587	zachód, wieczór, (pierw.) schodzenie; zachód (kierunek)
+2223673501	pięść
+2224192915	[nieprzetłumaczone]
+2225069927	lazuryt
 2226182847	<końcówka wykonawcy czynności>
 2227112801	Dzień Władców - ostatni dzień 6-dniowego tygodnia elfów
+2227752429	[nieprzetłumaczone]
 2228195261	liczyć
 2230295347	obserwować, wpatrywać się; strzec, nadzorować
+2230315945	przyrostek przymiotnikowy
 2231212503	popielaty, popielny
+2233826819	błysk, lśnić
 2237558917	gatunek trawy, (dosł.) wietrzne pióro
 2237903949	pięść, (mocno zaciśnięta) ręka
 2237911077	ciężki
+2237933831	rodzaj małego, czerwonego jabłka
 2239233521	ciemny, ciemnobrązowy, brunatny (kolor włosów)
 2239255549	wieniec, wianek; korona
 2239380991	niemądry
-2240623431	rzemiosło, zręczność, umiejętność, zdolność wykonawcza i wynalazczość
+2239727205	[nieprzetłumaczone]
+2240623431	zręczność, umiejętność, zdolność wykonawcza i wynalazczość
 2242483507	ręka
 2243069729	odpowiadać
 2243901709	sadzać, usadawiać
@@ -1995,32 +2758,46 @@
 2250287889	(ja) się <zaimek zwrotny 1 os. l. poj.>
 2250696399	w związku z tym, dlatego
 2252317941	niezłomny, nieugięty, solidny
+2252478425	przyrostek przymiotnikowy
+2252668351	pod spodem
 2253224797	lśnić/mienić się niczym klejnot
+2254681789	rzep
 2254977541	półmrok
 2255543657	istota, duch (nie wcielony)
+2257025757	luty
 2258350171	niewykonany, niezrobiony
 2258828877	teraz
 2260195529	*palec wskazujący
-2260950759	przylegający, klejący się, przywarty; uporczywy, przewlekły
+2260950759	przywiązany, klejący się, (dosł.) przyklejalny; ciągły, przewlekły
+2264058833	miód
 2264567091	czarna magia, czarnoksięstwo, czary
+2264728981	przeznaczenie
+2264981279	korupcja
 2265256255	grać na harfie
+2265271197	sędzia
 2266558873	dobroć, uprzejmość
 2266844375	język/mowa (ogólnie)
 2267179851	palec czwarty (u ręki)
 2267457001	przedwiośnie, (dosł.) rozbudzanie
+2267615209	bliźniak
 2267918303	broda
 2268845329	nasz (wyłączając ciebie) <zaimek dzierżawczy 1 os. l.mn. wykluczający>
+2270602841	kopuła
 2273184159	cię, ciebie (poufale) <zaimek 2 os. l.poj.>
+2273514083	mokradło, *bagno
 2273713215	oni (dwoje) <zaimek 3 os. l. podwójnej>
 2274460665	świecić, lśnić (na biało)
-2276320421	straszydło
+2276320421	straszydło, postrach
 2277369249	nadzieja, ufność
+2277487835	droga, ścieżka
+2277993531	?pierścień
 2281070427	potakiwać, zgadzać się
 2281324729	pragnąć podążyć w pewnym kierunku, chcieć gdzieś pójść, skierować się tam; mieć cel na widoku
 2282473589	<końcówka przymiotnika>
 2282518339	określać, wyznaczać, skazywać
 2284423603	tęsknić za, pragnąć, pożądać
 2285592663	on/ona/ono <zaimek 3 os. l.poj.>
+2286124063	drugi
 2286479807	znak, oznaka, symbol
 2288048915	łupacz, topór, tasak
 2288471099	październik, blaknięcie/zanikanie słońca
@@ -2028,7 +2805,7 @@
 2289729791	oddech, dech, tchnienie
 2290254557	mówić, rozmawiać <czasownik nieprzechodni>
 2290859819	samogłoska
-2293017047	dziewiętnaście
+2293017047	19; dziewiętnaście
 2293326951	dziesięć
 2293400207	nieelfowy
 2293581127	popiół
@@ -2038,29 +2815,42 @@
 2295922779	splątany, spowity, złowiony w sieć
 2295937545	ich <zaimek dzierżawczy 3 os. l.mn>
 2297079921	żelazo
+2297487839	w stanie
 2297543987	rzeka
+2298666999	nie jest
 2298877587	ty
 2299504901	*łatwy do policzenia
+2299615869	masło
+2300285871	[nieprzetłumaczone]
 2300496767	<końcówka rzeczownika abstrakcyjnego>
 2300691831	rachuba, rachunek, kalkulacja
 2301157183	błądzenie
 2301171761	spojrzenie, widzenie, spoglądanie
+2301383111	z, od; przyrostek ablatywu
 2301522977	śmiech
+2301985679	[nieprzetłumaczone]
+2304081585	czubek głowy, wierzch, góra
 2304331373	oddech, dech, tchnienie
 2305656567	-ny, -alny, -arny, <końcówka przymiotnika utworzonego od czasownika: dający się ..., nadający się do ...>
 2305833471	płaszcz
 2306117615	następca
 2306974725	dziesięć
 2307849497	*trzynasty
+2308069983	słońce
 2308381215	cenny, wartościowy
-2309710861	znak, symbol, kreska
+2309609629	rudobrunatny
+2309710861	znak, symbol, ślad
 2309968673	oni; <zaimek 3 os. l.mn.>
 2310777057	unosić/podnosić (coś)
 2311050181	królewski liść, ziele lecznicze
+2311454201	[nieprzetłumaczone]
 2312196801	zacieniony, ciemny, mroczny
 2313781075	czerwony płomień; ognistoczerwony
+2316201721	głaskać, czuć dłonią
+2316488797	solidny, stabilny, niezachwiany
 2316974801	kraina, królestwo
 2317265663	Elf (ogólnie)
+2317760203	[nieprzetłumaczone]
 2318541517	tu
 2318718619	sen, wizja
 2319182449	seria "p" {głosek wargowych}
@@ -2072,55 +2862,71 @@
 2327163449	zawsze, za każdym razem
 2327228447	drugi
 2328212835	Krasnolud Drobny
+2329350295	przyrostek rzeczownika abstrakcyjnego
 2330083291	czytanie; język/mowa (*śpiew)
+2333368315	zarządzanie
 2334200709	naszyjnik
 2334454935	wieża
 2334641113	błogosławieństwo, dobra rzecz
 2336363997	główny, naczelny, pierwszy, przodujący
 2336588789	biały kwiat (podobny do przebiśniegu); (dosł.) biały szpic
+2338300409	końcówka stopnia najwyższego
 2338502807	duża mucha
 2338507357	*twierdza
+2338567819	[nieprzetłumaczone]
 2338632415	splątany, uwity, utkany, wypleciony
 2339050435	szary
-2339283191	*półmrok, zmrok
+2339283191	*półmrok, zmrok, zmierzch
 2340062063	*prowadzić (do wnętrza)
 2342446351	dwanaście
 2342529375	mieć [boską] noc
 2342850967	<końcówka liczby podwójnej>
 2342946443	niewidzący, ślepy
+2344559751	[nieprzetłumaczone]
 2345144217	osąd lub chęć
 2345964217	*pieśń
 2346989227	krótki
 2348013001	dolina
+2348135973	[nieprzetłumaczone]
+2348599099	pokorny
+2348607167	zimno, mróz
+2348856495	demon, diabeł
 2350018975	*litować się, okazywać łaskę
 2350197575	*dobrze, szczęśliwie, pomyślnie
-2352833681	część, porcja, objętość, †garść
+2352014701	?koń
+2352833681	garść, porcja, część (po podziale), objętość
 2353256327	książka, księga, pisma, utwór, dokument pisany pewnych gabarytów
 2353825653	most
 2354154493	żyć
 2354893653	czyjś sprecyzowany zamiar; serce
 2354944799	dobrze, wybornie, wspaniale
 2355361641	wiąz
-2355375457	mówić, wypowiadać
+2355375457	mówić, powiedzieć, opowiadać
 2356470013	styczeń, nowy ogień
 2357253503	*hymn, (dosł.) święta pieśń
 2357301733	trzcina
 2358131715	sztywny, szorstki (lub twardy)
+2358290377	[nieprzetłumaczone]
 2360177771	długo; przez dłuższy czas
 2361776351	wstręt, odraza
 2361842249	podobny, jednakowy
-2362228707	srebrny błysk; valinorskie wyobrażenia [wizerunki prawdziwych gwiazd na kopule, którą Varda okryła Valinor]
+2362228707	srebrny błysk; valinorskie wyobrażenia [wizerunki prawdziwych gwiazd]
 2362339473	[nieprzetłumaczone]
+2362856137	wódz
 2363254967	błyskotka, świecidełko, ozdóbka
 2364192717	przemyślenia, rozważanie
 2364721657	pusty
+2365137437	iść, przebiegać (o procesie)
 2365882591	móc, umieć, potrafić
 2366211463	szósty
+2367280005	kogut
 2368374837	dziecinny
 2369702793	święty, duch, istota duchowa
 2369863497	zagrożenie, groźba; przeczucie, obawa, spodziewanie się niechcianego
+2371511927	nic
+2372060161	los, przeznaczenie
 2372353107	pozdrowienie
-2372885703	<bezosobowy zaimek l.mn> (domyślna zbiorowość, każdy/nikt)
+2372885703	bezosobowy zaimek l.mnogiej
 2372957001	sobota, dzień gwiazdy*
 2373780737	lojalność, oddanie
 2374611369	nas (włączając ciebie) {zaimek 1 os. l.mn. włączający}
@@ -2128,47 +2934,64 @@
 2376237379	krzyczeć, wołać
 2377476565	ziele, zioło
 2377556009	nastrój umysłu
-2377898147	zmiana, zamiana {czegoś}
+2377898147	zmiana
 2378376665	wóz do przewożenia ciężkiego ładunku
 2378950535	rój, chmara
 2380668503	*ziemia (powierzchnia)
 2380704503	jego/jej/jego <zaimek dzierżawczy 3 os. l.poj.>
 2381113253	samotny
 2382757995	lewa ręka, lewa strona
+2383060751	część
 2383721897	jasny, świetlisty
+2390606881	telerin (język)
 2392274047	nie (rób)
 2392499487	szkło, kryształ
 2394219563	wspierający, drugi i władzy
 2394428783	Ziemia; ziemia
+2395762935	mędrzec
 2397957839	nasz (dwojga) (wyłączając ciebie) <zaimek dzierżawczy 1 os. l. podwójnej wykluczający>
 2398301613	srebrny
 2398368447	on
 2399206005	uświęcać, święcić
 2399437541	noc, mrok, ciemność
-2401096127	ostro zakończony
 2401626913	noc, półmrok, zmierzch, zmrok, ciemność
+2402372015	[nieprzetłumaczone]
 2405578811	nadgarstek, (dosł.) ogniwo ręki
 2406348601	kształtować, formować
 2407603967	z (kądś)
+2408607617	medyczny
+2408740417	-razy
+2410745247	śmierć
 2411056289	sobota, *Dzień Gwiazdy
 2412099641	demon; potężne, wrogie i przerażające stworzenie
 2412130017	*trud, wysiłek, ciężka praca
 2413988785	dziedzic, spadkobierca
 2414137689	<końcówka liczby mnogiej zbiorowej>
+2414177109	dystans, odległość
+2416695089	od, skądś
 2417608783	dobrze
+2418845959	połączenie
 2419519815	<końcówka przymiotnika>
+2420512023	głaskać, czuć dłonią
 2423000051	ósmy
 2424035123	sierpień, *gorący
 2425112697	łagodzić, uspokajać, pomagać
+2425643791	teraz
 2425972755	noworodek, malec
-2427731641	pan, mistrz, władca, zwycięzca
+2427731641	pan, mistrz, władca
+2427864577	quenya
+2428059915	Noldor
 2428418057	pięść
 2429010503	ostatni, ostateczny, końcowy
-2434645191	chłód
 2435429627	sprzymierzeniec, obserwator
 2435708419	światło
+2436591093	obrazić, zhańbić
+2437134295	deszcz
 2438171517	(ludzka) kobieta
+2438427509	[nieprzetłumaczone]
 2439101407	mokradło, zalewisko, torfowisko
+2439900331	mrok
+2443503541	oddech
 2443642287	to <zaimek 3 os. l.poj. nieżywotny>; tamto
 2443710895	mama, mamusia, (pierw.) moja matka
 2445489761	my (dwoje) <włączając ciebie>, ty i ja
@@ -2176,20 +2999,26 @@
 2445986747	wysoko, w górze
 2446125381	odkładać, przeznaczać na specjalny cel lub dla konkretnej osoby
 2446586267	słońce, światło słoneczne
-2447472675	<*końcówka imion>
+2447472675	osoba, byt
 2447985239	<końcówka imiesłowu dokonanego>
 2448654347	drewno
+2448793265	głowa
 2448984617	świecić (biało)
-2449084653	byk
-2449627081	wyspa (o stromym brzegu), ostrów
+2449084653	byk, muł
+2449627081	wyspa (o stromym brzegu)
 2449672867	syn, chłopiec
+2452754513	srebro
+2454859367	jeść
 2455908727	wiać
 2456200671	ojczyzna, kraj pochodzenia
+2457668225	-ilion, *przyrostek dużej liczby
+2458069261	niebo
 2458071225	*ogrodzone pole
+2458738031	wasal, sługa
 2459380105	ciek, przypływ, strumień
 2459556929	ogrodzenie, granica
 2461442705	traktować uprzejmie, ułatwiać, pomagać w leczeniu, leczyć
-2461804581	kowal, budowniczy, rzemieślnik
+2461804581	kowal, budowniczy
 2462020639	wiek (100 lat)
 2462022577	ogólny, powszechny
 2462443855	lub, albo
@@ -2200,97 +3029,145 @@
 2466400815	żegnaj, bywaj zdrów, (dosł.) miej się dobrze
 2467526391	to samo
 2467954793	czarodziej
+2469868989	[nieprzetłumaczone]
 2470256983	szósty
 2470581535	<końcówka czasu przeszłego czasowników nieprzechodnich>
 2470996447	mrok, czarny/ciemny cień
+2471610403	*potok, *strumyk
 2471830365	duch
 2475504767	Słońce
+2477682109	buk
+2479017623	wilcze wycie
 2479503999	?odbijać się echem, rezonować
 2479944515	warga
 2480699897	palec środkowy (u ręki)
 2480864253	martwić się, wycierać się (zużywać)
 2481269349	jeść
+2481281003	dziadek
 2483276927	zwierciadło
+2487130781	przerażający, budzący postrach i grozę, poważany
 2487792493	inną osobę, jego (tego drugiego)
+2488376863	[nieprzetłumaczone]
+2488943259	*okrutny, okropny, potworny
 2489057083	bród, przejście
 2489135807	dzień (doba od zachodu do zachodu słońca)
 2490316429	duch, cień
 2490614027	narzędzie, przyrząd, sprzęt, środki, zasoby, broń
 2491199175	przeglądanie myśli, czytanie w myślach
+2491607563	[nieprzetłumaczone]
 2492193463	siedem
 2492417759	uwolnić, zwolnić
 2494180767	wy <zaimek 2 os. l.mn.>
+2494202879	płot, ogrodzenie
+2494300195	elf
 2494527397	punkt
-2494824447	*ballada, poemat
+2494824447	opowieść
 2495271581	w oddali od
 2495279887	leczyć, kurować
+2496528181	niebieski
 2496575225	[nieprzetłumaczone]
 2496618851	słodki
 2498098539	czeluść, jama; próżnia, otchłań
 2498701317	palec wskazujący
 2498844709	[nieprzetłumaczone]
+2499899465	recytator, minstrel, opowiadacz, śpiewak
 2500130785	śmierć
-2500639107	spragniony
+2500639107	rozdziawiony, rozwarty
 2501521429	nadzieja (oparta na rozsądku), (dosł.) spoglądanie w górę
 2503579977	miecz, ostrze, głownia miecza
+2503648991	końcówka przymiotnika
 2504699977	upadek, zapadnięcie się
 2505300943	skowronek
+2505597467	[nieprzetłumaczone]
+2505610937	temu
 2506117305	wygięty, zakrzywiony
+2506517139	język
+2506544985	elf; wróżka
 2507842115	za, z tyłu
 2507942725	cień
+2508755773	biec
+2510625793	dawno temu
 2511870571	<końcówka przymiotnik: pełny czegoś, zdolny do czegoś, przydatny do czegoś>
+2512157529	przyrostek przymiotnika
 2512322283	stary
+2512481247	precz!, odejdź!
 2512561567	w oddali od
+2513143135	przyrostek przymiotnikowy
 2513556933	próbować, usiłować
+2513598759	czarnoksięstwo
 2515527153	ciemny kształt, zjawa, widziadło
 2515674957	strszydło, ork
 2515739841	ujście rzeki, delta, (dosł.) wypływ
 2517786689	czwarty
 2517943711	wywoływać, powodować
+2518777251	czwarty
 2519438269	roślina
 2520265131	*król, władca
 2520533029	mądry
+2520647243	panować nad czymś, mieć władzę nad, posiadać, [ᴱQ.] rządzić
 2521385807	przebudzenie
 2521404431	ocean
 2521511209	umierać
+2521818879	pstrokaty
 2523142719	rozniecać, powodować iskrzenie
+2524882353	*uciekły, ten który uciekł
 2525040927	paluch
 2525075863	przylądek
+2526199587	przyrostek zwrotny
 2526944171	zwłoki, trup
 2527072637	wręcz przeciwnie
 2527344021	długie cierpienie, cierpliwość
 2527779167	zwykły, zwyczajny
+2527999405	Nauka/Filozofia jako całość
 2528015477	głęboka dolina
 2528281223	<końcówka przymiotnika>; zdolny do czegoś, z natury coś czyniący
+2528958293	ilość
+2529363497	przyrostek zdrabniający
+2530122121	[nieprzetłumaczone]
 2531781883	[nieprzetłumaczone]
 2532135507	Elfi Lud, Elfowie
+2532700987	mgła
+2532770031	[nieprzetłumaczone]
+2534896053	przyrostek przymiotnikowy
 2535454597	powódź
 2535614015	ostry, kanciasty
 2536405609	szybki, chyży
 2536897167	nie
+2537150225	silny, mocny
+2537296125	[nieprzetłumaczone]
 2538377341	<końcówka bezokolicznika szczegółowego>
 2538746727	(?odłamek, wiór)
 2539173209	*przeznaczony światłu
 2539317313	?stawać się
 2540154521	na zawsze
+2540743615	niedźwiedź
 2541307047	zastęp, rzesza, mnogość, lud (jednego rodzaju lub pochodzenia)
 2542334375	zły
+2543996219	mrok
 2544499019	chleb zabierany w drogę (na długą podróż)
 2544797639	obóz
+2545283685	quenya
 2546562029	kraj
+2546900351	[nieprzetłumaczone]
+2547804695	ziewający
+2547955845	2; dwa
+2548706891	*ogromny, *gigantyczny
 2550140975	gatunek drzewa w Númenorze, (dosł.) Nessy ulubione
 2550909863	nasz (wyłączając ciebie/was); <zaimek dzierżawczy 1 os. l.mn. (wykluczający)>
-2552421727	?lekarz, cyrulik
+2553250031	maszt
 2553713315	?ty, ty sam
 2554162565	ich <zaimek dzierżawczy 3 os. l.mn.>
 2554619573	poplamiony, splamiony
 2555689073	*królestwo
 2557917401	ktoś, osoba
+2557969873	ostrze, ostra krawędź (nie: narzędzi), gwałtowny koniec
 2558263103	dostatek, bogacwo
 2558936447	jedzenie, pokarm
 2559291621	dobrze (szczęśliwie) powiedziane
 2560139675	powódź, przypływ
 2560163767	kto
+2560858897	trzymać
+2562071099	przyrostek przymiotnikowy
 2562596025	być
 2564153459	sprytny, zdolny
 2564417317	wiaterek, bryza [?]
@@ -2298,8 +3175,11 @@
 2564790529	gwiezdny
 2565985245	strach
 2566863855	*wtorek, dzień Dwóch Drzew
+2567335201	[nieprzetłumaczone]
+2567665847	?
 2567901809	księżniczka
 2569461293	bryza, wiaterek
+2570120383	przyrostek przymiotnikowy
 2572136645	srebro
 2572470613	tutaj
 2573279063	ostrze broni tnącej/narzędzia
@@ -2326,12 +3206,17 @@
 2592496131	przerażać
 2593614971	Śmiertelnik (płci męskiej)
 2594271637	uczony, mędrzec, czarodziej, posiadacz wielkiej wiedzy
+2594471237	zgięty, w kształcie łuku
 2594874609	zielony; świeży, żwawy; †jasny
+2594973729	niebiosa, niebo
+2595741435	mężczyzna
 2598164953	zginać, uginać, zakrzywiać
 2599142691	usta (otwór, którego granicę stanowią wargi)
+2600753487	gnom
 2601362111	widzieć, patrzeć, spoglądać
 2602825163	podziemna twierdza
 2603284139	girlanda, wieniec, wianek
+2603785473	Ziemia
 2606315395	niewola, zniewolenie
 2606521445	zepsuty (o jedzeniu), gnijący
 2606610077	wielki mur
@@ -2341,46 +3226,69 @@
 2608515139	kwiat, lilia
 2608705589	nurt, prąd, strumień, potok
 2609055983	odchodzić, emigrować, przesiedlać się, opuszczać miejsce zamieszkania
+2611571823	Chiny
 2612242275	chodzić, spacerować
-2613796699	o!
+2613401759	szyja; przesmyk
+2613796699	och!
 2614444921	mały
 2615625981	obserwować (intensywnie), oglądać (przez jakiś czas); czytać
 2615695963	łatwy (do zrobienia)
 2615875029	bystrooki
+2616590469	latający lampion
 2617208775	inny, drugi
 2617604085	kłopotliwy, niezręczny, trudny
 2617733007	wschodni
 2618394569	*grzesznik
 2618888513	my (włączając ciebie) <zaimek 1 os. l.mn. włączający>
+2620322881	czerwony
 2620941289	dziesięć
 2621104083	posiadanie
+2621996561	uczciwy, prawy, lojalny
 2622159365	mały i wątły
 2622402411	nadobny niczym elf
+2623341033	przyrostek imiesłowu czynnego, przymiotnikowy
+2623720081	możliwy do usłyszenia
+2624883655	?rządzić, podbijać
+2625478367	końcówka liczby mnogiej czasownika
+2625887665	dziś
 2626863179	cieśla, stolarz (rzeźbiarz)
 2627169949	odnawiać, odświeżać
+2627543373	mathom
 2627887317	gruby (o pojedynczej rzeczy)
 2628309151	siostra
+2628769979	miasto
 2628898081	nasz (włączając ciebie) <zaimek dzierżawczy 1 os. l.mn. włączający>
+2629746645	[nieprzetłumaczone]
 2629986153	radosny, wesoły
 2633593757	[ilk.] zwinny, żwawy, swobodny
+2633703171	ciemność, cień
 2633788881	Ty sam (we własnej osobie) <zaimek 2 os. l.poj. emfatyczny>
 2634126105	zasłaniać, zakrywać, okrywać
-2634469607	kwiat, (duży pojedynczy) kwiat
+2634469607	(pojedynczy) kwiat
+2634606367	niebieski
 2635401667	demon
+2635449647	*Valar
 2635797897	*poszukiwanie
 2636302397	jadowity, trujący
+2636887477	[nieprzetłumaczone]
 2638031325	*(ty) się <zaimek zwrotny 2 os. l. poj. grzecznościowy>
 2640149631	czyjś sprecyzowany zamiar; serce
 2640495199	wieniec, wianek, girlanda
 2643520155	gwiazda
+2644545043	(jakiś czas) temu, przedtem; tak (było)
 2644870353	złoto (kolor lub światło), złocistość
 2644895277	(srebrzysto)szary, siwy, popielaty
 2646581155	przyzwoity, zdrowy
-2649445811	wiedza, filozofia (włączając naukę)
+2649445811	wiedza, filozofia (włączając naukę), dziedzina nauki
+2650247199	przyrostek liczby podwójnej
 2650815885	palec (u ręki)
 2651534721	grób
+2652804927	[nieprzetłumaczone]
+2653650511	gąsienica
+2654869829	przyrostek kauzatywny
+2655099307	[nieprzetłumaczone]
 2655805023	hełm
-2657320935	kraj; †naród, lud, rasa, szczep
+2657320935	ziemia, kraj; †naród, lud, rasa, szczep, plemię
 2658215323	rodzący żółte kwiecie
 2658327839	*obraz
 2659335039	napełniać, wypełniać
@@ -2389,20 +3297,31 @@
 2660670639	prywatność, (dosł.) *pełna bliskość
 2660946887	kura
 2665194557	żal, rozpacz
+2665268825	niewolnik
 2667261305	zerkać (na)
+2667728721	żarłoczność
+2667787819	narzędzie do cięcia kamienia
+2670876447	odpowiedzieć, *odpowiadać
 2671301123	zmiana, zamiana {czegoś}
 2671401041	*złoty
+2671734755	[nieprzetłumaczone]
 2671921183	<negacja (odmowa lub zakaz)>
 2672251663	kochający, miłujący, oddany
+2672944447	jeden z Valarów
+2673707313	"on mówi"
 2677341731	tam
 2677832879	grobowiec
+2681035565	czeluść, przepaść
 2681294593	sidła, wnyki
-2681462959	blaknięcie; (późna) jesień, przedzimie
+2681462959	blaknięcie; (późna) jesień
+2683695407	przedrostek zdrabniający
+2684458479	wyszukać, odnaleźć, odkryć
 2685817457	zły, nikczemny, niegodziwy, podły
 2686021607	<końcówka narzędnika> {kim?, czym?}
 2686408379	płaska powierzchnia, platforma (na drzewie)
 2687066379	lament, zawodzenie, jęk, wycie
 2689183125	wracać
+2690289803	12; dwanaście
 2690492563	nieczerwony
 2690720493	ogar (albo ?serce)
 2691220853	*poniedziałek, dzień Księżyca
@@ -2413,39 +3332,55 @@
 2694824321	wiedzieć, znać
 2695697911	nagi, goły
 2695713125	jedna siódma
+2696537325	końcówka celownika
 2696870919	objawiać się, ukazywać (o pięknych rzeczach); pociągać, oczarowywać, zauraczać (łączy się z celownikiem)
 2697575839	wschodni
 2697624467	ten sam/ta sama (osoba), się <zaimek zwrotny 3 os. l. poj.>
+2698321455	zachodni
 2699750647	(do)pasować, dostosować, przystosować
 2702834689	mieć wigor, rozkwitać
 2703046983	przepiękny
 2704157275	*podnoszenie, powstanie
 2705415807	rodowód, pochodzenie
+2705460779	[nieprzetłumaczone]
+2705591745	chory
+2706762997	rozmiar
+2707293275	*przyrostek zdrabniający
 2707296195	świecić
 2707392759	taki sam
 2709756661	czysty, dobry, przyzwoity, korzystny
 2710983117	łatwo, bez trudu
+2713327683	martwić się; wycierać się, kończyć się
 2714170369	historyczny
+2715172381	wróg, nieprzyjaciel
 2715563423	piękny, nadobny
 2716896255	bez
+2718641717	świętość, święte miejsce
+2719625943	końcówka przymiotnikowa
 2722195169	ich (potocznie) <zaimek dzierżawczy 3 os. l.mn.>
 2723973773	przekrzywiony, zagięty
 2725102035	wiewiórka, (dosł.) chowacz orzechów
 2725515331	jasnowłosy (wszystkie odcienie blond)
 2725648113	[nieprzetłumaczone]
 2726901631	<końcówka rodzaju żeńskiego>
+2726960807	[nieprzetłumaczone]
+2727970891	granica
 2727994185	*z (skądś dokądś)
 2729276485	harfa
 2729640531	do- {jak w: dodać, dopełnić, dopowiedzieć}
+2730337267	Trollowie
 2731355079	kłuć, dźgać; traktować z pogardą, obrażać, znieważać
+2731409527	-alny, możliwy
 2731558433	zły; zło
 2731883551	Pani, władczyni, (dosł.) chlebodawczyni
-2733189339	osiem
+2733189339	8; osiem
 2733711425	poślubiać (męża lub żonę), złączać się
 2734281471	odnawiać, uzdrawiać
 2734492325	[nieprzetłumaczone]
 2735068155	próbować
+2735385387	[nieprzetłumaczone]
 2735560421	miedź
+2738696609	topór
 2739029693	relacjonować, recytować
 2739417141	dwunóg, dwunożny, *(dosł.) dwustopy
 2739874331	bycie królową, królowanie
@@ -2453,31 +3388,43 @@
 2742326269	podstawa, baza
 2743136031	dłoń
 2745533365	*zewnętrzny/zewnętrznie
+2745712941	przyrostek przymiotnikowy
 2747078041	niedziela, *Dzień Słońca
 2747573643	zstępować
+2747834535	[nieprzetłumaczone]
 2748402405	kręcić, obracać
 2748498901	*upadek, spadek, opad
 2749834413	szczelina, rozpadlina
+2750145265	aktywny, obecny w robieniu czegoś
 2750830853	rozsypywać, roznosić, rozdmuchiwać
 2753253893	wyniosły, wysoki
 2753667189	*agonia
+2754573899	lord, pan, władca
+2755443103	świeży, nowy, odnowiony
 2755830751	smukły, szczupły, zgrabny
+2756071791	wiedza ludowa
 2756894593	przybywać, przychodzić
 2756919645	inspekcja, obserwacja, przegląd, czytanie
+2757229789	koń
 2758272103	zręczny, wprawny
+2759613647	gniazdo
 2760177883	góra
-2760610079	noga; [dolny] koniec
-2761759351	-sługa
+2760610079	stopa; [dolny] koniec
+2761759351	-sługa; służyć
+2763908381	Elf, (dosł.) Świecący
 2763999157	obserwujący
 2764761255	jeżeli
-2766567753	świecić {wielokrotnie} <forma częstotliwa>
+2766567753	świecić (wielokrotnie)
 2766633845	wówczas, wtedy
+2768164367	łokieć
 2769781381	drewno
+2771520689	*przyrostek (żeńskiego) patronimikum
 2773702815	płonąć, gorzeć
 2774110649	<końcówka przymiotnika>
 2775427327	[?następnie] {wkrótce?}
 2775872441	koronka
-2776183209	dumny, uparty, (dosł.) o sztywnym karku
+2776183209	dumny, (dosł.) o sztywnym karku; trudne przejście
+2778565879	chleb podróżny
 2778608771	tego rodzaju
 2779700851	róg
 2780755521	znajdować
@@ -2490,6 +3437,7 @@
 2788643269	matka
 2789954505	rycerz, (dosł.) pan konia
 2789973233	rozwijający się kwiat {szyszak zwieńczony w formie kwiatu}
+2790163679	[nieprzetłumaczone]
 2791104223	dzwoneczek
 2791720329	<końcówka liczby podwójnej>
 2792332985	wąski
@@ -2499,19 +3447,26 @@
 2793821179	braciszek
 2794977311	?lekarz, cyrulik
 2795749563	przejażdżka, wyścig, szarża, galop
+2800125867	[nieprzetłumaczone]
 2801099951	znak graniczny, granicznik
 2801522269	przekraczać (tam i z powrotem)
 2801953181	szlachcic, rycerz
 2802355209	twardy
+2802770563	woda, rzeka
 2803446275	*imię
 2804093811	prawa ręka
 2804380087	przestrzegać, nawoływać
+2804785965	śmierć
+2805565435	?świat
 2806898495	przerażenie
+2806926295	brzask, wschód (kierunek)
 2807206115	dzisiaj
 2807675659	wgląd, spostrzeżenie, przenikliwość
 2808635967	imię
 2810831041	wznoszący, wschodni
+2811065589	potwór
 2811947765	(na nowo) zjednoczyć
+2813202397	niepewność
 2813244031	siostra
 2813615889	zwierzę; żywa istota, która się porusza
 2813855305	złoty (odcień)
@@ -2519,36 +3474,50 @@
 2814200763	i; †przy? blisko, obok
 2815966649	cichy, spokojny
 2816012655	*sąsiad
+2816669295	ciemność
 2818329207	*co, kto
 2818364785	kość
 2818816369	los, przeznaczenie, klątwa
+2819020639	król
+2819127933	powietrze
 2819130599	luty, *wodnisty
 2819847529	rozkwit, kwiecie, wszystkie kwiaty jednej rośliny
 2819936511	lizać
 2820583539	zastep, rzesza, gromada
 2821188799	słyszeć
+2822148845	królewicz
 2822334673	dziewięć
+2823369325	przyrostek przymiotnikowy
 2823382885	przerażenie, groza
 2824215221	wiaterek, bryza [?]
 2825491331	dłoń, garść
-2825838411	przebiśnieg, (dosł.) biała łza
+2825838411	przebiśnieg
 2825932115	czujny, uważny, baczny
+2826094789	demon, diabeł, potwór
+2826942087	równy
 2828040981	[nieprzetłumaczone]
 2828762165	cisza; cichy, spokojny
 2829087431	demon; potężne, wrogie i przerażające stworzenie
+2829326885	jeden z mądrych, Gnom
+2829717375	troll
 2830370873	[nieprzetłumaczone]
-2830432359	ten który odmówił
+2830432359	Ten-który-odmówił
 2830633241	wydatny, prominentny
-2831151097	biały, blady; chłodny, zimny
+2831151097	biały; blady, chłodny, zimny
 2831863345	niemy
 2832729799	wiatr
 2834544799	wszystek
 2835879015	<końcówka pojedynczej czynności>
+2836113581	[nieprzetłumaczone]
 2837847875	uszy (para uszu jednej osoby)
 2838862699	ukrywanie
+2838866293	palec
 2838912239	żarłoczny
 2839805993	-jedzący, -żerny
+2840721455	[nieprzetłumaczone]
 2840834399	migotać, skrzyć się, błyszczeć, dawać drżące światło; †drżeć
+2844494867	nadmierny, wygórowany
+2845698693	uschnięty, ⚠️martwy
 2846883185	zwycięzca, pogromca
 2847250753	być nazywanym
 2847417889	*więc
@@ -2560,36 +3529,51 @@
 2852002687	ześlizgiwać się, spadać, zapadać się, zsuwać się, opadać
 2852640255	precz!
 2853268099	trudny
+2853617091	nie
+2853673295	Ork
+2854242359	[nieprzetłumaczone]
 2854880019	blady, jasny, wypłowiały, biały
 2855626745	wgłębienie, jama, dół
-2859055819	minstrel, bard, recytator
+2857748359	przyrostek zgrubiający
+2859892413	czarnoksięstwo, zjawa
+2861576537	mający palce
 2861952767	uczyć się
 2862492255	nas <zaimek 1 os. l.mn. wyłączajacy>
 2862812157	pani, władczyni
 2864436961	serce (przeczucie); ostrzeżenie, ostrożność, przezorność, przeczucie
-2864474663	kunsztowne (?urządzenie)
+2864474663	zręczny (?urządzenie)
 2865439231	oczywiście, że się zgadzam; oczywiście tak
 2867002305	drzewo o żółtym kwieciu
 2868651819	językowy, mówiony
-2869206327	zanik, uwiąd, słabnięcie, blaknięcie, blednięcie
+2869206327	zanik
 2869207697	wiosna
 2869753515	zachodni
+2869789847	przyrostek bezosobowy (czasownika)
+2869872317	żelazny
 2871412533	jeden
 2871813959	dobry, sprawiedliwy, sprzyjający
-2873474053	tam
 2874200249	motyli, motylowy
+2874204839	powinien, powinna, powinno, powinni
 2874850925	szary
+2875351997	ty
 2875913343	wyplatać sieć, dziergać koronkę
 2876201031	*smok ziejący
 2876232895	seria, szereg
+2877303575	?
+2877306881	potwór, zdeformowana i szkaradna kreatura
+2877675641	*daleki
 2878447359	ogniwo
+2880522637	ziemia
 2880568835	pierzchać, uciekać
 2880892759	polerowana miedź
 2880961279	zręczny, wprawny
 2881064821	obsiane pole
+2883774599	[nieprzetłumaczone]
 2884992727	seria głosek zmiękczonych
 2885248771	ufność, lojalność
+2885862097	morze
 2887067247	uczyniony z konieczności
+2887993929	nad
 2889331379	wykończyć, udekorować coś delikatnym motywem; zaprezentować kunszt
 2889418039	<końcówka imiesłowu czynnego>
 2889842835	stracony, zapomniany, porzucony, wyjęty spod prawa, wyrzutek, wygnaniec <rodzaj męski>
@@ -2597,38 +3581,58 @@
 2890157241	krok; szlak, droga; bród
 2890290251	krótki
 2890758247	trzy
+2891503999	tatuś
+2891571405	monastyr, klasztor
 2892230481	ono <zaimek 3 os. l.poj. rodz. nijakiego>
 2892910051	czytać zapisane treści
 2896360835	gatunek ptaka ze szkarłatnym upierzeniem
+2897056033	dłoń, ręka
+2897629797	*końcówka liczby
+2899194561	ścieżka, bieg rzeki, koryto rzeki
+2900441799	promień światła
 2901136171	życie
+2901319211	bez, nie-
 2901437703	piąty
+2901712831	pragnienie (zrobienia czegoś), nacisk, ucisk, mus
 2904485229	dziesięć
 2904641837	odmawiać, zabraniać
 2905073759	chłopiec, synek (zdrobniale)
+2905799505	wolny
 2906542817	drugi
 2906914869	nóż
 2906921893	Elf, (dosł. ten, który mówi)
+2907377673	niania
 2908123947	przyjaciel, miłośnik
+2909910015	(uczynione) ręką, (zrobione) przez (kogoś)
 2910101353	podwójny
 2910593893	szczęśliwy, dobrze prosperujący
 2911492079	[nieprzetłumaczone]
 2911858939	spotkanie (ścieżek), (dosł.) zejście się dwóch szlaków, spotkanie lub połączenie kierunków dwojga ludzi
 2913923685	jezioro, staw
-2914542017	odmawiać, zabraniać
+2914090027	lud
+2914131057	[nieprzetłumaczone]
+2914542017	odmawiać, zabraniać, zakazać; (dosł.) mówić nie, mówić 'nie zrobię'
 2915116991	Człowiek, (dosł.) Drugi (z Drugiego Ludu)
 2915236271	*sąsiad
+2916144863	dziecko, przyrostek patronimiczny
 2916664893	zdrajca
 2917102839	szeroki, obszerny, przestronny
 2917679883	ratunek, ocalenie
+2917809203	wyrażenie pogardy
 2917923381	obserwator, strażnik
 2918149131	zgromadzenie, zebranie, zbiorowisko
 2921710565	syn
 2923200645	żyjący
 2924025105	łabędź
 2924178013	wciąż, nadal
+2925069803	długi
+2925113975	[nieprzetłumaczone]
+2925141877	*spostrzegawczy, *wnikliwy
 2927620725	Elf Szary
 2928144957	grot, róg, klin, wąski cypel; kąt
+2928266583	przyrostek zdrabniający
 2928418565	ostra krawędź (ale nie narzędzia), nagły koniec
+2928456615	sukcesja, dynastia
 2929142055	lipiec
 2929754629	*środkowy palec (u ręki)
 2930222175	(my (dwoje) sami) się (we własnej osobie) <zaimek zwrotny 1 os. l. podwójnej emfatyczny>
@@ -2644,9 +3648,11 @@
 2938301067	góral, alpinista
 2938382153	wierny
 2939308023	śmiać się
+2941235637	głuchy, (dosł.) bez-słuchu
 2941356327	spółgłoska
+2941359909	kształty lądów, *geografia
 2943713061	(wy) się <zaimek zwrotny 2 os. {grzecznościowy}>
-2945289967	być gorącym; [ᴹQ.] gorzeć, płonąć [ᴱQ.] palić
+2945289967	być gorącym
 2948886743	wydatny, prominentny
 2950002373	straszna ciemność, czarna mgła
 2952848001	koń
@@ -2655,16 +3661,20 @@
 2953730349	wręcz przeciwnie
 2953823883	kwiatostan, kwiecie
 2954915823	jego/jej/jego <zaimek dzierżawczy 3 os. l.poj.>
-2954987583	nie! (zabraniające)
+2954987583	nie, nie rób!
+2956615905	Ainu, jeden z Ainurów
 2956630217	możliwy do zaobserwowania, obserwowalny
 2957180467	zmyślny, precyzyjny, delikatny; zręczny
 2957412107	trudny do policzenia
 2957890527	przerażenie, groza, strach
 2958596603	panowanie nad czymś, kontrolowanie
 2959811903	zły, nikczemny, niegodziwy
+2960142007	ćwierć
 2960584337	?wypoczynek
 2960856767	późna jesień i wczesna zima, przedzimie, (dosł.) blaknięcie
+2961853907	[nieprzetłumaczone]
 2961968329	długi znak
+2963142067	ząb
 2964279087	więzy, okowy, pęta
 2964964287	przyjaciel
 2966543841	pomścić, odpłacić się, zareagować, odwzajemnić się
@@ -2676,6 +3686,7 @@
 2974762519	kochanek, ukochany
 2976762143	spójrz!
 2977012703	w, wewnątrz
+2977047775	złoczyńca
 2977430193	statek (o ostrym dziobie); szybko ślizgający się
 2978186543	to co rośnie będąc zakorzenione w ziemi, *roślina
 2979650437	wieloryb
@@ -2692,14 +3703,16 @@
 2988717037	niezrównanie, znakomicie, nadzwyczaj, wyjątkowo, niezwykle
 2988740557	dolina
 2992537229	*od- <przedrostek oznaczający odpowiedź lub wzajemność, np. odpowiedzieć, odpłacić>
-2993152693	*rozniecać
+2993152693	rozpalać, zapalać
 2994183473	*dług, przewinienie
+2994269311	sparaliżowany, okaleczony, kulawy
+2994444219	wykopaliska, hale, posiadłości
 2994670795	sześć
 2995074817	piąty
 2995328557	mglista nić, szara elfia lina
 2996056243	mały palec (u ręki)
 2996860573	klejnot, kosztowność, skarb
-2998780483	litera; znak, symbol, wskaźnik
+2998780483	litera; znak, symbol, oznaka, wskaźnik
 3001223523	ogień
 3001749179	łagodzić, wspierać
 3002688151	wstążka, opaska, siatka do włosów, pątlik
@@ -2709,25 +3722,34 @@
 3004760479	stawać się
 3004906791	?polowanie/łowy, myśliwi
 3005052249	tak, tak jest, to fakt
-3005078315	strome zbocze, stok, spadek, pochyłość
+3005078315	strome zbocze, stok
 3005081253	drzewo
+3005768219	broda
 3005903089	która roznieciła
 3007496685	poza
 3008126655	twardy; krasnolud
 3010255839	sposób, metoda
+3010343769	*dwudziestokrotnie
 3010743093	czerwiec, *ognistość
+3010903383	[nieprzetłumaczone]
 3013596673	je <zaimek 3 os. l.mn nieżywotny>
-3017001975	*posyłalny, nadający się do wysłania
+3017001975	*możliwy do przyniesienia, wzywalny
 3017085073	skręt, lok włosów
 3018033807	strach
+3019268681	od, z
 3022117599	(oślepiająco) biały
 3022140925	ocean, wielkie morze
 3022220127	razem, wspólnie, wespół
-3023271443	osiem
+3023271443	8; osiem
 3023286303	przypuszczać, domniemywać
 3025263089	chleb podróżny
+3027744379	wieniec, girlanda
 3028755839	ja <zaimek 1 os. l.poj.>
+3029056381	torba
 3030023557	dom mieszkalny
+3030058493	przyrostek liczby mnogiej
+3031289607	końcówka dopełniacza
+3033407207	[nieprzetłumaczone]
 3034985991	iglica
 3035605195	ja, ja sam; sam we własnej osobie
 3036179073	teraz
@@ -2735,34 +3757,41 @@
 3037506565	pieśń
 3038134979	tata, tato
 3039306293	zima
-3039415213	[niezidentyfikowana roślina], (dosł.) ?pierzaste ciernie
+3039415213	niezidentyfikowana roślina, (dosł.) ?strzała-ciernie
 3039837479	krysztaliczny, niczym kryształ
-3042028649	szczęki, pysk (zwierzęcia)
 3042176179	niezdarny, niezręczny, nieumiejętny, niewprawiony
 3042849385	zalewać, moczyć, podtapiać
 3043197505	wysoki, szlachetny, wzniosły
 3043551695	razem (dot. wspólnoty 3 lub więcej rzeczy)
+3046166527	strumienie
 3046291107	dwuręczny
 3048533057	*tron
 3049069583	pajęczyna
 3050296043	złe postępowanie, przekraczanie zasad, łamanie prawa
-3050856941	ząb, kieł
+3050856941	kieł
 3051762201	?rozkazywać
 3052165273	orzeł
 3052306501	ktokolwiek
+3053249097	przyrostek przymiotnikowy
+3053374085	one
 3053880583	nie być, nie robić
-3054433215	tron
+3054011737	srebrny (kolor)
+3054433215	tron, (dosł.) wysokie krzesło
 3055671527	<końcówka czasownika>
 3059215967	Twój (uprzejmie), pana/-i; <zaimek dzierżawczy 2 os. l.poj. (grzecznościowy)>
 3060558711	iskra, [widoczna na niebie] gwiazda
 3061765823	pan, władca
 3061781529	(wysokie) drzewo
+3062167103	kamień
 3062727203	usta, jama ustna
+3064763541	18; osiemnaście
 3064831821	(buchający) ogień, pożar
+3066485011	Teleri
 3067633277	rodzina, dom
 3068304285	<końcówka wielu sindarińskich przysłówków>
 3068638387	wiedza, znajomość
 3068762577	<końcówka czasownika>
+3068967135	przychodzić, podchodzić
 3069203949	kunsztowne, precyzyjnie, delikatnie wykonany
 3069982657	*udo
 3070349187	gramatyka, morfologia, system znaków, zbiór tresci dotyczących pisania; *struktura języka
@@ -2774,9 +3803,12 @@
 3072845257	odłożyć, przeznaczyć na specjalny cel lub dla konkretnej osoby
 3073110357	lub, albo
 3073514489	odczyniać, cofać, niweczyć
-3075984851	złoto (metal)
+3075984851	złoto
+3076415159	nadgarstek, (dosł.) dłoni-połączenie
 3076529389	*słodko/ślicznie pachnieć
 3076614207	region, kraina
+3077106943	przełykać, połykać
+3078119591	*miłość, kochać
 3078561477	sopel
 3078961407	zakończenie, koniec, końcówka
 3078993973	[nieprzetłumaczone]
@@ -2784,24 +3816,33 @@
 3079690821	ekscytować się, wzburzać, podniecać
 3080672679	zamknięty, prywatny
 3081138495	schodzący, zachodzący (o słońcu), zachodni
+3082145429	struna
+3082145430	ubranie, odzież
 3082311819	niezłomny, niezawodny, wierny, zaufany
 3082499941	zapytanie, dochodzenie
-3083989847	<końcówka zdrobnienia/końcówka l.poj.>
+3082729225	ósmy
+3083989847	przyrostek zdrabniający
 3084063027	wojna
+3084705231	fryzjer, stylista
 3085624231	gorący, czerwony
 3086128205	królewna, (dosł.) córka królowej
+3086337745	odmawiać
 3087741415	gasić, tłumić
+3088478543	zejść się, spotkać się
 3088909213	wstążka, opaska, *pątlik tj. siatka do upinania włosów
 3088983891	chwalebny, wspaniały, roziskrzony, świetlisty
 3089681113	upadać, spadać
 3089808201	mrozowe wzory, szron; płatek śniegu, łuska lodu
+3089814145	w, w środku
 3090082541	re-, ponownie
 3090473943	puszcza, (wielki) las
+3091424077	wrostek odmiany podmiotu
 3092365337	*macica, łono
+3092941671	[nieprzetłumaczone]
 3093716127	*świecić
 3094734111	wsadzać, wstawiać, wtrącać
 3095758215	niezłomny, niezawodny, solidny
-3098131039	tu
+3098131039	tutaj
 3098311947	świecić jasno
 3100110347	promienistość, świetlistość, lśniące odbicie; światło, ogień, jasność, lśnienie
 3100303595	kłopotliwy, trudny; sztywny, twardy
@@ -2809,92 +3850,133 @@
 3102361379	srebro
 3102465213	wytwórca lamp, latarenek
 3103047495	demon; potężne, wrogie i przerażające stworzenie
-3103181473	tam
+3103181473	w tamtą stronę, tam
+3103487487	łabądź
 3103644803	miejsce
 3104749351	<końcówka pieszczotliwa>
+3106368631	wschodni
 3106919459	wosk
+3107213013	pomorze, obszary przy morzu
 3107467887	królowa, małżonka; najwyższa, wspaniała
 3108066663	zamykać
+3109002673	[nieprzetłumaczone]
+3109845713	cierpienie
 3109921315	kwiat, który otwierał się i zamykał szybko na jakąkolwiek zmianę światła
 3113165211	mocny, trwały, silny, (?odporny)
+3113288231	mathom
 3113495103	źródło, ujście wody
 3114332903	*codzienny
 3114524899	wierzba
 3117949915	sierpień, *gorący
 3118136801	szary
+3119423355	[nieprzetłumaczone]
 3119518115	ścieżka, droga, linia
+3121219255	jeść
 3121321839	wykonany, ukończony
+3124436475	przyrostek częściowy
 3124877063	czarnoręki
+3125405013	powyżej
 3126183753	wierzyć
 3127885809	ciało (mięso)
 3128790831	nie do ukrycia
 3129157547	piąty
 3130079937	osobisty, prywatny, własny
+3131426649	jedna dwunasta
 3131483913	*jako
+3132789723	[nieprzetłumaczone]
 3133490339	pieśń
 3133840783	<gondorska moneta>
+3134824731	kupić, kupować
 3135473047	słowik, (dosł.) wieczorny śpiewak
 3136154397	wschód słońca, wschód, (dosł.) od wznoszenia
+3136646229	mądry, doświadczony
+3137014591	zakaz, odmowa
+3137150869	-ski, przyrostek rasowy i językowy
 3138369023	prawo, przepis
 3139263471	tata, tatko, (mój) ojciec
-3139850309	zapał, usposobienie; oddech, tchnienie
-3140790847	sklepienie kopulaste lub łukowe, sklepiona sala; jaskinia (krasowa)
-3141734757	istota żywa, organizm, żyjątko
+3139812135	wzmacniać [dźwięk]
+3139850309	zapał, ochota; oddech, tchnienie
+3140790847	sklepienie kopulaste lub łukowe, sklepiona sala
+3141734757	istota żywa
+3142997227	tylna-ścieżka
+3144856545	serce (w przenośni)
 3144942559	elficki długi rok (144 lata zwrotnikowe)
 3145030969	kwitnąć
+3146690079	[nieprzetłumaczone]
 3146852713	dom (rodzinny)
 3147606303	bardzo dobrze, w porządku, zgoda, oczywiście
 3147673391	inna rzecz
-3148469075	niewolnik
+3148074231	[nieprzetłumaczone]
 3148791515	ktoś, ktokolwiek
 3149142565	do, w kierunku, ku, przy
-3149549439	potakiwać, zgadzać się
+3149549439	potakiwać, zgadzać się, (dosł.) mówić 'tak'
+3151433059	[nieprzetłumaczone]
 3151703189	płonący, ognisty
 3151865735	[nieprzetłumaczone]
 3152813873	*pieśń
 3152846125	prowincja, dzielnica
 3154585085	mały (zwykle w skojarzeniu że słabością)
 3155105797	spółgłoska
+3155506335	*gwiazda
 3156878213	ciemność
+3158239139	kopalnia
 3159645779	<końcówka rzeczownika abstrakcyjnego/przysłówka>
+3162077471	kwiat, lilia
+3162108997	piana (morska)
 3162943039	(my) się <zaimek zwrotny 1 os. l.mn. wykluczający>
 3164901039	<końcówka l.poj.>
+3166554081	król, królowa
 3168690083	panna/dziewczę
-3169405565	dłoń; [ᴱQ.] półka
+3169046377	leżeć na ziemi
+3169405565	dłoń (płaska część)
 3169907981	z (kądś)
 3171901809	mieć nadzieję
+3173840781	liczba podwójna
 3174276031	złe postępowanie, przekraczanie zasad, łamanie prawa
 3175428769	ciąć
 3175973159	policzalny, ograniczony w liczbie (wadze i mierze); (potocznie) umiarkowanej ilości; kilka, parę, nieco, niewiele
 3178076865	<najprostszy bezokolicznik aorytstu>
+3178122871	[nieprzetłumaczone]
 3178321073	spójrz!
 3183181465	schodzący, zachodzący (o słońcu), zachód
 3183880157	(spieniona) fala, grzywacz, bałwan
 3183924893	z (kimś/czymś)
 3184160293	*przyjaciółka
+3185060117	stopien wyższy przymiotnika
 3187467167	pan, mistrz, władca
 3188002087	wcielony duch
-3189877099	*dwanaście
+3189252691	[nieprzetłumaczone]
+3189877099	*12; dwanaście
 3190262951	w pełni, zupełnie, całkowicie, kompletnie
+3191799057	[nieprzetłumaczone]
 3192240413	cztery
+3192734999	[nieprzetłumaczone]
 3193606885	palec wskazujący
-3194411753	<końcówka oznaczająca wykonawcę czynności>
+3194411753	przyrostek agensa (wykonawcy czynności)
+3195849927	przyrostek zdrabniający
 3196598823	brat
+3197625993	przedrostek zdrabniający
 3199894735	w następstwie czego, skutkiem czego, stamtąd, po czym
-3202359171	wielki, potężny; duży, obszerny, [ᴱN] ogromny
+3201410565	*korzeń (jako roślina)
+3202359171	wielki, potężny; duży, ogromny
 3202477017	przy, w, na
 3204020863	o!, och!
 3207715071	to, ono, rzecz <zaimek 3 os. l.poj. rodz. nijakiego>
 3213776277	osiem
-3213975931	pytać, prosić, *rządać; szukać; poszukiwać
+3213975931	pytać; szukać, poszukiwać
 3215533983	<końcówka przymiotnika>
 3216541741	szlachetny, wysoko urodzony
+3216765161	[nieprzetłumaczone]
+3216787173	toaleta
 3216943711	już, wciąż, dotychczas, teraz; dotąd [od przeszłości]
 3216950591	z, od
 3217776197	(delikatny, słodki) pocałunek
+3219356621	solenizant (urodzin)
 3219389361	mały [palec u ręki]
+3221753591	[nieprzetłumaczone]
 3222272777	los, przeznaczenie, dola
 3223210719	swobodny, nie obciążony trudnościami, bez przeszkód
+3223804575	Vanya, jeden z Vanyarów
 3224003443	lipiec
 3224417329	łapać w sidła, usidlać
 3225954741	alternatywna nazwa ostatniego dnia 6-dniowego tygodnia elfów
@@ -2903,6 +3985,8 @@
 3228878609	historia, relacja
 3229814977	kopalnia, odwiert, tunel, podziemne mieszkanie/siedziba
 3230561871	czarodziej
+3230795619	robić
+3231057939	lud Elfów
 3231360515	tak się zdaje, *warunkowane tak
 3234085465	(jakiś czas) temu, za (wcześniej); tak (było)
 3234495583	przeklinać
@@ -2914,77 +3998,113 @@
 3239931345	ten
 3241389157	elficki
 3241401725	twardy (*jak głaz)
-3244631637	niedźwiedź
+3244027801	[nieprzetłumaczone]
+3245177373	użyteczność
 3245623203	*ten dzień
 3246100897	< końcówka rzeczownika odczasownikowego>
+3247814847	Wschód (kierunek)
+3247977791	palec serdeczny
 3249289589	oniemiały
 3251788527	wypowiadać, wygłaszać
 3252431679	dotykać
+3255933037	przyjaciel Elfów
 3257448755	tak (jak tamto)
+3257854441	[nieprzetłumaczone]
 3259339243	morze
 3259716995	byt, istnienie
 3260046495	witaj, bądź pozdrowiony
 3260578809	mokry
+3260707905	przyrostek zdrabniający
+3262952603	trzymać, zatrzymać, przechować
 3265164009	pienić się, spiętrzać się
 3265511325	mroczny (ze złymi konotacjami), ponury, piekielny
 3265662125	tamto
 3266035465	chwalebny, wspaniały, roziskrzony
+3266229707	wszyscy
 3267174599	niejasny, ciemny, mroczny, ponury
+3267380889	hak, haczyk
 3270227219	lato
 3270536169	zwieńczenie (grzebień, grzywa, kita, pióropusz), grzbiet (górski, nosa), grań
-3273842381	zagroda, teren otoczony ogrodzeniem
+3273022963	dwadzieścia dwa
+3273842381	teren otoczony ogrodzeniem
+3274975903	ja
 3275882219	rosa
 3275918159	i tak dalej
 3276392343	[razem] z
+3276586995	pierwszy, pierwsza
+3277300435	społeczeństwo, społeczność
 3279475135	ucho
 3281616511	przylądek
 3281865629	dobrze, szczęśliwie; dobroć, dobrostan, szczęście
+3282342423	tron, (dosł.) wysokie krzesło
 3282645679	w dal patrząca {(dosł.) która patrzyła w dal}
 3286818751	ratować, ocalać
+3286942031	-alny, możliwy (do zrobienia)
 3287117937	młody
 3288832145	świt
+3288939379	przyrostek podmiotu męskiego
 3289016555	smakować
 3289956123	srebro z Morii, "prawdziwe srebro", (dosł.) siwy blask
+3290625407	kaszlnięcie i kichnięcie
 3291161231	miód, nektar, szczególne wino lub likier, napój Elfów, (dosł.) cenny sok
+3291712839	niebieski
+3291936011	miłość, kochać, pożądanie, pragnąć
 3292194817	pozbawiony piękna
+3292482515	sto dwadzieścia
 3293067887	matka
 3293667097	trzeci
 3294375263	*dziś, dzisiaj
 3294494683	miedź
 3294505213	wspomnienie, pamięć
+3294767281	jak, niczym
 3298435681	nadzieja, ufność, *wiara
 3299650413	przebywać na wolności
 3302198753	<końcówka celownika> {komu?, czemu?}
+3303487785	sok (rośliny)
 3303637545	ten który przekracza, prom, bród, przecznica, most, poprzeczka, stropnica
+3303686477	zapalać
+3303755081	przyrostek przymiotnikowy
 3305428541	metal
+3305860269	elf
 3306041155	poufny, tajny
 3307456953	<końcówka imiesłowu czynnego>
+3308413061	zachód, w kierunku zachodu
 3309334861	syn
 3309528591	przerażenie
+3309718201	*powódź, mokradło
 3312486463	dawno, dawno temu
+3313977923	[nieprzetłumaczone]
 3314352465	żelazo
 3316717221	<końcówka przymiotnika>
+3316979453	Ciemny Elf, (dosł.) Odmawiacz
 3318090687	(ja) się <zaimek zwrotny 1 os. l. poj.>
 3319688973	niknąć, blednąć, płowieć, ubywać, słabnąć, więdnąć
 3321888325	ich; <zaimek dzierżawczy 3 os. l. mn.>
 3322232159	niech, -że <partykuła trybu rozkazującego>
 3322768559	astronom, (dosł.) miłośnik niebios
 3323631173	Jedyny, Bóg
+3324964403	ciosać skałę
+3326342119	kłaść (czasownik przechodni)
 3329624251	wiązać, otaczać, ograniczać
+3331116347	13; trzynaście
 3332006945	rodzaj ciemnego metalu wynalezionego przez Eola, (dosł.) lśniąca czerń
 3332359177	?spójrz, zobacz
 3332819975	błogosławiony, święty (dotyczy rzeczy)
 3333015137	*lok, pukiel, pasmo włosów
+3333722453	choroba
+3334463873	struś
 3334881567	szpon, pazur
 3334912475	<końcówka rodzaju męskiego - wykonawca czynności>
 3335328871	uginać
 3337236005	łódź
 3338855555	(razem) z, (wraz) z
+3338903383	jako
 3339236895	*córka
 3339901781	marzec, *wietrzny
 3340802769	najwyższy król
 3341755013	*błogosławiony, uświęcony
 3341961537	robiący, czyniący
+3343575083	miasto
 3344686927	przekraczać
 3345320209	bez, wyzbyty, pozbawiony
 3345570783	samotny
@@ -2992,43 +4112,62 @@
 3346199611	przybywać ponownie, *powracać
 3348247981	*nazywać
 3348602073	poniżej, nie dotykając, pod
+3351703237	buk
 3352422685	wiaterek, bryza [?]
+3352810613	uniwersalny
 3353828115	końcowy, ostatni
 3354395703	klejnot rodowy
 3354444923	srebro
+3355024575	mżawka, lekki deszczyk
 3355064255	świetlisty, wspaniały
+3356681019	Słomiane Głowy
 3358028127	wygładzać, wyrównywać, prasować
+3359416443	przyrostek zdrabniający
 3359506665	łatwy
 3360802665	pokrywać, zakrywać, nakrywać
 3361285405	koryto rzeki, kanał; łożysko, żyła
 3362095755	w dół (z góry), pod, poniżej
 3362852287	liść
 3362945285	środkowy
+3363054159	cieśla okrętowy, budowniczy statków
 3364125219	złoty
 3364276287	wrostek, wtrącenie, wstawka, intruzja
 3364420927	liga (jednostka miary odległości), staje/stajanie
+3366026929	Bóg Wszechmogący, Wszechmocny Stwórca
+3366123469	przyrostek zdrabniający/spieszczający
+3366337141	[nieprzetłumaczone]
 3366477821	odnawiać
 3366592837	oni sami (we własnej osobie) <zaimek 3 os. l. mn. emfatyczny>
+3367034621	kupa, (sztuczna) sterta
 3367157657	żona
 3368542489	wieś, miasteczko (zagroda)
 3369271285	złocistość; złocisty
-3372313121	*litery
+3370374475	babcia
+3372313121	*litera
 3373898907	wysoki, wyniosły, wzniosły
 3375325217	dawać, przysparzać
 3375402787	zabraniać, zakazywać, odmawiać
 3375594199	(wysokie) drzewo
 3376435927	<końcówka aspektu dokonanego>
+3376440661	chwała
+3376597617	przyrostek dopełniacza
 3379022005	dzień, światło dzienne
-3380236613	*relacja
+3380236613	*relacja, raport, sprawozdanie
 3380703333	Księżyc
+3381098869	hiacynt
 3381168381	opanowany, okiełznany
 3381540013	złocisty kwiat wodny (kosaciec żółty)
 3381701981	sieć
+3381766861	liczba mnoga (czasownika)
+3382591263	[nieprzetłumaczone]
 3383194491	pojedynczy osąd lub chęć
 3383253025	duży, wielki
 3383391839	radość, szczęście
+3383674751	srebrny błysk
+3384584707	lord, pan, władca
 3384734233	rzecz
-3385950207	zasłaniać, zakrywać, okrywać
+3385340295	detal, szczegół
+3385950207	zasłaniać, okrywać
 3387166105	przenikliwy, wnikliwy wzrok lub pojmowanie
 3387722417	*potęga, władza
 3388146255	napój, łyk, coś pitego; kubek
@@ -3037,28 +4176,41 @@
 3394608927	ucisk, nacisk, presja, prześladowanie
 3395896771	stary
 3395915147	Elf (płci żeńskiej), Elfka, Elfida
+3395999881	przyrostek agensa
 3396278471	(bardzo) potężny, władczy; rozległy, ogromny, niezmiernie potężny lub wielki
 3398042911	zahamowany, zablokowany, zakłócony
 3398205471	śnieg
+3400101399	razy
 3401470939	*więc
+3401719351	blizna, karb, nacięcie, bruzda
 3402128255	?pierwszy; ?i (jeszcze) jeden (ponad to)
-3404386397	przyjaciel, miłośnik
+3404110625	przyrostek zgrubiający
+3404386397	przyjaciel, miłośnik; oddany, kochający bezinteresownie
+3406330109	[nieprzetłumaczone]
 3407884905	<końcówka rzeczownik abstrakcyjnego lub przysłówka>
 3407987165	brakujący, niedostateczny
 3409017825	obsiane pole, ziemia uprawna, rola
 3410404799	[nieprzetłumaczone]
+3413821753	z dala od
 3413873241	obżarstwo, żarłoczność, łakomstwo
 3414825689	*wszystek, cały, każdy
 3416427027	*tak, tak jak
+3416818159	[nieprzetłumaczone]
+3417204217	siedzenie
+3417378539	Elf
 3417752301	umiłowany, ukochany, luby, ulubiony, drogi, najdroższy
 3418180587	od (kogo/czego; <rodzaj dopełniacza>)
+3419432989	cegła
+3420637715	złoto
 3420717649	tytoń, ziele fajkowe
 3420722951	dobrze/dobry; wspaniale/wspaniały
 3420918689	lojalność
+3421108167	rodzina, młode, *potomkowie
 3421216065	wkrótce
 3422093461	*ukrywać, chować
 3423653599	określać, , przeznaczać, orzekać, wyrokować
 3427892515	*po (czymś/kimś)
+3428544027	sługa, ?osoba
 3430762901	nie! (ostra lub burkliwa odmowa)
 3431724583	dom; wychodek, szopa, chata, budka; budynek służący celom mieszkalnym lub innym; †ciało
 3435499647	mędrzec
@@ -3069,30 +4221,45 @@
 3440531627	sosna
 3440831135	znany, stwierdzony, ustalony, pewny
 3442276471	murawa, trawnik, darń
-3444049341	pan, władca
+3444049341	pan, władca, mistrz
+3444272415	topór, siekiera
 3445738619	siwy, popielaty, jasnoszary
+3447159911	tęsknota
 3448600547	stworzenie, zwierzę
 3449841823	pojedynczy
 3449896309	obraz w pamięci (marzeń sennych)
+3451401003	zachód słońca
 3453407143	nasz (włączając ciebie/was), <zaimek dzierżawczy 1 os. l.mn. (włączający)>
+3453938143	gwiazda (na niebie)
+3455958143	-ilion, *przyrostek dużej liczby
+3456098893	środkowy
+3456746295	przyrostek rzeczownika abstrakcyjnego
+3456893065	terror, przerażenie, trwoga
 3458212955	(wrodzona) moc, potęga, władza
-3458303167	jasnozielony; (mający barwę i wygląd młodych roślin)
+3458303167	świeży zielony, zieleń (liści, roślinności)
 3458309631	garść, grupa pięciu (podobnych) rzeczy; ręka (potocznie); zamykająca się lub zamknięta w uchwycie, sięgająca [ręka] (skierowana dłonią do dołu)
+3458753685	biały
 3459536167	ognisty wąż, smok ognisty
 3459826637	zamykać
 3460790389	wolny, uwolniony, swobodny, oswobodzony
 3461038807	*królestwo
 3461767419	trudzić się, ciężko pracować
-3462907171	tutaj
+3462907171	(do) tutaj
+3463474825	siostra
 3463524117	biografia
 3463899123	dawać
 3464760849	wyzwalać, oswobadzać
 3466874281	nadobny niczym elf
 3467152845	złoczynny, zbrodniczy
+3470721279	język
+3471398315	wojna
 3471453687	przypominać sobie, przywoływać w pamięci
-3473527589	grzbiet górski, grań, przełęcz
+3473305021	?syn
+3473527589	szyja
+3473971007	radosny, żywy, dziewczęcy
 3474763173	zachodni
 3475146071	nieświadomy, nieznający, niedouczony
+3475674111	[nieprzetłumaczone]
 3475768127	wygładzony, gładki, bezwłosy
 3476200381	ledwo widoczny, trudny do zobaczenia
 3476416161	przykry, nieprzyjemny, paskudny
@@ -3101,79 +4268,118 @@
 3480330147	dowiadywać się, wnioskować po zbadaniu lub przyjrzeniu się [?]
 3480983243	krzyk, wrzawa, jazgot
 3482070047	<przedrostek bezokolicznika>
+3486256673	Renesans, Odrodzenie
+3486562877	zatrzymać dla siebie, trzymać (w areszcie)
+3486687205	ich; końcówka dopełnienia 3os. l.mnogiej
+3489500917	przyrostek zdrabniający
+3490369415	ona
 3491124211	odcinać (i pozbywać się lub tracić tę część)
+3491135807	przyrostek przymiotnikowy
 3491156127	teraz
+3491313397	rozumieć
 3491333723	*sąsiad
 3491961465	gdyby tylko
+3493129345	*mieć władzę
+3493876583	ogień
 3494583511	zielony
 3494665183	złocisty gwiazdokształtny kwiat, (dosł.) słoneczna gwiazda
 3495499477	przystań
+3495975737	przyrostek przymiotnikowy
 3496584719	wygląd, wizerunek
 3498175325	oni (dwoje) <zaimek 3 os. l. podwójnej>
 3498912469	*impuls, pobudka, odruch, emocja
 3499802317	zima
 3500991287	szczyt góry
+3501148923	pienić (się)
+3501160011	brzoza
 3501461407	ten
+3502111881	spędzać czas
+3502289591	stracić, zgubić
 3502696751	*głęboki staw
 3502768309	zgładzony, zabity, uśmiercony
 3502888771	ciosać, rąbać, ciąć
 3503146575	wschód, wznoszenie się, wschód słońca
+3503556293	przyrostek podmiotu żeńskiego
 3503594321	kark
+3504897725	*tamten
 3505521411	niestosowność, uchybienie, niewłaściwe zachowanie
+3506737917	mokradło, bagno
 3506878051	nienadający się do powiedzenia, nieopisany, niewysłowiony
 3508880117	włos, włókno
+3512982049	końcówka orzeczenia
 3513297911	kasztanowy <kolor>
 3513692377	*ciemny
 3516003693	zepsuty, skażony
 3516091267	<końcówka stopnia wyższego>
 3517210617	pozdrawiać, *przekazywać pozdrowienia
 3517885517	drogi, miły; bycie drogim/miłym komuś
+3518233375	pisać, ryć
+3518924725	kciuk
 3519182345	miecz, miecz długi, półtorak
+3519250155	pół-, prawie
 3520315715	zabójca, pogromca
 3521663585	braciszek
 3521740537	dzień (w przeciwieństwie do nocy), światło dnia, słońce, światło słoneczne
+3522320641	płynący, płynny
 3524609079	niedobry, zły
 3526835681	szata, odzienie
 3527752535	roślina z czerwonym kwieciem, (dosł.) krew kamienia
 3528081227	*dług, przewina
+3531131609	Mądrość
 3531217223	piana, mgiełka wodna
 3531605055	mienie, własność
 3531741789	nagi (o osobach)
+3532863401	[nieprzetłumaczone]
 3534581217	czarna magia, czarnoksięstwo, czary
 3534744979	robić, wytwarzać, wyrabiać (coś kunsztownego)
 3535335113	ryczący
+3535973173	kształt gwiazdy
+3536377641	[nieprzetłumaczone]
+3537499397	hiacynt
 3537504935	dyftong
 3539807937	mieć, posiadać
 3540845759	*wróg
 3541747277	oddalenie, (duża) odległość
+3542931759	hobbit
 3544307773	ich (dwojga) <zaimek dzierżawczy 3 os. liczby podwójnej>
 3544385121	piękny (o dziełach sztuki)
+3544888447	mój
+3546629557	ostro zakończony
 3546800451	cienka nić
 3547079839	dar, (pierw.) rzecz podana, przyniesiona lub przysłana komuś
 3547552943	dłużnik, winowajca
+3547833005	żelazopodobny
 3549506187	władca, książę
 3549544985	paluch; palik; kciuk
-3549659777	wznoszący, unoszący się, wstający
 3550160277	ostro zakończony
+3550520913	Włochy
 3552314785	cyrulik, lekarz
+3553488753	ciemny, przyćmiony
 3553569401	dziesięć
 3554980149	niezawodność, oddanie, wierność
 3555297337	elfi
+3555848301	na (czymś)
 3557695319	książę, królewicz
 3558124111	*wola
+3558340363	rzymski
 3559189537	odpływ
 3560809247	pełny, zupełny
+3561504239	kot
 3561565643	*piętnaście
 3562707849	przeraźliwy strach, lęk
 3563320015	gniewny, rozwścieczony
+3565569233	spójrz!
 3566559871	drżeć, dygotać, trząść się
 3567722679	my (dwoje) (włączając ciebie) <zaimek 1 os. l. podwójnej włączający>
 3569029613	dziewczynka
 3570217533	ścieżka, przejście
+3570319021	przed-tnący
 3570443779	żywopłot, ogrodzenie
 3570525553	porzucony, pozostawiony
 3571042603	listowie, zbiór liści
 3571548077	cierń, kolec
+3571782537	dwieście
+3572217629	czerwony, rudawy
 3573771469	braciszek
 3573976975	bojaźń
 3576032727	powitanie
@@ -3181,7 +4387,8 @@
 3577473609	niewykonalny, niemożliwy, nieprawdopodobny
 3577626693	trudny, żmudny, mozolny
 3579488663	ogłoszenie, rozkaz
-3583823381	Vala/Potęga
+3579742667	siadać, usiąść
+3583823381	Valar
 3583944535	Elf, (dosł.) należący do ludu gwiazd
 3584998099	głębia, głęboka dolina
 3586135651	piękny i umiłowany, pełen elfiego powabu
@@ -3190,21 +4397,36 @@
 3587259915	kwiatostan (białych kwiatów)
 3588771591	chorowity, cherlawy
 3591473211	trudzić się, być udręczonym
-3591882407	jezioro, staw
+3591830229	odnowiony
+3591882407	jezioro
+3591894489	Teler, jeden z Telerich
 3593477243	Księżyc, (dosł.) Tułacz
 3594741895	bystrooki
-3594850469	*sterczący, ten który wystaje {środkowy palec u ręki}
+3594850469	*ten który wystaje, sterczy
+3595228601	wy (biernik liczby mnogiej)
+3595243675	[nieprzetłumaczone]
 3595567633	błąd, pomyłka
 3596420667	ślepy
+3597091507	prędki, szybki
 3597380807	głowa
-3598986367	pomiędzy; do środka, do wewnątrz, (?w)
+3598010327	staw, jezioro
+3598986367	pomiędzy
 3599313701	(oni) się <zaimek zwrotny 3 os. l.mn.>
+3599641071	owoce, produkt
+3599803999	przyrostek zdrabniający
+3599963433	8; osiem
 3601066893	<końcówka liczby mnogiej>
+3601283475	półka skalna
+3602044119	bukłak
+3602730309	jezioro, sadzawka
 3605082813	liczyć
 3605134347	*ocean
 3606114301	(wielkie) wrota, drzwi
 3606301281	stary, wiekowy, starożytny
 3606722275	sługa
+3607056493	[nieprzetłumaczone]
+3607975961	siedzenie
+3608605023	dziewczyna ukoronowana wieńcem
 3608758121	piękny, nadobny, jasny
 3609277317	podobny, mający wspólne cechy
 3611641109	srebrzysty (jak srebro w odcieniu lub wartości)
@@ -3213,73 +4435,116 @@
 3612484395	drewniany
 3612638081	zmrok
 3613078047	wstrętny, odrażający, okropny, straszny
-3613765759	*sterczący, ten który wystaje {środkowy palec u ręki}
+3613765759	*ten który wystaje, sterczy
 3613966351	żwir, kamienisty brzeg rzeki
+3614580533	strata, utrata
 3614827839	dziki, barbarzyński
 3615229963	on/ona/ono; <zaimek 3 os. l.poj.>
 3616225529	wytryskujący
+3616451487	[nieprzetłumaczone]
 3617982887	jeden
 3618727045	schodzić się, spotykać; gromadzić
 3619564517	gest, charakterystyczny wygląd, gest lub cecha
 3619717329	cichy
-3620266967	przypływ
+3620266967	powódź, przypływ
 3620921633	szkrzydlaty
+3623165649	i tak
 3623274737	jasny, czysty
-3623768543	baśń, opowiadanie, powieść, fabuła, przekaz, historia
+3623768543	opowieść, opowiadanie, rzecz o, historia, relacja
 3626240895	w ten sposób
 3627882891	to nie tak
 3627972525	artysta; poeta
+3628137457	rów, dziura, luka, wąwóz; niski/wąski gościniec między wysokimi ścianami
+3628720745	końcówka imiesłowu
 3628974147	jedna ósma
+3630137473	cieśla, *budowniczy
+3630243135	tylni, *za czymś
 3630401887	pokazywać, wskazywać
 3630748889	przyglądać się, mierzyć wzrokiem, badać, odczytywać, przeglądać
+3631985271	szósty
+3632584501	leżeć
+3634825879	[nieprzetłumaczone]
 3635133399	łatwy
 3635475519	do, ku, w kierunku
+3637118797	stary
+3638400533	Azja
 3640217119	wycie, ujadanie
 3640840225	czyn
+3643152289	[nieprzetłumaczone]
+3643623199	leczyć
 3643912947	grudzień, *dygoczący/drżący
 3643936511	południowy
 3644022111	kciuk i palec wskazujący jako para, (dosł.) *zbieracze
+3644473329	*przyrostek zdrabniający
 3645783073	samogłoska rdzenna, samogłoska wyznacznikowa
 3645783233	obozowisko
 3646644693	ja sam (we własnej osobie) <zaimek 1 os. l.poj. emfatyczny>
+3646926183	przyjaciel -
+3646957823	podążanie, śledzenie
 3647577459	złoto (kolor lub światło), złocistość
 3648556543	potem, następnie
 3648859519	noworodek, niemowlę, osesek, malec
+3649495679	czarny, mroczny
 3649518499	trzynaście
 3649744603	lilia, inny duży pojedynczy kwiat
 3650929309	oprawiać, ograniczać, ogradzać, oddzielać, wyznaczać granice
 3651249801	zabójca, pogromca, zguba
+3651493071	mały palec
 3652402261	dobry, wspaniały, piękny
 3652543649	pięć
 3653585229	październik, przygasanie słońca
 3653772469	droga
+3654251001	9; dziewięć
+3655533163	końcówka celownika
 3655691749	rejon, kraina, kraj, region
 3655697389	nie policzony, niezliczony
 3655849281	*uzupełnić, ponownie napełnić, dopełnić
+3656090881	nieczysty
 3656351225	*wybawca, zbawca
+3659547937	bardzo
+3660579171	mieszczanie
+3661025887	ślub, małżeństwo
 3662074335	tam, w tamtą stronę
+3663749859	goblin
+3664201239	suchy piach, żwir
 3664448297	(zamieszkujacy ciało lub wcielony) duch, dusza
 3664782271	wołać, wzywać
+3667344993	[nieprzetłumaczone]
 3667476735	kwiatostan; wszystkie kwiaty jednej rośliny
+3667900695	Średniowiecze
+3668050335	góra
 3668235473	luty, *wilgotność
 3669226417	długi znak
+3669758889	kusiciel
 3672281631	gładki, bezwłosy
+3672455691	spojrzenie, wpatrywanie
+3672755709	odnowić, odświeżyć
 3673974815	(biało) lśniący
 3674137413	rycerz
 3676766289	cztery
+3677288041	przyrostek zdrabniający
 3678936607	spółgłoskowy
+3679936123	dzicz
 3680125161	młot
 3681532269	pierścień
+3681972119	końcówka narzędnika
 3682562687	co więcej, mało tego
+3682943999	odeszły, ten który odszedł
 3683864041	blond, jasnowłosy
 3684301635	czwartek*, dzień morza
+3685105125	elf
 3686067967	szeroki, obszerny
+3686119117	masło
 3686162625	trucizna, trutka, substancja trująca
 3686939787	kamień (jako materiał), (duża bryła) skały
 3687268913	woda; jezioro, staw; (mała) rzeka
+3687442389	[nieprzetłumaczone]
 3687459933	roczniki, annały, kronika
 3687881673	zachowywać się
+3688267983	jakiś, pewien
 3689681447	okrutny, zły, podły; śmierdzący, cuchnący, plugawy, obrzydliwy; niedobry, niezdrowy, wynędzniały
+3690385575	elficki
+3690616025	wiosna
 3690795455	?iskrzący się
 3690812191	miód
 3690839341	rycerz, jeździec
@@ -3287,53 +4552,76 @@
 3691149531	góra, wzgórze
 3692833871	las
 3692987629	mały
+3694351997	dwieście
 3694664661	zło
 3694760767	dobry, właściwy
 3694974161	krew
 3698039951	słodki
 3698044421	zatoka
 3699203997	opanowywać, pokonywać, zwyciężać
-3701749217	bohater, człowiek mężny; ⚠️[ᴱN.] wojownik
-3702347683	pięść, zamknięta dłoń
+3700767877	ojciec
+3701749217	silny, nieustraszony; siła
+3702347683	pięść, (zamknięta) dłoń
 3702971491	odpuszczać, przebaczać
 3703154217	Vala, (Anielska) Moc, bóstwo, Potęga, Władza
+3703747121	Elf; wróżka
 3706525889	wilk
 3707081957	zamykać
 3707476671	płaska powierzchnia, platforma
+3708086135	dziewiętnasty
 3708830239	<końcówka rzeczownika abstrakcyjnego>
+3708888901	[nieprzetłumaczone]
 3711199553	pijący (nałogowo), *wodny
 3711271661	*wtorek, Dzień Dwóch Drzew
+3711399911	dom
 3712003025	bielić, bieleć
 3712471969	szlachcic, rycerz
 3713703897	książę, wódz, naczelnik
+3714709665	[nieprzetłumaczone]
+3715203519	przyrostek przymiotnikowy
 3716531873	grzbiet górski, grań, przełęcz
+3717565769	[nieprzetłumaczone]
 3717607423	lis
 3717772161	zranienie, rana
 3717913129	liczebnik
+3719144347	[nieprzetłumaczone]
 3719591821	niewypowiedziany, którego nie wolno powiedzieć, o którym nie wolno mówić
 3720174187	magiczny stop jarzący się w blasku księżyca, (dosł.) księżycowa iskra
-3720376219	zręczność, umiejętność, rzemiosło; zdolność, moc, możność; przebiegłość, podstęp
+3720376219	zręczność, umiejętność, rzemiosło; zdolność, moc
 3720558403	wielki ciężar, brzemię, nieszczęście
+3720573353	zimny
 3725104511	ekscytować się, podniecać, być poruszonym
+3727027589	nikt
 3727189605	mrok, czarny/ciemny cień
+3727861447	opowiadać się po stronie, sprzymierzać się z, wspomagać, asystować, służyć
 3728053711	modlitwa
 3729976777	spotkanie, zgromadzenie
+3730815499	udowodnić, pokazać, zademonstrować
 3731320607	przekaz historyczny
 3731809395	lęk przed śmiercią, cień śmierci
+3732072109	odgłos obrzydzenia
+3732235487	wczorajszy
+3732866897	prorok, (dosł.) Boga-posłaniec
 3733669219	śmierć
 3733938955	razem
 3733971225	Valiera
+3734453601	końcówka porównawcza (stopnia wyższego)
 3735508947	rozmowny, gadatliwy
+3736292445	łabądź
 3736354243	robić, czynić
 3736608831	wzruszony, poruszony, podekscytowany
 3737687551	jedna czwarta
 3737823025	drobna [kobieta]
+3738070555	głupiec
 3738278997	język (narząd); mowa
 3741161233	*dostarczać
-3741809301	pomiędzy
+3741809301	[coś] pomiędzy; luka, przestrzeń, bariera; cokolwiek znajdujące się między dwoma rzeczami
 3743116979	niezliczony
 3743403951	powodować pomyślność, błogosławić (pracę), wspomagać
 3743592383	bliżej do
+3744077927	*kochać, pożądać
+3744415383	[nieprzetłumaczone]
+3744824521	przyrostek zgrubiający
 3744832185	dobrze, szczęśnilie, pomyślnie
 3745988075	błąd, błędne działanie
 3747276287	skrzydło
@@ -3346,25 +4634,31 @@
 3748571905	pani, władczyni
 3748877237	rozciągnięty, wydłużony
 3749551147	szermierz
+3750127003	prowadzić wojnę
+3750558263	przyrostek zgrubiający
 3750711103	echo
 3752151555	następca
 3752445525	odchodzić, opuszczać, zostawiać; znikać, ginąć, umierać
 3753756423	świeży, nowy
+3754360373	moc
+3755633621	wtedy, dawniej, ongiś
 3756209657	blask, promienistość, skrzące się odbicie, migocący odblask
 3756694359	(uczuciowy) dom
 3758815315	nasz (włączając ciebie/was), <zaimek dzierżawczy 1 os. l.mn. (włączający)>
 3759075559	proszę
-3760977735	a także, następnie
 3761184881	my sami (we własnej osobie) <zaimek 1 os. l.mn. włączający emfatyczny>
 3761191357	wysoki, szlachetny, wzniosły
 3762401855	Elfka, Elfida
 3762779111	mocny/chyży w biegu
 3763759021	wiatr
-3764144369	złote drzewo
+3764144369	złote/żółte drzewo
 3766524639	skrywalny, zatajalny
+3768375871	iść, wybywać, odchodzić
 3768993343	śnieżnobiały
 3769219383	twój (poufale); <zaimek dzierżawczy 2 os. l.poj. (poufały)>
+3769409345	krzyk
 3771168529	dzika bestia
+3772305805	mleczny
 3772528591	wspaniale
 3774770873	kark, przesmyk, przejście, korytarz
 3774957611	zwarty, zbity, zwięzły
@@ -3375,33 +4669,46 @@
 3777901293	siostra/siostrzyczka; dziewczyna/dziewczynka
 3778378305	tunel, mała grota, jaskinia
 3778869167	skrzyć się, błyszczeć
+3779566519	smajal, jama
 3780770151	podkreślenie, uwypuklenie, zaakcentowanie
+3780789739	19; dziewiętnaście
+3780843229	Númenórejczyk, (dosł.) Ten z Zachodu
 3784141785	zgięty, wygięty, garbaty
-3784242973	rdzawy, kasztanowy (kolor)
+3784242973	rudobrunatny, [n.] brązowy
 3785307351	nieskazitelny, nieskażony, nieskalany
 3785391995	słabnący, więdnący, niedomagający
 3787328481	*targi książki
 3788418257	łowić w sieci, usidlać
 3788535851	twardy, sztywny, trudny, uparty
+3789197597	[nieprzetłumaczone]
 3789478639	?aliteracja
+3789761185	[nieprzetłumaczone]
+3790102249	[nieprzetłumaczone]
 3790235999	inny
-3790570019	liga (jednostka miary), staje/stajanie; †przystanek, przerwa
+3790570019	staja (jednostka miary); †przystanek, przerwa
 3790855049	przerażać
 3791653951	ostry
 3791711107	zasłaniać, przesłaniać
-3795356441	historia, narracja, relacja, przekaz
+3794550385	chmura (chmury)
+3795356441	historia, narracja
+3796935529	Elf
+3800175475	elf
+3800186407	spokornieć
 3800221091	mąż
 3800356233	pomścić, odpłacić się, zareagować, odwzajemnić się
 3800692653	odkrywalny, możliwy do odkrycia
+3801790317	jaskinia
 3802622023	wzgórze, pagórek
+3804326689	godzina, *czas
 3806423637	*Twój (uprzejmie)
 3806997461	*ślub
 3807304969	najpiękniejszy, nadzwyczaj powabny; piękności Ty
 3809010781	skarlały, skrócony, karłowaty/karli
+3809708157	dwadzieścia
 3809724267	lamentujący, zawodzący, jęczący, wyjący
 3809831789	obszerny, rozległy, szeroki, pusty
-3809934845	<końcówka zdrobnienia>
-3810606711	<końcówka allatywu> {komu?, czemu?, do kogo?, do czego?, dokąd?, na kogo?, na co?}
+3809934845	przyrostek zdrabniający
+3810606711	(ruch) do, dokądś, na coś; końcówka allatywu
 3810911159	[nieprzetłumaczone]
 3814533759	mowa rąk
 3814898459	port
@@ -3409,57 +4716,81 @@
 3815044181	pod
 3815549671	trik, sztuczka, podstęp
 3816813615	Noldo, mędrzec
-3816856759	tata, tato, tatko, tatuś
+3816856759	tata, tatuś
 3817109049	imię matczyne, nadane przez matkę
 3817637221	drugi
 3818650479	ogień, żar
 3818685791	sieć
+3818730551	noszący itp.
+3821245049	wieśniak
 3821402109	ów, owa, owo (wcześniej wspomniany/-a/-e)
 3822006327	podnoszący, ten który podnosi
+3822650069	[nieprzetłumaczone]
 3824133689	źródło
+3824528825	szept
 3824976295	popielaty, (jasno) szary
 3825061649	zamykać, ograniczać, gnębić, ciemiężyć
 3825221399	kciuk
 3825415825	mokry
-3828581983	duży; silny, krzepki
+3826844773	ożywać
+3828536521	przyrostek dopełniacza; z, w
+3828581983	duży
+3829322039	cztery
 3829929605	kamieniarz, murarz (rzeźbiarz)
 3831904253	ta kwestia
+3832276295	kochanie, ukochany, ukochana
 3832933461	kołowrotek, obrotnica, stół obrotowy
+3832941589	[nieprzetłumaczone]
 3833075073	wasz (dwojga) <zaimek dzierżawczy 2 os. l.podwójej>
 3833827487	przypuszczać, domniemywać
 3834153233	bluźnierstwo
 3834644447	możność, wola, chęć, zamiar
+3835926165	usunąć, (dosł.) oddalić
 3836401959	moc, siła
 3837352769	ząb, kieł; [ostra] skała
 3837698719	mały
 3838046085	gość
 3838964689	*piętnaście
+3839419453	kulturowy
 3839826717	Pani, Dama, chlebodawczyni
 3840579707	siedemnaście
+3840950499	*złoto
+3841336905	gromadzić, zbierać, robić zapasy
 3842045925	wielolistny, ulistniony
+3842151301	grad
 3845959215	taki sam, identyczny, ten sam
 3846226729	zruinowany, upadły
 3847913077	Ty <zaimek 2 os. grzecznościowy>
+3848017207	*ten który wystaje, sterczy
+3849188265	rodzic
 3849434087	litera (alfabetu Rúmiliańskiego)
+3851481093	[nieprzetłumaczone]
+3853251513	Gnom, Głęboki-elf
+3853602097	[nieprzetłumaczone]
 3854309219	cienisty, zacieniony, ciemny, przyćmiony
 3855390275	kamień, (kamyk)
 3855995391	piosenka, pieśń, śpiew; śpiewak
 3857689791	czynność, działanie, akcja
+3857807519	końcówka dopełniacza
 3858475197	potężny
 3858737205	[nieprzetłumaczone]
 3859389531	wzbudzać zainteresowanie, interesować (się), (dosł.) spowodować by ktoś wypytywał
 3860020313	w oddali, za granicą, rozlegle (daleko i szeroko)
 3860062497	forteca, twierdza, miejsce umocnione
 3861655215	<końcówka wykonawcy czynności>
+3862935413	[nieprzetłumaczone]
 3863335103	wiatr, (szum wiatru)
+3863963433	dolina
 3864307853	deszcz
 3864516415	ja <zaimek 1 os. l.poj.>
+3865022819	odrzucić, opuścić, pozostawić
 3865111061	<przedimek określony l. mn.>
 3865306761	górny koniuszek {tj. palec u ręki}
 3865426267	nie być, nie robić
 3865996291	[wielki, mnogi] (dotyczy ilości)
 3867116161	z melodyjnym dźwiękiem, melodyjny
 3867793305	istniejący, rzeczywisty (prawdziwy)
+3867795455	[nieprzetłumaczone]
 3868060519	(bardzo) daleki/daleko
 3869423149	*jedna jedenasta
 3870440295	zaufany naśladowca, wierny towarzysz
@@ -3467,25 +4798,33 @@
 3872213169	wdzięk, gracja
 3872859039	poza, ponad
 3872901791	?hełm, ?wierzch
-3873358831	leżeć
 3873479807	?przed
 3875004085	koń
 3876656863	ukoronowany, zwieńczony, przystrojony (wieńcem/girlandami)
+3877429671	twarz
 3877833613	*wtorek, Dzień Drzew
+3878382609	długi
 3878459981	kroniki, roczniki
 3880272319	*ten, który liczy, rachuje, {rachmistrz, księgowy}
 3880471189	delikatny, piękny i kruchy, szczupły, śliczny
 3880477855	być żywym, żyć
 3881118769	odczyniać, cofać, niweczyć
+3881155005	my, nas
+3882428547	lazuryt
 3882467267	żona
+3882937963	[nieprzetłumaczone]
 3884665251	piątek, *Dzień Valarów/Potęg
 3885129153	siódmy
-3885255623	wola
+3885190213	szybki, pędzący
+3885255623	*wola
 3886415043	pleść, tkać, snuć
+3886797545	przyrostek zdrabniający
 3887130207	wyobraźnia, umysł
+3888537273	nie rób!
 3888667647	mądry
 3889514715	seria "t" {głosek przedniojęzykowych}
 3889531097	daleko poza
+3891065863	królestwo, kraina
 3891238109	świeży, nowy
 3891332125	jad, trucizna
 3891334369	szpieg
@@ -3493,32 +4832,49 @@
 3892257731	akt woli, ćwiczenie woli
 3893088687	granica, pogranicze, kresy
 3894922181	wy (dwoje) <zaimek 2os. l.podwójnej>
+3894937529	[nieprzetłumaczone]
 3896311135	dziesięć
 3897585707	bolesny, rozpaczliwy, rozgoryczony
-3901100355	aż tak, tak jak, także
+3898706877	przyrostek rzeczownikowy
+3899081301	problem, trudność
+3899338651	delikatny, smukły
+3900729739	syn
+3900979519	ork, goblin
+3901100355	więc, tako, w ten sposób, tak, też; następnie
 3901504895	pęknięty, rozłupany, rozłączony, oddzielny; szczelina, rozpadlina
 3903076413	nikczemny, niegodziwy, czyniący zło
 3903208351	odpowiadać
 3903335687	czytać na głos
+3904235179	ciemnowłosy
 3905199127	żółty, złotej barwy
+3906853623	[nieprzetłumaczone]
 3907709397	śledztwo, dochodzenie, *rozprawa, esej
 3907891475	pośród
 3911858975	miedziany
 3912347965	wejście, wrota
+3912984289	grzmieć
 3913241219	rudowłosy, rudy, miedziany (kolor)
 3913555393	powtarzać, mówić ponownie
+3913990897	okropny
 3914979765	puszczać, wypuszczać, uwalniać
 3915000503	piękny, nadobny, jasny
+3916430711	[nieprzetłumaczone]
 3917037867	góra, wzgórze; szczyt górski
 3919241195	przyjaciel, miłośnik
 3919380347	odmowa, opór, niechęć
+3919436975	*język elficki
 3919574303	wolny (o osobach)
+3919746125	on
+3920456151	[nieprzetłumaczone]
 3920638147	[nieprzetłumaczone]
 3921139409	tytoń, ziele fajkowe
+3921667919	zabijać
 3921849269	wycie wilków
+3922187843	jakiś
 3923493535	słuchać, wsłuchiwać się
 3923683715	tu, tutaj
 3923804893	*myśleć, rozważać
+3923922077	końcówka czasu przyszłego
 3924613279	po (dotyczy czasu)
 3924632063	?łatwy
 3925469285	szkło
@@ -3527,6 +4883,7 @@
 3926816979	(pachnące drzewo wieczniezielone)
 3927334449	blaknąć, blednąć, przygasać
 3929042785	*cięcie, wcięcie, zacięcie
+3929438533	16; szesnaście
 3929533291	długi
 3929898055	kiedykolwiek
 3930209269	przylądek, wybrzeże
@@ -3540,76 +4897,104 @@
 3935682441	czytanie (książki)
 3936362179	sen, wizja
 3938607967	przed (dot. czasu); z tyłu (dot. miejsca)
+3938804287	[nieprzetłumaczone]
+3939319125	jeden z mądrych, Gnom
+3940192117	tron
 3941551103	<końcówka miejscownika> {w/na kim?, w/na czym?, gdzie?>
 3942644123	ślepy
 3942714981	wyspa (o stromym brzegu), ostrów
 3942900161	solidny, mocny
+3944278007	[nieprzetłumaczone]
 3945383311	Niziołek
+3946321143	[nieprzetłumaczone]
+3946555453	[nieprzetłumaczone]
 3947897119	więcej
+3948981175	jesień
 3949168671	pokrywać
 3949267541	Śmiertelniczka
 3950492525	słupek, znak
 3950512525	natura, istota, *sedno; osoba, jednostka
 3950740861	kraj, kraina
-3951012883	zapytanie, dochodzenie
+3951012883	zapytanie, *badania
+3954224561	pięknowłosy; czupryna, grzywa, gęstwina długich włosów
 3955638989	złociste/żółte drzewo
-3957836665	pozostawać, przebywać, być osiadłym lub zadomowionym, mieszkać
+3955851201	trysnąć, wypływać
+3957836665	zamieszkiwać, osiadać, osiąść
 3958131179	<końcówka wyolbrzymienia>
 3958295597	córka
 3958536915	piękno
 3958649473	wzniosły, wysoki, szlachetny
 3959080223	usta
 3959515701	zręczność, sprawność, zwinność
+3960284409	(wszystkie) gwiazdy; ?srebro
 3961121839	dawczyni chleba
 3961474981	straszliwy, przerażający, okropny, wstrętny
-3961555915	lament, rozpacz, łzy
+3961555915	łzy
 3961657517	centrum, środek
-3962984891	kurz, pył, proch, piach, pyłek, żółty proszek
+3964112281	przekorny, uparty, trudny do poradzenia sobie
+3964823587	kura
 3965927295	oni; <zaimek 3 os. l.mn.>
 3966285529	śmiertelny; ludzki
 3967543073	zły uczynek
+3969678323	zięba
 3970078553	kciuk i palec wskazujący jako para
 3970214129	przyjaciel, ukochany
 3970856095	*blaknięcie, blednięcie, przygasanie
 3971000791	komnata
 3973339289	brat
 3974489697	mglista nić, szara elfia lina
+3974564575	iskra, błysk, migot gwiazd
 3977501583	<końcówka rodzaju żeńskiego>
 3978070507	granica, pogranicze, kresy
 3978296511	*-alny <końcówka oznaczająca możliwość, zdolność do czegoś>
+3981482523	[nieprzetłumaczone]
 3982252469	cichy
 3983103205	pojedynczy, sam, samotny
 3985925553	półmrok
 3986405015	wściekłość, furia
+3986975897	jedna dwudziesta
 3987415485	maleć, kurczyć się, słabnąć, niknąć, gasnąć
+3988524887	gwiazda
 3989317599	mama
 3989707245	brzoza
+3992412619	nie do wypowiedzenia, niewymawialny
 3992639495	jak, tak jak, podobnie, w ten sam sposób
 3992966901	*palec matczyny (wskazujący)
 3993000065	lew
+3993164445	*odnowienie
 3993480551	potwór, zdeprawowane lub złe stworzenie
 3994791257	mokry
+3995136989	Wosowie
+3996071351	kciuk
 3996849147	z zamiarem
 3997771925	nie! (rób/bądź), <tryb zakazujący>
 3999749265	nie mieć
 3999790511	klapka, przepaska na oczy
+3999922351	koń
+4001073265	[nieprzetłumaczone]
 4001305417	ojczulek; kciuk
 4001571311	docierać do, iść do, przybywać do
 4001946757	mój; <zaimek dzierżawczy 1 os. l.poj.>
 4002467419	słuchacz, podsluchiwacz (szpieg lub zwiadowca)
 4004674509	jutro
+4005084487	[nieprzetłumaczone]
 4005136415	Elfka, Elfida
+4005231047	1; jeden
 4005253249	czyn, uczynek
 4006790189	długa, wąska dolina z drogą lub ciekiem wodnym biegnącymi wzdłuż; (dosł.) przebieg doliny
 4007311329	zastęp, horda
+4009554495	do
 4010460053	zachód
 4010906227	czwarty palec (u ręki)
 4012232289	*dzienny, codzienny, powszedni
 4014852591	topić, łykać, zanurzać, (dosł.) zalizywać
+4016562133	żeliwo
 4016710911	pochmurny
 4019354049	*dłużnik, winowajca
 4020854329	[nieprzetłumaczone]
 4022873477	wychwalać, sławić, czcić
+4026405733	prawdomówca, prorok
+4027695637	siedlisko zła; komnata tortur
 4029157119	precz!, won!, odejdź!
 4029927507	zmierzch, zmrok
 4033790303	świeży, nowy, odnowiony
@@ -3618,37 +5003,48 @@
 4037938107	*dla
 4038609759	uczynek, czyn
 4039214635	malec, niemowlę
+4039612121	każdy
 4039813507	Ty (uprzejmie)
+4040020785	internet
 4040996631	pomścić, odpłacić się, zareagować, odwzajemnić się
-4041395811	?szczelina, rozpadlina, rysa
+4041395811	?szczelina, rozpadlina
+4042227713	[nieprzetłumaczone]
 4042471759	każdy, wszystek (o konkretnej grupie pewnych rzeczy)
 4042875441	ładunek
+4043533401	budować, ustanawiać, zakładać
 4044344237	chwała, pochwała
-4044538879	ogień (żywioł); płomień
+4044538879	ogień (żywioł)
 4044907595	oddychający powietrzem
 4045264559	Troll
 4045568737	pięć
-4045981433	wiecznie, bezustannie, nieustająco; bezkresny przedział czasu {wieczność}
+4045981433	na zawsze, bezustannie, nieustająco, wiecznie, na wieczność
 4047219659	odległy
 4047578469	*błogosławiony, pełen łaski
 4047916513	*wybaczać, ?przebaczać (komuś)
+4048978737	wysoki
+4049004639	zamarzać
 4049611703	złoto
 4051074567	nie-; †bez-
 4051090205	<końcówka rodzaju żeńskiego>
+4051693583	Francja
 4053066113	przyposzczalnie, może
-4053756473	hiacynt (liść hiacyntu); *trawa, trzcina
+4053756473	hiacynt (liść hiacyntu)
+4054182455	krzepki, silny, stabilny, trwały
 4054936863	*złooki, o złym spojrzeniu
 4054949657	serce (narząd)
-4056471025	pochyłość, zbocze, stok, nachylenie; pochyły, nachylony
+4056471025	stroma pochyłość, zbocze, stok; pochyły, mocno nachylony
 4059097285	w szczególności, szczególnie
 4060086335	kosmyk włosów, włos
 4060576159	to samo (rzecz)
+4061344463	przyrostek przysłówka
 4061512729	nić, przędza, ‽sznurek
+4061827153	imiesłów czynny
 4063999805	lampa, (urządzenie dające) światło
 4064628837	*tata, tato, tatuś, tatko
 4065221315	głęboka dolina, wąska dolina że stromymi ścianami, szczelina, wąwóz
 4065795727	Wasz (uprzejmie) <zaimek dzierżawczy 2 os. l.mn. grzecznościowy>
 4066051735	artysta, poeta
+4067628229	z, przyrostek częściowy
 4068001285	ciemny kształt, cień rzucany w świetle
 4068167609	areszt, więzienie, przechowalnia, przymus
 4069992565	(biała) chmura/obłok; woal, zasłona; kształt, postać, wizja
@@ -3659,106 +5055,158 @@
 4073717377	wschodni
 4076360815	warczeć, mruczeć, burczeć
 4076749719	twarz
+4077474701	Grecja
 4078817877	upiór, duch zmarłego
 4079644733	<końcówka narzędnika> {kim?, czym?}
 4081199993	południowy, (dosł.) po lewej
+4083468335	wylizujący (jedzenie lub picie), żarłoczne jedzenie czegoś
 4083958499	szaroelficki
-4086231081	szczelina, rozpadlina, przesmyk, wąwóz, przejście
+4086231081	szczelina, rozpadlina, przesmyk, wąwóz
+4086856511	język walijski
 4087715737	wieczny, wiekuisty
 4088422897	cyrulik, lekarz
 4089016991	spostrzegawczy, bystrooki
 4089572401	ostra krawędź (nie narzedzi), nagły koniec
 4090976303	równina, nisko położony/płaski teren
 4091448351	rodzic
+4092747857	od-; przedrostek oddalania się
 4093888565	ciało (mięso)
 4093980447	wygnany
-4094877333	gra, sport, igraszka
+4094041375	jedna dwudziesta
+4094877333	radość, wesołość
 4095170953	dmuchać, dąć, wiać
+4095405091	wyznaczony
+4096691455	wielki słoń
+4096697021	szpital
+4096810195	[nieprzetłumaczone]
+4096949627	końcówka męska
 4097786197	do, w kierunku, ku; do niedalekiego, pobliskiego miejsca
 4098087551	przylądek, cypel
+4098290317	gwiazda
 4098694141	fajkowe ziele, tytoń
-4103547401	?zdrowienie
+4101773603	końcówka rodzaju męskiego
+4102090331	pusty
+4103547401	?uzdrawianie
 4103883957	słuchaj, posłysz
 4104058537	łabędź
+4104588351	rzucony cień
 4105240237	zamykać
 4106024119	jeść łapczywie, połykać, pożerać; objadać się, obżerać
 4106235855	pięć
 4106654097	rozwijający się kwiat {szyszak zwieńczony w formie kwiatu}
+4107118777	zima
 4107823181	<końcówka czasu przeszłego 3 os. l.poj.>
 4108870091	iskra, błysk, migot gwiazd
-4109009003	(zagłębienie) dłoni, dłoń
+4108893081	przedrostek dopełniacza/przymiotnika
+4109009003	dłoń
 4109161905	bez, nie posiadający
 4109992773	ostrokrzew, cierń
+4110731679	przyrostek przymiotnikowy
 4111039267	prywatny, odrębny, wydzielony, nie wspólny
 4111469063	nie być, nie robić
+4111535087	umysł, serce, myśl
+4112253997	upadek, spadać
 4114373613	ogrodzenie, żywopłot
 4114972767	*wskazywać, pokazywać palcem
 4115185561	wielki zbiór rzeczy tego samego rodzaju lub tłum, ciżba
 4115753101	twierdza, miasto (z cytadelą i centralną strażnicą)
 4116257429	obserwacja, nadzór, dozór, straż, wachta
 4116701629	*w dal patrząca {(dosł.) która patrzyła w dal}
+4117669869	przyrostek zgrubiający
 4117920797	płaska powierzchnia, platforma
-4118114037	zimno; śnieg
+4118114037	zimno
 4118545881	ostro gryzący, kąśliwy
+4118745103	dostojny, zarozumiały
+4120619435	Jeździec
 4124470193	taki, tego rodzaju
 4127585931	my (dwoje), ty i ja, (włączając ciebie) <zaimek 1 os. l. podwójnej włączający>
 4127753645	ogromny
+4129195187	nieskończoność, nieskończony
 4129338963	włos, włókno
 4130403193	brew, czoło
 4131304031	zgładzać, uśmiercać; ranić, urażać, kaleczyć
+4131404857	przyzwolenie, zgoda
 4133314395	nić, przędza, ‽sznurek
-4133334341	otwierać (pąki, kwiaty, liście)
 4133685985	morze
+4135036005	1; jeden
+4135862713	zmarszczka
+4138176685	*kochanie, ukochany, ukochana
+4138507587	nagość
 4140090829	*zgładzony, zabity, uśmiercony
+4140600767	trzymać w ręku, dzierżyć, władać (bronią); radzić sobie z
+4140754967	[nieprzetłumaczone]
 4141797151	złamany
 4142094615	owca
+4143791143	brat
 4144148509	odpływ
 4144409663	wiąz
+4144823359	odpowiednik od-, wy-
 4145961873	deszcz; piana, rozbryzg, mgiełka wodna
 4146576285	pojedynczy kwiat; kwiatek
+4148558359	szlachetny
 4149591485	ustalony czas, święto, festival
 4149987191	*szesnaście
 4150102015	kompozytor, muzyk
 4150607555	on/ona <zaimek 3 os. l.poj. żywotny>
+4150995727	Wielkie Morze
+4151796695	[nieprzetłumaczone]
 4154323611	kciuk, (dosł.) zbieracz
 4154712331	kwiat
+4158146769	ogród
 4158226927	(Wielki) Krasnolud
-4158418399	*wtorek, dzień Drzewa (numenorejski)
+4158407079	[nieprzetłumaczone]
+4158418399	*wtorek, dzień Drzewa (númenórejski)
 4159881135	splot, sieć
 4159951903	dziecko
-4160452287	zasłaniać, zakrywać, okrywać
+4160452287	zasłaniać, okrywać
 4161645487	skwarny, upalny, parny, nieprzyjemnie gorący
 4162083097	wąż, gad, gadzina, jaszczur
+4163429773	mówi, powiedział
 4163520451	przyjaciel w potrzebie, znajomy ze wspólnymi zainteresowaniami, kolega
 4164591181	brązowy, szatynowy
+4165036199	[nieprzetłumaczone]
+4165670975	wymawialny, *możliwy do wymówienia, powiedzenia
 4166569345	sierpień, (dosł.) *koniec lata
+4166992513	wilk
 4167656007	syn <końcówka patronimiczna>
 4169082833	kwiatostan, zbiór kwiatów (jednej rośliny)
+4169096207	obierać, zdzierać; *ograbiać, pozbawiać
+4169427777	bliski
 4173160963	dźwigać, podnosić
 4173187777	?spotykać, wychodzić na przeciw
+4174734655	mnich
 4175215813	trudny do zrobienia, ledwo wykonalny
 4175770757	nosiciel; ten, który nosi
 4176522889	<końcówka rzeczownika odsłownego lub abstrakcyjnego>
 4176843733	słowik
 4177081881	źródło, krynica, zdrój, studnia
 4177661279	gdy
+4179129467	kobieta
 4179712901	zły
 4180597497	<końcówka oznaczająca wynik czynności>
+4181226571	kurhan
 4182175255	*błogosławiony
 4182277215	kalać, skażać
-4182917351	śpiewać, intonować
-4184813155	wola, decyzja
+4182917351	śpiewać
+4185650343	dwadzieścia jeden
+4187376821	[nieprzetłumaczone]
+4188809791	przyrostek przymiotnikowy
+4189115137	(u)krzyż(owanie)
 4191170921	prywatny, odrębny, wydzielony, nie wspólny
 4191424859	drugi
 4192247721	Vala/Potęga
 4192498879	mieć swobodę/przyzwolenie by coś robić
+4192847465	wioska, małe skupisko mieszkań na wzgórzu
 4194043423	szarość
+4194618745	budować
 4195000737	melodyjny dźwięk, melodia
 4195559591	topór, siekiera
 4196574653	ukryty, schowany
+4199243171	krasnoludzki
 4200644209	łatwy, (dosł.) bardzo wykonalny
-4200880481	wyspa (zwłaszcza o wysokim, stromym brzegu), ostrów
-4205058149	bliźniak, bliźnię
+4200880481	wyspa (o wysokim, stromym brzegu)
+4201718885	w, przy
+4205058149	bliźniak
 4205417691	skoro tak, w tym przypadku
 4205527803	*ten/ta/to
 4207095223	straszyć, przerażać (kogoś)
@@ -3766,6 +5214,7 @@
 4208071129	pod, poniżej
 4208458143	drzwi
 4208668943	mallorn, (dosł.) złociste/żółte drzewo
+4208803905	wskazówka
 4210222447	wy (dwoje) <zaimek 2os. l.mn.>
 4211354227	<końcówka rzeczownika odsłownego>
 4211379493	<przedrostek stopnia najwyższego>
@@ -3779,7 +5228,9 @@
 4216604853	<końcówka zaimka grzecznościowego>
 4216983799	w rezultacie, skutkiem tego, stamtąd, po czym, (dosł.) w następstwie czego
 4217184203	usta
+4217550275	[nieprzetłumaczone]
 4218712701	hełm, kask
+4220611423	w, przy; przyrostek inessivusa
 4222038463	my (we własnej osobie) <zaimek 1 os. l.mn. wykluczający emfatyczny>, *my <zaimek 1 os. l. podwójnej wykluczający emfatyczny>
 4222237149	tam
 4222309363	ciężkoręki, surowy, srogi, nieokrzesany
@@ -3788,36 +5239,47 @@
 4224936427	przebiśniegowaty, {(dosł.) niczym białe łzy}
 4227170687	więzienie, areszt, przymus
 4228146575	otoczony, ogrodzony, objęty
-4230435027	odpoczynek, wytchnienie, spokój
+4228604693	lampa, lampion
+4230435027	*spokój
 4231489635	pani, dama
+4232014917	język
 4233047675	czerwiec, ?przedlecie
 4234457545	wędrowiec, pielgrzym
+4236053139	chwała, promienność, blask
+4236292303	możliwy do zebrania, zgromadzenia
 4238353515	rzeka
-4238395593	operator czasu przyszłego
+4238395593	przedrostek czasu przyszłego
 4239422769	gorąc
 4239760387	spragniony
 4241769375	elficki 6-dniowy tydzień
 4242266335	jadalny
+4242522255	razy
 4242767351	mewa
 4243427473	zmiana zdania/nastroju
 4243988031	zwierzę
 4245165573	*ogrodzenie z zaostrzonych pali o postrzępionej krawędzi, częstokół
 4245414641	niewypowiedziany, niemożliwy do wypowiedzenia lub wymówienia
 4246125207	[nieprzetłumaczone]
+4248485527	dwanaście
 4249211181	<przedrostek stopnia najwyższego>; dobry
 4249818671	hełm, kask
+4250268093	kowal
 4250276895	dwa
+4250951057	przyrostek rzeczownikowy
 4251142745	nosić, dźwigać
 4252321995	rozmowa, dyskusja, (dosł.) wymiana słów
 4252990643	kiedykolwiek
 4253031949	Krasnolud
-4253673585	*dług, przewinienie, występek, wykroczenie
+4253673585	*grzech, dług, wykroczenie
+4254465967	zwodziciel, (dosł.) ten-który-wprowadza-w-błąd
 4255439701	<końcówka przymiotnika>
 4255490933	śmiać się
 4256108779	brud, nieczystość, plugawość, rozkład
+4256436181	księżyc
 4257748311	zwierzę
 4259228765	skóra
 4259558427	wzburzony, dziki
+4259782511	bąbel, pęcherzyk
 4260309385	aktywny, czynny
 4261623759	?falisty
 4261764581	bliźniaczy; bliźnię
@@ -3826,26 +5288,33 @@
 4264082917	stać
 4265974287	lecznicze zioło, athelas
 4267548881	rzecz niemożliwa do zaistnienia lub uczynienia
+4268347775	czuły, miękki, miły, delikatny
 4269013567	skrzydło
 4269229253	odtąd, stamtąd
 4270658761	ojciec
 4271446361	pragnący wyruszyć, skory by pójść
 4271954623	mowa, język
 4272116095	świeży, nowy, odnowiony
+4273374209	ale, piwo
 4273476171	słodki
 4273482913	Świat, Ziemia, (dosł.) Domostwo
 4273689701	światło, ogień, jasność, lśnienie
 4274439999	jeśli
 4276234617	jedna trzecia
 4278203391	skok, przeskok
+4278389847	[nieprzetłumaczone]
+4278843913	elf wysokiego rodu, wróżka
+4278919881	końcówka rodzaju żeńskiego
+4278957737	[nieprzetłumaczone]
 4281976313	powracać, wracać
 4282118887	w górę, górny
 4282488285	mrugać, mrużyć oczy przyglądając się
 4284817751	jeśli
 4286709673	wysoki, wyniosły, wzniosły
 4288164473	*nasz <zaimek dzierżawczy 1os. l.mn.>
+4288286923	[nieprzetłumaczone]
 4288803015	jedna trzecia
 4289339327	przesuwać, poruszać, dźwigać (duże i ciężkie przedmioty)
 4291700927	odpowiedź, (dosł.) *relacja zwrotna
 4293963715	smukły, szczupły
-4294414069	dach, baldachim; kopuła, sklepienie (niebieskie)
+4294414069	dach, baldachim, markiza; niebiosa, niebo
