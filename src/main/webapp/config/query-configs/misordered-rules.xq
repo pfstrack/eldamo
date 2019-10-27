@@ -19,7 +19,7 @@ declare function local:order-of($rule as element()?) as xs:string? {
 {
 let $rules := //word[@speech='phonetic-rule'][before]
 let $bad-rules :=
-    $rules[before[c:get-word(.)/@order lt ../@order]]
+    $rules[before[@l=../@l][c:get-word(.)/@order lt ../@order]]
 return (
 <p><b>Bad Rules: </b> {count($bad-rules)}</p>,
 <dl> {

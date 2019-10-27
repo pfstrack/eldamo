@@ -41,7 +41,7 @@ function postprocessTranscription(result) {
 	result = result.replaceAll('=', ' =').replaceAll('À', ' À') // ',', '?'
 
 	// Mode of Beleriand transcription fixes
-	result = result.replaceAll(']d', '‡d').replaceAll(']s', '‡s').replaceAll(']g', '‡g').replaceAll(']a', '‡a') // a(ch|g|ng|c) - PE22/36
+	// result = result.replaceAll(']d', '‡d').replaceAll(']s', '‡s').replaceAll(']g', '‡g').replaceAll(']a', '‡a') // a(ch|g|ng|c) - PE22/36
 	
 	// Sindarin Classical Mode transcription fixes
 	return result;

@@ -7,8 +7,7 @@ let $words := //word[@l=('ns', 's', 'n', 'en', 'g')][not(see)]
     [not(contains(@mark, '-'))][not(contains(@mark, '|'))]
     [c:is-word(.)][not(@gloss='[unglossed]')][not(c:get-gloss(.) = '‽')][not(@cat)]
 for $word in $words
-let $cat := //cat[@id=$word/@cat]
-order by c:normalize-for-sort($word/@v), $word/@l, xs:decimal($cat/@num)
+order by c:normalize-for-sort($word/@v), $word/@l
 return
     <tr>
         <td>{ c:get-lang($word) }</td>
