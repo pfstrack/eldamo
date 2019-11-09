@@ -163,4 +163,9 @@ public class MockResponse implements HttpServletResponse {
     public Collection<String> getHeaderNames() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public void setContentLengthLong(long len) {
+
+    }
 }
