@@ -67,6 +67,7 @@ return (
             { $cat/@num/string() }{' '}
             { $cat/@label/string() }
             </a>
+            { if ($pubmode != 'true') then concat(' [', $cat/@id/string(), ']') else ()}
         </li>
     } </ul>,
     for $cat in $cats
@@ -76,6 +77,7 @@ return (
             <a name="{$cat/@id}"/>
             { $cat/@num/string() }{' '}
             { $cat/@label/string() }
+            { if ($pubmode != 'true') then concat(' [', $cat/@id/string(), ']') else ()}
             </u>
         </h3>,
         <dl> {
@@ -131,13 +133,13 @@ return (
 ) }
 {
 let $uncategorized := xdb:key(/*, 'language', $id)
+    [$pubmode != 'true']
     [not(starts-with(c:get-speech(.), 'phon'))]
     [not(ends-with(c:get-speech(.), 'name'))]
     [not(c:get-speech(.) = 'grammar')]
     [not(c:get-speech(.) = 'phrase')]
     [not(c:get-speech(.) = 'text')]
     [not(@cat = /*/cats/cat-group/cat/@id or @cat = '?')]
-    [$pubmode != 'true']
 return if (count($uncategorized) = 0) then () else (
 <p><b>Uncategorized Words</b></p>,
 <dl> {
