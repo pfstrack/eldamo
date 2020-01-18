@@ -333,6 +333,7 @@
       <xs:enumeration value="irregular-plural"/>
       <xs:enumeration value="irregular-subjective"/>
       <xs:enumeration value="joining-base-vowel"/>
+      <xs:enumeration value="long-dative"/>
       <xs:enumeration value="long-imperfect"/>
       <xs:enumeration value="n-accusative"/>
       <xs:enumeration value="na-dative"/>
