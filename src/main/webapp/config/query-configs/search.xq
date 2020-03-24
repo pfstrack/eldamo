@@ -62,7 +62,8 @@ span.button-holder {{ float: right; display: block }}
 span.search-holder {{ overflow: hidden; display: block; padding-right: 0.5em; }}
 input.searchBox {{ width: 100%; }}
 .search-selectors {{ margin-top: 0.25em; display: none; text-align: center; }}
-.help-div {{ margin-top: 0.25em; display: none; }}
+.neo-warning-div {{ margin-top: 0.25em; padding-top: 0.25em; display: none; }}
+.help-div {{ margin-top: 0.25em; display: block; }}
 input[type="text"], select, button {{ font-size: 16px; }}
 button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
 .label-holder {{ display: none; }}
@@ -87,12 +88,12 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
         <button id="advancedButton" class="advancedButton" onclick="advanced()">...</button>
     </span>
     <span class="search-holder">
-        <input type="text" id="searchBox" class="searchBox" value="" onkeyup="doSearchTyping()" placeholder="Search..." />
+        <input type="text" id="searchBox" class="searchBox" value="" onfocus="hideHelp()" onkeyup="doSearchTyping()" placeholder="Search..." />
     </span>
 </div>
 <div class="search-selectors" id="search-selectors">
     <button id="helpButton" class="helpButton" onclick="help()">?</button> &#160;
-    <select id="langSelect" class="langSelect" onchange="doSearch()">
+    <select id="langSelect" class="langSelect" onfocus="hideHelp()" onchange="doSearch()">
         <option value="">All Languages</option>
         <option value="" disabled="disabled">─────────────</option>
         <option value="eq|mq|q|nq">All Quenya</option>
@@ -117,18 +118,18 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
             )
        }
     </select> &#160;
-    <select id="targetSelect" onchange="doSearch()">
+    <select id="targetSelect" onfocus="hideHelp()" onchange="doSearch()">
         <option value="word-and-gloss">word &amp; gloss</option>
         <option value="word-only">word only</option>
         <option value="gloss-only">gloss only</option>
     </select> &#160;
-    <select id="positionSelect" onchange="doSearch()">
+    <select id="positionSelect" onfocus="hideHelp()" onchange="doSearch()">
         <option value="anywhere">any match</option>
         <option value="start">start only</option>
         <option value="end">end only</option>
         <option value="interior">interior only</option>
     </select> &#160;
-    <select id="partsOfSpeechSelect" onchange="doSearch()">
+    <select id="partsOfSpeechSelect" onfocus="hideHelp()" onchange="doSearch()">
         <option value="">parts of speech</option>
         <option value="" disabled="disabled">──────</option>
         <option value="no-names">exclude names</option>
@@ -147,11 +148,22 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
     </select> &#160;
     <button id="resetButton" onclick="reset()">Reset</button>
 </div>
+<div class="neo-warning-div" id="neo-warning-div">
+WARNING: BETA CONTENT; USE WITH CAUTION. This search mixes words from various periods of Tolkien’s life, as well as
+neologisms invented by fans. The search results use the ⚠️  symbol to recommend against using particular words, but this is a
+reflection only of the author’s (Paul Strack’s) opinions. Furthermore, the analysis of the corpus remains incomplete,
+and these recommendations may change in the future. For more information about neologisms in Eldamo, see the neologism
+lists for <a href="../neologism-indexes/neologisms-nq.html?neo">Neo-Quenya</a> and
+<a href="../neologism-indexes/neologisms-ns.html?neo">Neo-Sindarin</a>. For a search limited to Tolkien’s own words
+excluding any neologisms or recommendations, see the <a href="search.html">Academic Search</a>.
+</div>
 <div class="help-div" id="help-div">
-<p><b>Help:</b> Enter the word or translation you want to search for in the text box to see matching results. The filter
-selectors can be used to further refine the search. By default, the search checks both the word and its glosses
-(translations) but you can further restrict this using the search filters. Note that English translations, like Tolkien,
-use British spellings: “colour” not “color”. There are a few additional “advanced search” options:</p>
+<p><b>Help:</b> This help section is replaced by the search results when you begin searching. You can use the “...”
+and “?” buttons to show/hide the search filters and help text while you are searching.</p>
+<p>To search, enter the word or translation in the text box to see matching results. By default, the search matches
+against both the word and its glosses (translations) but you can further restrict this by using the search filters,
+which can also be used to filter results by language or parts of speech. Note that English translations, like Tolkien,
+mostly use British spellings: “colour” not “color”. There are a few additional advanced search options:</p>
 <p><i>Wildcards</i> (*): This can be used as match placeholder. The normal search for “re” matches text ending
 containing the text “re” anywhere. The search “*re” matches text ending with “re”; “re*” matches text beginning “re”;
 “*re*” matches text with “re” in the interior; “r*e” matches text that contains an “r” followed by any number of

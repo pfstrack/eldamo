@@ -216,6 +216,8 @@ function initSearchBox() {
 }
 
 function initSearch() {
+	showNeoWarning();
+	if (isTrans) hideHelp();
     var langSelect = document.getElementById('langSelect');
     for (var i = 0; i < langs.length; i++) {
         var item = langs[i];
@@ -531,6 +533,7 @@ function reset() {
     positionSelect.selectedIndex = 0;
     var partsOfSpeechSelect = document.getElementById('partsOfSpeechSelect');
     partsOfSpeechSelect.selectedIndex = 0;
+    showHelp();
     doSearch();
 }
 
@@ -552,6 +555,29 @@ function help() {
     } else {
     	helpDiv.style.display = 'block';
     }
+}
+
+function hideHelp() {
+    var neoWarningDiv = document.getElementById('neo-warning-div');
+    neoWarningDiv.style.display = 'none';
+    var helpDiv = document.getElementById('help-div');
+	helpDiv.style.display = 'none';
+}
+
+function showHelp() {
+	if (isTrans) return;
+    var helpDiv = document.getElementById('help-div');
+	helpDiv.style.display = 'block';
+}
+
+function showNeoWarning() {
+	if (isNeo) {
+	    var neoWarningDiv = document.getElementById('neo-warning-div');
+	    neoWarningDiv.style.display = 'block';
+	} else {
+	    var neoWarningDiv = document.getElementById('neo-warning-div');
+	    neoWarningDiv.style.display = 'none';
+	}
 }
 
 //-----------------//
