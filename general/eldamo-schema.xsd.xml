@@ -20,7 +20,7 @@
       <xs:enumeration value="biconsonantal-root"/>
       <xs:enumeration value="triconsonantal-root"/>
 
-      <xs:enumeration value="a-stem"/>
+      <xs:enumeration value="a-verb"/>
       <xs:enumeration value="basic-verb"/>
       <xs:enumeration value="irregular-verb"/>
       <xs:enumeration value="na-formative"/>
@@ -28,7 +28,7 @@
       <xs:enumeration value="ta-causative"/>
       <xs:enumeration value="ta-formative"/>
       <xs:enumeration value="talat-stem"/>
-      <xs:enumeration value="u-stem"/>
+      <xs:enumeration value="u-verb"/>
       <xs:enumeration value="weak-verb"/>
       <xs:enumeration value="ya-causative"/>
       <xs:enumeration value="ya-formative"/>
@@ -327,6 +327,7 @@
       <xs:enumeration value="dialectical"/>
       <xs:enumeration value="draft"/>
       <xs:enumeration value="er-plural"/>
+      <xs:enumeration value="half-strong-past"/>
       <xs:enumeration value="infixed-imperative"/>
       <xs:enumeration value="irregular"/>
       <xs:enumeration value="irregular-dual"/>
@@ -347,12 +348,15 @@
       <xs:enumeration value="pronoun-prefix"/>
       <xs:enumeration value="prosodic-lengthening"/>
       <xs:enumeration value="r-locative"/>
+      <xs:enumeration value="root-perfect"/>
       <xs:enumeration value="short-instrumental"/>
       <xs:enumeration value="strong-I-without-syncope"/>
-      <xs:enumeration value="suffixed-imperative"/>
-      <xs:enumeration value="u-dual"/>
       <xs:enumeration value="strong-past"/>
       <xs:enumeration value="strong-perfect"/>
+      <xs:enumeration value="suffixed-imperative"/>
+      <xs:enumeration value="u-dual"/>
+      <xs:enumeration value="weak-past"/>
+      <xs:enumeration value="weak-perfect"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="inflect-variant-list-type">
