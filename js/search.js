@@ -533,6 +533,7 @@ function reset() {
     positionSelect.selectedIndex = 0;
     var partsOfSpeechSelect = document.getElementById('partsOfSpeechSelect');
     partsOfSpeechSelect.selectedIndex = 0;
+	window.stickyhelp = false;
     showHelp();
     doSearch();
 }
@@ -548,6 +549,7 @@ function advanced() {
 }
 
 function help() {
+	window.stickyhelp = !window.stickyhelp;
     var helpDiv = document.getElementById('help-div');
     display = getComputedStyle(helpDiv, null).getPropertyValue('display');
     if (display == 'block') {
@@ -558,6 +560,9 @@ function help() {
 }
 
 function hideHelp() {
+	if (window.stickyhelp) {
+		return;
+	}
     var neoWarningDiv = document.getElementById('neo-warning-div');
     neoWarningDiv.style.display = 'none';
     var helpDiv = document.getElementById('help-div');
