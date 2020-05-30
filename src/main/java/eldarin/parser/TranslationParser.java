@@ -18,11 +18,13 @@ import java.util.Map;
 public class TranslationParser {
 
     public static void main(String[] args) throws Exception {
+        // The older export with partial translations
         List<List<String>> baseList = readFile("/Users/pfstrack/Desktop/base-polish.txt");
         Map<String, List<String>> baseMap = new HashMap<String, List<String>>();
         for (List<String> row : baseList) {
             baseMap.put(row.get(0), row);
         }
+        // The new export from Eldamo
         List<List<String>> export = readFile("/Users/pfstrack/Desktop/export-polish.txt");
         for (List<String> row : export) {
             List<String> baseRow = baseMap.get(row.get(0));
