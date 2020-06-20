@@ -81,7 +81,7 @@ The <i>Tengwar Eldamar</i> font is © Måns Björkman and is used with permiss
 <a rel="license" href="http://at.mansbjorkman.net">http://at.mansbjorkman.net</a> for more information and the latest
 version of this font). The version of this font used by this lexicon is the web font
 (<a href="css/tengwar-eldamar-glaemscrafu.woff">tengwar-eldamar-glaemscrafu.woff</a>)
-created by Benjamin Babut and Bertrand Bellet for the <a rel="license" href="http://www.jrrvf.com/~glaemscrafu/">Glǽmscrafu</a>
+created by Benjamin Babut and Bertrand Bellet for the <a rel="license" href="https://glaemscrafu.jrrvf.com">Glǽmscrafu</a>
 web site, also used with permission. Please consult the owners of this font and the relevant licenses before using it in
 other projects.
 </p>

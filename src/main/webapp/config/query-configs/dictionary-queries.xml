@@ -20,6 +20,15 @@
             <xquery-renderer content-type="html" mime-type="text/html" file="test.xq"/>
         </renderers>
     </query-controller>
+    <query-controller uri-pattern="/csv/word-export.*">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="txt" mime-type="text/plain" file="word-export.xq"/>
+        </renderers>
+    </query-controller>
     <query-controller uri-pattern="/csv/base-export.*">
         <simple-request-parser />
         <query>
