@@ -158,8 +158,8 @@ lists for <a href="../neologism-indexes/neologisms-nq.html?neo">Neo-Quenya</a> a
 excluding any neologisms or recommendations, see the <a href="search.html">Academic Search</a>.
 </div>
 <div class="help-div" id="help-div">
-<p><b>Help:</b> This help section is replaced by the search results when you first begin searching. You can use the
-“...” button to show/hide the search filters and the and “?” button to show/hide help text while you are searching.</p>
+<p><b>Help:</b> This help section is replaced by the search results when you begin searching. You can use the “...”
+and “?” buttons to show/hide the search filters and help text while you are searching.</p>
 <p>To search, enter the word or translation in the text box to see matching results. By default, the search matches
 against both the word and its glosses (translations) but you can further restrict this by using the search filters,
 which can also be used to filter results by language or parts of speech. Note that English translations, like Tolkien,

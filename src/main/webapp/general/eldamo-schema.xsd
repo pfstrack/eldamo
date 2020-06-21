@@ -75,7 +75,6 @@
       <xs:enumeration value="pluperfect"/>
       <xs:enumeration value="future-imperfect"/>
       <xs:enumeration value="future-perfect"/>
-      <xs:enumeration value="future-future"/>
       <xs:enumeration value="continuative-present"/>
       <xs:enumeration value="continuative-past"/>
       <xs:enumeration value="draft-perfect"/>
