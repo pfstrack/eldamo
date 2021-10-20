@@ -3,7 +3,7 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body> 
 <table> {
-let $words := //word[@l=('ns', 's', 'n', 'en', 'g')][not(see)]
+let $words := //word[@l=('ns', 's', 'n', 'en', 'g', 'nq', 'q', 'mq', 'eq')][not(see)]
     [not(contains(@mark, '-'))][not(contains(@mark, '|'))]
     [c:is-word(.)][not(@gloss='[unglossed]')][not(c:get-gloss(.) = '‽')][not(c:get-gloss(.) = '?')][not(@cat)]
 for $word in $words

@@ -525,6 +525,10 @@ return (
     {if ($word/see)
         then (' see ', c:print-word(c:get-word($word/see)[1], <print-word style="bold" show-lang="y" show-link="y"/>))
         else ()}
+    {if ($word/@cat and not($word/see))
+        then (' (Category: ', <a href="../category-indexes/categories-{c:get-lang($word)}.html#{$word/@cat/string()}">
+        {xdb:key(., 'cat-def', $word/@cat)/@label/string()}</a>, ')')
+        else ()}
     {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
 </p>,
 
@@ -596,6 +600,10 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     { let $normalize := $l = ('q', 'nq', 'mq', 'eq') return
       if ($word/see and not ($word/deprecated))
         then (' see ', c:print-word(c:get-word($word/see), <print-word style="bold" show-lang="y" show-link="y" normalize="{$normalize}"/>))
+        else ()}
+    {if ($word/@cat and not($word/see))
+        then (' (Category: ', <a href="../category-indexes/categories-{c:get-neo-lang-with-fallback($word)}.html?neo#{$word/@cat/string()}">
+        {xdb:key(., 'cat-def', $word/@cat)/@label/string()}</a>, ')')
         else ()}
     {if ($pubmode = 'false' and $word/combine) then ' [combine^^]' else ()}
 </dt>

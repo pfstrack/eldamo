@@ -112,6 +112,14 @@ declare function c:get-neo-lang($ref as element()*) as xs:string {
     else ''
 };
 
+declare function c:get-neo-lang-with-fallback($ref as element()*) as xs:string {
+    let $lang := c:get-lang($ref) return
+    if ($lang = ('nq', 'q', 'mq', 'eq')) then 'nq'
+    else if ($lang = ('ns', 's', 'n', 'en', 'g')) then 'ns'
+    else if ($lang = ('np', 'p', 'mp', 'ep')) then 'np'
+    else $lang
+};
+
 declare function c:get-neo-lang-group($lang as xs:string) as xs:string* {
     if ($lang = 'nq') then ('nq', 'q', 'mq', 'eq')
     else if ($lang = 'ns') then ('ns', 's', 'n', 'en', 'g')

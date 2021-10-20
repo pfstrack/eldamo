@@ -166,8 +166,7 @@ which can also be used to filter results by language or parts of speech. Note th
 mostly use British spellings: “colour” not “color”. There are a few additional advanced search options:</p>
 <p><i>Wildcards</i> (*): This can be used as match placeholder. The normal search for “re” matches text ending
 containing the text “re” anywhere. The search “*re” matches text ending with “re”; “re*” matches text beginning “re”;
-“*re*” matches text with “re” in the interior; “r*e” matches text that contains an “r” followed by any number of
-characters and then an “e”.</p>
+“*re*” matches text with “re” in the interior; “r*e” matches text that starts with an “r” and ends with an “e”.</p>
 <p><i>Multi-match</i> (,): A comma “,” can be used for optional multi-match criteria. The search “dream, sleep”
 will find any word that matches either “dream” or “sleep”.</p>
 <p><i>Multi-match</i> (+): A plus “+” can be used for required multi-match criteria. The search “dream+sleep”

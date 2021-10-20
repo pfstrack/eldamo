@@ -109,7 +109,7 @@ return (
             let $lang-list := (c:print-lang2($word), for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]] return c:print-lang2($w))
             return concat(string-join($lang-list, ', '), ' ')
         ) }
-        { if ($alt-lang) then concat('[', $alt-lang, if (c:is-primitive($word)) then ']' else '] ') else () }
+        { if ($alt-lang and not($neo-lang and not($word/@mark))) then concat('[', $alt-lang, if (c:is-primitive($word)) then ']' else '] ') else () }
         { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)
           else c:print-word($word, <control style="bold" show-link="y" normalize="{$normalize}"/>) }
         { if ($word/@stem) then <span> (<b>{if ($normalize) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
@@ -132,14 +132,23 @@ return (
     )
 ) }
 {
-let $uncategorized := xdb:key(/*, 'language', $id)
+let $lang-group := c:get-neo-lang-group($id)
+let $is-neo-lang := count($lang-group) gt 1
+let $base-group := if ($pubmode = 'true') then ()
+    else if ($is-neo-lang)
+    then /*/word[@l=$lang-group]
+    else xdb:key(/*, 'language', $id)
+let $uncategorized := $base-group
     [$pubmode != 'true']
     [not(starts-with(c:get-speech(.), 'phon'))]
     [not(ends-with(c:get-speech(.), 'name'))]
     [not(c:get-speech(.) = 'grammar')]
     [not(c:get-speech(.) = 'phrase')]
     [not(c:get-speech(.) = 'text')]
+    [not(contains(@mark, '-'))]
     [not(@cat = /*/cats/cat-group/cat/@id or @cat = '?')]
+    [not(see)]
+    [not(@gloss='[unglossed]')]
 return if (count($uncategorized) = 0) then () else (
 <p><b>Uncategorized Words</b></p>,
 <dl> {

@@ -10,7 +10,15 @@
 <p>[<a href="../index.html">Home</a>]</p>
 <hr>
 <h1>Version History</h1>
-<p>v0.7.9</p>
+<p>v0.8.0</p>
+<ul>
+<li>Added information from <i>The Nature of Middle Earth</i>.</li>
+<li>Finished dictionary entries for Primitive Elvish roots: √N - √YUR.</li>
+<li>Add semantic category link to word pages.</li>
+<li>Finished semantic categorization of Sindarin/Noldorin/Gnomish.</li>
+<li>Edited and reviewed Quenya semantic categories.</li>
+</ul>
+<p>v0.7.9 (April 16, 2021)</p>
 <ul>
 <li>Started dictionary entries for Primitive Elvish roots: √A - √MUY.</li>
 <li>Continued semantic categorization of Sindarin/Noldorin/Gnomish.</li>
@@ -298,18 +306,18 @@ are treated as Neo-Quenya or Neo-Sindarin, even if the form itself is unchanged.
 <li>Partial analysis of Noldorin and Ilkorin phonetic histories, as a proof of concept.</li>
 </ul>
 <h2><a name="v0.6.1"></a>Breaking Changes in v0.6.1</h2>
-<p>As of v0.6.1, the Eldamo data model is going through a major reorganization. Eldamo has always had two missions: (1)
+<p>In v0.6.1, the Eldamo data model went through a major reorganization. Eldamo has always had two missions: (1)
 describing what Tolkien wrote about his languages and (2) suggesting which words might be used for new Elvish writing.
-With this release, the data is being reorganized to better reflect this dual mission.</p>
+In v0.6.1, the data was reorganized to better reflect this dual mission.</p>
 <p>In particular, prior to v0.6.1, Eldamo had many empty “Sindarin” and “Quenya” entries (with no page references) that
 were simply placeholders that indicated which Noldorin and (Middle) Qenya words from the 1930s and 1940s might be
-reasonably used in Neo-Sindarin and Neo-Quenya composition. Most of these entries have been removed, leaving only the
+reasonably used in Neo-Sindarin and Neo-Quenya composition. Most of these entries were removed, leaving only the
 corresponding Noldorin and Middle Quenya entries. The Sindarin and Quenya languages are now reserved almost exclusively
 for words that Tolkien himself used for those languages in his later writings (1950s and beyond).</p>
-<p>In some cases, previous “Sindarin” and (more rarely) “Quenya” entries were reformation of earlier words to fit the
-phonetic and conceptual structures of Tolkien’s later languages from the 1950s and beyond. These reformations are
+<p>In some cases, previous “Sindarin” and (more rarely) “Quenya” entries were reformations of earlier words to fit the
+phonetic and conceptual structures of Tolkien’s later languages from the 1950s and beyond. These reformations are now
 indicated by the “^” marker. Such reformations have been correctly recategorized as Neo-Sindarin (l="ns" or ᴺS.) and
-Neo-Quenya (l="nq" or ᴺQ.). Over time I intend to start including more neologism, reformations or otherwise, with these
+Neo-Quenya (l="nq" or ᴺQ.). Since v0.6.1, I started including more neologism, reformations or otherwise, with these
 ᴺS. and ᴺQ. designations.</p>
 <p>The Neo-Quenya and Neo-Sindarin language lists now serve as a suggested list of words to use in new Elvish
 composition. The Neo-Quenya list includes all published Quenya words created by Tolkien from the 1910s to the 1970s,
@@ -321,25 +329,24 @@ includes only words from 1930-1973.</p>
 word lists. For example, the Quenya word <i>aha</i> appeared in both the 1940s and 1950s, and is listed as: Q., ᴹQ.
 <b>aha</b> “rage”. Similarly, the Sindarin word <i>adar</i> appears as: S., N. <b>adar</b> “father”. In the data model
 these combinations are indicated by the &lt;combine&gt; elements in child &lt;word&gt; elements.</p>
-<p>Gloss attributes are also being modified to include only glosses from the specific time period of the word. Thus, the
+<p>Gloss attributes were also modified in v0.6.1 to include only glosses from the specific time period of the word. Thus, the
 gloss for Q. <b>mól</b> is “slave”, while ᴹQ. <b>mól</b> has the glosses “slave, thrall”. There is a new @ngloss
 attribute (neo-gloss) for the Neo-Eldarin entries that has gloss across multiple time periods. Where a specific gloss
 appears only in an older version of the language, this is also indicated in the @ngloss, as in: Q., ᴹQ. <b>mól</b>
 “slave, [ᴹQ.] thrall”.</p>
-<p>The Neo-Quenya and Neo-Sindarin word lists use the ⚠️  and ⛔️ symbols to indicate that some words are not recommended
+<p>The Neo-Quenya and Neo-Sindarin word lists use the ⚠️  and ⛔️ symbols [⛔️ was removed in v0.6.6 ] to indicate that some words are not recommended
 for new Elvish compositions, with alternate suggestions if they are available. In the data model, these recommendations
 are indicated by the &lt;deprecated&gt; element, with a @strong attribute to distinguish ⚠️ (weak) from ⛔️ (strong) 
 recommendations. These “unrecommended words” are only my opinion, and can be ignored if desired. The ⚠️ symbol also
 appears in glosses for recommendation against using words with certain meanings. Even if there is no &lt;deprecated&gt;
-element, deleted and unglossed words are still marked ⛔️, and words that appear in a deleted section are marked ⚠️.
+element, deleted and unglossed words are still marked ⚠️.
 Early words (1910-1930) are also marked ⚠️ by default; any “rescued” early words are treated as Neo-Quenya or
 Neo-Sindarin, even if the form remains unchanged.</p>
 <p>People using Eldamo data to populate their own dictionaries will need to make some decisions on how to incorporate
-these changes. If you want to ignore my deprecation suggestions, simply ignore the &lt;deprecated&gt; element and strip
+these markers. If you want to ignore my deprecation suggestions, simply ignore the &lt;deprecated&gt; element and strip
 out the ⚠️ symbol from glosses (Unicode Emoji U+26A0 U+FE0F, or XML encoding &amp;#9888;&amp;#65039;). You may also want
 to pre-process the glosses to combine or strip out older meanings. You may need to make decisions about whether you want
 to treat Noldorin words as Sindarin, and Middle Qenya words as Quenya. I can’t tell you exactly how you should use the
-data, but am happy to make suggestions, and perhaps makes some enhancements to the data model to simplify common
-use-cases.</p>
+data, but am happy to make suggestions.</p>
 </body>
 </html>

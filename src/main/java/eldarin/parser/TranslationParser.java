@@ -28,7 +28,7 @@ public class TranslationParser {
         List<List<String>> export = readFile("/Users/pfstrack/Desktop/export-polish.txt");
         for (List<String> row : export) {
             List<String> baseRow = baseMap.get(row.get(0));
-            if (baseRow != null) {
+            if (baseRow != null && baseRow.size() >= 6) {
                 row.add(baseRow.get(5));
                 if (!row.get(4).equals(baseRow.get(4))) {
                     row.add("English Updated");
