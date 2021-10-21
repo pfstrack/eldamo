@@ -1,11 +1,11 @@
 @font-face {
   font-family: GentiumPlusW;
-  src: url("GentiumPlus-R.woff");
+  src: url(GentiumPlus-R.woff);
 }
 @font-face {
   font-family: GentiumPlusW;
   font-style: italic;
-  src: url("GentiumPlus-I.woff");
+  src: url(GentiumPlus-I.woff);
 }
 /* Use "Times" for emoji characters. */
 @font-face {
