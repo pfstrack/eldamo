@@ -50,6 +50,7 @@ let $word-list := $words
         [not(c:get-speech(.)='phrase' or c:get-speech(.)='text')]
         [not(c:get-speech(.)='grammar')]
         [not(starts-with(c:get-speech(.), 'phone'))]
+        [not(c:get-speech(.)='root')]
         [not(deprecated)][not(see)][not(@gloss="[unglossed]")]
         [not(@l = ('eq', 'en', 'g', 'ep'))]
         [not(contains(@mark, '-'))][not(contains(@mark, '|'))]

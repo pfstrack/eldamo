@@ -43,7 +43,11 @@ public class ModelConfigManager {
      */
     public static void init(ServletContext context) {
         if (singleton == null) {
-            configRoot = new File(context.getRealPath("config/model-configs"));
+            String configPath = context.getRealPath("config/model-configs");
+            if (configPath == null) {
+            	configPath = "/Users/pfstrack/eldamo-github/eldamo/src/main/webapp/config/model-configs";
+            }
+			configRoot = new File(configPath);
             singleton = loadData();
         }
         ConfigMonitor monitor = ConfigMonitor.getInstance();

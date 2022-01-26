@@ -57,7 +57,11 @@ public final class DomManager {
      *            structure.
      */
     public static void init(ServletContext context) {
-        setDataRoot(context.getRealPath("data"));
+        String dataPath = context.getRealPath("data");
+        if (dataPath == null) {
+			dataPath = "/Users/pfstrack/eldamo-github/eldamo/data";
+        }
+		setDataRoot(dataPath);
         System.err.println(getDataRoot());
         ConfigMonitor monitor = ConfigMonitor.getInstance();
         if (!monitor.listenerExists(new File(getDataHome()))) {

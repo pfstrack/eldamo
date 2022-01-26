@@ -123,7 +123,7 @@ declare function c:get-neo-lang-with-fallback($ref as element()*) as xs:string {
 declare function c:get-neo-lang-group($lang as xs:string) as xs:string* {
     if ($lang = 'nq') then ('nq', 'q', 'mq', 'eq')
     else if ($lang = 'ns') then ('ns', 's', 'n', 'en', 'g')
-    else if ($lang = 'np') then ('ns', 's', 'n', 'en', 'g')
+    else if ($lang = 'np') then ('np', 'p', 'mp', 'ep')
     else $lang
 };
 

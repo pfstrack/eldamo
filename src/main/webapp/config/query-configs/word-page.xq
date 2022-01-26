@@ -569,13 +569,19 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     { if ($word/@stem) then <span> (<b>{if (c:get-lang($word) = ('q', 'mq', 'eq', 'nq')) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
     { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
     { if (($word/@l = ('s', 'ns', 'n', 'en', 'g', 'q', 'mq', 'eq', 'nq')) and
-         not($word/@speech = 'grammar' or $word/@speech = 'text' or contains($word/@speech, 'phone')) and
+         not($word/@speech = 'grammar' or $word/@speech = 'text' or $word/@speech = 'phrase' or contains($word/@speech, 'phone')) and
          not($word/@l='q' and starts-with($word/@v, '-d'))
         )
         then (', ',
             <span class="transcribe"
                 data-value="{
-                    if ($word/@tengwar='ñ') then
+                    if ($word/@tengwar='ng-') then
+                        $word/@v/lower-case(.) 
+                    else if ($word/@tengwar='nd-') then
+                        $word/@v/lower-case(.) 
+                    else if ($word/@tengwar='mb-') then
+                        $word/@v/lower-case(.) 
+                    else if ($word/@tengwar='ñ') then
                         translate($word/@v/lower-case(.), 'n', 'ñ') 
                     else if ($word/@tengwar='þ') then
                         translate($word/@v/lower-case(.), 's', 'þ') 
@@ -583,6 +589,8 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
                         concat('ñ', $word/@v/substring-after(lower-case(.), 'n'))
                     else if ($word/@tengwar='þ-') then
                         concat('þ', $word/@v/substring-after(lower-case(.), 's'))
+                    else if ($word/@tengwar/string-length() > 2) then
+                        $word/@tengwar/lower-case(.)
                     else $word/@v/lower-case(.)
                 }" data-lang="{if ($word/@l = ('q', 'mq', 'eq', 'nq')) then 'q' else 's'}"></span>
         , ' ') else ()}

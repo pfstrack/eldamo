@@ -49,6 +49,9 @@ public final class QueryConfigManager {
     public static void init(ServletContext context) {
         if (controllerMap == null) {
             configRoot = context.getRealPath("config/query-configs");
+            if (configRoot == null) {
+            	configRoot = "/Users/pfstrack/eldamo-github/eldamo/src/main/webapp/config/query-configs";
+            }
             controllerMap = loadData();
         }
         ConfigMonitor monitor = ConfigMonitor.getInstance();

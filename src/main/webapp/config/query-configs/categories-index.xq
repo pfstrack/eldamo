@@ -106,10 +106,17 @@ return (
             )
           ) then <span>⚠️</span> else () }
         { if (not($neo-lang)) then () else (
-            let $lang-list := (c:print-lang2($word), for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]] return c:print-lang2($w))
-            return concat(string-join($lang-list, ', '), ' ')
+            let $lang-list := (
+            concat(
+                c:print-lang2($word),
+                if ($alt-lang) then concat(' [', $alt-lang, ']') else ()
+            ),
+            for $w in $word/ancestor-or-self::word[last()]//word[combine[@l=$word/@l and @v=$word/@v]]
+                    [not(c:print-lang2(.) = $alt-lang)] return 
+                (c:print-lang2($w))
+            )
+            return concat(string-join(distinct-values($lang-list), ', '), if (c:is-primitive($word)) then '' else ' ')
         ) }
-        { if ($alt-lang and not($neo-lang and not($word/@mark))) then concat('[', $alt-lang, if (c:is-primitive($word)) then ']' else '] ') else () }
         { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)
           else c:print-word($word, <control style="bold" show-link="y" normalize="{$normalize}"/>) }
         { if ($word/@stem) then <span> (<b>{if ($normalize) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
