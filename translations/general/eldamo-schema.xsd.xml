@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:simpleType name="class-form-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="?"/>
+
+      <xs:enumeration value="strong-I"/>
+      <xs:enumeration value="strong-II"/>
+      <xs:enumeration value="weak-I"/>
+      <xs:enumeration value="weak-II"/>
+
+      <xs:enumeration value="neut"/>
+      <xs:enumeration value="gendered"/>
+
+      <xs:enumeration value="biconsonantal-verb"/>
+      <xs:enumeration value="triconsonantal-verb"/>
+      <xs:enumeration value="derived-verb"/>
+
+      <xs:enumeration value="uniconsonantal-form"/>
+      <xs:enumeration value="biconsonantal-root"/>
+      <xs:enumeration value="triconsonantal-root"/>
+
+      <xs:enumeration value="a-verb"/>
+      <xs:enumeration value="basic-verb"/>
+      <xs:enumeration value="irregular-verb"/>
+      <xs:enumeration value="na-formative"/>
+      <xs:enumeration value="non-verb-derived"/>
+      <xs:enumeration value="ta-causative"/>
+      <xs:enumeration value="ta-formative"/>
+      <xs:enumeration value="talat-stem"/>
+      <xs:enumeration value="u-verb"/>
+      <xs:enumeration value="weak-verb"/>
+      <xs:enumeration value="ya-causative"/>
+      <xs:enumeration value="ya-formative"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="class-form-list-type">
+    <xs:list itemType="class-form-type"/>
+  </xs:simpleType>
+  <xs:simpleType name="inflect-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="?"/>
+
+      <!-- inflections for number -->
+      <xs:enumeration value="singular"/>
+      <xs:enumeration value="dual"/>
+      <xs:enumeration value="plural"/>
+      <xs:enumeration value="partitive-plural"/>
+      <xs:enumeration value="class-plural"/>
+      <xs:enumeration value="draft-dual"/>
+      <xs:enumeration value="draft-plural"/>
+
+      <!-- basic verb tenses -->
+      <xs:enumeration value="infinitive"/>
+      <xs:enumeration value="aorist"/>
+      <xs:enumeration value="present"/>
+      <xs:enumeration value="past"/>
+      <xs:enumeration value="strong-past"/>
+      <xs:enumeration value="perfect"/>
+      <xs:enumeration value="strong-perfect"/>
+      <xs:enumeration value="future"/>
+      <xs:enumeration value="gerund"/>
+
+      <!-- complex verb tenses -->
+      <xs:enumeration value="particular-infinitive"/>
+      <xs:enumeration value="consuetudinal-past"/>
+      <xs:enumeration value="present-imperfect"/>
+      <xs:enumeration value="present-perfect"/>
+      <xs:enumeration value="past-continuous"/>
+      <xs:enumeration value="past-imperfect"/>
+      <xs:enumeration value="past-perfect"/>
+      <xs:enumeration value="past-future"/>
+      <xs:enumeration value="past-future-perfect"/>
+      <xs:enumeration value="long-perfect"/>
+      <xs:enumeration value="pluperfect"/>
+      <xs:enumeration value="future-imperfect"/>
+      <xs:enumeration value="future-perfect"/>
+      <xs:enumeration value="future-future"/>
+      <xs:enumeration value="continuative-present"/>
+      <xs:enumeration value="continuative-past"/>
+      <xs:enumeration value="draft-perfect"/>
+
+      <!-- obscure verb tenses -->
+      <xs:enumeration value="passive-past"/>
+      <xs:enumeration value="stative"/>
+      <xs:enumeration value="stative-past"/>
+      <xs:enumeration value="stative-future"/>
+
+      <!-- verbal moods -->
+      <xs:enumeration value="conditional"/>
+      <xs:enumeration value="imperative"/>
+      <xs:enumeration value="suffixed-imperative"/>
+      <xs:enumeration value="subjunctive"/>
+      <xs:enumeration value="past-subjunctive"/>
+      <xs:enumeration value="present-subjective"/>
+
+      <!-- verbal voice -->
+      <xs:enumeration value="impersonal"/>
+      <xs:enumeration value="passive"/>
+      <xs:enumeration value="reflexive"/>
+
+      <!-- verbal participles -->
+      <xs:enumeration value="active-participle"/>
+      <xs:enumeration value="passive-participle"/>
+      <xs:enumeration value="imperfect-participle"/>
+      <xs:enumeration value="imperfect-passive-participle"/>
+      <xs:enumeration value="perfect-participle"/>
+      <xs:enumeration value="perfect-passive-participle"/>
+      <xs:enumeration value="perfective-participle"/>
+      <xs:enumeration value="future-participle"/>
+      <xs:enumeration value="future-passive-participle"/>
+      <xs:enumeration value="reflexive-participle"/>
+
+      <!-- subject inflections -->
+      <xs:enumeration value="1st-sg"/>
+      <xs:enumeration value="1st-dual-exclusive"/>
+      <xs:enumeration value="1st-dual-inclusive"/>
+      <xs:enumeration value="1st-pl"/>
+      <xs:enumeration value="1st-pl-exclusive"/>
+      <xs:enumeration value="1st-pl-inclusive"/>
+      <xs:enumeration value="2nd-sg"/>
+      <xs:enumeration value="2nd-sg-familiar"/>
+      <xs:enumeration value="2nd-sg-polite"/>
+      <xs:enumeration value="2nd-sg-honorific"/>
+      <xs:enumeration value="2nd-dual"/>
+      <xs:enumeration value="2nd-dual-polite"/>
+      <xs:enumeration value="2nd-dual-honorific"/>
+      <xs:enumeration value="2nd-pl"/>
+      <xs:enumeration value="2nd-pl-polite"/>
+      <xs:enumeration value="2nd-pl-honorific"/>
+      <xs:enumeration value="3rd-sg"/>
+      <xs:enumeration value="3rd-sg-fem"/>
+      <xs:enumeration value="3rd-sg-masc"/>
+      <xs:enumeration value="3rd-sg-neut"/>
+      <xs:enumeration value="3rd-sg-reflexive"/>
+      <xs:enumeration value="3rd-dual"/>
+      <xs:enumeration value="3rd-dual-fem"/>
+      <xs:enumeration value="3rd-dual-masc"/>
+      <xs:enumeration value="3rd-dual-neut"/>
+      <xs:enumeration value="3rd-pl"/>
+      <xs:enumeration value="3rd-pl-fem"/>
+      <xs:enumeration value="3rd-pl-masc"/>
+      <xs:enumeration value="3rd-pl-neut"/>
+      <xs:enumeration value="3rd-pl-reflexive"/>
+
+      <!-- object inflections -->
+      <xs:enumeration value="with-sg-object"/>
+      <xs:enumeration value="with-dual-object"/>
+      <xs:enumeration value="with-pl-object"/>
+      <xs:enumeration value="with-remote-sg-object"/>
+      <xs:enumeration value="with-remote-pl-object"/>
+      <xs:enumeration value="with-1st-sg-object"/>
+      <xs:enumeration value="with-1st-pl-object"/>
+      <xs:enumeration value="with-2nd-sg-object"/>
+      <xs:enumeration value="with-2nd-pl-object"/>
+      <xs:enumeration value="with-1st-sg-dative"/>
+
+      <!-- prepositional inflections -->
+      <xs:enumeration value="1st-sg-prep"/>
+      <xs:enumeration value="1st-dual-prep"/>
+      <xs:enumeration value="1st-pl-exclusive-prep"/>
+      <xs:enumeration value="1st-pl-inclusive-prep"/>
+      <xs:enumeration value="2nd-sg-prep"/>
+      <xs:enumeration value="2nd-sg-familiar-prep"/>
+      <xs:enumeration value="2nd-sg-polite-prep"/>
+      <xs:enumeration value="2nd-pl-prep"/>
+      <xs:enumeration value="3rd-sg-prep"/>
+      <xs:enumeration value="3rd-sg-inanimate-prep"/>
+      <xs:enumeration value="3rd-sg-honorific-prep"/>
+      <xs:enumeration value="3rd-pl-prep"/>
+      <xs:enumeration value="3rd-pl-honorific-prep"/>
+      <xs:enumeration value="definite-prep"/>
+      <xs:enumeration value="definite-plural-prep"/>
+
+      <!-- possessive inflections -->
+      <xs:enumeration value="1st-sg-poss"/>
+      <xs:enumeration value="1st-pl-exclusive-poss"/>
+      <xs:enumeration value="1st-pl-inclusive-poss"/>
+      <xs:enumeration value="2nd-sg-poss"/>
+      <xs:enumeration value="2nd-sg-polite-poss"/>
+      <xs:enumeration value="2nd-dual-poss"/>
+      <xs:enumeration value="2nd-pl-poss"/>
+      <xs:enumeration value="3rd-sg-poss"/>
+      <xs:enumeration value="3rd-pl-poss"/>
+
+      <!-- noun cases -->
+      <xs:enumeration value="accusative"/>
+      <xs:enumeration value="ablative"/>
+      <xs:enumeration value="allative"/>
+      <xs:enumeration value="dative"/>
+      <xs:enumeration value="genitive"/>
+      <xs:enumeration value="instrumental"/>
+      <xs:enumeration value="locative"/>
+      <xs:enumeration value="nominative"/>
+      <xs:enumeration value="possessive"/>
+      <xs:enumeration value="possessive-adjectival"/>
+
+      <!-- obscure noun cases -->
+      <xs:enumeration value="s-case"/>
+      <xs:enumeration value="old-genitive"/>
+      <xs:enumeration value="comitative"/>
+      <xs:enumeration value="similative"/>
+      <xs:enumeration value="partitive"/>
+      <xs:enumeration value="objective"/>
+      <xs:enumeration value="subjective"/>
+      <xs:enumeration value="agental-formation"/>
+      <xs:enumeration value="draft-dative"/>
+      <xs:enumeration value="draft-genitive"/>
+      <xs:enumeration value="draft-instrumental"/>
+      <xs:enumeration value="draft-subjective"/>
+
+      <!-- comparative inflections -->
+      <xs:enumeration value="augmentative"/>
+      <xs:enumeration value="comparative"/>
+      <xs:enumeration value="diminutive"/>
+      <xs:enumeration value="intensive"/>
+      <xs:enumeration value="superlative"/>
+      <xs:enumeration value="diminutive-superlative"/>
+
+      <!-- gender inflections -->
+      <xs:enumeration value="fem"/>
+      <xs:enumeration value="masc"/>
+      <xs:enumeration value="neut"/>
+
+      <!-- mutations -->
+      <xs:enumeration value="soft-mutation"/>
+      <xs:enumeration value="nasal-mutation"/>
+      <xs:enumeration value="liquid-mutation"/>
+      <xs:enumeration value="stop-mutation"/>
+      <xs:enumeration value="mixed-mutation"/>
+      <xs:enumeration value="sibilant-mutation"/>
+      <xs:enumeration value="i-mutation"/>
+
+      <!-- root variations -->
+      <xs:enumeration value="a-fortification"/>     <!-- Adding a medial "a" to diphthongize vowel -->
+      <xs:enumeration value="augmentation"/>        <!-- Prefixing base vowel -->
+      <xs:enumeration value="consonant-doubling"/>  <!-- Doubling medial consonant -->
+      <xs:enumeration value="extension"/>           <!-- Extending a root with a suffix -->
+      <xs:enumeration value="full-form"/>           <!-- The normal root expression in Adûnaic -->
+      <xs:enumeration value="inversion"/>           <!-- Reversing a root, LA to AL -->
+      <xs:enumeration value="nasal-infixion"/>      <!-- Adding a medial nasal -->
+      <xs:enumeration value="nasal-prefixion"/>     <!-- Adding an initial nasal -->
+      <xs:enumeration value="s-fortification"/>     <!-- Adding an "s", usually initially -->
+      <xs:enumeration value="strengthened"/>        <!-- Strengthening a consonant, usually by nasalizing it -->
+      <xs:enumeration value="subordinate-vowel-variation"/> <!-- Changing the second vowel (Adûnaic term) -->
+      <xs:enumeration value="vocalic-extension"/>   <!-- Adding a vocalic suffix -->
+      <xs:enumeration value="vowel-lengthening"/>   <!-- Lengthening a vowel -->
+      <xs:enumeration value="vowel-prefixion"/>     <!-- = augmentation (Adûnaic term) -->
+      <xs:enumeration value="vowel-suffixion"/>     <!-- = vocalic-extension (Adûnaic term) -->
+      <xs:enumeration value="vowel-suppression"/>   <!-- Suppressing a vowel in its normal position -->
+
+      <!-- miscellaneous inflections -->
+      <xs:enumeration value="stem"/>
+      <xs:enumeration value="assimilated"/>
+      <xs:enumeration value="elided"/>
+      <xs:enumeration value="shortened"/>
+      <xs:enumeration value="negated"/>
+      <xs:enumeration value="definite"/>
+      <xs:enumeration value="indefinite"/>
+      <xs:enumeration value="affix"/>
+      <xs:enumeration value="prefix"/>
+      <xs:enumeration value="suffix"/>
+      <xs:enumeration value="patronymic"/>
+      <xs:enumeration value="adjectival"/>
+      <xs:enumeration value="adverbial"/>
+      <xs:enumeration value="frequentative"/>
+
+      <!-- obscure miscellaneous inflections -->
+      <xs:enumeration value="radical"/>
+      <xs:enumeration value="complete"/>
+      <xs:enumeration value="glide-consonant"/>
+      <xs:enumeration value="negative-quasi-participle"/>
+      <xs:enumeration value="no-agreement"/>
+      <xs:enumeration value="agental"/>
+      <xs:enumeration value="root"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="inflect-list-type">
+    <xs:list itemType="inflect-type"/>
+  </xs:simpleType>
+  <xs:simpleType name="inflect-variant-type">
+    <xs:restriction base="xs:string">
+      <!-- Mutation types -->
+      <xs:enumeration value="b-mutation"/>
+      <xs:enumeration value="c-mutation"/>
+      <xs:enumeration value="cw-mutation"/>
+      <xs:enumeration value="d-mutation"/>
+      <xs:enumeration value="dy-mutation"/>
+      <xs:enumeration value="g-mutation"/>
+      <xs:enumeration value="gw-mutation"/>
+      <xs:enumeration value="h-mutation"/>
+      <xs:enumeration value="lh-mutation"/>
+      <xs:enumeration value="m-mutation"/>
+      <xs:enumeration value="mb-mutation"/>
+      <xs:enumeration value="nd-mutation"/>
+      <xs:enumeration value="ng-mutation"/>
+      <xs:enumeration value="p-mutation"/>
+      <xs:enumeration value="rh-mutation"/>
+      <xs:enumeration value="s-mutation"/>
+      <xs:enumeration value="t-mutation"/>
+
+      <!-- Declension class variants -->
+      <xs:enumeration value="declension-A"/>
+      <xs:enumeration value="declension-B"/>
+      <xs:enumeration value="declension-C"/>
+      <xs:enumeration value="declension-D"/>
+
+      <!-- Gender variants -->
+      <xs:enumeration value="fem"/>
+      <xs:enumeration value="masc"/>
+      <xs:enumeration value="neut"/>
+
+      <!-- Abnormal formation -->
+      <xs:enumeration value="a-genitive"/>
+      <xs:enumeration value="adj-agreement"/>
+      <xs:enumeration value="adjectival"/>
+      <xs:enumeration value="adjective-in-objective"/>
+      <xs:enumeration value="archaic-objective-with-glide"/>
+      <xs:enumeration value="archaic-strong-dual"/>
+      <xs:enumeration value="archaic-dual-with-glide"/>
+      <xs:enumeration value="archaic-strong-objective"/>
+      <xs:enumeration value="archaic-strong-plural"/>
+      <xs:enumeration value="archaic-strong-subjective"/>
+      <xs:enumeration value="assimilated"/>
+      <xs:enumeration value="augmentless"/>
+      <xs:enumeration value="bare-stem"/>
+      <xs:enumeration value="colloquial-possessive"/>
+      <xs:enumeration value="dialectical"/>
+      <xs:enumeration value="draft"/>
+      <xs:enumeration value="er-plural"/>
+      <xs:enumeration value="half-strong-past"/>
+      <xs:enumeration value="infixed-imperative"/>
+      <xs:enumeration value="irregular"/>
+      <xs:enumeration value="irregular-dual"/>
+      <xs:enumeration value="irregular-plural"/>
+      <xs:enumeration value="irregular-subjective"/>
+      <xs:enumeration value="joining-base-vowel"/>
+      <xs:enumeration value="long-dative"/>
+      <xs:enumeration value="long-imperfect"/>
+      <xs:enumeration value="n-accusative"/>
+      <xs:enumeration value="na-dative"/>
+      <xs:enumeration value="no-agreement"/>
+      <xs:enumeration value="o-genitive"/>
+      <xs:enumeration value="normal-and-subjective"/>
+      <xs:enumeration value="object-suffix-only"/>
+      <xs:enumeration value="objective-with-syncope"/>
+      <xs:enumeration value="plural-with-linking-consonant"/>
+      <xs:enumeration value="possessive-second"/>
+      <xs:enumeration value="pronoun-prefix"/>
+      <xs:enumeration value="prosodic-lengthening"/>
+      <xs:enumeration value="r-locative"/>
+      <xs:enumeration value="root-perfect"/>
+      <xs:enumeration value="short-instrumental"/>
+      <xs:enumeration value="strong-I-without-syncope"/>
+      <xs:enumeration value="strong-past"/>
+      <xs:enumeration value="strong-perfect"/>
+      <xs:enumeration value="suffixed-imperative"/>
+      <xs:enumeration value="u-dual"/>
+      <xs:enumeration value="weak-past"/>
+      <xs:enumeration value="weak-perfect"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="inflect-variant-list-type">
+    <xs:list itemType="inflect-variant-type"/>
+  </xs:simpleType>
+  <xs:simpleType name="speech-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="?"/>               <!-- Unknown -->
+      <xs:enumeration value="adj"/>             <!-- Adjective -->
+      <xs:enumeration value="adv"/>             <!-- Adverb -->
+      <xs:enumeration value="affix"/>           <!-- Affix -->
+      <xs:enumeration value="article"/>         <!-- Definite Article -->
+      <xs:enumeration value="cardinal"/>        <!-- Cardinal -->
+      <xs:enumeration value="conj"/>            <!-- Conjugation -->
+      <xs:enumeration value="collective-name"/> <!-- Collective Name -->
+      <xs:enumeration value="collective-noun"/> <!-- Collective Noun -->
+      <xs:enumeration value="family-name"/>     <!-- Family Name -->
+      <xs:enumeration value="fem-name"/>        <!-- Feminine Name -->
+      <xs:enumeration value="fraction"/>        <!-- Fraction -->
+      <xs:enumeration value="grammar"/>         <!-- Grammatical Information -->
+      <xs:enumeration value="infix"/>           <!-- Infix -->
+      <xs:enumeration value="interj"/>          <!-- Interjection -->
+      <xs:enumeration value="masc-name"/>       <!-- Masculine Name -->
+      <xs:enumeration value="n"/>               <!-- Noun -->
+      <xs:enumeration value="ordinal"/>         <!-- Ordinal -->
+      <xs:enumeration value="particle"/>        <!-- Particle -->
+      <xs:enumeration value="phoneme"/>         <!-- Phoneme -->
+      <xs:enumeration value="phonetics"/>       <!-- Phonetic Information -->
+      <xs:enumeration value="phonetic-group"/>  <!-- Phonetic Group -->
+      <xs:enumeration value="phonetic-rule"/>   <!-- Phonetic Rule -->
+      <xs:enumeration value="phrase"/>          <!-- Phrase -->
+      <xs:enumeration value="place-name"/>      <!-- Place Name -->
+      <xs:enumeration value="pref"/>            <!-- Prefix -->
+      <xs:enumeration value="prep"/>            <!-- Preposition -->
+      <xs:enumeration value="pron"/>            <!-- Pronoun -->
+      <xs:enumeration value="proper-name"/>     <!-- Proper Name -->
+      <xs:enumeration value="radical"/>         <!-- Radical -->
+      <xs:enumeration value="root"/>            <!-- Root -->
+      <xs:enumeration value="text"/>            <!-- Text (collection of phrases) -->
+      <xs:enumeration value="suf"/>             <!-- Suffix -->
+      <xs:enumeration value="vb"/>              <!-- Verb -->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="speech-list-type">
+    <xs:list itemType="speech-type"/>
+  </xs:simpleType>
+  <xs:simpleType name="language-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ad"/>   <!-- Adunaic -->
+      <xs:enumeration value="aq"/>   <!-- Ancient Quenya -->
+      <xs:enumeration value="at"/>   <!-- Ancient Telerin -->
+      <xs:enumeration value="av"/>   <!-- Avari -->
+      <xs:enumeration value="bel"/>  <!-- Beleriandric -->
+      <xs:enumeration value="bs"/>   <!-- Black Speech -->
+      <xs:enumeration value="cir"/>  <!-- Cirth -->
+      <xs:enumeration value="dan"/>  <!-- Danian -->
+      <xs:enumeration value="dun"/>  <!-- Dunlending -->
+      <xs:enumeration value="dor"/>  <!-- Doriathrin -->
+      <xs:enumeration value="eas"/>  <!-- Easterling -->
+      <xs:enumeration value="ed"/>   <!-- Easterling -->
+      <xs:enumeration value="edan"/> <!-- East Danian -->
+      <xs:enumeration value="eilk"/> <!-- Early Ilkorin -->
+      <xs:enumeration value="en"/>   <!-- Early Noldorin -->
+      <xs:enumeration value="ent"/>  <!-- Entish -->
+      <xs:enumeration value="eon"/>  <!-- Early Old Noldorin -->
+      <xs:enumeration value="eoq"/>  <!-- Early Old Qenya -->
+      <xs:enumeration value="ep"/>   <!-- Early Primitive Elvish -->
+      <xs:enumeration value="eq"/>   <!-- Early Quenya -->
+      <xs:enumeration value="et"/>   <!-- Early Telerin -->
+      <xs:enumeration value="fal"/>  <!-- Falathrin -->
+      <xs:enumeration value="g"/>    <!-- Gnomish -->
+      <xs:enumeration value="ilk"/>  <!-- Ilkorin -->
+      <xs:enumeration value="kh"/>   <!-- Khuzdul -->
+      <xs:enumeration value="khx"/>  <!-- Khuzdhul, External -->
+      <xs:enumeration value="lem"/>  <!-- Lemberin -->
+      <xs:enumeration value="lin"/>  <!-- Lindarin -->
+      <xs:enumeration value="ln"/>   <!-- Late Noldorin -->
+      <xs:enumeration value="lon"/>  <!-- Late Old Noldorin -->
+      <xs:enumeration value="maq"/>  <!-- Middle Ancient Quenya -->
+      <xs:enumeration value="mp"/>   <!-- Middle Primitive Elvish -->
+      <xs:enumeration value="mq"/>   <!-- Middle Quenya -->
+      <xs:enumeration value="mt"/>   <!-- Middle Telerin -->
+      <xs:enumeration value="n"/>    <!-- Noldorin -->
+      <xs:enumeration value="oss"/>  <!-- Ossriandric -->
+      <xs:enumeration value="p"/>    <!-- Primitive Elvish -->
+      <xs:enumeration value="pad"/>  <!-- Primitive Adunaic -->
+      <xs:enumeration value="nan"/>  <!-- Nandorin -->
+      <xs:enumeration value="norths"/> <!-- North Sindarin -->
+      <xs:enumeration value="np"/>   <!-- Neo-Primitive Elvish -->
+      <xs:enumeration value="nq"/>   <!-- Neo-Quenya -->
+      <xs:enumeration value="ns"/>   <!-- Neo-Sindarin -->
+      <xs:enumeration value="on"/>   <!-- Old Noldorin -->
+      <xs:enumeration value="os"/>   <!-- Old Sindarin -->
+      <xs:enumeration value="q"/>    <!-- Quenya -->
+      <xs:enumeration value="roh"/>  <!-- Rohirric -->
+      <xs:enumeration value="s"/>    <!-- Sindarin -->
+      <xs:enumeration value="sar"/>  <!-- Sarati -->
+      <xs:enumeration value="sol"/>  <!-- Solosimpi -->
+      <xs:enumeration value="t"/>    <!-- Telerin -->
+      <xs:enumeration value="tal"/>  <!-- Talaski -->
+      <xs:enumeration value="teng"/> <!-- Tengwar -->
+      <xs:enumeration value="un"/>   <!-- Unknown -->
+      <xs:enumeration value="val"/>  <!-- Valarin -->
+      <xs:enumeration value="van"/>  <!-- Vanyarin -->
+      <xs:enumeration value="wes"/>  <!-- Westron -->
+      <xs:enumeration value="wos"/>  <!-- Wose -->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="language-list-type">
+    <xs:list itemType="language-type"/>
+  </xs:simpleType>
+  <xs:element name="before">
+    <xs:annotation>
+      <xs:documentation>Indicates that a particular phonetic change must occur before another one. The change that must come after is specified by the word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="order-example"/>
+      </xs:sequence>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cat">
+    <xs:annotation>
+      <xs:documentation>A semantic category, specified by its @id. An individual word element can be linked to a semantic category by its @cat attribute.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="label" use="required"/>
+      <xs:attribute name="num" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cat-group">
+    <xs:annotation>
+      <xs:documentation>A group of semantic categories, for organization purposes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="cat"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:ID"/>
+      <xs:attribute name="label" use="required"/>
+      <xs:attribute name="num" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cats">
+    <xs:annotation>
+      <xs:documentation>Parent element of all semantic categories.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="cat-group"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="change">
+    <xs:annotation>
+      <xs:documentation>Indicate a change on the part of Tolkien from one form to another. The new form is linked by the source reference (@source). Intermediate forms may be indicated by @i1 attributes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="i1"/>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cite" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Bibliographical citation for a specific reference.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="class">
+    <xs:annotation>
+      <xs:documentation>Syntactical class for a word, such as a strong versus weak verb. The @form attribute specifies one or more space-delimited classes. The optional @variant attribute has special variations.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="form" use="required" type="class-form-list-type"/>
+      <xs:attribute name="variant">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="common"/>
+            <xs:enumeration value="fem"/>
+            <xs:enumeration value="masc"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="cognate-ref" mixed="true"><!-- FIXME: Remove mixed -->
+    <xs:annotation>
+      <xs:documentation>Link to a cognate in another language (for ref elements). As a child of a ref element, uses a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="cognate-word">
+    <xs:annotation>
+      <xs:documentation>Link to a cognate in another language (for word elements). As a child of a word element, uses a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:element name="combine">
+    <xs:annotation>
+      <xs:documentation>Indicates that this entry is an earlier version of another, and they may be combined.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="correction">
+    <xs:annotation>
+      <xs:documentation>An editorial correction of an earlier published form. Uses a source reference (@source). Note that the reference value (ref/@v) of the correction reference is the original (uncorrected) form, while the reference value (ref/@v) of the linked/corrected reference is the corrected form. This is to ensure that the corrected form will appear in the relationships of its original reference.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deprecated">
+    <xs:annotation>
+      <xs:documentation>Indicates that a word is out-of-date, optionally with a link to a word that might be better. These are all in the opinion of the author.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" type="language-type"/>
+      <xs:attribute name="v"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deprecations" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s deprecations page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="deriv-ref" mixed="true">
+    <xs:annotation>
+      <xs:documentation>Indicates this form is derived etymologically from the linked form (for ref elements). As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source). Intermediate forms may be indicated by @i1, @i2 and @i3 attributes, in that chronological order (past to future). @@@ In the final form of the data model, a deriv element should be unique with a word/ref element, but there are some unfinished data corrections preventing enforcement of this rule. These unfinished data elements are indicated by @t="m" attribute values, which will be removed after the data is cleaned up.</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="rule-example"/>
+      <xs:element ref="rule-start"/>
+    </xs:choice>
+    <xs:attribute name="t"> <!-- FIXME: Remove -->
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="m"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="i1"/>
+    <xs:attribute name="i2"/>
+    <xs:attribute name="i3"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="deriv-word">
+    <xs:annotation>
+      <xs:documentation>Indicates this form is derived etymologically from the linked form (for word elements). As a child of a word element, uses a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:element name="derivatives"><!-- FIXME: Remove -->
+    <xs:annotation>
+      <xs:documentation>An element controlling how derivative are displayed in the page for this word. If @no-root="true", the derivation trees of child roots are not expanded.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="no-roots" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="element-ref" mixed="true"><!-- FIXME: Remove "mixed" -->
+    <xs:annotation>
+      <xs:documentation>Indicates the decomposition of a word or phrase into its elements (for ref elements). As a child of a ref element, uses a source reference (@source). If the element is a non-standard form (e.g. a soft-mutation), this is indicated by the @form attribute. The @form attribute is omitted if the link reference already has its inflection indicated by a child inflect element.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="form" type="inflect-list-type"/>
+    <xs:attribute name="variant" type="inflect-variant-list-type"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="element-word">
+    <xs:annotation>
+      <xs:documentation>Indicates the decomposition of a word or phrase into its elements (for word elements). As a child of a word element, uses a word reference (@l + @v). If the element is a non-standard form (e.g. a soft-mutation), this is indicated by the @form attribute.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="form" type="inflect-list-type"/>
+    <xs:attribute name="variant" type="inflect-variant-list-type"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:element name="example">
+    <xs:annotation>
+      <xs:documentation>Indicates examples of the topic under discussion, using a source reference (@source). If @t="deriv", it is an example a derivational rule. If @t="inflect", it is an example an inflectional rule.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="t">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="deriv"/>
+            <xs:enumeration value="inflect"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="form">
+    <xs:annotation>
+      <xs:documentation>Controls the subdivision of inflectional tables in the HTML version of the lexicon.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="exclude">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="plural"/>
+            <xs:enumeration value="subjective"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="exclude2">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="dual"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="form" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="grammar" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s grammar page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="inflect">
+    <xs:annotation>
+      <xs:documentation>Indicates this form is inflected grammatically from the base word. If this base form is attested, it is linked by a source reference (@source); if there is no @source attribute, then the base form is not attested. The @form attribute indicates the nature of the inflection, which may be a space-delimited list, such as form="soft-mutation plural". The @variant attribute indicates it is a nonstandard variation of the inflection.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:attribute name="form" use="required" type="inflect-list-type"/>
+      <xs:attribute name="source"/>
+      <xs:attribute name="v"/>
+      <xs:attribute name="variant" type="inflect-variant-list-type"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="inflect-table">
+    <xs:annotation>
+      <xs:documentation>Controls the generation of inflectional tables in the HTML version of the lexicon.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="form"/>
+      </xs:sequence>
+      <xs:attribute name="exclude" type="xs:NMTOKEN"/>
+      <xs:attribute name="form"/>
+      <xs:attribute name="from">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="inflect"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="hide">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="key" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="class"/>
+            <xs:enumeration value="inflect-form-and-class-ref"/>
+            <xs:enumeration value="inflect-form-ref"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="l" type="language-list-type"/>
+      <xs:attribute name="omit"/>
+      <xs:attribute name="show-element-of">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="show-form">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="class"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="show-glosses">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="false"/>
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="show-variants">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="speech" type="speech-type"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="language">
+    <xs:annotation>
+      <xs:documentation>Defines a language in the lexicon, identified by its @id attribute and labeled by its @name attribute. Child languages are historical descendants of the language. Other child elements provide documentation for the various index pages for the language.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="deprecations"/>
+        <xs:element ref="grammar"/>
+        <xs:element ref="language"/>
+        <xs:element ref="names"/>
+        <xs:element ref="neologisms"/>
+        <xs:element ref="notes"/>
+        <xs:element ref="phonetics"/>
+        <xs:element ref="phrases"/>
+        <xs:element ref="roots"/>
+        <xs:element ref="words"/>
+        <xs:element ref="vocabulary"/>
+      </xs:choice>
+      <xs:attribute name="id" use="required" type="xs:ID"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="language-cat">
+    <xs:annotation>
+      <xs:documentation>A category of languages that is not itself a language, labeled by its @name.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="language"/>
+        <xs:element ref="language-cat"/>
+      </xs:choice>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="names" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s name page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="neologisms" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s vocabulary page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="notes" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Notes for the parent item, which may contain (escaped) HTML markup.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="order-example">
+    <xs:annotation>
+      <xs:documentation>An example supporting the ordering of phonetic rules indicated by the containing before element, linked using a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phonetics" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s phonetics page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="phrases" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s phrases page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ref">
+    <xs:annotation>
+      <xs:documentation>Reference to an attested form (@v) in Tolkien’s writing, identified by its @source attribute. Child elements indicate relationships to other attested forms. The @gloss attribute contains any attested glosses.The @mark attribute indicates the notation markers associated with the form. The @l attribute indicates its language if it is different from the language of the containing word. The @rl, @rule and @from attributes link to associated phonetic rules, if any.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="change"/>
+        <xs:element name="cognate" type="cognate-ref"/>
+        <xs:element ref="correction"/>
+        <xs:element name="deriv" type="deriv-ref"/>
+        <xs:element name="element" type="element-ref"/>
+        <xs:element ref="example"/>
+        <xs:element ref="inflect"/>
+        <xs:element name="related" type="related-ref"/>
+      </xs:choice>
+      <xs:attribute name="from"/>
+      <xs:attribute name="gloss"/>
+      <xs:attribute name="l" type="language-type"/>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="rl"/>
+      <xs:attribute name="rule"/>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="related-ref" mixed="true">
+    <xs:annotation>
+      <xs:documentation>A generic relationship between forms (for ref elements). As a child of a ref element, uses a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="source" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:complexType name="related-word" mixed="true">
+    <xs:annotation>
+      <xs:documentation>A generic relationship between forms (for word elements). As a child of a word element, uses a word reference (@l + @v); as a child of a ref element, uses a source reference (@source).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="l" use="required" type="language-type"/>
+    <xs:attribute name="v" use="required"/>
+    <xs:attribute name="mark"/>
+  </xs:complexType>
+  <xs:element name="roots" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s root list page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="rule">
+    <xs:annotation>
+      <xs:documentation>A phonetic rule, specifying the language (@l), the original phonetic form (@from) and the new form (@rule). This triplet (@l, @rule, @form) is used to link to examples of the phonetic rule.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="rule" use="required"/>
+      <xs:attribute name="from" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rule-example">
+    <xs:annotation>
+      <xs:documentation>An example of phonetic rule within a derivation, linked by the triplet (@l, @rule, @form) = (language, new phonetic form, original phonetic form). The @stage attribute indicates the resulting word form at this stage of phonetic change, derived from the previous rule-example or rule-start.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="rule" use="required"/>
+      <xs:attribute name="from"/><!-- FIXME: Make this required -->
+      <xs:attribute name="stage" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rule-start">
+    <xs:annotation>
+      <xs:documentation>Starting point for a set of phonetic rule change, contained in its original form in its @stage attribute. Phonetic changes are described by the following rule-example elements. If the @l attribute is present, it specifies which linguistic period is the starting point for the phonetic changes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" type="language-type"/><!-- FIXME: Make this required -->
+      <xs:attribute name="stage" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see">
+    <xs:annotation>
+      <xs:documentation>Link to another word discussing this form, using a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see-also">
+    <xs:annotation>
+      <xs:documentation>Link to a similar word, with relevant discussion, using a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see-further">
+    <xs:annotation>
+      <xs:documentation>Link to another word with further discussion of this word, using a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="see-notes">
+    <xs:annotation>
+      <xs:documentation>Link to another word with notes discussing this word, using a word reference (@l + @v).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="v" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="source">
+    <xs:annotation>
+      <xs:documentation>Identifies a particular bibliographical source, identified by its @prefix and labeled by its @name. The optional @type attribute is used to group similar references in the generated reference documentation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="cite"/>
+        <xs:element ref="notes"/>
+      </xs:choice>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="prefix" use="required" type="xs:string"/>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="adunaic"/>
+            <xs:enumeration value="appendix"/>
+            <xs:enumeration value="index"/>
+            <xs:enumeration value="minor"/>
+            <xs:enumeration value="minor-work"/>
+            <xs:enumeration value="neologisms"/>
+            <xs:enumeration value="quenya"/>
+            <xs:enumeration value="secondary"/>
+            <xs:enumeration value="sindarin"/>
+            <xs:enumeration value="telerin"/>
+            <xs:enumeration value="work"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="word">
+    <xs:annotation>
+      <xs:documentation>An entry in the lexicon with its own word page. Uses the XML element-name "word" for historical reasons, but these elements also represent other lexicon entries such as phonetic rules or grammatical entries. Child elements indicate relationships to other words, while ref elements indicate attested forms of the word. Child words are generally conceptual predecessor’s of this word, though such relationships are often subjective. The @l attribute indicates the word’s language and the @v attribute the base word form. The @gloss attribute assembles the words glosses. The @speech attribute is the (possibly space-delimited) part of speech for the word. The @mark attribute indicates the notation markers for the word. The @page-id is the numeric identifier of the generated HTML Lexicon, and can be used to link to the lexicon. Other attributes have specialized uses that will eventually be cleaned up and documented.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="before"/>
+        <xs:element ref="class"/>
+        <xs:element name="cognate" type="cognate-word"/>
+        <xs:element ref="combine"/>
+        <xs:element ref="deprecated"/>
+        <xs:element name="deriv" type="deriv-word"/>
+        <xs:element ref="derivatives"/>
+        <xs:element name="element" type="element-word"/>
+        <xs:element ref="inflect"/>
+        <xs:element ref="inflect-table"/>
+        <xs:element ref="notes"/>
+        <xs:element ref="ref"/>
+        <xs:element name="related" type="related-word"/>
+        <xs:element ref="rule"/>
+        <xs:element ref="see"/>
+        <xs:element ref="see-also"/>
+        <xs:element ref="see-further"/>
+        <xs:element ref="see-notes"/>
+        <xs:element ref="word"/>
+      </xs:choice>
+      <xs:attribute name="cat"/>
+      <xs:attribute name="created"/>
+      <xs:attribute name="from"/>
+      <xs:attribute name="gloss"/>
+      <xs:attribute name="l" use="required" type="language-type"/>
+      <xs:attribute name="mark"/>
+      <xs:attribute name="neo-version"/>
+      <xs:attribute name="ngloss"/>
+      <xs:attribute name="order" type="xs:NMTOKEN"/>
+      <xs:attribute name="orthography"/>
+      <!-- Uniqueness guaranteed by page-id-key -->
+      <xs:attribute name="page-id" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="phone-col">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="phone-row">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="rule"/>
+      <xs:attribute name="speech" use="required" type="speech-list-type"/>
+      <xs:attribute name="stem"/>
+      <xs:attribute name="tengwar"/>
+      <xs:attribute name="v" use="required"/>
+      <xs:attribute name="vetted"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="word-data">
+    <xs:annotation>
+      <xs:documentation>The root element of the XML data, with a @version attribute indicating the current version of the lexicon data.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="language-cat"/>
+        <xs:element maxOccurs="unbounded" ref="source"/>
+        <xs:element ref="cats"/>
+        <xs:element maxOccurs="unbounded" ref="word"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+    <xs:key name="page-id-key">
+      <xs:selector xpath=".//word"/>
+      <xs:field xpath="@page-id"/>
+    </xs:key>
+    <!--
+    XSD key processing is too slow
+    <xs:key name="word-key">
+      <xs:selector xpath=".//word"/>
+      <xs:field xpath="@l"/>
+      <xs:field xpath="@v"/>
+    </xs:key>
+    <xs:key name="ref-key">
+      <xs:selector xpath=".//ref"/>
+      <xs:field xpath="@source"/>
+    </xs:key>
+    -->
+  </xs:element>
+  <xs:element name="words" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s words list page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="vocabulary" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Documentation appearing at the top of a language’s vocabulary page.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
