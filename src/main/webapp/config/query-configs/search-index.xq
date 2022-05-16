@@ -60,7 +60,8 @@ concat(
             if ($word/see and $word/see/@l != c:get-lang($word)) then c:print-lang($word/see) else '', '%',
             $word/@ngloss, '%',
             if (c:get-word($word/combine)) then xdb:hashcode(c:get-word($word/combine)) else '', '%',
-            string-join($deprecated/c:get-word(.)/xdb:hashcode(.), '|'),
+            string-join($deprecated/c:get-word(.)/xdb:hashcode(.), '|'),'%',
+            if ($word/@tengwar) then $word/@tengwar else '', '%',
             '",'
         ),
     '&#10;'),

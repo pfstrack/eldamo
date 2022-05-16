@@ -84,6 +84,7 @@ for (var i = 0; i < index.length; i++) {
     word.ngloss = array[9];
     word.combine = array[10];
     word.deprecated = array[11];
+    word.tengwar = array[12];
     word.match = toMatch(word.value);
     word.matchgloss = toMatch(word.gloss);
     word.matchNgloss = toMatch(word.ngloss);
@@ -129,8 +130,8 @@ function doReplace(charReplace1, charReplace2, value) {
 }
 
 function charReplace(value) {
-	var charReplace1 = 'ƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřšё -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
-	var charReplace2 = 'hietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrsе    ';
+	var charReplace1 = 'kƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřšё -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
+	var charReplace2 = 'chietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrsе    ';
 	return doReplace(charReplace1, charReplace2, value);
 }
 
@@ -370,6 +371,9 @@ function wordsToHtml(result, pos) {
         }
         if ((word.lang == 'mq') && (normalizeSpelling(value) != value)) {
             html += ' [Q. <b>' + normalizeSpelling(value) + '</b>] ';
+        }
+        if (word.tengwar) {
+            html += ' [<b>' + word.tengwar + '</b>] ';
         }
         html += ' <i>' + convertSpeech(word.speech) + '</i> ';
         if (isNeo && word.ngloss) {

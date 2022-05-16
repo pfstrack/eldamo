@@ -66,6 +66,15 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
                     <xsl:when test="count(ref[not(correction)][not(inflect) or ../speech='root'][not(contains(@mark, '-'))]/@gloss) = 1">
                        <xsl:copy-of select="ref[not(correction)][not(inflect) or ../speech='root'][not(contains(@mark, '-'))]/@gloss"/>
                     </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:variable name="glosses" select="ref[@gloss]
+                            [not(inflect) or ../@speech='root']
+                            [not(correction)]
+                            [not(@mark/contains(., '-')) or ../@mark/contains(., '-')]/@gloss"/>
+                        <xsl:if test="count($glosses) gt 0">
+                            <xsl:attribute name="gloss" select="$glosses[1]"/>
+                        </xsl:if>
+                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
             <xsl:if test="not(@page-id)">
