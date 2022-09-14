@@ -130,8 +130,8 @@ function doReplace(charReplace1, charReplace2, value) {
 }
 
 function charReplace(value) {
-	var charReplace1 = 'kƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřšё -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
-	var charReplace2 = 'chietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrsе    ';
+	var charReplace1 = 'ƕıǝðþθʒɣçƀɟḷḹẏýṃṇṛṝñŋᴬᴱᴵᴼᵁáéíóúýäëïöüāēīōūâêîôûŷăĕĭŏŭæǣǭχřšё -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!̆,`¯̯̥́̄̂'; 
+	var charReplace2 = 'hietttggcbjllyymnrrnnaeiouaeiouyaeiouaeiouaeiouyaeiouaeoxrsе    ';
 	return doReplace(charReplace1, charReplace2, value);
 }
 
@@ -271,7 +271,8 @@ function searchIt(buffer) {
     	return; // Skip
     }
     var noNames = (partsOfSpeech == 'no-names');
-    var partsOfSpeech = (partsOfSpeech == 'no-names') ? '' : partsOfSpeech;
+    var onlyNames = (partsOfSpeech == 'only-names');
+    var partsOfSpeech = (partsOfSpeech == 'no-names' || partsOfSpeech == 'only-names') ? '' : partsOfSpeech;
     var langs = [];
     if (lang.length > 0) {
     	langs = lang.split('|');
@@ -286,9 +287,12 @@ function searchIt(buffer) {
     for (var i = 0; i < words.length; i++) {
     	var word = words[i];
     	if (isMatch(word, searchText, target, position, partsOfSpeech)) {
-    		if (noNames && word.speech.indexOf('name') > 0) {
-    			continue;
-    		}
+            if (noNames && word.speech.indexOf('name') > 0) {
+                continue;
+            }
+            if (onlyNames && word.speech.indexOf('name') <= 0) {
+                continue;
+            }
     		if (langs.length === 0 || langs.includes(word.lang)) {
     			var set = last;
     			var compare = toMatch(searchText);

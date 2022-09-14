@@ -349,7 +349,7 @@
       <xs:enumeration value="pronoun-prefix"/>
       <xs:enumeration value="prosodic-lengthening"/>
       <xs:enumeration value="r-locative"/>
-      <xs:enumeration value="root-perfect"/>
+      <xs:enumeration value="reformed-perfect"/>
       <xs:enumeration value="short-instrumental"/>
       <xs:enumeration value="strong-I-without-syncope"/>
       <xs:enumeration value="strong-past"/>

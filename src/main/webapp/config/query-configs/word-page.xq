@@ -545,7 +545,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
     { let $deprecated := $word/deprecated | c:get-word($word/see)/deprecated return
       if (
         $deprecated or
-        $word/@gloss='[unglossed]' or
+        ($word/@gloss='[unglossed]' and not($word/@ngloss)) or
         contains($word/@mark, '-') or
         contains($word/@mark, '|') or
         contains($word/@mark, '‽') or
@@ -622,7 +622,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
         } </dd>
     ) else () }
 {  let $normalize := $l = ('q', 'nq', 'mq', 'eq')
-   for $deprecated-from in xdb:key($word, 'deprecated-to', $word/@v)[@l=$l][$pubmode != 'true']/parent::word[not(ancestor::word = $word)] return
+   for $deprecated-from in xdb:key($word, 'deprecated-to', $word/@v)[@l=$l]/parent::word[not(ancestor::word = $word)] return
    <dd class="see-from"> {
             c:print-word($deprecated-from, <print-word style="bold" show-lang="y" show-link="y" show-gloss="y" is-neo="y" normalize="{$normalize}"/>)
     } </dd>

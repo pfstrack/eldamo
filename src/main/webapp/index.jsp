@@ -46,7 +46,7 @@ of Tolkien’s languages: <i><a href="content/references/ref-Ety.html">The Etymo
 the <i><a href="content/references/ref-GL.html">Gnomish</a></i> and <i><a href="content/references/ref-QL.html">Qenya
 Lexicons</a></i>, <a href="content/references/ref-PE17.html">“Words, Phrases and Passages from <i>The Lord of the
 Rings</i>”</a> (PE17) as well as <i><a href="content/references/ref-LotR.html">The Lord of the Rings</a></i> itself.
-However, I have barely begun the work of analyzing and comparing the various word forms, and any conclusions in the
+However, I am still in the process of analyzing and comparing the various word forms, and any conclusions in the
 current version of the lexicon must be considered preliminary.</p>
 <hr/>
 <% } %>

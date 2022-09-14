@@ -133,6 +133,7 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
         <option value="">parts of speech</option>
         <option value="" disabled="disabled">──────</option>
         <option value="no-names">exclude names</option>
+        <option value="only-names">only names</option>
         <option value="" disabled="disabled">──────</option>
         <option value="n">noun</option>
         <option value="vb">verb</option>

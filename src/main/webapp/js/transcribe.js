@@ -81,6 +81,7 @@ function transcribeSpans() {
 			var a = anchors[i];
 			if (a.name) continue;
 			if (a.href.indexOf('#') > 0) continue;
+            if (!(a.href.indexOf('word') > 0) && !(a.href.indexOf('search'))) continue;
 			a.href = a.href + "?neo";
 		}
 	} else {
