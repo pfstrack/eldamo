@@ -43,6 +43,7 @@ h2 { font-size: 125% }
 h3 { font-size: 100% }
 
 ul { padding-left: 1.5em; }
+ol { padding-left: 1.5em; }
 blockquote { margin-left: 0.75em; margin-right: 0em; padding-left: 0.50em; border-left: 0.25em solid #ccc; }
 
 dt { list-style: none; text-indent: -1.5em; margin-left: 1.5em; }
@@ -60,7 +61,7 @@ dd.see-from::before { content: '← '; }
 .deleted-section::before { content: '{{'; }
 .deleted-section::after { content: '}}'; }
 
-li.c-bullet { list-style-type:none; text-indent: -1em }
+li.c-bullet { list-style-type: none; text-indent: -1em }
 
 div.neo-nav-block    { display: none; }
 
@@ -91,3 +92,23 @@ span.breadcrumb-nav { display: none; }
 dl.neo-lang-word    { display: none; }
 
 hr { border: none; height: 1px; color: #000; background-color: #000; }
+
+.vocab-list {
+    -webkit-column-width: 20em;
+    -moz-column-width: 20em;
+    column-width: 20em;
+}
+
+.exercise-list {
+    -webkit-column-width: 30em;
+    -moz-column-width: 30em;
+    column-width: 30em;
+}
+
+.tengwar-block {
+    line-height: 166%;
+}
+
+.advanced-topic {
+    background-color: #CCCCCC
+}
