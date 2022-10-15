@@ -49,7 +49,7 @@ return (
 ) }</ul>,
 xdb:html($lang/notes/string()),
 if (not($is-neo-lang)) then () else
-<p>For more information about how this vobulary list was assembled, see:</p>,
+<p>For more information about how this vocabulary list was assembled, see:</p>,
 <ul> { (
     if ($is-neo-lang and $roots) then <li><a href="../root-indexes/roots-{$id}.html">Full List of Roots</a></li> else (),
     if ($is-neo-lang and $words) then <li><a href="../word-indexes/words-{$id}.html">Full Word List</a></li> else (),

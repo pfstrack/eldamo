@@ -395,7 +395,8 @@ declare function c:print-word($word as element()?, $control as element()?) as no
 
 declare function c:normalize-spelling($value) as xs:string {
     let $v1 := translate(replace(replace(replace($value, 'q', 'qu'), 'quu', 'qu'), 'ks', 'x'), 'k', 'c')
-    let $v2 := replace($v1, 'ea', 'ëa')
+    let $v22 := replace($v1, 'oa', 'öa')
+    let $v2 := replace($v22, 'ea', 'ëa')
     let $v3 := if ($v2 = 'nye' or $v2 = 'lye' or $v2 = 'tye') then $v2
         else if (string-length(translate($v2, '¹²³⁴', '')) < 3) then $v2
         else if (ends-with($v2, 'e')) then concat(substring($v2, 1, string-length($v2) - 1), 'ë')
