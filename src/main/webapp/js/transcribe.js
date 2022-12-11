@@ -38,7 +38,7 @@ String.prototype.replaceAll = function(search, replacement) {
 
 function postprocessTranscription(result) {
 	// Quenya transcription fixes
-	result = result.replaceAll('=', ' =').replaceAll('À', ' À') // ',', '?'
+	result = result.replaceAll('-', ' -').replaceAll('=', ' =').replaceAll('À', ' À').replaceAll('Á', ' Á')  // ',', '?'
 
 	// Mode of Beleriand transcription fixes
 	// result = result.replaceAll(']d', '‡d').replaceAll(']s', '‡s').replaceAll(']g', '‡g').replaceAll(']a', '‡a') // a(ch|g|ng|c) - PE22/36
@@ -80,8 +80,8 @@ function transcribeSpans() {
 		for (var i = 0; i < anchors.length; i++) {
 			var a = anchors[i];
 			if (a.name) continue;
-			if (a.href.indexOf('#') > 0) continue;
-            if (!(a.href.indexOf('word') > 0) && !(a.href.indexOf('search'))) continue;
+            if (a.href.indexOf('#') > 0) continue;
+            if (!(a.href.indexOf('word') > 0) && !(a.href.indexOf('search') > 0)) continue;
 			a.href = a.href + "?neo";
 		}
 	} else {

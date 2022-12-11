@@ -112,3 +112,5 @@ hr { border: none; height: 1px; color: #000; background-color: #000; }
 .advanced-topic {
     background-color: #CCCCCC
 }
+
+.advanced-topic blockquote { margin-left: 0.75em; margin-right: 0em; padding-left: 0.50em; border-left: 0.25em solid #999; }

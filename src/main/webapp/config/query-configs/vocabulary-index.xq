@@ -23,7 +23,6 @@ declare variable $lang-name := $lang/@name/string();
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
 
 <script src="../../js/glaemscribe.min.js"></script>
-<script src="../../js/tengwar_ds.cst.js"></script>
 <script src="../../js/tengwar_ds_eldamar.cst.js"></script>
 <script src="../../js/quenya.glaem.js"></script>
 <script src="../../js/sindarin-beleriand.glaem.js"></script>
