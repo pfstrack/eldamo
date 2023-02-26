@@ -14,8 +14,8 @@ indyo	grandson	n.
 intya	guess, notion	n.
 nyelle	bell	n.
 tyelpe	silver (archaic)	n.
-umbar	fate	n.
-umbarti	fates	n.
+umbar	fate, doom	n.
+umbarti	fates, dooms	n.
 ungwe	spider’s web	n.
 unque	a hollow	n.
 
@@ -87,7 +87,7 @@ olva	plant	n.
 orne	(tall) tree	n.
 rere	sows	v.
 rende	sowed	pa.t.
-resta	field	n.
+resta   field (tilled)  n.
 salque	grass	n.
 sape	digs	v.
 sampe	dug	pa.t.
@@ -109,8 +109,8 @@ aláhie	has kicked	perf.
 leve	moves (intr.)	v.
 léve	moved	pa.t.
 elévie	has moved	perf.
-lute	floats	v.
-lunte	floated	pa.t.
+lute	floats, sails	v.
+lunte	floated, sailed	pa.t.
 ulútie	has floated	perf.
 nire	presses, pushes	v.
 nirne	pressed, pushed	pa.t.
@@ -196,7 +196,7 @@ voronda	faithful, loyal	adj.
 
 5.7.1 Vocabulary: Miscellaneous
 -------------------------------
-atta	two	n.
+atta	two	num.
 canya	commands	v.
 canyane	commanded	pa.t.
 cende	point	n.
