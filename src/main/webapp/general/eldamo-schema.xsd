@@ -32,6 +32,7 @@
       <xs:enumeration value="weak-verb"/>
       <xs:enumeration value="ya-causative"/>
       <xs:enumeration value="ya-formative"/>
+      <xs:enumeration value="inceptive-verb"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="class-form-list-type">

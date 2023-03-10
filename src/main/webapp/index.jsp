@@ -60,6 +60,13 @@ current version of the lexicon must be considered preliminary.</p>
 <li><a href="general/elvish-fonts.html">Elvish Fonts</a></li>
 <li><a href="general/version-history.html">Version History</a></li>
 </ul>
+
+<h2>Other Content</h2>
+<ul>
+<li><a href="intro-quenya/index.html">Eldamo Introductory Quenya</a> - A Quenya language course by Paul Strack.</li>
+<li><a href="elvish-composition-archive/index.html">Elvish Composition Archive</a> - A collection of Elvish compositions by other authors.</li>
+</ul>
+
 <% if ("true".equals(request.getAttribute("PUB_MODE"))) { %>
 <p><b>Downloads</b></p>
 <ul>
