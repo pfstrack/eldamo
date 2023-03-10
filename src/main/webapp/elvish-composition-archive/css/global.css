@@ -1,0 +1,49 @@
+@font-face {
+  font-family: GentiumPlusW;
+  src: url(GentiumPlus-R.woff);
+}
+@font-face {
+  font-family: GentiumPlusW;
+  font-style: italic;
+  src: url(GentiumPlus-I.woff);
+}
+
+/* Use "Times" for emoji characters. */
+@font-face {
+    font-family: GentiumPlusW;
+    src: local('Times');
+    unicode-range: U+1F600-U+1FFFF;
+}
+
+@font-face {
+    font-family: Tengwar_Eldamar_Glaemscrafu;
+    src: url('tengwar-eldamar-glaemscrafu.woff') format('woff');
+}
+
+.tengwar {
+    font-family: Tengwar_Eldamar_Glaemscrafu;
+    font-size: 100%;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body { font-family: 'GentiumPlusW', Times, 'Times New Roman', san-serif; line-height: 133%; }
+
+h1 { font-size: 150% }
+h2 { font-size: 125% }
+h3 { font-size: 100% }
+
+ul { padding-left: 1.5em; }
+ol { padding-left: 1.5em; }
+
+blockquote { margin-left: 0.75em; margin-right: 0em; padding-left: 0.50em; border-left: 0.25em solid #ccc; }
+
+hr { border: none; height: 1px; color: #000; background-color: #000; }
+
+.archive-nav { font-size: 100%; }
+
+.archive-nav::before { content: '['; }
+.archive-nav::after { content: '] »'; }
