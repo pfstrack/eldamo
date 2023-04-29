@@ -102,6 +102,7 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
         <option value="" disabled="disabled">─────────────</option>
         <option value="mq|q|nq">Later Quenya (1930+)</option>
         <option value="n|s|ns">Sindarin/Noldorin (1930+)</option>
+        <option value="mp|p|np">Later Primitive (1930+)</option>
         <option value="" disabled="disabled">─────────────</option>
         <option value="q|s|p">All Late Elvish (1950-73)</option>
         <option value="mq|n|mp">All Middle Elvish (1930-50)</option>
