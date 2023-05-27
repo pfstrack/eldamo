@@ -288,6 +288,28 @@
         <description>The search page.</description>
         <example><![CDATA[search.html]]></example>
     </query-controller>
+    <query-controller uri-pattern="/search/search-adv-index.js">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="js" mime-type="application/javascript" file="search-adv-index.xq"/>
+        </renderers>
+        <description>Advanced search index.</description>
+        <example><![CDATA[search-adv-index.js]]></example>
+    </query-controller>
+    <query-controller uri-pattern="/search/advanced-search.html">
+        <simple-request-parser />
+        <query>
+            <whole-doc-query />
+        </query>
+        <renderers>
+            <xquery-renderer content-type="html" mime-type="text/html" file="search-adv.xq"/>
+        </renderers>
+        <description>The advanced search page.</description>
+        <example><![CDATA[advanced-search.html]]></example>
+    </query-controller>
     <query-controller uri-pattern="/sindarin-dictionary/export.*">
         <simple-request-parser />
         <query>
@@ -296,7 +318,5 @@
         <renderers>
             <xquery-renderer content-type="html" mime-type="text/html" file="sindarin-dictionary.xq"/>
         </renderers>
-        <description>The search page.</description>
-        <example><![CDATA[search.html]]></example>
     </query-controller>
 </configs>

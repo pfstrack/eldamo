@@ -21,6 +21,7 @@ generated&nbsp;<%= java.text.DateFormat.getDateInstance(java.text.DateFormat.LON
 <ul>
 <li><a href="content/search/search.html" query="neo">Neo-Eldarin Word Search</a></li>
 <li><a href="content/search/search.html">Academic Word Search</a></li>
+<li><a href="content/search/advanced-search.html">Advanced Reference Search</a> [Beta]</li>
 <li><a href="translations/international-searches.html">International Searches</a></li>
 </ul>
 <% if ("true".equals(request.getAttribute("PUB_MODE"))) { %>

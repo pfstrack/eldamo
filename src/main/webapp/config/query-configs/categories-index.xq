@@ -100,7 +100,7 @@ return (
                 contains($word/@mark, '|') or
                 contains($word/@mark, '-') or
                 contains($word/@mark, '‽') or
-                $word/@gloss='[unglossed]' or
+                ($word/@gloss='[unglossed]' and not($word/@ngloss)) or
                 $word/@l = ('ep', 'en', 'eq', 'g')
             )
           ) then <span>⚠️</span> else () }
