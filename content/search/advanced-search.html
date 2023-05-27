@@ -1,0 +1,151 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+      <meta http-equiv="Content-Style-Type" content="text/css">
+      <title>Eldamo : Advanced Search</title>
+      <link rel="stylesheet" href="../../css/global.css" type="text/css"><style>
+
+span.label-holder { float: left; padding-right: 0.5em; }
+span.button-holder { float: right; display: block }
+span.search-holder { overflow: hidden; display: block; padding-right: 0.5em; }
+input.searchBox { width: 100%; }
+.search-selectors { margin-top: 0.25em; display: none; text-align: center; }
+.neo-warning-div { margin-top: 0.25em; padding-top: 0.25em; display: none; }
+.help-div { margin-top: 0.25em; display: block; }
+input[type="text"], select, button { font-size: 16px; }
+button { border-radius: 4px; background-color: #EEE; border: 1px solid #444 }
+.label-holder { display: none; }
+@media only screen and (min-width: 920px) {
+    .search-selectors { text-align: left; }
+}
+@media only screen and (min-width: 400px) and (min-height: 400px) {
+    .label-holder { display: block; }
+    .search-selectors { display: block; }
+}
+
+    </style></head><script src="search-adv-index.js"></script><script src="../../js/search-adv.js"></script><body onload="initSearch()">
+      <div class="search-header"><span class="label-holder"><big>[<a href="../../index.html">Home</a>]</big></span><span class="button-holder"><button onclick="advanced()" id="advancedButton" class="advancedButton">...</button></span><span class="search-holder"><input onfocus="hideHelp()" onkeyup="doSearchTyping()" id="searchBox" placeholder="Search..." type="text" class="searchBox" value=""></span></div>
+      <div id="search-selectors" class="search-selectors"><button onclick="help()" id="helpButton" class="helpButton">?</button> &nbsp;
+         <select onfocus="hideHelp()" onchange="doSearch()" id="langSelect" class="langSelect">
+            <option value="">All Languages</option>
+            <option disabled value="">─────────────</option>
+            <option value="eq|mq|q|nq">All Quenya</option>
+            <option value="g|n|en|s|ns">Sindarin/Noldorin/Gnomish</option>
+            <option value="p|mp|ep|np">All Primitive Elvish</option>
+            <option disabled value="">─────────────</option>
+            <option value="mq|q|nq">Later Quenya (1930+)</option>
+            <option value="n|s|ns">Sindarin/Noldorin (1930+)</option>
+            <option value="mp|p|np">Later Primitive (1930+)</option>
+            <option disabled value="">─────────────</option>
+            <option value="q|s|p">All Late Elvish (1950-73)</option>
+            <option value="mq|n|mp">All Middle Elvish (1930-50)</option>
+            <option value="eq|en|g|ep">All Early Elvish (1910-30)</option>
+            <option disabled value="">─────────────</option>
+            <option value="q">Late Quenya (1950-73)</option>
+            <option value="s">Sindarin (1950-73)</option>
+            <option value="p">Primitive Elvish (1950-73)</option>
+            <option disabled value="">─────────────</option>
+            <option value="mq">Middle Quenya (1930-50)</option>
+            <option value="n">Noldorin (1930-50)</option>
+            <option value="mp">Middle Primitive (1930-50)</option>
+            <option disabled value="">─────────────</option>
+            <option value="eq">Early Quenya (1910-30)</option>
+            <option value="en">Early Noldorin (1920-30)</option>
+            <option value="g">Gnomish (1910-20)</option>
+            <option value="ep">Early Primitive (1910-30)</option>
+            <option disabled value="">─────────────</option>
+            <option value="ad">Adûnaic</option>
+            <option value="aq">Ancient Quenya</option>
+            <option value="at">Ancient Telerin</option>
+            <option value="av">Avarin</option>
+            <option value="bs">Black Speech</option>
+            <option value="cir">Cirth</option>
+            <option value="dan">Danian/Ossiriandic</option>
+            <option value="dun">Dunlending</option>
+            <option value="eas">Easterling</option>
+            <option value="ed">Edain</option>
+            <option value="eilk">Early Ilkorin</option>
+            <option value="ent">Entish</option>
+            <option value="et">Solosimpi/Early Telerin</option>
+            <option value="ilk">Ilkorin/Doriathrin</option>
+            <option value="kh">Khuzdul</option>
+            <option value="khx">Khuzdul (External)</option>
+            <option value="lem">Lemberin</option>
+            <option value="lin">Lindarin</option>
+            <option value="maq">Middle Ancient Quenya</option>
+            <option value="mt">Middle Telerin</option>
+            <option value="nan">Nandorin</option>
+            <option value="norths">North Sindarin</option>
+            <option value="on">Old Noldorin</option>
+            <option value="os">Old Sindarin</option>
+            <option value="pad">Primitive Adûnaic</option>
+            <option value="roh">Rohirric</option>
+            <option value="sar">Sarati</option>
+            <option value="t">Telerin</option>
+            <option value="tal">Taliska</option>
+            <option value="teng">Tengwar</option>
+            <option value="un">Unknown</option>
+            <option value="val">Valarin</option>
+            <option value="van">Vanyarin</option>
+            <option value="wes">Westron</option>
+            <option value="wos">Wose</option></select> &nbsp;
+         <select onfocus="hideHelp()" onchange="doSearch()" id="partsOfSpeechSelect">
+            <option value="">parts of speech</option>
+            <option disabled value="">──────</option>
+            <option value="no-names">exclude names</option>
+            <option value="only-names">only names</option>
+            <option disabled value="">──────</option>
+            <option value="n">noun</option>
+            <option value="vb">verb</option>
+            <option value="adj">adjective</option>
+            <option value="adv">adverb</option>
+            <option value="pron">pronoun</option>
+            <option value="prep">preposition</option>
+            <option value="conj">conjunction</option>
+            <option value="interj">interjection</option>
+            <option value="pref">prefix</option>
+            <option value="suf">suffix</option>
+            <option value="root">root</option></select> &nbsp;
+         <select onfocus="hideHelp()" onchange="doSearch()" id="diacriticSelect">
+            <option value="ignore">ignore diacritics</option>
+            <option value="match">match diacritics</option></select> &nbsp;
+         <button onclick="reset()" id="resetButton">Reset</button></div>
+      <div id="neo-warning-div" class="neo-warning-div">
+         WARNING: BETA CONTENT; USE WITH CAUTION. This search mixes words from various periods of Tolkien’s life, as well as
+         neologisms invented by fans. The search results use the ⚠️  symbol to recommend against using particular words, but this is
+         a
+         reflection only of the author’s (Paul Strack’s) opinions. Furthermore, the analysis of the corpus remains incomplete,
+         and these recommendations may change in the future. For more information about neologisms in Eldamo, see the neologism
+         lists for <a href="../neologism-indexes/neologisms-nq.html?neo">Neo-Quenya</a> and
+         <a href="../neologism-indexes/neologisms-ns.html?neo">Neo-Sindarin</a>. For a search limited to Tolkien’s own words
+         excluding any neologisms or recommendations, see the <a href="search.html">Academic Search</a>.
+         
+      </div>
+      <div id="help-div" class="help-div">
+         <p><b>Help:</b> This help section is replaced by the search results when you first begin searching. You can use the
+            “...” button to show/hide the search filters and the “?” button to show/hide help text during a search.
+         </p>
+         <p>This advanced search allow you to search for raw references of Elvish words (and other languages) as they appeared
+            in Tolkien’s original texts. You can only search the Elvish (or other language) words, not English glosses. The same
+            result may appear multiple times if there are multiple references matching it. Where a given reference appears many
+            times in a particular work, however, sometimes only notable or initial references are included or a reference to the
+            index.
+         </p>
+         <p><b>Match Diacritics:</b> By default this advanced search is by exact match (c matches only c and k matches only k)
+            including matching punctation (-, !, ?, etc.), but ignores diacritics (u matches ū, ŭ, ū). For exact matches on
+            diacritics as well, choose “match diacritics”.
+         </p>
+         <p><b>Regular Expressions:</b> Prefixing a search by “regex=” allows you to match using regular expressions for very
+            advanced searches. For example “regex=^t” matches words beginning with “t” and “regex=^t” matches words ending with
+            “t”. An internet search can be used to find documentation on “JavaScript regular expressions”, which is what this
+            engine uses.
+         </p>
+         <p><b>Inflection Search:</b> TBD - A future version of the advanced search will allow searches for inflected forms
+            (e.g. past tenses).
+         </p>
+      </div>
+      <hr>
+      <dl id="resultList"></dl>
+   </body>
+</html>
