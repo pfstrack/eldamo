@@ -214,7 +214,7 @@ function searchIt(buffer) {
     var langSelect = document.getElementById('langSelect');
     var lang = langSelect.options[langSelect.selectedIndex].value;
     var target = "word-only";
-    var position = 'contains';
+    var position = 'regex';
     var partsOfSpeechSelect = document.getElementById('partsOfSpeechSelect');
     var partsOfSpeech = partsOfSpeechSelect.options[partsOfSpeechSelect.selectedIndex].value;
     var diacriticSelect = document.getElementById('diacriticSelect');
@@ -313,6 +313,7 @@ function isMatch(word, searchText, target, position, partsOfSpeech, diacriticMat
 function orMatch(word, searchText, target, position, partsOfSpeech, diacriticMatch) {
 	if (searchText.startsWith('word=')) {
 		target = 'word';
+        position = 'contains'
 		searchText = searchText.substring(5);
 	} else if (searchText.startsWith('regex=')) {
         target = 'word';

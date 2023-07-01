@@ -132,14 +132,17 @@ button { border-radius: 4px; background-color: #EEE; border: 1px solid #444 }
             times in a particular work, however, sometimes only notable or initial references are included or a reference to the
             index.
          </p>
-         <p><b>Match Diacritics:</b> By default this advanced search is by exact match (c matches only c and k matches only k)
-            including matching punctation (-, !, ?, etc.), but ignores diacritics (u matches ū, ŭ, ū). For exact matches on
-            diacritics as well, choose “match diacritics”.
+         <p><b>Match Diacritics:</b> By default this advanced search is by exact match (c matches only c and k matches only k),
+            but ignores diacritics (u matches ū, ŭ, ū). For exact matches on diacritics as well, choose “match diacritics”.
          </p>
-         <p><b>Regular Expressions:</b> Prefixing a search by “regex=” allows you to match using regular expressions for very
-            advanced searches. For example “regex=^t” matches words beginning with “t” and “regex=^t” matches words ending with
-            “t”. An internet search can be used to find documentation on “JavaScript regular expressions”, which is what this
-            engine uses.
+         <p><b>Regular Expressions:</b> This search supports regular expressions, allowing you to specify more advanced
+            matching criteria. For example “^t” matches words that begin with t, “t$” matches words that end with t, and
+            “.t.” matches t preceded and followed by at least one more character (in other words, in the interior of the word).
+            Quite complex searches are possible, such as “rd[aeiouy]” which matches “rd” followed by any (Sindarin) vowel, which
+            would exclude “rdh”. An internet search can be used to find documentation on “JavaScript Regular Expressions”,
+            which is what this search engine uses. A good regex summary can be found at
+            <a href="https://www.rexegg.com/regex-quickstart.html" target="_blank">https://www.rexegg.com/regex-quickstart.html</a>
+            and here is a good tutorial: <a href="https://regexone.com" target="_blank">https://regexone.com</a>.
          </p>
          <p><b>Inflection Search:</b> TBD - A future version of the advanced search will allow searches for inflected forms
             (e.g. past tenses).
