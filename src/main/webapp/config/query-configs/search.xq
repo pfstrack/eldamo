@@ -151,7 +151,7 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
     <button id="resetButton" onclick="reset()">Reset</button>
 </div>
 <div class="neo-warning-div" id="neo-warning-div">
-WARNING: BETA CONTENT; USE WITH CAUTION. This search mixes words from various periods of Tolkien’s life, as well as
+This search mixes words from various periods of Tolkien’s life, as well as
 neologisms invented by fans. The search results use the ⚠️  symbol to recommend against using particular words, but this is a
 reflection only of the author’s (Paul Strack’s) opinions. Furthermore, the analysis of the corpus remains incomplete,
 and these recommendations may change in the future. For more information about neologisms in Eldamo, see the neologism

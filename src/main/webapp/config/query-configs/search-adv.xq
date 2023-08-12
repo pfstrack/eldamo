@@ -143,15 +143,6 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
     </select> &#160;
     <button id="resetButton" onclick="reset()">Reset</button>
 </div>
-<div class="neo-warning-div" id="neo-warning-div">
-WARNING: BETA CONTENT; USE WITH CAUTION. This search mixes words from various periods of Tolkien’s life, as well as
-neologisms invented by fans. The search results use the ⚠️  symbol to recommend against using particular words, but this is a
-reflection only of the author’s (Paul Strack’s) opinions. Furthermore, the analysis of the corpus remains incomplete,
-and these recommendations may change in the future. For more information about neologisms in Eldamo, see the neologism
-lists for <a href="../neologism-indexes/neologisms-nq.html?neo">Neo-Quenya</a> and
-<a href="../neologism-indexes/neologisms-ns.html?neo">Neo-Sindarin</a>. For a search limited to Tolkien’s own words
-excluding any neologisms or recommendations, see the <a href="search.html">Academic Search</a>.
-</div>
 <div class="help-div" id="help-div">
 <p><b>Help:</b> This help section is replaced by the search results when you first begin searching. You can use the
 “...” button to show/hide the search filters and the “?” button to show/hide help text during a search.</p>
