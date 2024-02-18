@@ -76,7 +76,6 @@ function doReplace(charReplace1, charReplace2, value) {
 }
 
 function charReplace(value) {
-//    var charReplace1 = ' -–·¹²³⁴⁵⁶⁷⁸⁹?.‘’[]{}()!'; 
     var charReplace1 = '¹²³⁴⁵⁶⁷⁸⁹'; 
     var charReplace2 = '';
     return doReplace(charReplace1, charReplace2, value).trim();
@@ -399,8 +398,6 @@ function hideHelp() {
 	if (window.stickyhelp) {
 		return;
 	}
-    var neoWarningDiv = document.getElementById('neo-warning-div');
-    neoWarningDiv.style.display = 'none';
     var helpDiv = document.getElementById('help-div');
 	helpDiv.style.display = 'none';
 }
