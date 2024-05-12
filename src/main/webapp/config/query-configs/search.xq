@@ -104,9 +104,9 @@ button {{ border-radius: 4px; background-color: #EEE; border: 1px solid #444 }}
         <option value="n|s|ns">Sindarin/Noldorin (1930+)</option>
         <option value="mp|p|np">Later Primitive (1930+)</option>
         <option value="" disabled="disabled">─────────────</option>
-        <option value="q|s|p">All Late Elvish (1950-73)</option>
-        <option value="mq|n|mp">All Middle Elvish (1930-50)</option>
-        <option value="eq|en|g|ep">All Early Elvish (1910-30)</option>
+        <option value="q|aq|van|s|os|p|t|at|nan|norths|av">All Late Elvish (1950-73)</option>
+        <option value="mq|maq|lin|n|on|mp|mt|ilk|dan|lem">All Middle Elvish (1930-50)</option>
+        <option value="eq|en|g|et|ep">All Early Elvish (1910-30)</option>
         <option value="" disabled="disabled">─────────────</option> {
             for $lang in //language[@id][not(@id=('np', 'ns', 'nq'))]
             order by local:lang-order($lang/@id)

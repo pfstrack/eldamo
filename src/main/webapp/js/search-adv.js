@@ -107,6 +107,8 @@ function convertLang(lang, speech) {
         converted = 'ᴺ✶';
     else if (lang === 'mq')
         converted = 'ᴹQ. ';
+    else if (lang === 'maq')
+        converted = 'ᴹAQ. ';
     else if (lang === 'nq')
         converted = 'ᴺQ. ';
     else if (lang === 'mt')
