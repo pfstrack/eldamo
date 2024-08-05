@@ -46,10 +46,6 @@ return (
 ) }
 <h1>Unprocessed References</h1>
 {
-(:
-let $refs := //ref[not(c:get-ref(.)) or not(contains(@source, '.')) or ends-with(@source, '.00000')
-                       or *[@source][not(c:get-ref(.))]]
-:)
 let $refs := //ref[not(c:get-ref(.)) or not(contains(@source, '.')) or ends-with(@source, '.00000')
                        or *[@source][not(c:get-ref(.))]]
 let $sources := distinct-values($refs/substring-before(concat(@source, '/'), '/'))

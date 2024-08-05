@@ -3,9 +3,18 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body> 
 <table> {
-let $words := //word[@l=('ns', 's', 'n', 'en', 'g', 'nq', 'q', 'mq', 'eq')][not(see)]
-    [not(contains(@mark, '-'))][not(contains(@mark, '|'))]
-    [c:is-word(.)][not(@gloss='[unglossed]')][not(c:get-gloss(.) = '‽')][not(c:get-gloss(.) = '?')][not(@cat)]
+let $refs := //ref[count(deriv) gt 1]
+for $ref in $refs
+order by c:normalize-for-sort($ref/@v)
+return
+    <tr>
+        <td>{ c:get-lang($ref) }</td>
+        <td>{ $ref/@v/string() }</td>
+        <td>{ $ref/@source/string() }</td>
+    </tr>
+} </table>
+<table> {
+let $words := //word[count(deriv) gt 1]
 for $word in $words
 order by c:normalize-for-sort($word/@v), $word/@l
 return

@@ -30,6 +30,48 @@ declare variable $lang-name := $lang/@name/string();
 <hr/>
 <h1>{$lang-name} Neologisms</h1>
 {xdb:html($lang/neologisms/string())}
+{
+let $words := xdb:key(/*, 'language', $id)
+let $unversioned := $words
+        [not(@neo-version)]
+        [not(ends-with(c:get-speech(.), '-name'))]
+        [not(c:get-speech(.)='text')]
+        [not(c:get-speech(.)='phrase' or c:get-speech(.)='text')]
+        [not(c:get-speech(.)='grammar')]
+        [not(starts-with(c:get-speech(.), 'phone'))]
+return
+if (count($unversioned) = 0) then () else 
+<div>
+<hr/>
+<h2>Unversioned</h2>
+<dl> {
+for $word in $unversioned
+let $alt-lang := c:alt-lang($word)
+let $neo-lang := if ($id = 'nq' or $id = 'ns' or $id = 'np') then true() else false()
+let $normalize := if ($id = 'nq') then true() else false()
+let $deprecated :=
+    if ($word/deprecated) then $word/deprecated
+    else if ($word/see/c:get-word(.)/deprecated) then $word/see/c:get-word(.)/deprecated
+    else ()
+order by if ($neo-lang)
+    then c:normalize-for-sort(c:normalize-spelling($word/@v))
+    else c:normalize-for-sort($word/@v)
+return (
+    <dt>
+        { if (not($neo-lang)) then () else (
+            c:print-lang($word),
+            if ($alt-lang and not(contains($word/@mark, '!'))) then concat(' [', $alt-lang, '] ') else ()
+        ) }
+        { if ($word/see) then c:print-word($word, <control style="bold" normalize="{$normalize}"/>)
+          else c:print-word($word, <control style="bold" show-link="y" normalize="{$normalize}"/>) }
+        { if ($word/@stem) then <span> (<b>{if ($normalize) then c:normalize-spelling($word/@stem) else $word/@stem/string()}</b>)</span> else () }
+        { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
+        { c:print-speech($word) }
+        { if ($neo-lang) then c:print-neo-gloss($word) else c:print-gloss($word) }
+    </dt>
+) } </dl>
+</div>
+}
 <hr/> 
 <ul> {
 let $versions := distinct-values(xdb:key(/*, 'language', $id)/@neo-version)
