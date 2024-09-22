@@ -517,7 +517,7 @@ return (
     { if ($word/@stem) then <span> (<b>{$word/@stem/string()}</b>)</span> else () }
     { if ($word/@tengwar) then <span> [<b>{$word/@tengwar/string()}</b>]</span> else () }
     {c:print-speech($word)}
-    {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@form, ' ', $word/class/@variant))), ') ') else ()}
+    {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@mark, $word/class/@form, ' ', $word/class/@variant))), ') ') else ()}
     {c:print-gloss($word)}
     {let $rule := if ($word/@rule) then $word else $word/rule return
     if ($rule) then concat('; [', $rule/@from, '] &gt; [', $rule/@rule, ']') else ()}
@@ -594,7 +594,7 @@ if (xdb:hashcode($neo-lang-word) != xdb:hashcode($word)) then (
                 }" data-lang="{if ($word/@l = ('q', 'mq', 'eq', 'nq')) then 'q' else 's'}"></span>
         , ' ') else ()}
     {c:print-speech($word)}
-    {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@form, ' ', $word/class/@variant))), ') ') else ()}
+    {if ($word/class/@form) then (' (', local:print-inflections($word, normalize-space(concat($word/class/@mark, $word/class/@form, ' ', $word/class/@variant))), ') ') else ()}
     {c:print-neo-gloss($word)}
     { if (not($word/@created or $word/@vetted)) then () else
       concat(' [',

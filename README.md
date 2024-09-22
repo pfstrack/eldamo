@@ -3,7 +3,7 @@
 An Elvish Data Model in XML.
 
 Most consumers of this project are probably interested in the finished product, the generated Elvish lexicon. This can
-be found at http://eldamo.org (mirror http://pfstrack.github.io/eldamo/) and project releases are zip files of this site.
+be found at https://eldamo.org (mirror https://pfstrack.github.io/eldamo/) and project releases are zip files of this site.
 
 This document provides information for those interested in how the Eldamo site is generated. To fully understand this
 process, you need to know:
