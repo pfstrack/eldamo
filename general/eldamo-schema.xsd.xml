@@ -536,6 +536,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:attribute name="form" use="required" type="class-form-list-type"/>
+      <xs:attribute name="mark"/>
       <xs:attribute name="variant">
         <xs:simpleType>
           <xs:restriction base="xs:token">
