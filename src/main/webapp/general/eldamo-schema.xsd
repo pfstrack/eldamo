@@ -138,6 +138,7 @@
       <xs:enumeration value="3rd-dual-fem"/>
       <xs:enumeration value="3rd-dual-masc"/>
       <xs:enumeration value="3rd-dual-neut"/>
+      <xs:enumeration value="3rd-dual-reflexive"/>
       <xs:enumeration value="3rd-pl"/>
       <xs:enumeration value="3rd-pl-fem"/>
       <xs:enumeration value="3rd-pl-masc"/>
@@ -148,13 +149,27 @@
       <xs:enumeration value="with-sg-object"/>
       <xs:enumeration value="with-dual-object"/>
       <xs:enumeration value="with-pl-object"/>
-      <xs:enumeration value="with-remote-sg-object"/>
+      <xs:enumeration value="with-masc-object"/>
       <xs:enumeration value="with-remote-pl-object"/>
       <xs:enumeration value="with-1st-sg-object"/>
-      <xs:enumeration value="with-1st-pl-object"/>
-      <xs:enumeration value="with-2nd-sg-object"/>
-      <xs:enumeration value="with-2nd-pl-object"/>
-      <xs:enumeration value="with-1st-sg-dative"/>
+      <xs:enumeration value="with-1st-dual-exclusive-object"/>
+      <xs:enumeration value="with-1st-dual-inclusive-object"/>
+      <xs:enumeration value="with-1st-pl-exclusive-object"/>
+      <xs:enumeration value="with-1st-pl-inclusive-object"/>
+      <xs:enumeration value="with-2nd-sg-familiar-object"/>
+      <xs:enumeration value="with-2nd-sg-polite-object"/>
+      <xs:enumeration value="with-2nd-dual-familiar-object"/>
+      <xs:enumeration value="with-2nd-dual-polite-object"/>
+      <xs:enumeration value="with-2nd-pl-familiar-object"/>
+      <xs:enumeration value="with-2nd-pl-polite-object"/>
+      <xs:enumeration value="with-3rd-sg-remote-object"/>
+      <xs:enumeration value="with-3rd-sg-neuter-object"/>
+      <xs:enumeration value="with-3rd-dual-remote-object"/>
+      <xs:enumeration value="with-3rd-dual-neuter-object"/>
+      <xs:enumeration value="with-3rd-pl-remote-object"/>
+      <xs:enumeration value="with-3rd-pl-neuter-object"/>
+      <xs:enumeration value="with-abstract-object"/>
+      <xs:enumeration value="with-1st-sg-dative"/><!-- FIXME -->
 
       <!-- prepositional inflections -->
       <xs:enumeration value="1st-sg-prep"/>
@@ -177,7 +192,7 @@
       <xs:enumeration value="1st-sg-poss"/>
       <xs:enumeration value="1st-pl-exclusive-poss"/>
       <xs:enumeration value="1st-pl-inclusive-poss"/>
-      <xs:enumeration value="2nd-sg-poss"/>
+      <xs:enumeration value="2nd-sg-familiar-poss"/>
       <xs:enumeration value="2nd-sg-polite-poss"/>
       <xs:enumeration value="2nd-dual-poss"/>
       <xs:enumeration value="2nd-pl-poss"/>
@@ -215,6 +230,7 @@
       <xs:enumeration value="comparative"/>
       <xs:enumeration value="diminutive"/>
       <xs:enumeration value="intensive"/>
+      <xs:enumeration value="negative"/>
       <xs:enumeration value="superlative"/>
       <xs:enumeration value="diminutive-superlative"/>
 
@@ -290,6 +306,7 @@
       <xs:enumeration value="g-mutation"/>
       <xs:enumeration value="gw-mutation"/>
       <xs:enumeration value="h-mutation"/>
+      <xs:enumeration value="hw-mutation"/>
       <xs:enumeration value="lh-mutation"/>
       <xs:enumeration value="m-mutation"/>
       <xs:enumeration value="mb-mutation"/>
