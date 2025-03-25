@@ -381,6 +381,7 @@ public final class CustomFunctions {
         for (int i=0; i < links.getLength(); i++) {
             Element link = (Element) links.item(i);
             String lang = link.getAttribute("l");
+            String deeplink = link.getAttribute("deeplink");
             if (lang != null && lang.length() > 0) {
                 String v = link.getAttribute("v");
                 if (v != null && v.length() > 0 && link.getChildNodes().getLength() == 0) {
@@ -389,7 +390,12 @@ public final class CustomFunctions {
                 }
                 String value = v == null ? link.getTextContent() : v;
                 String hashcode = hashcode(lang, value);
-                link.setAttribute("href", "../words/word-" + hashcode + ".html");
+                String href = "../words/word-" + hashcode + ".html";
+                if (deeplink != null && deeplink.length() > 0) {
+                	href += "#" + deeplink;
+                    link.removeAttribute("deeplink");
+                }
+				link.setAttribute("href", href);
                 link.removeAttribute("l");
                 link.removeAttribute("v");
             }

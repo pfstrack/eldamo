@@ -66,6 +66,7 @@ current version of the lexicon must be considered preliminary.</p>
 <ul>
 <li><a href="intro-quenya/index.html">Eldamo Introductory Quenya</a> - A Quenya language course by Paul Strack.</li>
 <li><a href="elvish-composition-archive/index.html">Elvish Composition Archive</a> - A collection of Elvish compositions by other authors.</li>
+<li><a href="elvish-essays/index.html">Elvish Essays</a> - A collection of Elvish essays by Paul Strack on various topics.</li>
 </ul>
 
 <% if ("true".equals(request.getAttribute("PUB_MODE"))) { %>

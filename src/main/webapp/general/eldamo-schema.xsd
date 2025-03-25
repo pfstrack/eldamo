@@ -182,8 +182,9 @@
       <xs:enumeration value="2nd-pl-prep"/>
       <xs:enumeration value="3rd-sg-prep"/>
       <xs:enumeration value="3rd-sg-inanimate-prep"/>
-      <xs:enumeration value="3rd-sg-honorific-prep"/>
+      <xs:enumeration value="3rd-sg-inanimate-prep"/>
       <xs:enumeration value="3rd-pl-prep"/>
+      <xs:enumeration value="3rd-pl-inanimate-prep"/>
       <xs:enumeration value="3rd-pl-honorific-prep"/>
       <xs:enumeration value="definite-prep"/>
       <xs:enumeration value="definite-plural-prep"/>
@@ -212,7 +213,7 @@
       <xs:enumeration value="possessive-adjectival"/>
 
       <!-- obscure noun cases -->
-      <xs:enumeration value="s-case"/>
+      <xs:enumeration value="short-locative"/>
       <xs:enumeration value="old-genitive"/>
       <xs:enumeration value="comitative"/>
       <xs:enumeration value="similative"/>
@@ -306,7 +307,6 @@
       <xs:enumeration value="g-mutation"/>
       <xs:enumeration value="gw-mutation"/>
       <xs:enumeration value="h-mutation"/>
-      <xs:enumeration value="hw-mutation"/>
       <xs:enumeration value="lh-mutation"/>
       <xs:enumeration value="m-mutation"/>
       <xs:enumeration value="mb-mutation"/>
@@ -316,6 +316,7 @@
       <xs:enumeration value="rh-mutation"/>
       <xs:enumeration value="s-mutation"/>
       <xs:enumeration value="t-mutation"/>
+      <xs:enumeration value="wh-mutation"/>
 
       <!-- Declension class variants -->
       <xs:enumeration value="declension-A"/>
