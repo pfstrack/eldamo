@@ -19,6 +19,7 @@ public class ProbTest {
 					for (int c2 = 1; c2 <= 10; c2++) {
 						total++;
 						int result = die + bonus;
+						if (result > 10) result = 10;
 						if (result > c1 && result > c2) {
 							strongHit++;
 						} else if (result > c1 || result > c2) {
@@ -29,7 +30,7 @@ public class ProbTest {
 					}
 				}
 			}
-			System.out.println(bonus + "," + perc(miss / total) + "," + perc(weakHit / total) + "," + perc(strongHit / total));
+			System.out.println(bonus + "\t" + perc(miss / total) + "\t" + perc(weakHit / total) + "\t" + perc(strongHit / total));
 		}
 		System.out.println("---");
 		for (int bonus = 1; bonus <= 10; bonus++) {
@@ -41,6 +42,7 @@ public class ProbTest {
 				for (int c2 = 1; c2 <= 10; c2++) {
 					total++;
 					int result = bonus;
+					if (result > 10) result = 10;
 					if (result > c1 && result > c2) {
 						strongHit++;
 					} else if (result > c1 || result > c2) {
@@ -50,7 +52,7 @@ public class ProbTest {
 					}
 				}
 			}
-			System.out.println(bonus + "," + perc(miss / total) + "," + perc(weakHit / total) + "," + perc(strongHit / total));
+			System.out.println(bonus + "\t" + perc(miss / total) + "\t" + perc(weakHit / total) + "\t" + perc(strongHit / total));
 		}
 		for (int negmomentum = 1; negmomentum <= 6; negmomentum++) {
 			System.out.println("---");
@@ -65,6 +67,7 @@ public class ProbTest {
 						for (int c2 = 1; c2 <= 10; c2++) {
 							total++;
 							int result = die + bonus;
+							if (result > 10) result = 10;
 							if (negmomentum == die) {
 								result = bonus;
 							}
@@ -78,7 +81,7 @@ public class ProbTest {
 						}
 					}
 				}
-				System.out.println(bonus + "," + perc(miss / total) + "," + perc(weakHit / total) + "," + perc(strongHit / total));
+				System.out.println(bonus + "\t" + perc(miss / total) + "\t" + perc(weakHit / total) + "\t" + perc(strongHit / total));
 			}
 		}
 		for (int posmomentum = 1; posmomentum <= 10; posmomentum++) {
@@ -95,6 +98,7 @@ public class ProbTest {
 						for (int c2 = 1; c2 <= 10; c2++) {
 							total++;
 							int result = die + bonus;
+							if (result > 10) result = 10;
 							if (result > c1 && result > c2) {
 								strongHit++;
 							} else if (posmomentum > c1 && posmomentum > c2) {
@@ -111,7 +115,7 @@ public class ProbTest {
 						}
 					}
 				}
-				System.out.println(bonus + "," + perc(miss / total) + "," + perc(weakHit / total) + "," + perc(strongHit / total) + "," + perc(burn / total));
+				System.out.println(bonus + "\t" + perc(miss / total) + "\t" + perc(weakHit / total) + "\t" + perc(strongHit / total) + "\t" + perc(burn / total));
 			}
 		}
 	}
