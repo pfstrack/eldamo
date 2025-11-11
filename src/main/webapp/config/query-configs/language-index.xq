@@ -27,6 +27,7 @@ declare function local:has-lang($lang as xs:string?) as xs:boolean {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"></meta>
 <title>Eldamo : Language Index</title>
 <link type="text/css" rel="stylesheet" href="../../css/global.css" />
+
 </head>
 <body>
 <p>[<a href="../../index.html">Home</a>]</p>
@@ -73,5 +74,6 @@ return if (normalize-space($lang-list) = '') then () else (
     <p><b>Unexplained Languages</b></p>,
     $lang-list
 ) } </div>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

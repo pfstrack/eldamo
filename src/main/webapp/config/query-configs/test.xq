@@ -25,5 +25,6 @@ return
         <td>{ c:get-gloss($word) }</td>
     </tr>
 } </table>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

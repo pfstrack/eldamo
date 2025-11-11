@@ -1,5 +1,7 @@
 import module namespace c = "common.xq" at "common.xq";
 
+
+
 declare function local:lang-name($lang as element()) as xs:string {
     if ($lang/@id = 'q') then (
         concat('Late ', $lang/@name/string(), ' (1950-73)')
@@ -182,5 +184,6 @@ breaks down across the “+” first, then the “,”. For example, “word=lor
 </div>
 <hr />
 <dl id="resultList"></dl>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

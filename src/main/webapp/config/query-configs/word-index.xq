@@ -127,5 +127,6 @@ return <dt>{c:print-word($word, <control style="bold" show-link="y"/>) }</dt>
 } </dl>
 ) ) 
 ) ) }
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

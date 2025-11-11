@@ -54,5 +54,6 @@ for $word in $lang-words[c:get-speech(.) = 'phrase'][not(parent::word[c:get-lang
 order by c:normalize-for-sort($word/@v)
 return local:print-phrase($word)
 } </ul>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

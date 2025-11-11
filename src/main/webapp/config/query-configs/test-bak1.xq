@@ -3,6 +3,7 @@ import module namespace c = "common.xq" at "common.xq";
 <html>
 <body>
 <div></div>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>
 

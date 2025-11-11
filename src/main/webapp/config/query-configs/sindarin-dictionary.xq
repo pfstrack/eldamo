@@ -298,5 +298,6 @@ return (
         <td>[N.] <i> v. </i>to fetch<br/>Sindarized from N.  <i>toltha-</i><br/>Deduced from <i>inf.</i> N. <i>toltho</i>; Ety/TUL</td>
     </tr>
 </table>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

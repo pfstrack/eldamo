@@ -1355,6 +1355,6 @@ for $ref in $applied-phonetic-rules return
 ) }
 </div>
 ) }
-
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

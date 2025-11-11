@@ -214,6 +214,6 @@ if (local:skip-deriv($deriv, $cognate-refs)) then () else
 <td>{local:show-refs('fal', $show-refs)}</td>
 </tr>
 } </table>
-
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

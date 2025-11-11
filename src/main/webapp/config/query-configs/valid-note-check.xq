@@ -19,5 +19,6 @@ if ($note[contains(xdb:html(.)[1], 'ERROR')]) then (
     ) else ()
 )}
 </dl>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

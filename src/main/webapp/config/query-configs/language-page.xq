@@ -68,5 +68,6 @@ for (var i = 0; i &lt; anchors.length; i++) {{
     if (a.href.indexOf('-{$id}') > 0) a.href = a.href + "?neo";
 }}
 </script>
-)} 
+)}
+<script src="../../js/dark-mode.js" ></script>
 </html>
