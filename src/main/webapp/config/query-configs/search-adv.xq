@@ -166,5 +166,6 @@ and here is a good tutorial: <a href="https://regexone.com" target="_blank">http
 </div>
 <hr />
 <dl id="resultList"></dl>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

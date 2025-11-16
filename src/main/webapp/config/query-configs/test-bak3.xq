@@ -11,5 +11,6 @@ return
         <td>{ $cat/@label/string() }</td>
     </tr>
 } </table>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

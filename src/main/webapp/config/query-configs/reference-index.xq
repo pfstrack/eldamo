@@ -90,5 +90,6 @@ created by me (Paul Strack) or have an unknown source.</p>
 <ul> {
     local:list-references(/*/source[@type='neologisms'])
 } </ul>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

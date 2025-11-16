@@ -47,3 +47,48 @@ hr { border: none; height: 1px; color: #000; background-color: #000; }
 
 .archive-nav::before { content: '['; }
 .archive-nav::after { content: '] »'; }
+body.dark-mode {
+    background-color: #292929;
+    color: #e0e0e0;
+}
+
+body.dark-mode a:link {
+    color: #80b3ff;
+}
+body.dark-mode a:hover {
+    color: #b3d1ff;
+    text-decoration: underline;
+}
+
+
+body.dark-mode hr {
+    color: #444;
+    background-color: #444;
+}
+body.dark-mode a:visited {
+    color: #945AC7;
+}
+
+body.dark-mode td  { border: solid 1px white; padding: 0.2em; vertical-align: top; line-height: 133%; }
+
+body.dark-mode th  { border: solid 1px white; padding: 0.2em; vertical-align: top; line-height: 133%; background-color:#424242; }
+
+body.dark-mode button,body.dark-mode select{
+    background-color: #69696a;
+    color: white;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+body.dark-mode input,
+body.dark-mode input::placeholder {
+    background-color: #292929;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 2px;
+}
+
+
+

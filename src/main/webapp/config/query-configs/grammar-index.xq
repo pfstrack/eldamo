@@ -27,5 +27,6 @@ declare variable $secondary-word := <control show-link="y"/>;
 { let $words := /*//word[@l=$id]
 let $grammar := $words[c:get-speech(.)='grammar']
 return c:show-hierarchy($grammar, 'grammar', 'Grammar') }
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

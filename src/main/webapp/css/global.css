@@ -30,8 +30,17 @@ html {
 
 /* body    { font-family: Times, "Times New Roman", serif; } */
 /* body    { font-family: Arial, Helvetica, sans-serif; } */
-body    { font-family: 'GentiumPlusW', Times, 'Times New Roman', san-serif; line-height: 133%; }
+body    { font-family: 'GentiumPlusW', Times, 'Times New Roman', san-serif; line-height: 133%; margin-top: 1.2rem}
+.search-header {
+    position: relative;
+    margin-top:3rem;
+}
 
+.search-header .label-holder {
+    position: absolute;
+    top: -2em;
+    left: 0;
+}
 a:link  { text-decoration: none }
 a:hover { text-decoration: underline }
 table   { border: solid 1px black; border-collapse: collapse }
@@ -66,7 +75,7 @@ li.c-bullet { list-style-type: none; text-indent: -1em }
 div.neo-nav-block    { display: none; }
 
 span.hierachy-nav { display: block; }
-span.search-nav-link { display: block; float: right }
+span.search-nav-link { display: block; float: right; margin-right: 45px; }
 span.previous-nav-link { display: block; float: left }
 span.next-nav-link { display: block; text-align: right }
 span.parent-nav-link { display: none; }
@@ -74,7 +83,7 @@ span.search-nav-link2 { display: none; }
 hr.nav-break { display: block; }
 @media only screen and (min-width: 530px) {
 	span.hierachy-nav { display: block; float: left }
-	span.list-nav { display: block; float: right }
+	span.list-nav { display: block; float: right ; margin-right: 45px;}
     span.search-nav-link { display: none }
     span.parent-nav-link { display: inline-block }
 	span.previous-nav-link { display: inline-block; float: none }
@@ -114,3 +123,45 @@ hr { border: none; height: 1px; color: #000; background-color: #000; }
 }
 
 .advanced-topic blockquote { margin-left: 0.75em; margin-right: 0em; padding-left: 0.50em; border-left: 0.25em solid #999; }
+body.dark-mode {
+    background-color: #292929;
+    color: #e0e0e0;
+}
+
+body.dark-mode a:link {
+    color: #80b3ff !important;
+}
+body.dark-mode a:hover {
+    color: #b3d1ff;
+    text-decoration: underline;
+}
+
+
+body.dark-mode hr {
+    color: #444;
+    background-color: #444;
+}
+body.dark-mode a:visited {
+    color: #945AC7;
+}
+
+body.dark-mode td  { border: solid 1px white; padding: 0.2em; vertical-align: top; line-height: 133%; }
+
+body.dark-mode th  { border: solid 1px white; padding: 0.2em; vertical-align: top; line-height: 133%; background-color:#424242; }
+
+body.dark-mode button,body.dark-mode select{
+    background-color: #69696a;
+    color: white;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+body.dark-mode input,
+body.dark-mode input::placeholder {
+    background-color: #292929;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 2px;
+}

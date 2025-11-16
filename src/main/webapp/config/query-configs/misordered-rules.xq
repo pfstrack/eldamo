@@ -50,5 +50,6 @@ return (
 let $bad-words :=
     $rule-words[ref/deriv/rule-example[xdb:key(., 'rule-to', concat(@l, ':', @rule, ':', @from))/@order gt preceding-sibling::rule-example[1]/xdb:key(., 'rule-to', concat(@l, ':', @rule, ':', @from))/@order]] 
 -->
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

@@ -738,6 +738,7 @@ let $t3 :=
     )}</table>
 return $t3
 }
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>
 

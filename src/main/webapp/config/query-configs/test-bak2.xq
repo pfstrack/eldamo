@@ -615,5 +615,6 @@ if ($exclusions/word[@l = $word/@l and @v=$word/@v]) then () else
 <td>{$see-refs}</td>
 </tr>
 } </table>
+<script src="../../js/dark-mode.js" ></script>
 </body>
 </html>

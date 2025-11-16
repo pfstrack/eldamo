@@ -6,6 +6,8 @@
     <title>Eldamo : Home</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <script src="js/add-queries.js"></script>
+    <script src="js/dark-mode.js" defer></script>
+
 </head>
 <body>
 <h1>Eldamo - An&nbsp;Elvish&nbsp;Lexicon</h1>
@@ -13,6 +15,7 @@
 <p><i>by Paul Strack &mdash; v<%= xdb.dom.DomManager.getDoc().getDocumentElement().getAttribute("version") %> &mdash;
 generated&nbsp;<%= java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG).format(new java.util.Date()).replace(" ", "&#160;") %></i></p>
 <% } %>
+
 <ul>
 <li><a href="general/getting-started.html">Getting Started With Elvish</a></li>
 <li><a href="content/languages/index.html">Languages</a></li>
