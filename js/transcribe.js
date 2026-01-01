@@ -28,8 +28,13 @@ function preprocessTranscription(value, lang) {
 		base = base.replace('þt', 'st');
 		base = base.replace('rg', 'rñ');
 	}
-	base = base.replace('χ', 'h');
-	return base;
+    if (lang == 's') {
+        if (base.startsWith('wh')) {
+            base = base.replace('wh', 'hw');
+        }
+    }
+    base = base.replace('χ', 'h');
+    return base;
 }
 
 String.prototype.replaceAll = function(search, replacement) {

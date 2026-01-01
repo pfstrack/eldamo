@@ -102,6 +102,7 @@
 
       <!-- verbal participles -->
       <xs:enumeration value="active-participle"/>
+      <xs:enumeration value="past-active-participle"/>
       <xs:enumeration value="passive-participle"/>
       <xs:enumeration value="imperfect-participle"/>
       <xs:enumeration value="imperfect-passive-participle"/>
