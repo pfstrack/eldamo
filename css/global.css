@@ -113,11 +113,17 @@ hr { border: none; height: 1px; color: #000; background-color: #000; }
     background-color: #CCCCCC
 }
 
+
 .advanced-topic blockquote { margin-left: 0.75em; margin-right: 0em; padding-left: 0.50em; border-left: 0.25em solid #999; }
+
 
 body.dark-mode {
     background-color: #292929;
     color: #e0e0e0;
+}
+
+body.dark-mode .advanced-topic {
+    background-color: #474747
 }
 
 body.dark-mode a:link {
