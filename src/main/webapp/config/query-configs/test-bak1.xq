@@ -7,6 +7,19 @@ import module namespace c = "common.xq" at "common.xq";
 </body>
 </html>
 
+// UNFINISHED DICTIONARY ENTRIES //
+
+{
+let $words := //word[c:get-lang(.)=('nq', 'q', 'mq', 'eq', 'ns', 's', 'n', 'en', 'g')]
+let $finished := $words[notes | see-notes | see]
+return (
+    <p>Words: {count($words)}</p>,
+    <p>Finished: {count($finished)}</p>,
+    <p>Remaining: {count($words) - count($finished)}</p>
+)
+}
+
+
 (:
 declare function local:showPE17QRef($value as node()) as xs:string {
     let $v1 := translate($value, ',', '')
